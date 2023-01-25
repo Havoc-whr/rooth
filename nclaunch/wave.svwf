@@ -1,0 +1,300 @@
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+array unset createdGroup
+array set createdGroup {}
+#
+# Groups
+#
+if {[catch {group get -using [list PC]}]} {
+set createdGroup([list PC]) 1
+catch {group new -name PC -overlay 0}
+}
+if {[catch {group get -using [list DE]}]} {
+set createdGroup([list DE]) 1
+catch {group new -name DE -overlay 0}
+}
+if {[catch {group get -using [list EX]}]} {
+set createdGroup([list EX]) 1
+catch {group new -name EX -overlay 0}
+}
+if {[catch {group get -using [list AS]}]} {
+set createdGroup([list AS]) 1
+catch {group new -name AS -overlay 0}
+}
+if {[catch {group get -using [list WB]}]} {
+set createdGroup([list WB]) 1
+catch {group new -name WB -overlay 0}
+}
+if {[catch {group get -using [list Group 6]}]} {
+set createdGroup([list Group 6]) 1
+catch {group new -name {Group 6} -overlay 0}
+}
+if {[catch {group get -using [list flow_ctrl]}]} {
+set createdGroup([list flow_ctrl]) 1
+catch {group new -name flow_ctrl -overlay 0}
+}
+if {[info exists createdGroup([list PC])]} {
+group using PC
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.inst_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.pc_adder_i[31:0]}]} ]
+}
+
+if {[info exists createdGroup([list DE])]} {
+group using DE
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.inst_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.pc_adder_o[31:0]}]} ]
+}
+
+if {[info exists createdGroup([list EX])]} {
+group using EX
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex_0.inst_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex_0.pc_adder_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_core_0.alu_src1_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_core_0.alu_src2_i[31:0]}]} ]
+}
+
+if {[info exists createdGroup([list AS])]} {
+group using AS
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as_0.inst_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as_0.pc_adder_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_res_ctrl_0.reg_wr_data_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as_0.reg_wr_adder_o[4:0]}]} ]
+}
+
+if {[info exists createdGroup([list WB])]} {
+group using WB
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.inst_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.pc_adder_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.reg_wr_data_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.reg_wr_adder_o[4:0]}]} ]
+}
+
+if {[info exists createdGroup([list Group 6])]} {
+group using {Group 6}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.s11_x27[31:0]}]} ] \
+    [subst  {[format {tb_rooth.s10_x26[31:0]}]} ] \
+    [subst  {[format {tb_rooth.a3_x13[31:0]}]} ] \
+    [subst  {[format {tb_rooth.t4_x29[31:0]}]} ] \
+    [subst  {[format {tb_rooth.a1_x11[31:0]}]} ] \
+    [subst  {[format {tb_rooth.a0_x10[31:0]}]} ]
+}
+
+if {[info exists createdGroup([list flow_ctrl])]} {
+group using flow_ctrl
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.alu_busy_i}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.branch_i[2:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.bus_wait_i}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.client_hold_flag_i}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.client_int_addr_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.client_int_assert_i}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.flow_as_o[1:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.flow_de_o[1:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.flow_ex_o[1:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.flow_pc_o[1:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.flow_wb_o[1:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.imm_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.jump_i[1:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.less_i}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.more_zero_i}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.next_pc_four_o}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.next_pc_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.pc_adder_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.reg1_rd_data_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl_0.zero_i}]} ]
+}
+
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.clk}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.rst_n}]}
+	} ]]
+
+set groupId0 [waveform add -groups PC]
+
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_inst_mem_0.inst_o[31:0]}]}
+	} ]]
+
+set groupId0 [waveform add -groups DE]
+
+
+set groupId0 [waveform add -groups EX]
+set gpGlist0 [waveform hierarchy contents $groupId0]
+set gpID0 [lindex $gpGlist0 0]
+foreach {name attrs} [subst  {
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex_0.inst_o[31:0]}]} {}
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex_0.pc_adder_o[31:0]}]} {}
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_core_0.alu_src1_i[31:0]}]} {}
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_core_0.alu_src2_i[31:0]}]} {-radix %d}
+}] childcmds {
+    {}
+    {}
+    {}
+    {}
+} {
+    set expected [ join [waveform signals -format path $gpID0] ]
+    if {[string equal $name $expected] || $name == "cdivider"} {
+        if {$attrs != ""} {
+            eval waveform format $gpID0 $attrs
+        }
+        if { $childcmds != ""} {
+            eval $childcmds
+        }
+    }
+    set gpGlist0 [lrange $gpGlist0 1 end]
+    set gpID0 [lindex $gpGlist0 0]
+}
+
+
+set groupId0 [waveform add -groups AS]
+set gpGlist0 [waveform hierarchy contents $groupId0]
+set gpID0 [lindex $gpGlist0 0]
+foreach {name attrs} [subst  {
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as_0.inst_o[31:0]}]} {}
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as_0.pc_adder_o[31:0]}]} {}
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_res_ctrl_0.reg_wr_data_o[31:0]}]} {-radix %d}
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as_0.reg_wr_adder_o[4:0]}]} {-radix %d}
+}] childcmds {
+    {}
+    {}
+    {}
+    {}
+} {
+    set expected [ join [waveform signals -format path $gpID0] ]
+    if {[string equal $name $expected] || $name == "cdivider"} {
+        if {$attrs != ""} {
+            eval waveform format $gpID0 $attrs
+        }
+        if { $childcmds != ""} {
+            eval $childcmds
+        }
+    }
+    set gpGlist0 [lrange $gpGlist0 1 end]
+    set gpID0 [lindex $gpGlist0 0]
+}
+
+
+set groupId0 [waveform add -groups WB]
+set gpGlist0 [waveform hierarchy contents $groupId0]
+set gpID0 [lindex $gpGlist0 0]
+foreach {name attrs} [subst  {
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.inst_o[31:0]}]} {}
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.pc_adder_o[31:0]}]} {}
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.reg_wr_data_o[31:0]}]} {-radix %d}
+    {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.reg_wr_adder_o[4:0]}]} {-radix %d}
+}] childcmds {
+    {}
+    {}
+    {}
+    {}
+} {
+    set expected [ join [waveform signals -format path $gpID0] ]
+    if {[string equal $name $expected] || $name == "cdivider"} {
+        if {$attrs != ""} {
+            eval waveform format $gpID0 $attrs
+        }
+        if { $childcmds != ""} {
+            eval $childcmds
+        }
+    }
+    set gpGlist0 [lrange $gpGlist0 1 end]
+    set gpID0 [lindex $gpGlist0 0]
+}
+
+
+set groupId0 [waveform add -groups {{Group 6}}]
+set gpGlist0 [waveform hierarchy contents $groupId0]
+set gpID0 [lindex $gpGlist0 0]
+foreach {name attrs} [subst  {
+    {[format {tb_rooth.s11_x27[31:0]}]} {}
+    {[format {tb_rooth.s10_x26[31:0]}]} {}
+    {[format {tb_rooth.a3_x13[31:0]}]} {-radix %d}
+    {[format {tb_rooth.t4_x29[31:0]}]} {-radix %d}
+    {[format {tb_rooth.a1_x11[31:0]}]} {}
+    {[format {tb_rooth.a0_x10[31:0]}]} {}
+}] childcmds {
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+} {
+    set expected [ join [waveform signals -format path $gpID0] ]
+    if {[string equal $name $expected] || $name == "cdivider"} {
+        if {$attrs != ""} {
+            eval waveform format $gpID0 $attrs
+        }
+        if { $childcmds != ""} {
+            eval $childcmds
+        }
+    }
+    set gpGlist0 [lrange $gpGlist0 1 end]
+    set gpID0 [lindex $gpGlist0 0]
+}
+
+
+set groupId0 [waveform add -groups flow_ctrl]
+waveform hierarchy collapse $groupId0
+
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rib_0.m1_addr_i[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rib_0.m1_data_o[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rib_0.s0_addr_o[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rib_0.s0_data_i[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rib_0.s0_data_o[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rib_0.s0_we_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rib_0.req[3:0]}]}
+	} ]]
+
+waveform xview limits 301154ps 716654ps

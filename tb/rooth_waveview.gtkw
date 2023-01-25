@@ -1,0 +1,155 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Sun Jan  8 03:37:38 2023
+[*]
+[dumpfile] "/home/eda/Project/rooth/tb/sim_out.vcd"
+[dumpfile_mtime] "Sun Jan  8 03:16:24 2023"
+[dumpfile_size] 29871
+[savefile] "/home/eda/Project/rooth/tb/rooth_waveview.gtkw"
+[timestart] 44100
+[size] 1358 1368
+[pos] -153 -204
+*-15.000000 174000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_rooth.
+[treeopen] tb_rooth.u_rooth_soc_0.
+[treeopen] tb_rooth.u_rooth_soc_0.u_rooth_0.
+[sst_width] 223
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 415
+@28
+tb_rooth.clk
+@200
+-
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_pc_reg0.curr_pc_o[31:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.pc_inst_i[31:0]
+@200
+-
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de.pc_adder_o[31:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de.inst_o[31:0]
+@28
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_ctrl_0.alu_res_op_o[1:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_ctrl_0.opcode[6:0]
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_ctrl_0.reg1_rd_adder_o[4:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_ctrl_0.reg2_rd_adder_o[4:0]
+@200
+-
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_mux_alu_0.curr_pc_i[31:0]
+@28
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex.opcode_o[6:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex.funct3_o[2:0]
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex.imm_o[31:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_mux_alu_0.alu_src1_o[31:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_mux_alu_0.alu_src2_o[31:0]
+@24
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex.reg1_rd_adder_o[4:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex.reg2_rd_adder_o[4:0]
+@420
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_mux_alu_0.reg1_rd_data_i[31:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_mux_alu_0.reg2_rd_data_i[31:0]
+@200
+-
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as.alu_res_o[31:0]
+@c00024
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as.reg_wr_adder_o[4:0]
+@28
+(0)tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as.reg_wr_adder_o[4:0]
+(1)tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as.reg_wr_adder_o[4:0]
+(2)tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as.reg_wr_adder_o[4:0]
+(3)tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as.reg_wr_adder_o[4:0]
+(4)tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as.reg_wr_adder_o[4:0]
+@1401204
+-group_end
+@421
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_res_ctrl_0.reg_wr_data_o[31:0]
+@28
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_as.alu_res_op_o[1:0]
+@200
+-
+@28
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb.reg_wr_en_o
+@24
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb.reg_wr_adder_o[4:0]
+@420
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb.reg_wr_data_o[31:0]
+@800200
+-reg
+@22
+tb_rooth.s10_x26[31:0]
+tb_rooth.s11_x27[31:0]
+tb_rooth.ra_x1[31:0]
+tb_rooth.sp_x2[31:0]
+@420
+tb_rooth.t4_x29[31:0]
+@c00420
+tb_rooth.t5_x30[31:0]
+@28
+(0)tb_rooth.t5_x30[31:0]
+(1)tb_rooth.t5_x30[31:0]
+(2)tb_rooth.t5_x30[31:0]
+(3)tb_rooth.t5_x30[31:0]
+(4)tb_rooth.t5_x30[31:0]
+(5)tb_rooth.t5_x30[31:0]
+(6)tb_rooth.t5_x30[31:0]
+(7)tb_rooth.t5_x30[31:0]
+(8)tb_rooth.t5_x30[31:0]
+(9)tb_rooth.t5_x30[31:0]
+(10)tb_rooth.t5_x30[31:0]
+(11)tb_rooth.t5_x30[31:0]
+(12)tb_rooth.t5_x30[31:0]
+(13)tb_rooth.t5_x30[31:0]
+(14)tb_rooth.t5_x30[31:0]
+(15)tb_rooth.t5_x30[31:0]
+(16)tb_rooth.t5_x30[31:0]
+(17)tb_rooth.t5_x30[31:0]
+(18)tb_rooth.t5_x30[31:0]
+(19)tb_rooth.t5_x30[31:0]
+(20)tb_rooth.t5_x30[31:0]
+(21)tb_rooth.t5_x30[31:0]
+(22)tb_rooth.t5_x30[31:0]
+(23)tb_rooth.t5_x30[31:0]
+(24)tb_rooth.t5_x30[31:0]
+(25)tb_rooth.t5_x30[31:0]
+(26)tb_rooth.t5_x30[31:0]
+(27)tb_rooth.t5_x30[31:0]
+(28)tb_rooth.t5_x30[31:0]
+(29)tb_rooth.t5_x30[31:0]
+(30)tb_rooth.t5_x30[31:0]
+(31)tb_rooth.t5_x30[31:0]
+@1401200
+-group_end
+@22
+tb_rooth.gp_x3[31:0]
+@1000200
+-reg
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_res_ctrl_0.alu_res_i[31:0]
+@28
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_res_ctrl_0.alu_res_op_i[1:0]
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_res_ctrl_0.data_mem_addr_o[31:0]
+@28
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_alu_res_ctrl_0.data_mem_req_o
+@420
+tb_rooth.u_rooth_soc_0.u_rib.m0_addr_i[31:0]
+tb_rooth.u_rooth_soc_0.u_rib.m0_data_o[31:0]
+@28
+tb_rooth.u_rooth_soc_0.u_rib.m0_req_i
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de.flow_de_i[1:0]
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de.inst_o[31:0]
+@28
+tb_rooth.u_rooth_soc_0.u_rib.hold_flag_o
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl.flow_as_o[1:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl.flow_de_o[1:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl.flow_ex_o[1:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl.flow_pc_o[1:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_flow_ctrl.flow_wb_o[1:0]
+[pattern_trace] 1
+[pattern_trace] 0

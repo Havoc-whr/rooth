@@ -1,0 +1,20 @@
++parser_out_dir+/home/eda/Project/rooth/core/vtags.db/parser_out/pub/
++parser_file_standalone+0
+-v /home/eda/Project/rooth/core/inst_mem.v -s parser_inst_mem_v_0.py
+-v /home/eda/Project/rooth/core/if_ex.v -s parser_if_ex_v_1.py
+-v /home/eda/Project/rooth/core/flow_ctrl.v -s parser_flow_ctrl_v_2.py
+-v /home/eda/Project/rooth/core/csr_reg.v -s parser_csr_reg_v_3.py
+-v /home/eda/Project/rooth/core/regs_file.v -s parser_regs_file_v_4.py
+-v /home/eda/Project/rooth/core/mux_alu.v -s parser_mux_alu_v_5.py
+-v /home/eda/Project/rooth/core/rooth_defines.v -s parser_rooth_defines_v_6.py
+-v /home/eda/Project/rooth/core/alu_core.v -s parser_alu_core_v_7.py
+-v /home/eda/Project/rooth/core/if_de.v -s parser_if_de_v_8.py
+-v /home/eda/Project/rooth/core/data_mem.v -s parser_data_mem_v_9.py
+-v /home/eda/Project/rooth/core/pc_reg.v -s parser_pc_reg_v_10.py
+-v /home/eda/Project/rooth/core/if_as.v -s parser_if_as_v_11.py
+-v /home/eda/Project/rooth/core/imm_gen.v -s parser_imm_gen_v_12.py
+-v /home/eda/Project/rooth/core/rooth.v -s parser_rooth_v_13.py
+-v /home/eda/Project/rooth/core/alu_res_ctrl.v -s parser_alu_res_ctrl_v_14.py
+-v /home/eda/Project/rooth/core/reg_clash_fb.v -s parser_reg_clash_fb_v_15.py
+-v /home/eda/Project/rooth/core/if_wb.v -s parser_if_wb_v_16.py
+-v /home/eda/Project/rooth/core/ctrl.v -s parser_ctrl_v_17.py

@@ -1,0 +1,116 @@
+Magic 271485
+Revision Verdi_O-2018.09-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 27 2560 960 268 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ICer/ic_prjs/rooth/VCS/verification/tb.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 761.718750 1054.687500
+cursor 960.000000
+marker 920.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 6
+; marker line index
+markerPos 19
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ICer/ic_prjs/rooth/VCS/verification/tb.fsdb"
+addSignal -h 15 /tinyriscv_soc_tb/clk
+addSignal -h 15 -holdScope rst_n
+addGroup "G2"
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_if_de_0/pc_adder_i[31:0]
+addSignal -h 15 -holdScope inst_i[31:0]
+addGroup "G3"
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_if_de_0/pc_adder_o[31:0]
+addSignal -h 15 -holdScope inst_o[31:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_decode_0/reg1_rd_adder_o[4:0]
+addSignal -h 15 -holdScope rs1[4:0]
+addGroup "G4"
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_if_ex_0/pc_adder_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope inst_o[31:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_mux_alu_0/reg1_rd_data_i[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_if_ex_0/reg1_rd_adder_o[4:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_mux_alu_0/csr_rd_data_i[31:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_reg_clash_fb_0/csr_rd_adder_i[11:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_if_ex_0/csr_rd_adder_i[11:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_decode_0/csr_rd_adder_o[11:0]
+addGroup "G5"
+addSignal -h 15 -UNSIGNED -HEX /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_if_as_0/pc_adder_o[31:0]
+addSignal -h 15 -holdScope inst_o[31:0]
+addSignal -h 15 -holdScope csr_wr_adder_o[11:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_alu_res_ctrl_0/csr_wr_data_o[31:0]
+addSignal -h 15 -holdScope alu_res_op_i[1:0]
+addSignal -h 15 -holdScope funct3_i[2:0]
+addSignal -h 15 -holdScope rs1_data_i[31:0]
+addGroup "G6"
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_if_wb_0/pc_adder_o[31:0]
+addSignal -h 15 -holdScope inst_o[31:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_csr_reg_0/csr_wr_en_i
+addSignal -h 15 -holdScope csr_wr_adder_i[11:0]
+addSignal -h 15 -holdScope csr_wr_data_i[31:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_regs_file_0/reg_wr_en_i
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg_wr_adder_i[4:0]
+addSignal -h 15 -holdScope reg_wr_data_i[31:0]
+addGroup "G7"
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_flow_ctrl_0/client_hold_flag_i
+addSignal -h 15 -UNSIGNED -BIN /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_clinet_0/int_state[3:0]
+addSignal -h 15 -UNSIGNED -BIN -holdScope csr_state[4:0]
+addSignal -h 15 -holdScope we_o
+addSignal -h 15 -holdScope waddr_o[11:0]
+addSignal -h 15 -holdScope data_o[31:0]
+addSignal -h 15 /tinyriscv_soc_tb/u_rooth_soc_0/u_rooth_0/u_csr_reg_0/mstatus[31:0]
+addSignal -h 15 -holdScope mepc[31:0]
+addSignal -h 15 -holdScope mtvec[31:0]
+addSignal -h 15 -holdScope client_csr_wr_en_i
+addSignal -h 15 -holdScope client_csr_wr_adder_i[11:0]
+addSignal -h 15 -holdScope client_csr_wr_data_i[31:0]
+addGroup "G8"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/ICer/ic_prjs/rooth/VCS/verification/tb.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/tinyriscv_soc_tb"
+
+SCOPE_LIST_BEGIN
+"/tinyriscv_soc_tb"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+
