@@ -45,4 +45,5 @@ clean  :
 	 rm  -rf  *~  core  csrc  simv*  vc_hdrs.h  ucli.key  urg* *.log  novas.* *.fsdb* verdiLog  64* DVEfiles *.vpd
 	 rm -rf INCA_libs irun*
 	 rm -rf modelsim.ini transcript work
+	 rm -rf result.output
 #-------------------------------------------------------------------------------------------------------

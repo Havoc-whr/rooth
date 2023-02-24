@@ -1,0 +1,8 @@
+Info (10281): Verilog HDL Declaration information at uart.v(64): object "UART_CTRL" differs only in case from object "uart_ctrl" in the same scope File: D:/rooth/fpga/rtl/perips/uart.v Line: 64
+Info (10281): Verilog HDL Declaration information at uart.v(65): object "UART_STATUS" differs only in case from object "uart_status" in the same scope File: D:/rooth/fpga/rtl/perips/uart.v Line: 65
+Info (10281): Verilog HDL Declaration information at uart.v(66): object "UART_BAUD" differs only in case from object "uart_baud" in the same scope File: D:/rooth/fpga/rtl/perips/uart.v Line: 66
+Info (10281): Verilog HDL Declaration information at spi.v(38): object "SPI_CTRL" differs only in case from object "spi_ctrl" in the same scope File: D:/rooth/fpga/rtl/perips/spi.v Line: 38
+Info (10281): Verilog HDL Declaration information at spi.v(39): object "SPI_DATA" differs only in case from object "spi_data" in the same scope File: D:/rooth/fpga/rtl/perips/spi.v Line: 39
+Info (10281): Verilog HDL Declaration information at spi.v(40): object "SPI_STATUS" differs only in case from object "spi_status" in the same scope File: D:/rooth/fpga/rtl/perips/spi.v Line: 40
+Info (10281): Verilog HDL Declaration information at gpio.v(38): object "GPIO_CTRL" differs only in case from object "gpio_ctrl" in the same scope File: D:/rooth/fpga/rtl/perips/gpio.v Line: 38
+Info (10281): Verilog HDL Declaration information at gpio.v(40): object "GPIO_DATA" differs only in case from object "gpio_data" in the same scope File: D:/rooth/fpga/rtl/perips/gpio.v Line: 40

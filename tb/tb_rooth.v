@@ -12,8 +12,8 @@
 //
 // -FHDR----------------------------------------------------------------------------
 `timescale 1ns / 1ps
-`include "../core/rooth_defines.v"
-`include "../core/rooth_soc.v"
+`include "../rtl/rooth_soc.v"
+`include "../rtl/rooth_defines.v"
 
 module tb_rooth ();
 
@@ -60,7 +60,7 @@ initial begin
     rst_n = 1'b1;
     # (`SIM_PERIOD)
     rst_n = 1'b0;
-    inst_name = "MUL";
+    inst_name = "../tb/ADD";
     inst_test(inst_name);
     #(`SIM_PERIOD * 50);
     $finish;
@@ -88,6 +88,7 @@ task inst_load;
         #(`SIM_PERIOD/2);
         clk       = 1'b0;
         rst_n     = 1'b0;
+        $readmemh ("../tb/SETREG", u_rooth_soc_0.u_rooth_0. u_regs_file_0. register);
         $readmemh (inst_name, u_rooth_soc_0.u_inst_mem_0. inst_mem_f);
     end
 endtask
@@ -109,19 +110,16 @@ task inst_test;
             $display("~~~~~~~~~~~~~~~~~~~ %s FAIL ~~~~~~~~~~~~~~~~~~~~",inst_name);
             $display("fail testnum = %2d", gp_x3);
             #(`SIM_PERIOD * 1);
-            /*
-             *for (r = 0; r < 32; r = r + 1)
-             *    $display("x%2d = 0x%x", r, u_rooth_soc_0.u_rooth_0. u_regs_file_0. register[r]);
-             */
-            $stop;
+            for (r = 0; r < 32; r = r + 1)
+            $display("x%2d = 0x%x", r, u_rooth_soc_0.u_rooth_0. u_regs_file_0. register[r]);
+            $finish;
         end
     end
 endtask
 
 rooth_soc u_rooth_soc_0(
     .clk                            ( clk                           ),
-    .rst_n                          ( rst_n                         ),
-    .int_flag_i                     ( 8'b0                          )
+    .rst_n                          ( rst_n                         )
 );
 
 

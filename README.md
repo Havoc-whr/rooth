@@ -1,4 +1,10 @@
-### 指令支持：
+## 说明：
+
+### 处理器为取指、译码、执行、访存、写回的五级流水线，通过VCS(-SP2)工具验证通过了[tinyriscv项目中全部旧的指令测试][tinyriscv],并且也使用[RISC-V][riscv]官方维护的[测试程序][riscv-arch-test]进行了指令的兼容性测试，[测试套件][suite]版本为1.0，设计在除"非对齐访存（MISALIGN）"测试外的rv32i、rv32im、rv32Zicsr以及rv32Zifencei中的测试全部通过。即不支持硬件非对齐访存。
+
+### 最新更新在dev分支中，使用cyclone IV FPGA的RAM IP核作为指令和数据存储器，通过RAM IP核暂时只支持初始化方式下载程序，提供程序bin转mif工具(rooth/fpga/altera/EP4CE10F17C8/porgram)。程序demo在example文件夹下，使用了tinyriscv的外设以及配套的demo，编译方法参考tinyriscv项目。
+
+## 指令支持：
 
 | 序号 |  指令   | 类型 | 测试 | 备注 |
 | :--: | :-----: | :--: | :--: | :--: |
@@ -57,9 +63,7 @@
 |  53  |   REM   |  R   | PASS |      |
 |  54  |  REMU   |  R   | PASS |      |
 
-### 说明：
 
-##### 设计通过VCS(-SP2)工具验证通过了[tinyriscv项目中全部旧的指令测试][tinyriscv],并且也使用[RISC-V][riscv]官方维护的[测试程序][riscv-arch-test]进行了指令的兼容性测试，[测试套件][suite]版本为1.0，设计在除"非对齐访存（MISALIGN）"测试外的rv32i、rv32im、rv32Zicsr以及rv32Zifencei中的测试全部通过。即不支持硬件非对齐访存
 
 [tinyriscv]:https://gitee.com/liangkangnan/tinyriscv?_from=gitee_search#431-%E8%BF%90%E8%A1%8C%E6%97%A7%E7%9A%84%E6%8C%87%E4%BB%A4%E6%B5%8B%E8%AF%95%E7%A8%8B%E5%BA%8F "tinyriscv"
 [riscv]: https://riscv.org/china/	"RISC-V"

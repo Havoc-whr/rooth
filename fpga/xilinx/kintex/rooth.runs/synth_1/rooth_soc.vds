@@ -1,0 +1,1468 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Feb  3 19:43:38 2023
+# Process ID: 6426
+# Current directory: /home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1
+# Command line: vivado -log rooth_soc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rooth_soc.tcl
+# Log file: /home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/rooth_soc.vds
+# Journal file: /home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source rooth_soc.tcl -notrace
+Command: synth_design -top rooth_soc -part xc7k325tfbg676-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6436 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1320.672 ; gain = 88.988 ; free physical = 2843 ; free virtual = 6666
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'rooth_soc' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:35]
+INFO: [Synth 8-638] synthesizing module 'clk_pll' [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_pll' (1#1) [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'rooth' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/rooth.v:18]
+INFO: [Synth 8-638] synthesizing module 'flow_ctrl' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/flow_ctrl.v:17]
+INFO: [Synth 8-256] done synthesizing module 'flow_ctrl' (2#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/flow_ctrl.v:17]
+INFO: [Synth 8-638] synthesizing module 'pc_reg' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/pc_reg.v:15]
+INFO: [Synth 8-256] done synthesizing module 'pc_reg' (3#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/pc_reg.v:15]
+INFO: [Synth 8-638] synthesizing module 'if_de' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/if_de.v:18]
+INFO: [Synth 8-256] done synthesizing module 'if_de' (4#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/if_de.v:18]
+INFO: [Synth 8-638] synthesizing module 'decode' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/decode.v:16]
+INFO: [Synth 8-226] default block is never used [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/decode.v:71]
+INFO: [Synth 8-226] default block is never used [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/decode.v:93]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/decode.v:175]
+INFO: [Synth 8-256] done synthesizing module 'decode' (5#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/decode.v:16]
+INFO: [Synth 8-638] synthesizing module 'imm_gen' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/imm_gen.v:16]
+INFO: [Synth 8-256] done synthesizing module 'imm_gen' (6#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/imm_gen.v:16]
+INFO: [Synth 8-638] synthesizing module 'if_ex' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/if_ex.v:17]
+INFO: [Synth 8-256] done synthesizing module 'if_ex' (7#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/if_ex.v:17]
+INFO: [Synth 8-638] synthesizing module 'mux_alu' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/mux_alu.v:16]
+INFO: [Synth 8-256] done synthesizing module 'mux_alu' (8#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/mux_alu.v:16]
+INFO: [Synth 8-638] synthesizing module 'alu_core' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/alu_core.v:16]
+INFO: [Synth 8-256] done synthesizing module 'alu_core' (9#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/alu_core.v:16]
+INFO: [Synth 8-638] synthesizing module 'div' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/div.v:22]
+	Parameter STATE_IDLE bound to: 4'b0001 
+	Parameter STATE_START bound to: 4'b0010 
+	Parameter STATE_CALC bound to: 4'b0100 
+	Parameter STATE_END bound to: 4'b1000 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/div.v:85]
+INFO: [Synth 8-256] done synthesizing module 'div' (10#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/div.v:22]
+INFO: [Synth 8-638] synthesizing module 'if_as' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/if_as.v:17]
+INFO: [Synth 8-256] done synthesizing module 'if_as' (11#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/if_as.v:17]
+INFO: [Synth 8-638] synthesizing module 'alu_res_ctrl' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/alu_res_ctrl.v:16]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/alu_res_ctrl.v:75]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/alu_res_ctrl.v:107]
+INFO: [Synth 8-256] done synthesizing module 'alu_res_ctrl' (12#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/alu_res_ctrl.v:16]
+INFO: [Synth 8-638] synthesizing module 'if_wb' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/if_wb.v:17]
+INFO: [Synth 8-256] done synthesizing module 'if_wb' (13#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/if_wb.v:17]
+INFO: [Synth 8-638] synthesizing module 'reg_clash_fb' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/reg_clash_fb.v:16]
+INFO: [Synth 8-256] done synthesizing module 'reg_clash_fb' (14#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/reg_clash_fb.v:16]
+INFO: [Synth 8-638] synthesizing module 'regs_file' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:16]
+WARNING: [Synth 8-5788] Register register_reg[0] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[1] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[2] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[3] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[4] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[5] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[6] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[7] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[8] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[9] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[10] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[11] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[12] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[13] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[14] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[15] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[16] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[17] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[18] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[19] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[20] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[21] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[22] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[23] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[24] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[25] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[26] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[27] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[28] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[29] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[30] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+WARNING: [Synth 8-5788] Register register_reg[31] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:38]
+INFO: [Synth 8-256] done synthesizing module 'regs_file' (15#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/regs_file.v:16]
+INFO: [Synth 8-638] synthesizing module 'csr_reg' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/csr_reg.v:16]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/csr_reg.v:67]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/csr_reg.v:77]
+INFO: [Synth 8-256] done synthesizing module 'csr_reg' (16#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/csr_reg.v:16]
+INFO: [Synth 8-638] synthesizing module 'clinet' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/clinet.v:15]
+	Parameter S_INT_IDLE bound to: 4'b0001 
+	Parameter S_INT_SYNC_ASSERT bound to: 4'b0010 
+	Parameter S_INT_ASYNC_ASSERT bound to: 4'b0100 
+	Parameter S_INT_MRET bound to: 4'b1000 
+	Parameter S_CSR_IDLE bound to: 5'b00001 
+	Parameter S_CSR_MSTATUS bound to: 5'b00010 
+	Parameter S_CSR_MEPC bound to: 5'b00100 
+	Parameter S_CSR_MSTATUS_MRET bound to: 5'b01000 
+	Parameter S_CSR_MCAUSE bound to: 5'b10000 
+INFO: [Synth 8-256] done synthesizing module 'clinet' (17#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/clinet.v:15]
+INFO: [Synth 8-256] done synthesizing module 'rooth' (18#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/rooth.v:18]
+INFO: [Synth 8-638] synthesizing module 'rib' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/bus/rib.v:21]
+	Parameter slave_0 bound to: 4'b0000 
+	Parameter slave_1 bound to: 4'b0001 
+	Parameter slave_2 bound to: 4'b0010 
+	Parameter slave_3 bound to: 4'b0011 
+	Parameter slave_4 bound to: 4'b0100 
+	Parameter slave_5 bound to: 4'b0101 
+	Parameter grant0 bound to: 2'b00 
+	Parameter grant1 bound to: 2'b01 
+	Parameter grant2 bound to: 2'b10 
+	Parameter grant3 bound to: 2'b11 
+INFO: [Synth 8-226] default block is never used [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/bus/rib.v:161]
+INFO: [Synth 8-256] done synthesizing module 'rib' (19#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/bus/rib.v:21]
+INFO: [Synth 8-638] synthesizing module 'inst_mem' [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/realtime/inst_mem_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'inst_mem' (20#1) [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/realtime/inst_mem_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (12) of module 'inst_mem' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:226]
+INFO: [Synth 8-638] synthesizing module 'data_mem' [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/realtime/data_mem_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'data_mem' (21#1) [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/realtime/data_mem_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (12) of module 'data_mem' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:235]
+INFO: [Synth 8-638] synthesizing module 'timer' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/timer.v:21]
+	Parameter REG_CTRL bound to: 4'b0000 
+	Parameter REG_COUNT bound to: 4'b0100 
+	Parameter REG_VALUE bound to: 4'b1000 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/timer.v:79]
+INFO: [Synth 8-256] done synthesizing module 'timer' (22#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/timer.v:21]
+INFO: [Synth 8-638] synthesizing module 'uart' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:19]
+	Parameter BAUD_115200 bound to: 440 - type: integer 
+	Parameter S_IDLE bound to: 4'b0001 
+	Parameter S_START bound to: 4'b0010 
+	Parameter S_SEND_BYTE bound to: 4'b0100 
+	Parameter S_STOP bound to: 4'b1000 
+	Parameter UART_CTRL bound to: 8'b00000000 
+	Parameter UART_STATUS bound to: 8'b00000100 
+	Parameter UART_BAUD bound to: 8'b00001000 
+	Parameter UART_TXDATA bound to: 8'b00001100 
+	Parameter UART_RXDATA bound to: 8'b00010000 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:102]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:183]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:307]
+INFO: [Synth 8-256] done synthesizing module 'uart' (23#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:19]
+INFO: [Synth 8-638] synthesizing module 'gpio' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/gpio.v:19]
+	Parameter GPIO_CTRL bound to: 4'b0000 
+	Parameter GPIO_DATA bound to: 4'b0100 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/gpio.v:60]
+INFO: [Synth 8-256] done synthesizing module 'gpio' (24#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/gpio.v:19]
+INFO: [Synth 8-638] synthesizing module 'spi' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/spi.v:19]
+	Parameter SPI_CTRL bound to: 4'b0000 
+	Parameter SPI_DATA bound to: 4'b0100 
+	Parameter SPI_STATUS bound to: 4'b1000 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/spi.v:140]
+INFO: [Synth 8-256] done synthesizing module 'spi' (25#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/spi.v:19]
+WARNING: [Synth 8-3848] Net m2_addr_i in module/entity rooth_soc does not have driver. [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:67]
+WARNING: [Synth 8-3848] Net m2_data_i in module/entity rooth_soc does not have driver. [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:68]
+WARNING: [Synth 8-3848] Net m2_req_i in module/entity rooth_soc does not have driver. [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:70]
+WARNING: [Synth 8-3848] Net m2_we_i in module/entity rooth_soc does not have driver. [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:71]
+WARNING: [Synth 8-3848] Net m3_addr_i in module/entity rooth_soc does not have driver. [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:74]
+WARNING: [Synth 8-3848] Net m3_data_i in module/entity rooth_soc does not have driver. [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:75]
+WARNING: [Synth 8-3848] Net m3_req_i in module/entity rooth_soc does not have driver. [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:77]
+WARNING: [Synth 8-3848] Net m3_we_i in module/entity rooth_soc does not have driver. [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:78]
+INFO: [Synth 8-256] done synthesizing module 'rooth_soc' (26#1) [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:35]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[31]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[30]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[29]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[28]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[27]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[26]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[25]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[24]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[23]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[22]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[21]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[20]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[19]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[18]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[17]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[16]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[15]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[14]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[13]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[12]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[11]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[10]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[9]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[8]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[7]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[6]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[5]
+WARNING: [Synth 8-3331] design spi has unconnected port addr_i[4]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[31]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[30]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[29]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[28]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[27]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[26]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[25]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[24]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[23]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[22]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[21]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[20]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[19]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[18]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[17]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[16]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[15]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[14]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[13]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[12]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[11]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[10]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[9]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[8]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[7]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[6]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[5]
+WARNING: [Synth 8-3331] design gpio has unconnected port addr_i[4]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[31]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[30]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[29]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[28]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[27]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[26]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[25]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[24]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[23]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[22]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[21]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[20]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[19]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[18]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[17]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[16]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[15]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[14]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[13]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[12]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[11]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[10]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[9]
+WARNING: [Synth 8-3331] design uart has unconnected port addr_i[8]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[31]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[30]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[29]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[28]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[27]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[26]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[25]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[24]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[23]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[22]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[21]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[20]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[19]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[18]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[17]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[16]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[15]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[14]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[13]
+WARNING: [Synth 8-3331] design timer has unconnected port addr_i[12]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1378.203 ; gain = 146.520 ; free physical = 2838 ; free virtual = 6661
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[31] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[30] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[29] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[28] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[27] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[26] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[25] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[24] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[23] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[22] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[21] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[20] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[19] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[18] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[17] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[16] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[15] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[14] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[13] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[12] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[11] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[10] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[9] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[8] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[7] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[6] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[5] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[4] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[3] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[2] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[1] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_addr_i[0] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[31] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[30] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[29] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[28] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[27] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[26] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[25] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[24] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[23] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[22] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[21] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[20] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[19] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[18] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[17] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[16] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[15] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[14] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[13] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[12] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[11] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[10] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[9] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[8] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[7] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[6] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[5] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[4] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[3] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[2] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[1] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_data_i[0] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_req_i to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m2_we_i to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[31] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[30] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[29] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[28] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[27] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[26] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[25] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[24] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[23] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[22] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[21] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[20] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[19] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[18] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[17] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[16] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[15] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[14] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[13] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[12] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[11] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[10] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[9] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[8] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[7] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[6] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[5] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[4] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[3] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[2] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[1] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_addr_i[0] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_data_i[31] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+WARNING: [Synth 8-3295] tying undriven pin u_rib_0:m3_data_i[30] to constant 0 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/soc/rooth_soc.v:161]
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1378.203 ; gain = 146.520 ; free physical = 2844 ; free virtual = 6668
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k325tfbg676-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/dcp3/inst_mem_in_context.xdc] for cell 'inst_mem_0'
+Finished Parsing XDC File [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/dcp3/inst_mem_in_context.xdc] for cell 'inst_mem_0'
+Parsing XDC File [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/dcp4/data_mem_in_context.xdc] for cell 'data_mem_0'
+Finished Parsing XDC File [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/dcp4/data_mem_in_context.xdc] for cell 'data_mem_0'
+Parsing XDC File [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/dcp5/clk_pll_in_context.xdc] for cell 'clk_pll_inst'
+Finished Parsing XDC File [/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/dcp5/clk_pll_in_context.xdc] for cell 'clk_pll_inst'
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1798.375 ; gain = 0.000 ; free physical = 2528 ; free virtual = 6352
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'data_mem_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:37 . Memory (MB): peak = 1798.375 ; gain = 566.691 ; free physical = 2628 ; free virtual = 6452
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tfbg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:37 . Memory (MB): peak = 1798.375 ; gain = 566.691 ; free physical = 2628 ; free virtual = 6452
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for refer_clk. (constraint file  /home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/dcp5/clk_pll_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for refer_clk. (constraint file  /home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/.Xil/Vivado-6426-ubuntu/dcp5/clk_pll_in_context.xdc, line 5).
+Applied set_property DONT_TOUCH = true for clk_pll_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for data_mem_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for inst_mem_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:37 . Memory (MB): peak = 1798.375 ; gain = 566.691 ; free physical = 2630 ; free virtual = 6453
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "flow_de_o" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "flow_de_o" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "flow_de_o" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "flow_de_o" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "flow_de_o" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "flow_de_o" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "flow_wb_o" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_pc_four_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "next_pc_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "jump_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "reg_wr_en_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "csr_wr_en_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alu_op_o0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alu_op_o0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alu_op_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "alu_res_op_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5545] ROM "zero_o0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "less_o0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "more_zero_o0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5587] ROM size for "extends_reg" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/alu_core.v:45]
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'div'
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "ready_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "div_result" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "op_r" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "dividend_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "divisor_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "data_mem_req_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mtvec" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mtvec" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mcause" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mcause" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mepc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mepc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mie" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mie" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mstatus" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mstatus" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mscratch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mscratch" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element cycle_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/csr_reg.v:52]
+INFO: [Synth 8-3898] No Re-encoding of one hot register 'csr_state_reg' in module 'clinet'
+INFO: [Synth 8-5545] ROM "int_state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "cause" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "we_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "waddr_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "int_assert_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "timer_ctrl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "timer_value" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element timer_count_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/timer.v:59]
+INFO: [Synth 8-5546] ROM "uart_ctrl" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "uart_baud" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cycle_cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_reg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_reg" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "bit_cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_data_ready" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rx_start" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rx_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element cycle_cnt_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:165]
+WARNING: [Synth 8-6014] Unused sequential element bit_cnt_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:167]
+WARNING: [Synth 8-6014] Unused sequential element rx_clk_cnt_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:258]
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_ctrl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "spi_clk_edge_level" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "spi_clk" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "spi_ctrl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "spi_data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element clk_cnt_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/spi.v:93]
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'next_pc_o_reg' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/flow_ctrl.v:57]
+WARNING: [Synth 8-327] inferring latch for variable 'next_pc_four_o_reg' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/flow_ctrl.v:55]
+WARNING: [Synth 8-327] inferring latch for variable 'extends_reg_reg' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/alu_core.v:45]
+WARNING: [Synth 8-327] inferring latch for variable 'csr_wr_data_o_reg' [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/alu_res_ctrl.v:96]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:39 . Memory (MB): peak = 1798.375 ; gain = 566.691 ; free physical = 2616 ; free virtual = 6439
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 16    
+	   3 Input     32 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 3     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 77    
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 5     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 26    
++---Muxes : 
+	  16 Input     64 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 32    
+	   2 Input     32 Bit        Muxes := 93    
+	  16 Input     32 Bit        Muxes := 3     
+	   5 Input     32 Bit        Muxes := 10    
+	   3 Input     32 Bit        Muxes := 3     
+	   9 Input     32 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 24    
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 24    
+	   7 Input     28 Bit        Muxes := 24    
+	   4 Input     28 Bit        Muxes := 6     
+	   2 Input     16 Bit        Muxes := 2     
+	  12 Input     12 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 4     
+	   2 Input     12 Bit        Muxes := 2     
+	   5 Input     10 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	  12 Input      5 Bit        Muxes := 3     
+	   7 Input      5 Bit        Muxes := 1     
+	   9 Input      5 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 2     
+	   4 Input      5 Bit        Muxes := 6     
+	   2 Input      5 Bit        Muxes := 7     
+	   8 Input      4 Bit        Muxes := 2     
+	   7 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 7     
+	   3 Input      4 Bit        Muxes := 2     
+	   7 Input      3 Bit        Muxes := 3     
+	  12 Input      3 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 5     
+	   3 Input      3 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   3 Input      2 Bit        Muxes := 3     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 6     
+	  12 Input      2 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 21    
+	   4 Input      1 Bit        Muxes := 29    
+	   2 Input      1 Bit        Muxes := 156   
+	   6 Input      1 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 31    
+	  17 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 9     
+	   8 Input      1 Bit        Muxes := 7     
+	   9 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rooth_soc 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 16    
+Module flow_ctrl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
+Module pc_reg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module if_de 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module decode 
+Detailed RTL Component Info : 
++---Muxes : 
+	  12 Input     12 Bit        Muxes := 1     
+	  12 Input      5 Bit        Muxes := 3     
+	   7 Input      5 Bit        Muxes := 1     
+	   9 Input      5 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 2     
+	   7 Input      4 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 3     
+	  12 Input      3 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	  12 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 1     
+Module if_ex 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 3     
+	               12 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 3     
+	   4 Input     12 Bit        Muxes := 2     
+	   4 Input      5 Bit        Muxes := 4     
+	   4 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 3     
+Module alu_core 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	  16 Input     64 Bit        Muxes := 1     
+	  16 Input     32 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 8     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	  17 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  16 Input      1 Bit        Muxes := 2     
+Module div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 7     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   5 Input     32 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 10    
+	   2 Input     31 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   5 Input      1 Bit        Muxes := 13    
+Module if_as 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 7     
+	               12 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 6     
+	   4 Input     12 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 5     
+Module alu_res_ctrl 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   4 Input     32 Bit        Muxes := 4     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+Module if_wb 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	               12 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 4     
+	   4 Input     12 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 3     
+Module reg_clash_fb 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	   2 Input     12 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 6     
+Module regs_file 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 32    
+Module csr_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   9 Input     32 Bit        Muxes := 1     
+	   9 Input      4 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 6     
+	   8 Input      1 Bit        Muxes := 6     
+Module clinet 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               12 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 6     
+	   5 Input     32 Bit        Muxes := 1     
+	   3 Input     32 Bit        Muxes := 1     
+	   5 Input     10 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   9 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+Module rib 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 10    
+	   2 Input     32 Bit        Muxes := 28    
+	   7 Input     32 Bit        Muxes := 24    
+	   2 Input     28 Bit        Muxes := 24    
+	   7 Input     28 Bit        Muxes := 24    
+	   4 Input     28 Bit        Muxes := 6     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 26    
+	   7 Input      1 Bit        Muxes := 24    
+	   4 Input      1 Bit        Muxes := 6     
+Module timer 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module uart 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 7     
+	   5 Input     32 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 27    
+	   5 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 4     
+Module gpio 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+	   3 Input      1 Bit        Muxes := 2     
+Module spi 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "jump_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "reg_wr_en_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "csr_wr_en_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alu_op_o0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alu_op_o0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "alu_res_op_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5545] ROM "less_o0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "more_zero_o0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+DSP Report: Generating DSP multiply_result, operation Mode is: A*B.
+DSP Report: operator multiply_result is absorbed into DSP multiply_result.
+DSP Report: operator multiply_result is absorbed into DSP multiply_result.
+DSP Report: Generating DSP multiply_result, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multiply_result is absorbed into DSP multiply_result.
+DSP Report: operator multiply_result is absorbed into DSP multiply_result.
+DSP Report: Generating DSP multiply_result, operation Mode is: A*B.
+DSP Report: operator multiply_result is absorbed into DSP multiply_result.
+DSP Report: operator multiply_result is absorbed into DSP multiply_result.
+DSP Report: Generating DSP multiply_result, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multiply_result is absorbed into DSP multiply_result.
+DSP Report: operator multiply_result is absorbed into DSP multiply_result.
+INFO: [Synth 8-5545] ROM "div_result" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "divisor_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "ready_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "dividend_r" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "mtvec" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mcause" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mepc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mie" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mstatus" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "mscratch" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element cycle_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/core/csr_reg.v:52]
+INFO: [Synth 8-5546] ROM "waddr_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cause" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "timer_0/timer_ctrl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio_0/gpio_data" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "u_spi_O/spi_ctrl" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "gpio1" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element timer_0/timer_count_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/timer.v:59]
+WARNING: [Synth 8-6014] Unused sequential element uart_0/rx_clk_cnt_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:258]
+WARNING: [Synth 8-6014] Unused sequential element uart_0/cycle_cnt_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:165]
+WARNING: [Synth 8-6014] Unused sequential element uart_0/bit_cnt_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/uart.v:167]
+WARNING: [Synth 8-6014] Unused sequential element u_spi_O/clk_cnt_reg was removed.  [/home/eda/Project/rooth/fpga/rooth/rooth.srcs/sources_1/imports/rtl/perips/spi.v:93]
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[2]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[31]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[4]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[5]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[6]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[6]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[7]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[8]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[9]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[10]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[10]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[11]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[11]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[12]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[12]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[13]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[14]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[14]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[15]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[15]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[16]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[16]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[17]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[17]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[18]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[18]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[19]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[19]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[20]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[20]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[21]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[21]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[22]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[22]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[23]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[23]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[24]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[24]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[25]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[25]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[26]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[26]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[27]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[27]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[28]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[28]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[29]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[29]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_clinet_0/\cause_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_div_0/\count_reg[31] )
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/waddr_o_reg[10]' (FDC) to 'u_rooth_0/u_clinet_0/waddr_o_reg[11]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/waddr_o_reg[11]' (FDC) to 'u_rooth_0/u_clinet_0/waddr_o_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/waddr_o_reg[7]' (FDC) to 'u_rooth_0/u_clinet_0/waddr_o_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/waddr_o_reg[5]' (FDC) to 'u_rooth_0/u_clinet_0/waddr_o_reg[4]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/waddr_o_reg[4]' (FDC) to 'u_rooth_0/u_clinet_0/waddr_o_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/waddr_o_reg[3]' (FDC) to 'u_rooth_0/u_clinet_0/waddr_o_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_clinet_0/\waddr_o_reg[2] )
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/waddr_o_reg[9]' (FDC) to 'u_rooth_0/u_clinet_0/waddr_o_reg[8]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[1] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[2]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[2] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[4]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[4] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[5]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[5] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[6]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[6] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[7]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[7] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[16]' (FDRE) to 'uart_0/uart_rx_reg[17]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[16]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[16] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[17]' (FDRE) to 'uart_0/uart_rx_reg[8]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[17]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[17] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[8]' (FDRE) to 'uart_0/uart_rx_reg[18]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[8]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[8] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[18]' (FDRE) to 'uart_0/uart_rx_reg[19]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[18]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[18] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[19]' (FDRE) to 'uart_0/uart_rx_reg[9]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[19]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[19] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[9]' (FDRE) to 'uart_0/uart_rx_reg[20]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[9]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[9] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[20]' (FDRE) to 'uart_0/uart_rx_reg[21]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[20]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[20] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[21]' (FDRE) to 'uart_0/uart_rx_reg[10]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[21]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[21] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[10]' (FDRE) to 'uart_0/uart_rx_reg[22]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[10]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[10] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[22]' (FDRE) to 'uart_0/uart_rx_reg[23]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[22]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[22] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[23]' (FDRE) to 'uart_0/uart_rx_reg[11]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[23]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[23] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[11]' (FDRE) to 'uart_0/uart_rx_reg[24]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[11]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[11] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[24]' (FDRE) to 'uart_0/uart_rx_reg[25]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[24]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[24] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[25]' (FDRE) to 'uart_0/uart_rx_reg[12]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[25]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[25] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[12]' (FDRE) to 'uart_0/uart_rx_reg[26]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[12]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[12] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[26]' (FDRE) to 'uart_0/uart_rx_reg[27]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[26]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[26] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[27]' (FDRE) to 'uart_0/uart_rx_reg[13]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[27]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[27] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[13]' (FDRE) to 'uart_0/uart_rx_reg[28]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[13]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[13] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[28]' (FDRE) to 'uart_0/uart_rx_reg[29]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[28]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[28] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[29]' (FDRE) to 'uart_0/uart_rx_reg[14]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[29]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[29] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[14]' (FDRE) to 'uart_0/uart_rx_reg[30]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[14]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[14] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[30]' (FDRE) to 'uart_0/uart_rx_reg[31]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[30]' (FDRE) to 'uart_0/uart_status_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[30] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_rx_reg[31]' (FDRE) to 'uart_0/uart_rx_reg[15]'
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[31]' (FDRE) to 'uart_0/uart_status_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart_0/uart_rx_reg[15] )
+INFO: [Synth 8-3886] merging instance 'uart_0/uart_status_reg[15]' (FDRE) to 'uart_0/uart_status_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart_0/uart_status_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[3] )
+WARNING: [Synth 8-3332] Sequential element (count_reg[31]) is unused and will be removed from module div.
+WARNING: [Synth 8-3332] Sequential element (busy_o_reg) is unused and will be removed from module div.
+WARNING: [Synth 8-3332] Sequential element (waddr_o_reg[2]) is unused and will be removed from module clinet.
+WARNING: [Synth 8-3332] Sequential element (cause_reg[30]) is unused and will be removed from module clinet.
+WARNING: [Synth 8-3332] Sequential element (uart_0/uart_status_reg[3]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (uart_0/uart_rx_reg[15]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[31]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[30]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[29]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[28]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[27]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[26]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[25]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[24]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[23]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[22]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[21]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[20]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[19]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[18]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[17]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[16]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[15]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[14]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[13]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[12]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[11]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[10]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[9]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[8]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[7]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[6]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[5]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[4]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[3]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[2]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_spi_O/spi_status_reg[1]) is unused and will be removed from module rooth_soc.
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[0]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[0]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[1]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[1]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[2]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[2]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[3]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[3]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[4]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[4]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[5]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[6]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[6]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[7]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[8]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[9]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[10]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[10]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_if_ex_0/csr_wr_adder_o_reg[11]' (FDCE) to 'u_rooth_0/u_if_ex_0/csr_rd_adder_o_reg[11]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/waddr_o_reg[8]' (FDC) to 'u_rooth_0/u_clinet_0/we_o_reg'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:17 . Memory (MB): peak = 1798.375 ; gain = 566.691 ; free physical = 2518 ; free virtual = 6342
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|alu_core    | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_core    | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_core    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_core    | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_pll_inst/clk_out1' to pin 'clk_pll_inst/bbstub_clk_out1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'clk_pll_inst/clk_out2' to pin 'clk_pll_inst/bbstub_clk_out2/O'
+INFO: [Synth 8-5819] Moved 2 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:26 . Memory (MB): peak = 1833.359 ; gain = 601.676 ; free physical = 2369 ; free virtual = 6194
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:34 . Memory (MB): peak = 1929.359 ; gain = 697.676 ; free physical = 2306 ; free virtual = 6130
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][3] )
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][31]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][30]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][29]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][28]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][27]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][26]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][25]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][24]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][23]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][22]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][21]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][20]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][19]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][18]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][17]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][16]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][15]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][14]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][13]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][12]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][11]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][10]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][9]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][8]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][7]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][6]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][5]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][4]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][3]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][2]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][1]) is unused and will be removed from module rooth_soc.
+WARNING: [Synth 8-3332] Sequential element (u_rooth_0/u_regs_file_0/register_reg[0][0]) is unused and will be removed from module rooth_soc.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:18 ; elapsed = 00:01:38 . Memory (MB): peak = 1976.375 ; gain = 744.691 ; free physical = 2300 ; free virtual = 6124
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:19 ; elapsed = 00:01:39 . Memory (MB): peak = 1976.375 ; gain = 744.691 ; free physical = 2298 ; free virtual = 6122
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:19 ; elapsed = 00:01:39 . Memory (MB): peak = 1976.375 ; gain = 744.691 ; free physical = 2298 ; free virtual = 6122
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:20 ; elapsed = 00:01:39 . Memory (MB): peak = 1976.375 ; gain = 744.691 ; free physical = 2298 ; free virtual = 6122
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:20 ; elapsed = 00:01:39 . Memory (MB): peak = 1976.375 ; gain = 744.691 ; free physical = 2298 ; free virtual = 6122
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:01:39 . Memory (MB): peak = 1976.375 ; gain = 744.691 ; free physical = 2298 ; free virtual = 6122
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:20 ; elapsed = 00:01:39 . Memory (MB): peak = 1976.375 ; gain = 744.691 ; free physical = 2298 ; free virtual = 6122
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_pll       |         1|
+|2     |inst_mem      |         1|
+|3     |data_mem      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |clk_pll  |     1|
+|2     |data_mem |     1|
+|3     |inst_mem |     1|
+|4     |BUFG     |     3|
+|5     |CARRY4   |   216|
+|6     |DSP48E1  |     4|
+|7     |LUT1     |   411|
+|8     |LUT2     |   770|
+|9     |LUT3     |   369|
+|10    |LUT4     |   667|
+|11    |LUT5     |   856|
+|12    |LUT6     |  1979|
+|13    |MUXF7    |   339|
+|14    |MUXF8    |    87|
+|15    |FDCE     |  1229|
+|16    |FDPE     |    12|
+|17    |FDRE     |  1400|
+|18    |FDSE     |     6|
+|19    |LD       |   128|
+|20    |LDC      |     1|
+|21    |IBUF     |     3|
+|22    |IOBUF    |    16|
+|23    |OBUF     |     6|
++------+---------+------+
+
+Report Instance Areas: 
++------+---------------------+-------------+------+
+|      |Instance             |Module       |Cells |
++------+---------------------+-------------+------+
+|1     |top                  |             |  8569|
+|2     |  gpio_0             |gpio         |   144|
+|3     |  timer_0            |timer        |   174|
+|4     |  u_rooth_0          |rooth        |  7766|
+|5     |    u_alu_core_0     |alu_core     |   190|
+|6     |    u_alu_res_ctrl_0 |alu_res_ctrl |    69|
+|7     |    u_clinet_0       |clinet       |   230|
+|8     |    u_csr_reg_0      |csr_reg      |   392|
+|9     |    u_div_0          |div          |   727|
+|10    |    u_flow_ctrl_0    |flow_ctrl    |    71|
+|11    |    u_if_as_0        |if_as        |  1221|
+|12    |    u_if_de_0        |if_de        |   330|
+|13    |    u_if_ex_0        |if_ex        |  1820|
+|14    |    u_if_wb_0        |if_wb        |   535|
+|15    |    u_imm_gen_0      |imm_gen      |     6|
+|16    |    u_pc_reg_0       |pc_reg       |   281|
+|17    |    u_regs_file_0    |regs_file    |  1894|
+|18    |  u_spi_O            |spi          |   139|
+|19    |  uart_0             |uart         |   251|
++------+---------------------+-------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:20 ; elapsed = 00:01:39 . Memory (MB): peak = 1976.375 ; gain = 744.691 ; free physical = 2298 ; free virtual = 6122
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 95 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:10 ; elapsed = 00:01:17 . Memory (MB): peak = 1976.375 ; gain = 324.520 ; free physical = 2361 ; free virtual = 6185
+Synthesis Optimization Complete : Time (s): cpu = 00:01:20 ; elapsed = 00:01:40 . Memory (MB): peak = 1976.383 ; gain = 744.691 ; free physical = 2361 ; free virtual = 6185
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 794 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 145 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  LD => LDCE: 128 instances
+  LDC => LDCE: 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+434 Infos, 328 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:23 ; elapsed = 00:01:43 . Memory (MB): peak = 2008.391 ; gain = 809.547 ; free physical = 2459 ; free virtual = 6283
+INFO: [Common 17-1381] The checkpoint '/home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/rooth_soc.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file rooth_soc_utilization_synth.rpt -pb rooth_soc_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2032.402 ; gain = 0.000 ; free physical = 2456 ; free virtual = 6281
+INFO: [Common 17-206] Exiting Vivado at Fri Feb  3 19:45:31 2023...

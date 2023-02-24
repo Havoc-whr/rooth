@@ -12,7 +12,7 @@
 //
 // -FHDR----------------------------------------------------------------------------
 `timescale 1ns / 1ps
-`include "../core/rooth_defines.v"
+`include "../rtl/rooth_defines.v"
 
 module tb_rooth_alltest ();
 

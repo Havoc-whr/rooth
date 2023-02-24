@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Feb  3 18:57:14 2023
+# Process ID: 5004
+# Current directory: /home/eda/Project/rooth/fpga/rooth/rooth.runs/inst_mem_synth_1
+# Command line: vivado -log inst_mem.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source inst_mem.tcl
+# Log file: /home/eda/Project/rooth/fpga/rooth/rooth.runs/inst_mem_synth_1/inst_mem.vds
+# Journal file: /home/eda/Project/rooth/fpga/rooth/rooth.runs/inst_mem_synth_1/vivado.jou
+#-----------------------------------------------------------
+source inst_mem.tcl -notrace

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Feb  3 19:43:38 2023
+# Process ID: 6426
+# Current directory: /home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1
+# Command line: vivado -log rooth_soc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rooth_soc.tcl
+# Log file: /home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/rooth_soc.vds
+# Journal file: /home/eda/Project/rooth/fpga/rooth/rooth.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source rooth_soc.tcl -notrace
