@@ -6,7 +6,7 @@
 
 ## 2. 对于VCS仿真测试运行方式，在[VCS目录](https://gitee.com/havocsite/rooth/tree/master/VCS#如何运行)下查看。
 
-![](https://gitee.com/havocsite/rooth/raw/master/images/1677426445654.jpg)
+![](https://gitee.com/havocsite/rooth/raw/master/images/1677426750198.jpg)
 
 ## 3. 其他验证方式介绍待更新......
 
