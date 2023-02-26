@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Feb 03 20:28:08 2023
+Analysis & Synthesis Status : Successful - Sun Feb 26 15:02:05 2023
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : rooth
 Top-level Entity Name : rooth_soc
 Family : Cyclone IV E
-Total logic elements : 7,981
-    Total combinational functions : 6,720
-    Dedicated logic registers : 2,634
-Total registers : 2634
-Total pins : 27
+Total logic elements : 9,937
+    Total combinational functions : 8,532
+    Dedicated logic registers : 3,212
+Total registers : 3212
+Total pins : 32
 Total virtual pins : 0
 Total memory bits : 262,144
 Embedded Multiplier 9-bit elements : 8

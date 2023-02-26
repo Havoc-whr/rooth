@@ -20,6 +20,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "jtag_TDO",
+					"strict" : false
+				},
+				{
+					"name" : "halted_ind",
+					"strict" : false
+				},
+				{
 					"name" : "over",
 					"strict" : false
 				},
@@ -93,6 +101,18 @@
 				},
 				{
 					"name" : "refer_rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "jtag_TCK",
+					"strict" : false
+				},
+				{
+					"name" : "jtag_TDI",
+					"strict" : false
+				},
+				{
+					"name" : "jtag_TMS",
 					"strict" : false
 				},
 				{

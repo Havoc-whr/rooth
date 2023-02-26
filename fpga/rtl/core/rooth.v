@@ -16,22 +16,29 @@
 `include "rooth_defines.v"
 
 module rooth(
-    input                   clk,
-    input                   rst_n,
+    input                           clk,
+    input                           rst_n,
     
-    input                   bus_hold_flag,
-    input  [`INT_BUS]       int_flag_i,
+    input                           bus_hold_flag,
+    input  [`INT_BUS]               int_flag_i,
 
-    input  [`CPU_WIDTH-1:0] data_mem_data_out_i,
-    output [`CPU_WIDTH-1:0] data_mem_addr_o,
-    output                  data_mem_req_o,
-    output                  data_mem_wr_en_o,
-    output [`CPU_WIDTH-1:0] data_mem_data_in_o,
+    input  [`CPU_WIDTH-1:0]         data_mem_data_out_i,
+    output [`CPU_WIDTH-1:0]         data_mem_addr_o,
+    output                          data_mem_req_o,
+    output                          data_mem_wr_en_o,
+    output [`CPU_WIDTH-1:0]         data_mem_data_in_o,
 
-    input  [`CPU_WIDTH-1:0] pc_inst_i,
-    output [`CPU_WIDTH-1:0] pc_curr_pc_o,
-	 output wire             s10_o,
-    output wire             s11_o
+    input  [`CPU_WIDTH-1:0]         pc_inst_i,
+    output [`CPU_WIDTH-1:0]         pc_curr_pc_o,
+
+    input                           jtag_reset_flag_i,
+    input                           jtag_halt_flag_i,
+    input                           jtag_we_i,      // 写寄存器标志
+    input  [`REG_ADDR_WIDTH-1:0]    jtag_addr_i,    // 读、写寄存器地址
+    input  [`CPU_WIDTH-1:0]         jtag_data_i,    // 写寄存器数据
+    output [`CPU_WIDTH-1:0]         jtag_data_o,    // 读寄存器数据
+	 output wire             			s10_o,
+    output wire             			s11_o
 );
 
 // pc_reg
@@ -188,6 +195,7 @@ assign ex_pc_adder = ex_pc_adder_i;
 assign ex_imm = ex_imm_i;
 
 flow_ctrl u_flow_ctrl_0(
+    .jtag_halt_flag_i               ( jtag_halt_flag_i            ),
     .branch_i                       ( ex_branch                   ),
     .pc_adder_i                     ( ex_pc_adder                 ),
     .zero_i                         ( ex_zero                     ),
@@ -216,6 +224,7 @@ flow_ctrl u_flow_ctrl_0(
 pc_reg u_pc_reg_0(
     .clk                            ( clk                         ),
     .rst_n                          ( rst_n                       ),
+	 .jtag_reset_flag_i              ( jtag_reset_flag_i           ),
     .flow_pc_i                      ( flow_pc                     ),
     .next_pc_four_i                 ( next_pc_four                ),
     .next_pc_i                      ( next_pc                     ),
@@ -458,9 +467,12 @@ regs_file u_regs_file_0(
     .reg1_rd_data_o                 ( ctrl_reg1_rd_data           ),
     .reg2_rd_adder_i                ( ctrl_reg2_rd_adder          ),
     .reg2_rd_data_o                 ( ctrl_reg2_rd_data           ),
+    .jtag_we_i                      ( jtag_we_i                   ),  
+    .jtag_addr_i                    ( jtag_addr_i                 ),
+    .jtag_data_i                    ( jtag_data_i                 ),
+    .jtag_data_o                    ( jtag_data_o                 ),
 	 .s10_o                          ( s10_o                       ),
     .s11_o                          ( s11_o                       )
-	 
 );
 
 csr_reg u_csr_reg_0(

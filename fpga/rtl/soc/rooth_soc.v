@@ -45,6 +45,12 @@ module rooth_soc(
     output                  spi_mosi,    // spi控制器输入、spi设备输出信号脚
     output                  spi_ss,      // spi设备片选
     output                  spi_clk,     // spi设备时钟，最大频率为输入clk的一半
+	 input wire              jtag_TCK,     // JTAG TCK引脚
+    input wire              jtag_TMS,     // JTAG TMS引脚
+    input wire              jtag_TDI,     // JTAG TDI引脚
+    output wire             jtag_TDO,     // JTAG TDO引脚
+    output wire             halted_ind,
+	 
 	 output wire 				 over,        // 测试是否完成信号
     output wire 				 succ         // 测试是否成功信号
 ); 
@@ -122,6 +128,13 @@ wire[31:0]           gpio_data;
 wire[`INT_BUS]       int_flag_i;
 wire                 timer0_int;
 
+wire                        jtag_reg_we;
+wire[`REG_ADDR_WIDTH-1:0]   jtag_reg_addr;
+wire[`CPU_WIDTH-1:0]        jtag_reg_data_o;
+wire[`CPU_WIDTH-1:0]        jtag_reg_data_i;
+wire                        jtag_halt_req_o;
+wire                        jtag_reset_req_o;
+
 assign int_flag_i = {7'h0, timer0_int};
 
 
@@ -130,6 +143,7 @@ wire clk_double;
 wire rst_n;
 wire locked_sig;
 
+assign halted_ind = ~jtag_halt_req_o;
 assign rst_n = refer_rst_n & locked_sig;
 
 
@@ -154,6 +168,12 @@ rooth u_rooth_0(
     .data_mem_data_in_o ( m0_data_i             ),
     .pc_inst_i          ( m1_data_o             ),
     .pc_curr_pc_o       ( m1_addr_i             ),
+	 .jtag_we_i          ( jtag_reg_we           ),  
+    .jtag_addr_i        ( jtag_reg_addr         ),
+    .jtag_data_i        ( jtag_reg_data_o       ),
+    .jtag_data_o        ( jtag_reg_data_i       ),
+    .jtag_halt_flag_i   ( jtag_halt_req_o       ),
+    .jtag_reset_flag_i  ( jtag_reset_req_o      ),
 	 .s10_o              ( over                  ),
     .s11_o              ( succ                  )
 );
@@ -351,5 +371,29 @@ spi u_spi_O(
     .mem_wdata_o            ( m3_data_i                 ),
     .mem_rdata_i            ( m3_data_o                 )
 );*/
+
+jtag_top #(
+    .DMI_ADDR_BITS(6),
+    .DMI_DATA_BITS(32),
+    .DMI_OP_BITS(2)
+) u_jtag_top(
+    .clk                            ( clk                         ),
+    .jtag_rst_n                     ( rst_n                       ),
+    .jtag_pin_TCK                   ( jtag_TCK                    ),
+    .jtag_pin_TMS                   ( jtag_TMS                    ),
+    .jtag_pin_TDI                   ( jtag_TDI                    ),
+    .jtag_pin_TDO                   ( jtag_TDO                    ),
+    .reg_we_o                       ( jtag_reg_we                 ),
+    .reg_addr_o                     ( jtag_reg_addr               ),
+    .reg_wdata_o                    ( jtag_reg_data_o             ),
+    .reg_rdata_i                    ( jtag_reg_data_i             ),
+    .mem_we_o                       ( m2_we_i                     ),
+    .mem_addr_o                     ( m2_addr_i                   ),
+    .mem_wdata_o                    ( m2_data_i                   ),
+    .mem_rdata_i                    ( m2_data_o                   ),
+    .op_req_o                       ( m2_req_i                    ),
+    .halt_req_o                     ( jtag_halt_req_o             ),
+    .reset_req_o                    ( jtag_reset_req_o            )
+);
 
 endmodule

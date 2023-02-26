@@ -1,4 +1,45 @@
 
+State Machine - |rooth_soc|jtag_top:u_jtag_top|jtag_dm:u_jtag_dm|full_handshake_rx:rx|state
+Name state.STATE_DEASSERT 
+state.STATE_IDLE 0 
+state.STATE_DEASSERT 1 
+
+State Machine - |rooth_soc|jtag_top:u_jtag_top|jtag_dm:u_jtag_dm|full_handshake_tx:tx|state
+Name state.STATE_DEASSERT state.STATE_ASSERT state.STATE_IDLE 
+state.STATE_IDLE 0 0 0 
+state.STATE_ASSERT 0 1 1 
+state.STATE_DEASSERT 1 0 1 
+
+State Machine - |rooth_soc|jtag_top:u_jtag_top|jtag_driver:u_jtag_driver|jtag_state
+Name jtag_state.UPDATE_IR jtag_state.EXIT2_IR jtag_state.PAUSE_IR jtag_state.EXIT1_IR jtag_state.SHIFT_IR jtag_state.CAPTURE_IR jtag_state.SELECT_IR jtag_state.UPDATE_DR jtag_state.EXIT2_DR jtag_state.PAUSE_DR jtag_state.EXIT1_DR jtag_state.SHIFT_DR jtag_state.CAPTURE_DR jtag_state.SELECT_DR jtag_state.RUN_TEST_IDLE jtag_state.TEST_LOGIC_RESET 
+jtag_state.TEST_LOGIC_RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+jtag_state.RUN_TEST_IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+jtag_state.SELECT_DR 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+jtag_state.CAPTURE_DR 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+jtag_state.SHIFT_DR 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+jtag_state.EXIT1_DR 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+jtag_state.PAUSE_DR 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+jtag_state.EXIT2_DR 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+jtag_state.UPDATE_DR 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+jtag_state.SELECT_IR 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+jtag_state.CAPTURE_IR 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+jtag_state.SHIFT_IR 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+jtag_state.EXIT1_IR 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+jtag_state.PAUSE_IR 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+jtag_state.EXIT2_IR 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+jtag_state.UPDATE_IR 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |rooth_soc|jtag_top:u_jtag_top|jtag_driver:u_jtag_driver|full_handshake_rx:rx|state
+Name state.STATE_DEASSERT 
+state.STATE_IDLE 0 
+state.STATE_DEASSERT 1 
+
+State Machine - |rooth_soc|jtag_top:u_jtag_top|jtag_driver:u_jtag_driver|full_handshake_tx:tx|state
+Name state.STATE_DEASSERT state.STATE_ASSERT state.STATE_IDLE 
+state.STATE_IDLE 0 0 0 
+state.STATE_ASSERT 0 1 1 
+state.STATE_DEASSERT 1 0 1 
+
 State Machine - |rooth_soc|uart:uart_0|state
 Name state.S_STOP state.S_SEND_BYTE state.S_START state.S_IDLE 
 state.S_IDLE 0 0 0 0 

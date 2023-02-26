@@ -223,6 +223,7 @@ flow_ctrl u_flow_ctrl_0(
 pc_reg u_pc_reg_0(
     .clk                            ( clk                         ),
     .rst_n                          ( rst_n                       ),
+    .jtag_reset_flag_i              ( jtag_reset_flag_i           ),
     .flow_pc_i                      ( flow_pc                     ),
     .next_pc_four_i                 ( next_pc_four                ),
     .next_pc_i                      ( next_pc                     ),
