@@ -1,4 +1,4 @@
-## 1. 说明：
+## 1. 说明
 
 ### 处理器为取指、译码、执行、访存、写回的五级流水线，通过VCS(2018-SP2)工具验证通过了[tinyriscv项目中全部旧的指令测试][tinyriscv],并且也使用[RISC-V][riscv]官方维护的[测试程序][riscv-arch-test]进行了指令的兼容性测试，[测试套件][suite]版本为1.0，设计在除"非对齐访存（MISALIGN）"测试外的rv32i、rv32im、rv32Zicsr以及rv32Zifencei中的测试全部通过。即不支持硬件非对齐访存。
 
