@@ -11,7 +11,7 @@
 //
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/core/rooth_defines.v"
 
 module mux_alu(
     input       [`ALU_SRC_WIDTH-1:0]    alu_src_sel_i,

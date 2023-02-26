@@ -12,7 +12,7 @@
 //
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/core/rooth_defines.v"
 module alu_core (
     input [`ALU_OP_WIDTH-1:0]   alu_op_i,
     input [`CPU_WIDTH-1:0]      alu_src1_i,

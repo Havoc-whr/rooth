@@ -11,7 +11,7 @@
 // RISC-V RV32I指令集测试
 //
 // -FHDR----------------------------------------------------------------------------
-`include "/home/ICer/ic_prjs/rooth/VCS/rtl/core/rooth_defines.v"
+`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
 `timescale 1ns / 1ps
 
 module tb_rooth_alltest ();
@@ -28,8 +28,11 @@ wire spi_miso;
 wire spi_mosi;
 wire spi_ss;
 wire spi_clk;
-wire over;
-wire succ;
+wire jtag_TCK;
+wire jtag_TMS;
+wire jtag_TDI;
+wire jtag_TDO;
+wire halted_ind;
 
 reg [30*8-1:0]        inst_name;
 
@@ -221,21 +224,24 @@ task inst_test;
     end
 endtask
 
+
 rooth_soc u_rooth_soc_0(
-    .refer_clk                            ( clk                           ),
-    .refer_rst_n                          ( rst_n                         ),
-    .uart_debug_pin     (uart_debug_pin),
-    .gpio               (gpio),
-    .uart_tx_pin   (uart_tx_pin),
+    .clk            (clk),
+    .rst_n          (rst_n),
+    .uart_debug_pin (uart_debug_pin),
+    .gpio           (gpio),
+    .uart_tx_pin    (uart_tx_pin),
     .uart_rx_pin    (uart_rx_pin),
     .spi_miso       (spi_miso),
-    .spi_mosi      (spi_mosi),
-    .spi_ss        (spi_ss),
-    .spi_clk       (spi_clk),
-    .over          (over),
-    .succ          (succ)
+    .spi_mosi       (spi_mosi),
+    .spi_ss         (spi_ss),
+    .spi_clk        (spi_clk),
+    .jtag_TCK       (jtag_TCK),
+    .jtag_TMS       (jtag_TMS),
+    .jtag_TDI       (jtag_TDI),
+    .jtag_TDO       (jtag_TDO),
+    .halted_ind     (halted_ind)
 );
-
 
 
 initial begin

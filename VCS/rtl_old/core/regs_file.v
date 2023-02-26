@@ -11,7 +11,7 @@
 //
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/core/rooth_defines.v"
 
 module regs_file(
     input                           clk,
@@ -26,14 +26,19 @@ module regs_file(
 
     input   [`REG_ADDR_WIDTH-1:0]   reg2_rd_adder_i,
     output reg   [`CPU_WIDTH-1:0]   reg2_rd_data_o,
-    // jtag
-    input wire                      jtag_we_i,      // 写寄存器标志
-    input wire[`REG_ADDR_WIDTH-1:0] jtag_addr_i,    // 读、写寄存器地址
-    input wire[`CPU_WIDTH-1:0]      jtag_data_i,    // 写寄存器数据
-    output reg[`CPU_WIDTH-1:0]      jtag_data_o     // 读寄存器数据
+	 output wire                     s10_o,
+    output wire                     s11_o
 );
 
+wire [`CPU_WIDTH-1:0] s10;
+wire [`CPU_WIDTH-1:0] s11;
+
 reg [`REG_NUM-1:0]    register[0:`REG_DATA_DEPTH-1];
+
+assign s10 = register[26];
+assign s11 = register[27];
+assign s10_o = s10[0];
+assign s11_o = s11[0];
 
 always  @(posedge clk or negedge rst_n) begin
     if(~rst_n) begin
@@ -41,9 +46,6 @@ always  @(posedge clk or negedge rst_n) begin
 	else begin
 		if(reg_wr_en_i && (reg_wr_adder_i != `REG_ADDR_WIDTH'b0))
 			register[reg_wr_adder_i] <= reg_wr_data_i;
-        else if((jtag_we_i == 1'b1) && (jtag_addr_i != `REG_ADDR_WIDTH'b0)) begin
-            register[jtag_addr_i] <= jtag_data_i;
-        end
 	end
 end
 
@@ -65,13 +67,4 @@ always @(*) begin
     end
 end
 
-// jtag读寄存器
-always @ (*) begin
-    if (jtag_addr_i == `REG_ADDR_WIDTH'b0) begin
-        jtag_data_o = `CPU_WIDTH'b0;
-    end
-    else begin
-        jtag_data_o = register[jtag_addr_i];
-    end
- end
 endmodule

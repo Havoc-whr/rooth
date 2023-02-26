@@ -12,10 +12,9 @@
 //
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/core/rooth_defines.v"
 
 module flow_ctrl (
-    input                           jtag_halt_flag_i,
     input      [`WIDTH_BRANCH-1:0]  branch_i,           // branch type
     input      [`CPU_WIDTH-1:0]     pc_adder_i,
 
@@ -47,14 +46,7 @@ module flow_ctrl (
 );
 
 always @( *) begin
-    if(jtag_halt_flag_i) begin
-        flow_pc_o = `FLOW_STOP;
-        flow_de_o = `FLOW_STOP;
-        flow_ex_o = `FLOW_STOP;
-        flow_as_o = `FLOW_STOP;
-        flow_wb_o = `FLOW_STOP;
-    end
-    else if(client_hold_flag_i) begin
+    if(client_hold_flag_i) begin
         flow_pc_o = `FLOW_STOP;
         flow_de_o = `FLOW_STOP;
         flow_ex_o = `FLOW_STOP;

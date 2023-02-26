@@ -10,12 +10,11 @@
 // Description   : Update the current pc value 
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/core/rooth_defines.v"
 
 module pc_reg (
     input                           clk,        // system clock
     input                           rst_n,      // active low reset
-    input                           jtag_reset_flag_i,
     input      [`FLOW_WIDTH-1:0]    flow_pc_i,
     input                           next_pc_four_i,     
     input      [`CPU_WIDTH-1:0]     next_pc_i,  // next pc addr
@@ -23,7 +22,7 @@ module pc_reg (
 );
 
 always @ (posedge clk or negedge rst_n) begin
-    if(!rst_n || jtag_reset_flag_i)
+    if(!rst_n)
         curr_pc_o <= `CPU_WIDTH'b0;
     else begin
         case(flow_pc_i)

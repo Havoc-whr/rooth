@@ -11,7 +11,7 @@
 // 决定存储数据最终流向 
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/core/rooth_defines.v"
 
 module alu_res_ctrl(
     input                                   clk,

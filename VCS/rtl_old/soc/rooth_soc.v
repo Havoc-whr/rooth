@@ -10,25 +10,23 @@
 // Description   : 
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
-module rooth_soc(
-    input                   clk,
-    input                   rst_n,
-    
-    input					uart_debug_pin,
-    inout       [15:0]      gpio,
-    output                  uart_tx_pin,  // UART发送引脚
-    input                   uart_rx_pin,  // UART接收引脚
+//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/core/rooth_defines.v"
 
-    input                   spi_miso,     // spi控制器输出、spi设备输入信号脚
-    output                  spi_mosi,     // spi控制器输入、spi设备输出信号脚
-    output                  spi_ss,       // spi设备片选
-    output                  spi_clk,      // spi设备时钟，最大频率为输入clk的一半
-    input wire              jtag_TCK,     // JTAG TCK引脚
-    input wire              jtag_TMS,     // JTAG TMS引脚
-    input wire              jtag_TDI,     // JTAG TDI引脚
-    output wire             jtag_TDO,     // JTAG TDO引脚
-    output wire             halted_ind
+module rooth_soc(
+    input                   refer_clk,
+    input                   refer_rst_n,
+
+	 input						 uart_debug_pin,
+    inout       [15:0]      gpio,
+    output                  uart_tx_pin, // UART发送引脚
+    input                   uart_rx_pin, // UART接收引脚
+
+    input                   spi_miso,    // spi控制器输出、spi设备输入信号脚
+    output                  spi_mosi,    // spi控制器输入、spi设备输出信号脚
+    output                  spi_ss,      // spi设备片选
+    output                  spi_clk,     // spi设备时钟，最大频率为输入clk的一半
+	 output wire 				 over,        // 测试是否完成信号
+    output wire 				 succ         // 测试是否成功信号
 ); 
 
 // master 0 interface data_mem
@@ -95,26 +93,35 @@ wire[`CPU_WIDTH-1:0] s5_data_o;
 wire[`CPU_WIDTH-1:0] s5_data_i;
 wire s5_we_o;
 
+wire                 bus_hold_flag;
 //gpio
-wire[15:0]                  io_in;
-wire[31:0]                  gpio_ctrl;
-wire[31:0]                  gpio_data;
+wire[15:0]           io_in;
+wire[31:0]           gpio_ctrl;
+wire[31:0]           gpio_data;
 
-wire[`INT_BUS]              int_flag_i;
-wire                        timer0_int;
+wire[`INT_BUS]       int_flag_i;
+wire                 timer0_int;
 
-wire                        bus_hold_flag;
+assign int_flag = {7'h0, timer0_int};
 
-wire                        jtag_reg_we;
-wire[`REG_ADDR_WIDTH-1:0]   jtag_reg_addr;
-wire[`CPU_WIDTH-1:0]        jtag_reg_data_o;
-wire[`CPU_WIDTH-1:0]        jtag_reg_data_i;
-wire                        jtag_halt_req_o;
-wire                        jtag_reset_req_o;
 
-// 低电平表示已经halt住CPU
-assign halted_ind = ~jtag_halt_req_o;
-assign int_flag_i = {7'h0, timer0_int};
+wire clk;
+wire rst_n;
+wire locked_sig;
+
+assign clk = refer_clk;
+assign rst_n = refer_rst_n;
+
+/*assign rst_n = refer_rst_n & locked_sig;
+
+
+//时钟分频，调用PLL的ip核
+clk_pll	clk_pll_inst (
+	.inclk0 					( refer_clk 				),
+	.c0 						( clk 						),
+	.locked 					( locked_sig 				)
+);*/
+
 
 rooth u_rooth_0(
     .clk                ( clk                   ),
@@ -128,13 +135,10 @@ rooth u_rooth_0(
     .data_mem_data_in_o ( m0_data_i             ),
     .pc_inst_i          ( m1_data_o             ),
     .pc_curr_pc_o       ( m1_addr_i             ),
-    .jtag_we_i          ( jtag_reg_we           ),  
-    .jtag_addr_i        ( jtag_reg_addr         ),
-    .jtag_data_i        ( jtag_reg_data_o       ),
-    .jtag_data_o        ( jtag_reg_data_i       ),
-    .jtag_halt_flag_i   ( jtag_halt_req_o       ),
-    .jtag_reset_flag_i  ( jtag_reset_req_o      )
+	 .s10_o              ( over                  ),
+    .s11_o              ( succ                  )
 );
+
 rib u_rib_0(
     .clk                ( clk                   ),
     .rst                ( rst_n                 ),
@@ -205,6 +209,7 @@ inst_mem u_inst_mem_0(
     .inst_o                         ( s0_data_i                   )
 );
 
+
 data_mem u_data_mem_0(
     .clk                            ( clk                         ),
     .rst_n                          ( rst_n                       ),
@@ -227,8 +232,8 @@ timer timer_0(
 
 // uart模块例化
 uart uart_0(
-    .clk					( clk					    ),
-    .rst_n                  ( rst_n                     ),
+    .clk					   ( clk					      ),
+    .rst_n              ( rst_n                 ),
     .we_i					( s3_we_o					),
     .addr_i					( s3_addr_o					),
     .data_i					( s3_data_o					),
@@ -303,19 +308,20 @@ spi u_spi_O(
 
     .clk                    ( clk                       ),
     .rst                    ( rst_n                     ),
-    .data_i					( s5_data_o					),
-    .addr_i					( s5_addr_o					),
-    .we_i					( s5_we_o					),
-    .data_o					( s5_data_i					),
-    .spi_mosi				( spi_mosi				    ),             
-    .spi_miso				( spi_miso					),             
-    .spi_ss					( spi_ss					),             
-    .spi_clk				( spi_clk					)              
+    .data_i						 ( s5_data_o					  ),
+    .addr_i						 ( s5_addr_o					  ),
+    .we_i						 ( s5_we_o						  ),
+    .data_o						 ( s5_data_i					  ),
+    .spi_mosi					 ( spi_miso						  ),             
+    .spi_miso					 ( spi_mosi						  ),             
+    .spi_ss						 ( spi_ss						  ),             
+    .spi_clk					 ( spi_clk						  )              
 
 );
 
+//master
 // 串口下载模块例化
-uart_debug u_uart_debug(
+/*uart_debug u_uart_debug(
     .clk                    ( clk                       ),
     .rst                    ( rst_n                     ),
     .debug_en_i             ( uart_debug_pin            ),
@@ -324,30 +330,6 @@ uart_debug u_uart_debug(
     .mem_addr_o             ( m3_addr_i                 ),
     .mem_wdata_o            ( m3_data_i                 ),
     .mem_rdata_i            ( m3_data_o                 )
-);
-
-jtag_top #(
-    .DMI_ADDR_BITS(6),
-    .DMI_DATA_BITS(32),
-    .DMI_OP_BITS(2)
-) u_jtag_top(
-    .clk                            ( clk                         ),
-    .jtag_rst_n                     ( rst_n                       ),
-    .jtag_pin_TCK                   ( jtag_TCK                    ),
-    .jtag_pin_TMS                   ( jtag_TMS                    ),
-    .jtag_pin_TDI                   ( jtag_TDI                    ),
-    .jtag_pin_TDO                   ( jtag_TDO                    ),
-    .reg_we_o                       ( jtag_reg_we                 ),
-    .reg_addr_o                     ( jtag_reg_addr               ),
-    .reg_wdata_o                    ( jtag_reg_data_o             ),
-    .reg_rdata_i                    ( jtag_reg_data_i             ),
-    .mem_we_o                       ( m2_we_i                     ),
-    .mem_addr_o                     ( m2_addr_i                   ),
-    .mem_wdata_o                    ( m2_data_i                   ),
-    .mem_rdata_i                    ( m2_data_o                   ),
-    .op_req_o                       ( m2_req_i                    ),
-    .halt_req_o                     ( jtag_halt_req_o             ),
-    .reset_req_o                    ( jtag_reset_req_o            )
-);
+);*/
 
 endmodule
