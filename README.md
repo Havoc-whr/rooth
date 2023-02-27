@@ -8,7 +8,7 @@
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677426750198.jpg)
 
-## 3. 其他验证方式介绍待更新......
+## 3. NCLaunch运行测试，在[nclaunch目录]([nclaunch · Havoc-whr/rooth - 码云 - 开源中国 (gitee.com)](https://gitee.com/havocsite/rooth/tree/master/nclaunch))下查看。
 
 ## 指令支持：
 
