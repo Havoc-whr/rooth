@@ -12,12 +12,27 @@
 //
 // -FHDR----------------------------------------------------------------------------
 `timescale 1ns / 1ps
-`include "./hdl_file/rooth_defines.v"
+`include "./hdl_file/soc/rooth_defines.v"
 
 module tb_rooth_alltest ();
 
 reg                  clk;
-reg                  rst_n; 
+reg                  rst_n;
+
+wire uart_debug_pin;
+wire [15:0] gpio;
+wire uart_tx_pin;
+wire uart_rx_pin;
+
+wire spi_miso;
+wire spi_mosi;
+wire spi_ss;
+wire spi_clk;
+wire jtag_TCK;
+wire jtag_TMS;
+wire jtag_TDI;
+wire jtag_TDO;
+wire halted_ind;
 
 reg [50*8-1:0]        inst_name;
 
@@ -210,9 +225,21 @@ task inst_test;
 endtask
 
 rooth_soc u_rooth_soc_0(
-    .clk                            ( clk                           ),
-    .rst_n                          ( rst_n                         ),
-    .int_flag_i                     ( 1'b0                          )
+    .clk            (clk),
+    .rst_n          (rst_n),
+    .uart_debug_pin (uart_debug_pin),
+    .gpio           (gpio),
+    .uart_tx_pin    (uart_tx_pin),
+    .uart_rx_pin    (uart_rx_pin),
+    .spi_miso       (spi_miso),
+    .spi_mosi       (spi_mosi),
+    .spi_ss         (spi_ss),
+    .spi_clk        (spi_clk),
+    .jtag_TCK       (jtag_TCK),
+    .jtag_TMS       (jtag_TMS),
+    .jtag_TDI       (jtag_TDI),
+    .jtag_TDO       (jtag_TDO),
+    .halted_ind     (halted_ind)
 );
 
 
