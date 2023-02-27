@@ -13,7 +13,11 @@
 
 4. 选中hdl_file和testbench目录下的全部文件编译设计，选择在左侧worklib目录下选择一个tb文件，点击描述，将设计和激励文件生成一个快照。这里的tb_rooth.v是对单个指令测试，设计遇到bug时运行单个测试程序方便查看波形调试，tb_rooth_alltest.v会依次运行全部测试程序。
 
+![](https://gitee.com/havocsite/rooth/raw/master/images/20230227_213131.png)
+
 5. 选择对应的快照，打开仿真窗口，点击运行按钮，若运行成功控制台会输出PASS。
+
+![](https://gitee.com/havocsite/rooth/raw/master/images/20230227_214111.png)
 
 6. 查看波形。
 
