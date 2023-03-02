@@ -249,7 +249,7 @@ inst_mem	inst_mem_0 (
 
 
 data_mem	data_mem_0 (
-	.clka 					( clk_double 				),
+	.clka 					( clk 				        ),
 	.dina 					( s1_data_o 			    ),
 	.wea 					( s1_we_o 					),
 	.addra 				    ( {2'b0,s1_addr_o[`CPU_WIDTH-1:2]}),

@@ -66,6 +66,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 3
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7z020clg400-2
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -75,9 +76,9 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/rooth_soc.dcp
-  read_ip -quiet d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem.xci
-  read_ip -quiet d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem.xci
-  read_ip -quiet d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll.xci
+  read_ip -quiet D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem.xci
+  read_ip -quiet D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem.xci
+  read_ip -quiet D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll.xci
   read_xdc D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc
   link_design -top rooth_soc -part xc7z020clg400-2
   close_msg_db -file init_design.pb

@@ -15,7 +15,7 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-2
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10124 
+INFO: Helper process launched with PID 436 
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:60]
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:61]
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:62]
@@ -50,11 +50,11 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with 
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_top with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_top.v:46]
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_top with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_top.v:47]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1018.273 ; gain = 249.945
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1018.371 ; gain = 251.445
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'rooth_soc' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:35]
-INFO: [Synth 8-6157] synthesizing module 'clk_pll' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11020-Z2-R/realtime/clk_pll_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_pll' (1#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11020-Z2-R/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_pll' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_pll' (1#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/clk_pll_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'rooth' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/rooth.v:18]
 INFO: [Synth 8-6157] synthesizing module 'flow_ctrl' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/flow_ctrl.v:17]
 INFO: [Synth 8-6155] done synthesizing module 'flow_ctrl' (2#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/flow_ctrl.v:17]
@@ -155,11 +155,11 @@ INFO: [Synth 8-6157] synthesizing module 'rib' [D:/rooth/fpga/xilinx/ZYNQXC7Z020
 	Parameter grant3 bound to: 2'b11 
 INFO: [Synth 8-226] default block is never used [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/bus/rib.v:161]
 INFO: [Synth 8-6155] done synthesizing module 'rib' (19#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/bus/rib.v:21]
-INFO: [Synth 8-6157] synthesizing module 'inst_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11020-Z2-R/realtime/inst_mem_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'inst_mem' (20#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11020-Z2-R/realtime/inst_mem_stub.v:6]
-WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (12) of module 'inst_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:245]
-INFO: [Synth 8-6157] synthesizing module 'data_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11020-Z2-R/realtime/data_mem_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'data_mem' (21#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11020-Z2-R/realtime/data_mem_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'inst_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/inst_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'inst_mem' (20#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/inst_mem_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (13) of module 'inst_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:245]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/data_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (21#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/data_mem_stub.v:6]
 WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (12) of module 'data_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:255]
 INFO: [Synth 8-6157] synthesizing module 'timer' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/timer.v:21]
 	Parameter REG_CTRL bound to: 4'b0000 
@@ -378,7 +378,7 @@ WARNING: [Synth 8-3331] design timer has unconnected port addr_i[13]
 WARNING: [Synth 8-3331] design timer has unconnected port addr_i[12]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1101.609 ; gain = 333.281
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1101.484 ; gain = 334.559
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -391,12 +391,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1101.609 ; gain = 333.281
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1101.484 ; gain = 334.559
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1101.609 ; gain = 333.281
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1101.484 ; gain = 334.559
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.150 . Memory (MB): peak = 1101.609 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.150 . Memory (MB): peak = 1101.484 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -408,28 +408,27 @@ Finished Parsing XDC File [d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sou
 Parsing XDC File [d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc] for cell 'clk_pll_inst'
 Finished Parsing XDC File [d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc] for cell 'clk_pll_inst'
 Parsing XDC File [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc]
-WARNING: [Vivado 12-507] No nets matched 'jtag_TCK_IBUF'. [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc:40]
+WARNING: [Vivado 12-507] No nets matched 'jtag_TCK_IBUF'. [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc:43]
 Finished Parsing XDC File [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/rooth_soc_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/rooth_soc_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/rooth_soc_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1249.906 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1251.988 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1249.906 ; gain = 0.000
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'data_mem_0' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1251.988 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1257.762 ; gain = 489.434
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1251.988 ; gain = 485.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1257.762 ; gain = 489.434
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1251.988 ; gain = 485.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -440,7 +439,7 @@ Applied set_property DONT_TOUCH = true for inst_mem_0. (constraint file  auto ge
 Applied set_property DONT_TOUCH = true for data_mem_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for clk_pll_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1257.762 ; gain = 489.434
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1251.988 ; gain = 485.062
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "jump_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5587] ROM size for "reg_wr_en_o" is below threshold of ROM address width. It will be mapped to LUTs
@@ -519,7 +518,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'f
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'jtag_state_reg' using encoding 'one-hot' in module 'jtag_driver'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1257.762 ; gain = 489.434
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1251.988 ; gain = 485.062
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1130,7 +1129,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart_0/uart_status_reg[3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[3] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1257.762 ; gain = 489.434
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:01:11 . Memory (MB): peak = 1251.988 ; gain = 485.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1159,14 +1158,15 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'refer_clk'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1257.762 ; gain = 489.434
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:22 . Memory (MB): peak = 1251.988 ; gain = 485.062
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:30 . Memory (MB): peak = 1375.773 ; gain = 607.445
+Finished Timing Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:34 . Memory (MB): peak = 1376.148 ; gain = 609.223
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1210,7 +1210,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][12] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][3] )
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:31 ; elapsed = 00:01:36 . Memory (MB): peak = 1461.461 ; gain = 693.133
+Finished Technology Mapping : Time (s): cpu = 00:01:15 ; elapsed = 00:01:40 . Memory (MB): peak = 1463.625 ; gain = 696.699
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1234,13 +1234,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:35 ; elapsed = 00:01:40 . Memory (MB): peak = 1466.566 ; gain = 698.238
+Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:44 . Memory (MB): peak = 1468.379 ; gain = 701.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:35 ; elapsed = 00:01:40 . Memory (MB): peak = 1466.566 ; gain = 698.238
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:01:44 . Memory (MB): peak = 1468.379 ; gain = 701.453
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1259,25 +1259,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:36 ; elapsed = 00:01:41 . Memory (MB): peak = 1466.566 ; gain = 698.238
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:36 ; elapsed = 00:01:41 . Memory (MB): peak = 1466.566 ; gain = 698.238
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:36 ; elapsed = 00:01:41 . Memory (MB): peak = 1466.566 ; gain = 698.238
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:36 ; elapsed = 00:01:41 . Memory (MB): peak = 1466.566 ; gain = 698.238
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1303,14 +1303,14 @@ Report Cell Usage:
 |5     |CARRY4   |   224|
 |6     |DSP48E1  |     4|
 |7     |LUT1     |   404|
-|8     |LUT2     |   873|
-|9     |LUT3     |   380|
-|10    |LUT4     |   780|
-|11    |LUT5     |  1274|
-|12    |LUT6     |  2366|
+|8     |LUT2     |   871|
+|9     |LUT3     |   378|
+|10    |LUT4     |   779|
+|11    |LUT5     |  1258|
+|12    |LUT6     |  2409|
 |13    |MUXF7    |   450|
 |14    |MUXF8    |   191|
-|15    |FDCE     |  1751|
+|15    |FDCE     |  1752|
 |16    |FDPE     |    19|
 |17    |FDRE     |  1444|
 |18    |FDSE     |     8|
@@ -1324,17 +1324,17 @@ Report Instance Areas:
 +------+---------------------+--------------------+------+
 |      |Instance             |Module              |Cells |
 +------+---------------------+--------------------+------+
-|1     |top                  |                    | 10398|
-|2     |  gpio_0             |gpio                |   101|
+|1     |top                  |                    | 10421|
+|2     |  gpio_0             |gpio                |   117|
 |3     |  timer_0            |timer               |   201|
-|4     |  u_jtag_top         |jtag_top            |  1273|
-|5     |    u_jtag_dm        |jtag_dm             |   874|
-|6     |      rx             |full_handshake_rx_0 |   420|
+|4     |  u_jtag_top         |jtag_top            |  1295|
+|5     |    u_jtag_dm        |jtag_dm             |   896|
+|6     |      rx             |full_handshake_rx_0 |   455|
 |7     |      tx             |full_handshake_tx_1 |    81|
 |8     |    u_jtag_driver    |jtag_driver         |   399|
 |9     |      rx             |full_handshake_rx   |    88|
 |10    |      tx             |full_handshake_tx   |    95|
-|11    |  u_rooth_0          |rooth               |  8297|
+|11    |  u_rooth_0          |rooth               |  8282|
 |12    |    u_alu_core_0     |alu_core            |   238|
 |13    |    u_alu_res_ctrl_0 |alu_res_ctrl        |    66|
 |14    |    u_clinet_0       |clinet              |   264|
@@ -1346,24 +1346,24 @@ Report Instance Areas:
 |20    |    u_if_ex_0        |if_ex               |  1737|
 |21    |    u_if_wb_0        |if_wb               |   539|
 |22    |    u_imm_gen_0      |imm_gen             |     6|
-|23    |    u_pc_reg_0       |pc_reg              |   428|
+|23    |    u_pc_reg_0       |pc_reg              |   413|
 |24    |    u_regs_file_0    |regs_file           |  2341|
 |25    |  u_spi_O            |spi                 |   171|
 |26    |  uart_0             |uart                |   254|
 +------+---------------------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:36 ; elapsed = 00:01:41 . Memory (MB): peak = 1466.566 ; gain = 698.238
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 123 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:27 ; elapsed = 00:01:37 . Memory (MB): peak = 1466.566 ; gain = 542.086
-Synthesis Optimization Complete : Time (s): cpu = 00:01:37 ; elapsed = 00:01:41 . Memory (MB): peak = 1466.566 ; gain = 698.238
+Synthesis finished with 0 errors, 0 critical warnings and 124 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:11 ; elapsed = 00:01:42 . Memory (MB): peak = 1468.379 ; gain = 550.949
+Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:46 . Memory (MB): peak = 1468.379 ; gain = 701.453
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.135 . Memory (MB): peak = 1466.566 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.133 . Memory (MB): peak = 1468.379 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1014 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1466.566 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1468.379 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 145 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
@@ -1372,10 +1372,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 292 Infos, 180 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:44 ; elapsed = 00:01:50 . Memory (MB): peak = 1466.566 ; gain = 998.473
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1466.566 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:01:55 . Memory (MB): peak = 1468.379 ; gain = 997.719
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1468.379 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/rooth_soc.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file rooth_soc_utilization_synth.rpt -pb rooth_soc_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Mar  2 18:56:22 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar  3 01:04:33 2023...

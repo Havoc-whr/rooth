@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7z020clg400-2
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,7 +32,7 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files d:/rooth/fpga/xilinx/ZYNQXC7Z020/program/demo.coe
+add_files D:/rooth/fpga/xilinx/ZYNQXC7Z020/program/demo.coe
 read_verilog -library xil_defaultlib {
   D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/rooth_defines.v
   D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v
@@ -62,13 +64,13 @@ read_verilog -library xil_defaultlib {
   D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/uart.v
   D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v
 }
-read_ip -quiet d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem.xci
+read_ip -quiet D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem.xci
 set_property used_in_implementation false [get_files -all d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem_ooc.xdc]
 
-read_ip -quiet d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem.xci
+read_ip -quiet D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem.xci
 set_property used_in_implementation false [get_files -all d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem_ooc.xdc]
 
-read_ip -quiet d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll.xci
+read_ip -quiet D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll.xci
 set_property used_in_implementation false [get_files -all d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll_board.xdc]
 set_property used_in_implementation false [get_files -all d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll.xdc]
 set_property used_in_implementation false [get_files -all d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll_ooc.xdc]
