@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rooth
-Sun Feb 26 15:02:06 2023
+Thu Mar 02 17:45:57 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -31,7 +31,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
  23. General Register Statistics
  24. Inverted Register Statistics
  25. Multiplexer Restructuring Statistics (Restructuring Performed)
- 26. Source assignments for inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_48r1:auto_generated
+ 26. Source assignments for inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_n6r1:auto_generated
  27. Source assignments for data_mem:data_mem_0|altsyncram:altsyncram_component|altsyncram_vhq1:auto_generated
  28. Parameter Settings for User Entity Instance: clk_pll:clk_pll_inst|altpll:altpll_component
  29. Parameter Settings for User Entity Instance: rib:u_rib_0
@@ -84,7 +84,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Feb 26 15:02:05 2023           ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 02 17:45:56 2023           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; rooth                                           ;
 ; Top-level Entity Name              ; rooth_soc                                       ;
@@ -93,7 +93,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 8,532                                           ;
 ;     Dedicated logic registers      ; 3,212                                           ;
 ; Total registers                    ; 3212                                            ;
-; Total pins                         ; 32                                              ;
+; Total pins                         ; 31                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 262,144                                         ;
 ; Embedded Multiplier 9-bit elements ; 8                                               ;
@@ -208,67 +208,67 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                            ;
-+------------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path   ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                            ; Library ;
-+------------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
-; ../../rtl/jtag/jtag_top.v          ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/jtag/jtag_top.v                                       ;         ;
-; ../../rtl/jtag/jtag_driver.v       ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/jtag/jtag_driver.v                                    ;         ;
-; ../../rtl/jtag/jtag_dm.v           ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/jtag/jtag_dm.v                                        ;         ;
-; ../../rtl/jtag/full_handshake_tx.v ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/jtag/full_handshake_tx.v                              ;         ;
-; ../../rtl/jtag/full_handshake_rx.v ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/jtag/full_handshake_rx.v                              ;         ;
-; ip_core/inst_mem/inst_mem.v        ; yes             ; User Wizard-Generated File             ; D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/inst_mem/inst_mem.v           ;         ;
-; ip_core/data_mem/data_mem.v        ; yes             ; User Wizard-Generated File             ; D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/data_mem/data_mem.v           ;         ;
-; ip_core/clk_pll/clk_pll.v          ; yes             ; User Wizard-Generated File             ; D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/clk_pll/clk_pll.v             ;         ;
-; ../../rtl/soc/rooth_soc.v          ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/soc/rooth_soc.v                                       ;         ;
-; ../../rtl/core/rooth_defines.v     ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/rooth_defines.v                                  ;         ;
-; ../../rtl/core/rooth.v             ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/rooth.v                                          ;         ;
-; ../../rtl/core/regs_file.v         ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/regs_file.v                                      ;         ;
-; ../../rtl/core/reg_clash_fb.v      ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/reg_clash_fb.v                                   ;         ;
-; ../../rtl/core/pc_reg.v            ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/pc_reg.v                                         ;         ;
-; ../../rtl/core/mux_alu.v           ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/mux_alu.v                                        ;         ;
-; ../../rtl/core/imm_gen.v           ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/imm_gen.v                                        ;         ;
-; ../../rtl/core/if_wb.v             ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/if_wb.v                                          ;         ;
-; ../../rtl/core/if_ex.v             ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/if_ex.v                                          ;         ;
-; ../../rtl/core/if_de.v             ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/if_de.v                                          ;         ;
-; ../../rtl/core/if_as.v             ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/if_as.v                                          ;         ;
-; ../../rtl/core/flow_ctrl.v         ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/flow_ctrl.v                                      ;         ;
-; ../../rtl/core/div.v               ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/div.v                                            ;         ;
-; ../../rtl/core/decode.v            ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/decode.v                                         ;         ;
-; ../../rtl/core/csr_reg.v           ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/csr_reg.v                                        ;         ;
-; ../../rtl/core/clinet.v            ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/clinet.v                                         ;         ;
-; ../../rtl/core/alu_res_ctrl.v      ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/alu_res_ctrl.v                                   ;         ;
-; ../../rtl/core/alu_core.v          ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/core/alu_core.v                                       ;         ;
-; ../../rtl/perips/uart.v            ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/perips/uart.v                                         ;         ;
-; ../../rtl/perips/timer.v           ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/perips/timer.v                                        ;         ;
-; ../../rtl/perips/spi.v             ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/perips/spi.v                                          ;         ;
-; ../../rtl/perips/gpio.v            ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/perips/gpio.v                                         ;         ;
-; ../../rtl/bus/rib.v                ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/rtl/bus/rib.v                                             ;         ;
-; altpll.tdf                         ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
-; aglobal181.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
-; stratix_pll.inc                    ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
-; stratixii_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
-; cycloneii_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-; db/clk_pll_altpll.v                ; yes             ; Auto-Generated Megafunction            ; D:/rooth/fpga/altera/EP4CE10F17C8/db/clk_pll_altpll.v                   ;         ;
-; altsyncram.tdf                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc              ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                        ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; a_rdenreg.inc                      ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                         ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                         ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_48r1.tdf             ; yes             ; Auto-Generated Megafunction            ; D:/rooth/fpga/altera/EP4CE10F17C8/db/altsyncram_48r1.tdf                ;         ;
-; porgram/demo.mif                   ; yes             ; Auto-Found Memory Initialization File  ; D:/rooth/fpga/altera/EP4CE10F17C8/porgram/demo.mif                      ;         ;
-; db/altsyncram_vhq1.tdf             ; yes             ; Auto-Generated Megafunction            ; D:/rooth/fpga/altera/EP4CE10F17C8/db/altsyncram_vhq1.tdf                ;         ;
-; lpm_mult.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
-; lpm_add_sub.inc                    ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
-; multcore.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/multcore.inc          ;         ;
-; bypassff.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/bypassff.inc          ;         ;
-; altshift.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altshift.inc          ;         ;
-; db/mult_7dt.tdf                    ; yes             ; Auto-Generated Megafunction            ; D:/rooth/fpga/altera/EP4CE10F17C8/db/mult_7dt.tdf                       ;         ;
-+------------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
+; ip_core/inst_mem/inst_mem.v      ; yes             ; User Wizard-Generated File             ; D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/inst_mem/inst_mem.v           ;         ;
+; ip_core/data_mem/data_mem.v      ; yes             ; User Wizard-Generated File             ; D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/data_mem/data_mem.v           ;         ;
+; ip_core/clk_pll/clk_pll.v        ; yes             ; User Wizard-Generated File             ; D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/clk_pll/clk_pll.v             ;         ;
+; rtl/soc/rooth_soc.v              ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v                   ;         ;
+; rtl/perips/uart.v                ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/uart.v                     ;         ;
+; rtl/perips/timer.v               ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/timer.v                    ;         ;
+; rtl/perips/spi.v                 ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/spi.v                      ;         ;
+; rtl/perips/gpio.v                ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/gpio.v                     ;         ;
+; rtl/jtag/jtag_top.v              ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_top.v                   ;         ;
+; rtl/jtag/jtag_driver.v           ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v                ;         ;
+; rtl/jtag/jtag_dm.v               ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_dm.v                    ;         ;
+; rtl/jtag/full_handshake_tx.v     ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/full_handshake_tx.v          ;         ;
+; rtl/jtag/full_handshake_rx.v     ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/full_handshake_rx.v          ;         ;
+; rtl/bus/rib.v                    ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/bus/rib.v                         ;         ;
+; rtl/core/rooth_defines.v         ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth_defines.v              ;         ;
+; rtl/core/rooth.v                 ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v                      ;         ;
+; rtl/core/regs_file.v             ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/regs_file.v                  ;         ;
+; rtl/core/reg_clash_fb.v          ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/reg_clash_fb.v               ;         ;
+; rtl/core/pc_reg.v                ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/pc_reg.v                     ;         ;
+; rtl/core/mux_alu.v               ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/mux_alu.v                    ;         ;
+; rtl/core/imm_gen.v               ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/imm_gen.v                    ;         ;
+; rtl/core/if_wb.v                 ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_wb.v                      ;         ;
+; rtl/core/if_ex.v                 ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v                      ;         ;
+; rtl/core/if_de.v                 ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_de.v                      ;         ;
+; rtl/core/if_as.v                 ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_as.v                      ;         ;
+; rtl/core/flow_ctrl.v             ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v                  ;         ;
+; rtl/core/div.v                   ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/div.v                        ;         ;
+; rtl/core/decode.v                ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/decode.v                     ;         ;
+; rtl/core/csr_reg.v               ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/csr_reg.v                    ;         ;
+; rtl/core/clinet.v                ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v                     ;         ;
+; rtl/core/alu_res_ctrl.v          ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v               ;         ;
+; rtl/core/alu_core.v              ; yes             ; User Verilog HDL File                  ; D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v                   ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; db/clk_pll_altpll.v              ; yes             ; Auto-Generated Megafunction            ; D:/rooth/fpga/altera/EP4CE10F17C8/db/clk_pll_altpll.v                   ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_n6r1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/rooth/fpga/altera/EP4CE10F17C8/db/altsyncram_n6r1.tdf                ;         ;
+; ./program/demo.mif               ; yes             ; Auto-Found Memory Initialization File  ; D:/rooth/fpga/altera/EP4CE10F17C8/program/demo.mif                      ;         ;
+; db/altsyncram_vhq1.tdf           ; yes             ; Auto-Generated Megafunction            ; D:/rooth/fpga/altera/EP4CE10F17C8/db/altsyncram_vhq1.tdf                ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
+; multcore.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/multcore.inc          ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/bypassff.inc          ;         ;
+; altshift.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altshift.inc          ;         ;
+; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction            ; D:/rooth/fpga/altera/EP4CE10F17C8/db/mult_7dt.tdf                       ;         ;
++----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -292,7 +292,7 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 3212                                                                                        ;
 ;     -- I/O registers                        ; 0                                                                                           ;
 ;                                             ;                                                                                             ;
-; I/O pins                                    ; 32                                                                                          ;
+; I/O pins                                    ; 31                                                                                          ;
 ; Total memory bits                           ; 262144                                                                                      ;
 ;                                             ;                                                                                             ;
 ; Embedded Multiplier 9-bit elements          ; 8                                                                                           ;
@@ -302,7 +302,7 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                                             ;
 ; Maximum fan-out node                        ; clk_pll:clk_pll_inst|altpll:altpll_component|clk_pll_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 3219                                                                                        ;
-; Total fan-out                               ; 42595                                                                                       ;
+; Total fan-out                               ; 42594                                                                                       ;
 ; Average fan-out                             ; 3.58                                                                                        ;
 +---------------------------------------------+---------------------------------------------------------------------------------------------+
 
@@ -312,7 +312,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                           ; Entity Name       ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------+-------------------+--------------+
-; |rooth_soc                                ; 8532 (17)           ; 3212 (0)                  ; 262144      ; 8            ; 0       ; 4         ; 32   ; 0            ; |rooth_soc                                                                                    ; rooth_soc         ; work         ;
+; |rooth_soc                                ; 8532 (17)           ; 3212 (0)                  ; 262144      ; 8            ; 0       ; 4         ; 31   ; 0            ; |rooth_soc                                                                                    ; rooth_soc         ; work         ;
 ;    |clk_pll:clk_pll_inst|                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|clk_pll:clk_pll_inst                                                               ; clk_pll           ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|clk_pll:clk_pll_inst|altpll:altpll_component                                       ; altpll            ; work         ;
 ;          |clk_pll_altpll:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|clk_pll:clk_pll_inst|altpll:altpll_component|clk_pll_altpll:auto_generated         ; clk_pll_altpll    ; work         ;
@@ -322,7 +322,7 @@ refer to the applicable agreement for further details.
 ;    |gpio:gpio_0|                          ; 152 (152)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|gpio:gpio_0                                                                        ; gpio              ; work         ;
 ;    |inst_mem:inst_mem_0|                  ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|inst_mem:inst_mem_0                                                                ; inst_mem          ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|inst_mem:inst_mem_0|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
-;          |altsyncram_48r1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_48r1:auto_generated ; altsyncram_48r1   ; work         ;
+;          |altsyncram_n6r1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_n6r1:auto_generated ; altsyncram_n6r1   ; work         ;
 ;    |jtag_top:u_jtag_top|                  ; 1398 (0)            ; 578 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|jtag_top:u_jtag_top                                                                ; jtag_top          ; work         ;
 ;       |jtag_dm:u_jtag_dm|                 ; 1181 (1094)         ; 345 (256)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|jtag_top:u_jtag_top|jtag_dm:u_jtag_dm                                              ; jtag_dm           ; work         ;
 ;          |full_handshake_rx:rx|           ; 43 (43)             ; 45 (45)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rooth_soc|jtag_top:u_jtag_top|jtag_dm:u_jtag_dm|full_handshake_rx:rx                         ; full_handshake_rx ; work         ;
@@ -357,14 +357,14 @@ refer to the applicable agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                   ;
-+-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+---------------------+
-; Name                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                 ;
-+-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+---------------------+
-; data_mem:data_mem_0|altsyncram:altsyncram_component|altsyncram_vhq1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 4096         ; 32           ; 4096         ; 32           ; 131072 ; None                ;
-; inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_48r1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 4096         ; 32           ; 4096         ; 32           ; 131072 ; ../porgram/demo.mif ;
-+-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+---------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                  ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------+
+; Name                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------+
+; data_mem:data_mem_0|altsyncram:altsyncram_component|altsyncram_vhq1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 4096         ; 32           ; 4096         ; 32           ; 131072 ; None               ;
+; inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_n6r1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 4096         ; 32           ; 4096         ; 32           ; 131072 ; ./program/demo.mif ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+--------------------+
 
 
 +-----------------------------------------------------+
@@ -906,7 +906,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 
 
 +-----------------------------------------------------------------------------------------------------------+
-; Source assignments for inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_48r1:auto_generated ;
+; Source assignments for inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_n6r1:auto_generated ;
 +---------------------------------+--------------------+------+---------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                          ;
 +---------------------------------+--------------------+------+---------------------------------------------+
@@ -1359,7 +1359,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                              ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                              ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                              ;
-; INIT_FILE                          ; ../porgram/demo.mif  ; Untyped                              ;
+; INIT_FILE                          ; ./program/demo.mif   ; Untyped                              ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                              ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Untyped                              ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                              ;
@@ -1372,7 +1372,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                              ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                              ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                              ;
-; CBXI_PARAMETER                     ; altsyncram_48r1      ; Untyped                              ;
+; CBXI_PARAMETER                     ; altsyncram_n6r1      ; Untyped                              ;
 +------------------------------------+----------------------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1695,7 +1695,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 32                          ;
+; boundary_port         ; 31                          ;
 ; cycloneiii_ff         ; 3212                        ;
 ;     CLR               ; 217                         ;
 ;     CLR SCLR          ; 15                          ;
@@ -1735,7 +1735,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:20     ;
+; Top            ; 00:00:23     ;
 +----------------+--------------+
 
 
@@ -1745,111 +1745,109 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Sun Feb 26 15:01:34 2023
+    Info: Processing started: Thu Mar 02 17:45:20 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rooth -c rooth
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/jtag/jtag_top.v
-    Info (12023): Found entity 1: jtag_top File: D:/rooth/fpga/rtl/jtag/jtag_top.v Line: 18
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/jtag/jtag_driver.v
-    Info (12023): Found entity 1: jtag_driver File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 23
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/jtag/jtag_dm.v
-    Info (12023): Found entity 1: jtag_dm File: D:/rooth/fpga/rtl/jtag/jtag_dm.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/jtag/full_handshake_tx.v
-    Info (12023): Found entity 1: full_handshake_tx File: D:/rooth/fpga/rtl/jtag/full_handshake_tx.v Line: 23
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/jtag/full_handshake_rx.v
-    Info (12023): Found entity 1: full_handshake_rx File: D:/rooth/fpga/rtl/jtag/full_handshake_rx.v Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file ip_core/inst_mem/inst_mem.v
     Info (12023): Found entity 1: inst_mem File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/inst_mem/inst_mem.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file ip_core/data_mem/data_mem.v
     Info (12023): Found entity 1: data_mem File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/data_mem/data_mem.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file ip_core/clk_pll/clk_pll.v
     Info (12023): Found entity 1: clk_pll File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/clk_pll/clk_pll.v Line: 39
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/soc/rooth_soc.v
-    Info (12023): Found entity 1: rooth_soc File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 35
-Info (12021): Found 0 design units, including 0 entities, in source file /rooth/fpga/rtl/core/rooth_defines.v
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/rooth.v
-    Info (12023): Found entity 1: rooth File: D:/rooth/fpga/rtl/core/rooth.v Line: 18
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/regs_file.v
-    Info (12023): Found entity 1: regs_file File: D:/rooth/fpga/rtl/core/regs_file.v Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/reg_clash_fb.v
-    Info (12023): Found entity 1: reg_clash_fb File: D:/rooth/fpga/rtl/core/reg_clash_fb.v Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/pc_reg.v
-    Info (12023): Found entity 1: pc_reg File: D:/rooth/fpga/rtl/core/pc_reg.v Line: 15
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/mux_alu.v
-    Info (12023): Found entity 1: mux_alu File: D:/rooth/fpga/rtl/core/mux_alu.v Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/imm_gen.v
-    Info (12023): Found entity 1: imm_gen File: D:/rooth/fpga/rtl/core/imm_gen.v Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/if_wb.v
-    Info (12023): Found entity 1: if_wb File: D:/rooth/fpga/rtl/core/if_wb.v Line: 17
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/if_ex.v
-    Info (12023): Found entity 1: if_ex File: D:/rooth/fpga/rtl/core/if_ex.v Line: 17
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/if_de.v
-    Info (12023): Found entity 1: if_de File: D:/rooth/fpga/rtl/core/if_de.v Line: 18
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/if_as.v
-    Info (12023): Found entity 1: if_as File: D:/rooth/fpga/rtl/core/if_as.v Line: 17
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/flow_ctrl.v
-    Info (12023): Found entity 1: flow_ctrl File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 17
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/div.v
-    Info (12023): Found entity 1: div File: D:/rooth/fpga/rtl/core/div.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/decode.v
-    Info (12023): Found entity 1: decode File: D:/rooth/fpga/rtl/core/decode.v Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/csr_reg.v
-    Info (12023): Found entity 1: csr_reg File: D:/rooth/fpga/rtl/core/csr_reg.v Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/clinet.v
-    Info (12023): Found entity 1: clinet File: D:/rooth/fpga/rtl/core/clinet.v Line: 15
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/alu_res_ctrl.v
-    Info (12023): Found entity 1: alu_res_ctrl File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/core/alu_core.v
-    Info (12023): Found entity 1: alu_core File: D:/rooth/fpga/rtl/core/alu_core.v Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/perips/uart_debug.v
-    Info (12023): Found entity 1: uart_debug File: D:/rooth/fpga/rtl/perips/uart_debug.v Line: 44
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/perips/uart.v
-    Info (12023): Found entity 1: uart File: D:/rooth/fpga/rtl/perips/uart.v Line: 19
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/perips/timer.v
-    Info (12023): Found entity 1: timer File: D:/rooth/fpga/rtl/perips/timer.v Line: 21
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/perips/spi.v
-    Info (12023): Found entity 1: spi File: D:/rooth/fpga/rtl/perips/spi.v Line: 19
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/perips/gpio.v
-    Info (12023): Found entity 1: gpio File: D:/rooth/fpga/rtl/perips/gpio.v Line: 19
-Info (12021): Found 1 design units, including 1 entities, in source file /rooth/fpga/rtl/bus/rib.v
-    Info (12023): Found entity 1: rib File: D:/rooth/fpga/rtl/bus/rib.v Line: 21
-Warning (10236): Verilog HDL Implicit Net warning at jtag_dm.v(325): created implicit net for "tx_idle" File: D:/rooth/fpga/rtl/jtag/jtag_dm.v Line: 325
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_top.v(46): Parameter Declaration in module "jtag_top" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_top.v Line: 46
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_top.v(47): Parameter Declaration in module "jtag_top" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_top.v Line: 47
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(47): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 47
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(48): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 48
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(49): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 49
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(51): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 51
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(52): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 52
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(54): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 54
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(55): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 55
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(56): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 56
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(72): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 72
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(73): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 73
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(74): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 74
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(75): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 75
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(76): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 76
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(77): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 77
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(78): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 78
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(79): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 79
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(80): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 80
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(81): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 81
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(82): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 82
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(83): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 83
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(84): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 84
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(85): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 85
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(86): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 86
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(87): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 87
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(90): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 90
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(91): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 91
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(92): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 92
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(93): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 93
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_dm.v(60): Parameter Declaration in module "jtag_dm" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_dm.v Line: 60
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_dm.v(61): Parameter Declaration in module "jtag_dm" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_dm.v Line: 61
-Warning (10222): Verilog HDL Parameter Declaration warning at jtag_dm.v(62): Parameter Declaration in module "jtag_dm" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/rtl/jtag/jtag_dm.v Line: 62
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/soc/rooth_soc.v
+    Info (12023): Found entity 1: rooth_soc File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/perips/uart.v
+    Info (12023): Found entity 1: uart File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/uart.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/perips/timer.v
+    Info (12023): Found entity 1: timer File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/timer.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/perips/spi.v
+    Info (12023): Found entity 1: spi File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/spi.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/perips/gpio.v
+    Info (12023): Found entity 1: gpio File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/gpio.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/jtag/jtag_top.v
+    Info (12023): Found entity 1: jtag_top File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_top.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/jtag/jtag_driver.v
+    Info (12023): Found entity 1: jtag_driver File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/jtag/jtag_dm.v
+    Info (12023): Found entity 1: jtag_dm File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_dm.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/jtag/full_handshake_tx.v
+    Info (12023): Found entity 1: full_handshake_tx File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/full_handshake_tx.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/jtag/full_handshake_rx.v
+    Info (12023): Found entity 1: full_handshake_rx File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/full_handshake_rx.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/bus/rib.v
+    Info (12023): Found entity 1: rib File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/bus/rib.v Line: 21
+Info (12021): Found 0 design units, including 0 entities, in source file rtl/core/rooth_defines.v
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/rooth.v
+    Info (12023): Found entity 1: rooth File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/regs_file.v
+    Info (12023): Found entity 1: regs_file File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/regs_file.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/reg_clash_fb.v
+    Info (12023): Found entity 1: reg_clash_fb File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/reg_clash_fb.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/pc_reg.v
+    Info (12023): Found entity 1: pc_reg File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/pc_reg.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/mux_alu.v
+    Info (12023): Found entity 1: mux_alu File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/mux_alu.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/imm_gen.v
+    Info (12023): Found entity 1: imm_gen File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/imm_gen.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/if_wb.v
+    Info (12023): Found entity 1: if_wb File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_wb.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/if_ex.v
+    Info (12023): Found entity 1: if_ex File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/if_de.v
+    Info (12023): Found entity 1: if_de File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_de.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/if_as.v
+    Info (12023): Found entity 1: if_as File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_as.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/flow_ctrl.v
+    Info (12023): Found entity 1: flow_ctrl File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/div.v
+    Info (12023): Found entity 1: div File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/div.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/decode.v
+    Info (12023): Found entity 1: decode File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/decode.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/csr_reg.v
+    Info (12023): Found entity 1: csr_reg File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/csr_reg.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/clinet.v
+    Info (12023): Found entity 1: clinet File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/alu_res_ctrl.v
+    Info (12023): Found entity 1: alu_res_ctrl File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file rtl/core/alu_core.v
+    Info (12023): Found entity 1: alu_core File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 16
+Warning (10236): Verilog HDL Implicit Net warning at jtag_dm.v(325): created implicit net for "tx_idle" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_dm.v Line: 325
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_top.v(46): Parameter Declaration in module "jtag_top" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_top.v Line: 46
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_top.v(47): Parameter Declaration in module "jtag_top" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_top.v Line: 47
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(47): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 47
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(48): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 48
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(49): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 49
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(51): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 51
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(52): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 52
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(54): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 54
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(55): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 55
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(56): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 56
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(72): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 72
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(73): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 73
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(74): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 74
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(75): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 75
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(76): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 76
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(77): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 77
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(78): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 78
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(79): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 79
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(80): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 80
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(81): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 81
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(82): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 82
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(83): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 83
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(84): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 84
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(85): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 85
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(86): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 86
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(87): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 87
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(90): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 90
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(91): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 91
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(92): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 92
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_driver.v(93): Parameter Declaration in module "jtag_driver" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 93
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_dm.v(60): Parameter Declaration in module "jtag_dm" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_dm.v Line: 60
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_dm.v(61): Parameter Declaration in module "jtag_dm" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_dm.v Line: 61
+Warning (10222): Verilog HDL Parameter Declaration warning at jtag_dm.v(62): Parameter Declaration in module "jtag_dm" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_dm.v Line: 62
 Info (12127): Elaborating entity "rooth_soc" for the top level hierarchy
-Info (12128): Elaborating entity "clk_pll" for hierarchy "clk_pll:clk_pll_inst" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 156
+Info (12128): Elaborating entity "clk_pll" for hierarchy "clk_pll:clk_pll_inst" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 155
 Info (12128): Elaborating entity "altpll" for hierarchy "clk_pll:clk_pll_inst|altpll:altpll_component" File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/clk_pll/clk_pll.v Line: 98
 Info (12130): Elaborated megafunction instantiation "clk_pll:clk_pll_inst|altpll:altpll_component" File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/clk_pll/clk_pll.v Line: 98
 Info (12133): Instantiated megafunction "clk_pll:clk_pll_inst|altpll:altpll_component" with the following parameter: File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/clk_pll/clk_pll.v Line: 98
@@ -1915,169 +1913,169 @@ Info (12133): Instantiated megafunction "clk_pll:clk_pll_inst|altpll:altpll_comp
 Info (12021): Found 1 design units, including 1 entities, in source file db/clk_pll_altpll.v
     Info (12023): Found entity 1: clk_pll_altpll File: D:/rooth/fpga/altera/EP4CE10F17C8/db/clk_pll_altpll.v Line: 29
 Info (12128): Elaborating entity "clk_pll_altpll" for hierarchy "clk_pll:clk_pll_inst|altpll:altpll_component|clk_pll_altpll:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "rooth" for hierarchy "rooth:u_rooth_0" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 179
-Info (12128): Elaborating entity "flow_ctrl" for hierarchy "rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 221
-Warning (10240): Verilog HDL Always Construct warning at flow_ctrl.v(50): inferring latch(es) for variable "next_pc_four_o", which holds its previous value in one or more paths through the always construct File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 50
-Warning (10240): Verilog HDL Always Construct warning at flow_ctrl.v(50): inferring latch(es) for variable "next_pc_o", which holds its previous value in one or more paths through the always construct File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 50
-Info (10041): Inferred latch for "next_pc_o[0]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[1]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[2]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[3]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[4]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[5]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[6]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[7]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[8]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[9]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[10]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[11]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[12]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[13]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[14]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[15]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[16]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[17]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[18]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[19]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[20]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[21]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[22]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[23]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[24]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[25]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[26]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[27]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[28]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[29]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[30]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_o[31]" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (10041): Inferred latch for "next_pc_four_o" at flow_ctrl.v(57) File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-Info (12128): Elaborating entity "pc_reg" for hierarchy "rooth:u_rooth_0|pc_reg:u_pc_reg_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 232
-Info (12128): Elaborating entity "if_de" for hierarchy "rooth:u_rooth_0|if_de:u_if_de_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 244
-Info (12128): Elaborating entity "decode" for hierarchy "rooth:u_rooth_0|decode:u_decode_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 261
-Warning (10270): Verilog HDL Case Statement warning at decode.v(175): incomplete case statement has no default case item File: D:/rooth/fpga/rtl/core/decode.v Line: 175
-Info (12128): Elaborating entity "imm_gen" for hierarchy "rooth:u_rooth_0|imm_gen:u_imm_gen_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 267
-Info (12128): Elaborating entity "if_ex" for hierarchy "rooth:u_rooth_0|if_ex:u_if_ex_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 303
-Info (12128): Elaborating entity "mux_alu" for hierarchy "rooth:u_rooth_0|mux_alu:u_mux_alu_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 314
-Info (12128): Elaborating entity "alu_core" for hierarchy "rooth:u_rooth_0|alu_core:u_alu_core_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 330
-Warning (10230): Verilog HDL assignment warning at alu_core.v(91): truncated value with size 32 to match size of target (1) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 91
-Warning (10230): Verilog HDL assignment warning at alu_core.v(92): truncated value with size 32 to match size of target (1) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 92
-Warning (10230): Verilog HDL assignment warning at alu_core.v(96): truncated value with size 32 to match size of target (1) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 96
-Warning (10230): Verilog HDL assignment warning at alu_core.v(97): truncated value with size 32 to match size of target (1) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 97
-Warning (10240): Verilog HDL Always Construct warning at alu_core.v(49): inferring latch(es) for variable "extends_reg", which holds its previous value in one or more paths through the always construct File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[0]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[1]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[2]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[3]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[4]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[5]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[6]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[7]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[8]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[9]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[10]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[11]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[12]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[13]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[14]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[15]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[16]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[17]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[18]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[19]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[20]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[21]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[22]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[23]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[24]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[25]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[26]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[27]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[28]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[29]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[30]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[31]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[32]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[33]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[34]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[35]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[36]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[37]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[38]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[39]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[40]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[41]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[42]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[43]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[44]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[45]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[46]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[47]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[48]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[49]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[50]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[51]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[52]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[53]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[54]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[55]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[56]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[57]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[58]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[59]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[60]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[61]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[62]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (10041): Inferred latch for "extends_reg[63]" at alu_core.v(49) File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-Info (12128): Elaborating entity "div" for hierarchy "rooth:u_rooth_0|div:u_div_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 342
-Warning (10036): Verilog HDL or VHDL warning at div.v(59): object "op_remu" assigned a value but never read File: D:/rooth/fpga/rtl/core/div.v Line: 59
-Info (12128): Elaborating entity "if_as" for hierarchy "rooth:u_rooth_0|if_as:u_if_as_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 380
-Info (12128): Elaborating entity "alu_res_ctrl" for hierarchy "rooth:u_rooth_0|alu_res_ctrl:u_alu_res_ctrl_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 409
-Warning (10270): Verilog HDL Case Statement warning at alu_res_ctrl.v(75): incomplete case statement has no default case item File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 75
-Warning (10270): Verilog HDL Case Statement warning at alu_res_ctrl.v(107): incomplete case statement has no default case item File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 107
-Warning (10240): Verilog HDL Always Construct warning at alu_res_ctrl.v(65): inferring latch(es) for variable "csr_wr_data_o", which holds its previous value in one or more paths through the always construct File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 65
-Info (10041): Inferred latch for "csr_wr_data_o[0]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[1]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[2]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[3]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[4]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[5]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[6]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[7]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[8]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[9]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[10]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[11]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[12]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[13]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[14]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[15]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[16]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[17]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[18]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[19]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[20]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[21]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[22]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[23]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[24]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[25]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[26]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[27]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[28]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[29]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[30]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (10041): Inferred latch for "csr_wr_data_o[31]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/rtl/core/alu_res_ctrl.v Line: 93
-Info (12128): Elaborating entity "if_wb" for hierarchy "rooth:u_rooth_0|if_wb:u_if_wb_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 431
-Info (12128): Elaborating entity "reg_clash_fb" for hierarchy "rooth:u_rooth_0|reg_clash_fb:u_reg_clash_fb_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 458
-Info (12128): Elaborating entity "regs_file" for hierarchy "rooth:u_rooth_0|regs_file:u_regs_file_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 476
-Info (12128): Elaborating entity "csr_reg" for hierarchy "rooth:u_rooth_0|csr_reg:u_csr_reg_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 494
-Info (12128): Elaborating entity "clinet" for hierarchy "rooth:u_rooth_0|clinet:u_clinet_0" File: D:/rooth/fpga/rtl/core/rooth.v Line: 516
-Warning (10762): Verilog HDL Case Statement warning at clinet.v(108): can't check case statement for completeness because the case expression has too many possible states File: D:/rooth/fpga/rtl/core/clinet.v Line: 108
-Info (10264): Verilog HDL Case Statement information at clinet.v(172): all case item expressions in this case statement are onehot File: D:/rooth/fpga/rtl/core/clinet.v Line: 172
-Info (10264): Verilog HDL Case Statement information at clinet.v(212): all case item expressions in this case statement are onehot File: D:/rooth/fpga/rtl/core/clinet.v Line: 212
-Info (12128): Elaborating entity "rib" for hierarchy "rib:u_rib_0" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 240
-Info (12128): Elaborating entity "inst_mem" for hierarchy "inst_mem:inst_mem_0" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 249
+Info (12128): Elaborating entity "rooth" for hierarchy "rooth:u_rooth_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 178
+Info (12128): Elaborating entity "flow_ctrl" for hierarchy "rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 221
+Warning (10240): Verilog HDL Always Construct warning at flow_ctrl.v(50): inferring latch(es) for variable "next_pc_four_o", which holds its previous value in one or more paths through the always construct File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 50
+Warning (10240): Verilog HDL Always Construct warning at flow_ctrl.v(50): inferring latch(es) for variable "next_pc_o", which holds its previous value in one or more paths through the always construct File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 50
+Info (10041): Inferred latch for "next_pc_o[0]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[1]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[2]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[3]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[4]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[5]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[6]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[7]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[8]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[9]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[10]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[11]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[12]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[13]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[14]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[15]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[16]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[17]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[18]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[19]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[20]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[21]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[22]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[23]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[24]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[25]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[26]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[27]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[28]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[29]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[30]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_o[31]" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (10041): Inferred latch for "next_pc_four_o" at flow_ctrl.v(57) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+Info (12128): Elaborating entity "pc_reg" for hierarchy "rooth:u_rooth_0|pc_reg:u_pc_reg_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 232
+Info (12128): Elaborating entity "if_de" for hierarchy "rooth:u_rooth_0|if_de:u_if_de_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 244
+Info (12128): Elaborating entity "decode" for hierarchy "rooth:u_rooth_0|decode:u_decode_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 261
+Warning (10270): Verilog HDL Case Statement warning at decode.v(175): incomplete case statement has no default case item File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/decode.v Line: 175
+Info (12128): Elaborating entity "imm_gen" for hierarchy "rooth:u_rooth_0|imm_gen:u_imm_gen_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 267
+Info (12128): Elaborating entity "if_ex" for hierarchy "rooth:u_rooth_0|if_ex:u_if_ex_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 303
+Info (12128): Elaborating entity "mux_alu" for hierarchy "rooth:u_rooth_0|mux_alu:u_mux_alu_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 314
+Info (12128): Elaborating entity "alu_core" for hierarchy "rooth:u_rooth_0|alu_core:u_alu_core_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 330
+Warning (10230): Verilog HDL assignment warning at alu_core.v(91): truncated value with size 32 to match size of target (1) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 91
+Warning (10230): Verilog HDL assignment warning at alu_core.v(92): truncated value with size 32 to match size of target (1) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 92
+Warning (10230): Verilog HDL assignment warning at alu_core.v(96): truncated value with size 32 to match size of target (1) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 96
+Warning (10230): Verilog HDL assignment warning at alu_core.v(97): truncated value with size 32 to match size of target (1) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 97
+Warning (10240): Verilog HDL Always Construct warning at alu_core.v(49): inferring latch(es) for variable "extends_reg", which holds its previous value in one or more paths through the always construct File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[0]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[1]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[2]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[3]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[4]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[5]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[6]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[7]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[8]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[9]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[10]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[11]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[12]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[13]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[14]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[15]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[16]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[17]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[18]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[19]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[20]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[21]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[22]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[23]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[24]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[25]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[26]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[27]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[28]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[29]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[30]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[31]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[32]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[33]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[34]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[35]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[36]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[37]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[38]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[39]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[40]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[41]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[42]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[43]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[44]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[45]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[46]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[47]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[48]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[49]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[50]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[51]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[52]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[53]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[54]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[55]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[56]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[57]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[58]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[59]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[60]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[61]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[62]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (10041): Inferred latch for "extends_reg[63]" at alu_core.v(49) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+Info (12128): Elaborating entity "div" for hierarchy "rooth:u_rooth_0|div:u_div_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 342
+Warning (10036): Verilog HDL or VHDL warning at div.v(59): object "op_remu" assigned a value but never read File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/div.v Line: 59
+Info (12128): Elaborating entity "if_as" for hierarchy "rooth:u_rooth_0|if_as:u_if_as_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 380
+Info (12128): Elaborating entity "alu_res_ctrl" for hierarchy "rooth:u_rooth_0|alu_res_ctrl:u_alu_res_ctrl_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 409
+Warning (10270): Verilog HDL Case Statement warning at alu_res_ctrl.v(75): incomplete case statement has no default case item File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 75
+Warning (10270): Verilog HDL Case Statement warning at alu_res_ctrl.v(107): incomplete case statement has no default case item File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 107
+Warning (10240): Verilog HDL Always Construct warning at alu_res_ctrl.v(65): inferring latch(es) for variable "csr_wr_data_o", which holds its previous value in one or more paths through the always construct File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 65
+Info (10041): Inferred latch for "csr_wr_data_o[0]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[1]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[2]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[3]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[4]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[5]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[6]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[7]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[8]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[9]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[10]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[11]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[12]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[13]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[14]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[15]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[16]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[17]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[18]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[19]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[20]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[21]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[22]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[23]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[24]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[25]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[26]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[27]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[28]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[29]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[30]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (10041): Inferred latch for "csr_wr_data_o[31]" at alu_res_ctrl.v(93) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_res_ctrl.v Line: 93
+Info (12128): Elaborating entity "if_wb" for hierarchy "rooth:u_rooth_0|if_wb:u_if_wb_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 431
+Info (12128): Elaborating entity "reg_clash_fb" for hierarchy "rooth:u_rooth_0|reg_clash_fb:u_reg_clash_fb_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 458
+Info (12128): Elaborating entity "regs_file" for hierarchy "rooth:u_rooth_0|regs_file:u_regs_file_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 476
+Info (12128): Elaborating entity "csr_reg" for hierarchy "rooth:u_rooth_0|csr_reg:u_csr_reg_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 494
+Info (12128): Elaborating entity "clinet" for hierarchy "rooth:u_rooth_0|clinet:u_clinet_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/rooth.v Line: 516
+Warning (10762): Verilog HDL Case Statement warning at clinet.v(108): can't check case statement for completeness because the case expression has too many possible states File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 108
+Info (10264): Verilog HDL Case Statement information at clinet.v(172): all case item expressions in this case statement are onehot File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 172
+Info (10264): Verilog HDL Case Statement information at clinet.v(212): all case item expressions in this case statement are onehot File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 212
+Info (12128): Elaborating entity "rib" for hierarchy "rib:u_rib_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 239
+Info (12128): Elaborating entity "inst_mem" for hierarchy "inst_mem:inst_mem_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 248
 Info (12128): Elaborating entity "altsyncram" for hierarchy "inst_mem:inst_mem_0|altsyncram:altsyncram_component" File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/inst_mem/inst_mem.v Line: 88
 Info (12130): Elaborated megafunction instantiation "inst_mem:inst_mem_0|altsyncram:altsyncram_component" File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/inst_mem/inst_mem.v Line: 88
 Info (12133): Instantiated megafunction "inst_mem:inst_mem_0|altsyncram:altsyncram_component" with the following parameter: File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/inst_mem/inst_mem.v Line: 88
@@ -2086,7 +2084,7 @@ Info (12133): Instantiated megafunction "inst_mem:inst_mem_0|altsyncram:altsyncr
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
-    Info (12134): Parameter "init_file" = "../porgram/demo.mif"
+    Info (12134): Parameter "init_file" = "./program/demo.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
     Info (12134): Parameter "lpm_type" = "altsyncram"
     Info (12134): Parameter "numwords_a" = "4096"
@@ -2101,10 +2099,11 @@ Info (12133): Instantiated megafunction "inst_mem:inst_mem_0|altsyncram:altsyncr
     Info (12134): Parameter "width_a" = "32"
     Info (12134): Parameter "width_b" = "32"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_48r1.tdf
-    Info (12023): Found entity 1: altsyncram_48r1 File: D:/rooth/fpga/altera/EP4CE10F17C8/db/altsyncram_48r1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_48r1" for hierarchy "inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_48r1:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:data_mem_0" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 260
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_n6r1.tdf
+    Info (12023): Found entity 1: altsyncram_n6r1 File: D:/rooth/fpga/altera/EP4CE10F17C8/db/altsyncram_n6r1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_n6r1" for hierarchy "inst_mem:inst_mem_0|altsyncram:altsyncram_component|altsyncram_n6r1:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Critical Warning (127005): Memory depth (4096) in the design file differs from memory depth (346) in the Memory Initialization File "D:/rooth/fpga/altera/EP4CE10F17C8/program/demo.mif" -- setting initial value for remaining addresses to 0 File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/inst_mem/inst_mem.v Line: 88
+Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:data_mem_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 259
 Info (12128): Elaborating entity "altsyncram" for hierarchy "data_mem:data_mem_0|altsyncram:altsyncram_component" File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/data_mem/data_mem.v Line: 91
 Info (12130): Elaborated megafunction instantiation "data_mem:data_mem_0|altsyncram:altsyncram_component" File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/data_mem/data_mem.v Line: 91
 Info (12133): Instantiated megafunction "data_mem:data_mem_0|altsyncram:altsyncram_component" with the following parameter: File: D:/rooth/fpga/altera/EP4CE10F17C8/ip_core/data_mem/data_mem.v Line: 91
@@ -2131,26 +2130,26 @@ Info (12133): Instantiated megafunction "data_mem:data_mem_0|altsyncram:altsyncr
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_vhq1.tdf
     Info (12023): Found entity 1: altsyncram_vhq1 File: D:/rooth/fpga/altera/EP4CE10F17C8/db/altsyncram_vhq1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_vhq1" for hierarchy "data_mem:data_mem_0|altsyncram:altsyncram_component|altsyncram_vhq1:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "timer" for hierarchy "timer:timer_0" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 271
-Info (12128): Elaborating entity "uart" for hierarchy "uart:uart_0" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 283
-Info (10264): Verilog HDL Case Statement information at uart.v(183): all case item expressions in this case statement are onehot File: D:/rooth/fpga/rtl/perips/uart.v Line: 183
-Info (12128): Elaborating entity "gpio" for hierarchy "gpio:gpio_0" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 345
-Info (12128): Elaborating entity "spi" for hierarchy "spi:u_spi_O" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 360
-Warning (10027): Verilog HDL or VHDL warning at the spi.v(145): index expression is not wide enough to address all of the elements in the array File: D:/rooth/fpga/rtl/perips/spi.v Line: 145
-Warning (10027): Verilog HDL or VHDL warning at the spi.v(157): index expression is not wide enough to address all of the elements in the array File: D:/rooth/fpga/rtl/perips/spi.v Line: 157
-Info (12128): Elaborating entity "jtag_top" for hierarchy "jtag_top:u_jtag_top" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 397
-Info (12128): Elaborating entity "jtag_driver" for hierarchy "jtag_top:u_jtag_top|jtag_driver:u_jtag_driver" File: D:/rooth/fpga/rtl/jtag/jtag_top.v Line: 78
-Info (10264): Verilog HDL Case Statement information at jtag_driver.v(162): all case item expressions in this case statement are onehot File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 162
-Info (12128): Elaborating entity "full_handshake_tx" for hierarchy "jtag_top:u_jtag_top|jtag_driver:u_jtag_driver|full_handshake_tx:tx" File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 281
-Info (12128): Elaborating entity "full_handshake_rx" for hierarchy "jtag_top:u_jtag_top|jtag_driver:u_jtag_driver|full_handshake_rx:rx" File: D:/rooth/fpga/rtl/jtag/jtag_driver.v Line: 293
-Info (12128): Elaborating entity "jtag_dm" for hierarchy "jtag_top:u_jtag_top|jtag_dm:u_jtag_dm" File: D:/rooth/fpga/rtl/jtag/jtag_top.v Line: 104
-Warning (10036): Verilog HDL or VHDL warning at jtag_dm.v(94): object "sbdata0" assigned a value but never read File: D:/rooth/fpga/rtl/jtag/jtag_dm.v Line: 94
-Warning (10036): Verilog HDL or VHDL warning at jtag_dm.v(95): object "command" assigned a value but never read File: D:/rooth/fpga/rtl/jtag/jtag_dm.v Line: 95
-Warning (10230): Verilog HDL assignment warning at jtag_dm.v(242): truncated value with size 16 to match size of target (5) File: D:/rooth/fpga/rtl/jtag/jtag_dm.v Line: 242
+Info (12128): Elaborating entity "timer" for hierarchy "timer:timer_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 270
+Info (12128): Elaborating entity "uart" for hierarchy "uart:uart_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 282
+Info (10264): Verilog HDL Case Statement information at uart.v(183): all case item expressions in this case statement are onehot File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/uart.v Line: 183
+Info (12128): Elaborating entity "gpio" for hierarchy "gpio:gpio_0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 344
+Info (12128): Elaborating entity "spi" for hierarchy "spi:u_spi_O" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 359
+Warning (10027): Verilog HDL or VHDL warning at the spi.v(145): index expression is not wide enough to address all of the elements in the array File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/spi.v Line: 145
+Warning (10027): Verilog HDL or VHDL warning at the spi.v(157): index expression is not wide enough to address all of the elements in the array File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/spi.v Line: 157
+Info (12128): Elaborating entity "jtag_top" for hierarchy "jtag_top:u_jtag_top" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/soc/rooth_soc.v Line: 383
+Info (12128): Elaborating entity "jtag_driver" for hierarchy "jtag_top:u_jtag_top|jtag_driver:u_jtag_driver" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_top.v Line: 78
+Info (10264): Verilog HDL Case Statement information at jtag_driver.v(162): all case item expressions in this case statement are onehot File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 162
+Info (12128): Elaborating entity "full_handshake_tx" for hierarchy "jtag_top:u_jtag_top|jtag_driver:u_jtag_driver|full_handshake_tx:tx" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 281
+Info (12128): Elaborating entity "full_handshake_rx" for hierarchy "jtag_top:u_jtag_top|jtag_driver:u_jtag_driver|full_handshake_rx:rx" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_driver.v Line: 293
+Info (12128): Elaborating entity "jtag_dm" for hierarchy "jtag_top:u_jtag_top|jtag_dm:u_jtag_dm" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_top.v Line: 104
+Warning (10036): Verilog HDL or VHDL warning at jtag_dm.v(94): object "sbdata0" assigned a value but never read File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_dm.v Line: 94
+Warning (10036): Verilog HDL or VHDL warning at jtag_dm.v(95): object "command" assigned a value but never read File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_dm.v Line: 95
+Warning (10230): Verilog HDL assignment warning at jtag_dm.v(242): truncated value with size 16 to match size of target (5) File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/jtag/jtag_dm.v Line: 242
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "rooth:u_rooth_0|alu_core:u_alu_core_0|Mult0" File: D:/rooth/fpga/rtl/core/alu_core.v Line: 45
-Info (12130): Elaborated megafunction instantiation "rooth:u_rooth_0|alu_core:u_alu_core_0|lpm_mult:Mult0" File: D:/rooth/fpga/rtl/core/alu_core.v Line: 45
-Info (12133): Instantiated megafunction "rooth:u_rooth_0|alu_core:u_alu_core_0|lpm_mult:Mult0" with the following parameter: File: D:/rooth/fpga/rtl/core/alu_core.v Line: 45
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "rooth:u_rooth_0|alu_core:u_alu_core_0|Mult0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 45
+Info (12130): Elaborated megafunction instantiation "rooth:u_rooth_0|alu_core:u_alu_core_0|lpm_mult:Mult0" File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 45
+Info (12133): Instantiated megafunction "rooth:u_rooth_0|alu_core:u_alu_core_0|lpm_mult:Mult0" with the following parameter: File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 45
     Info (12134): Parameter "LPM_WIDTHA" = "32"
     Info (12134): Parameter "LPM_WIDTHB" = "32"
     Info (12134): Parameter "LPM_WIDTHP" = "64"
@@ -2165,222 +2164,220 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mult
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13014): Ignored 222 buffer(s)
     Info (13019): Ignored 222 SOFT buffer(s)
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[0] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_four_o has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 41
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[28] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[29] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[30] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[31] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[1] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[2] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[3] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[7] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[6] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[5] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[4] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[27] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[26] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[25] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[24] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[23] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[22] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[21] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[20] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[19] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[18] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[17] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[16] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[15] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[14] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[13] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[12] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[11] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[10] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[9] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[8] has unsafe behavior File: D:/rooth/fpga/rtl/core/flow_ctrl.v Line: 57
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/rtl/core/clinet.v Line: 47
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[32] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[33] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[34] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[35] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[36] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[37] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[38] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[39] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[40] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[41] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[42] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[43] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[44] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[45] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[46] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[47] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[48] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[49] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[0] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[1] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[2] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[3] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[4] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[5] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[6] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[7] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[8] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[9] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[10] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[11] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[12] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[13] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[14] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[15] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[16] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[17] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[50] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[51] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[52] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[53] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[54] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[55] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[56] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[57] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[58] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[59] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[60] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[61] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[62] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[63] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[18] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[19] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[20] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[21] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[22] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[23] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[24] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[25] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[26] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[27] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[28] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[29] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[30] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[31] has unsafe behavior File: D:/rooth/fpga/rtl/core/alu_core.v Line: 49
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/rtl/core/if_ex.v Line: 88
-Info (13000): Registers with preset signals will power-up high File: D:/rooth/fpga/rtl/core/if_as.v Line: 72
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[0] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_four_o has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 41
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[28] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[29] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[30] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[31] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[1] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[2] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[3] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[7] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[6] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[5] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[4] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[27] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[26] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[25] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[24] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[23] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[22] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[21] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[20] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[19] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[18] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[17] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[16] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[15] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[14] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[13] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[12] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[11] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[10] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[9] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|flow_ctrl:u_flow_ctrl_0|next_pc_o[8] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/flow_ctrl.v Line: 57
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|clinet:u_clinet_0|hold_flag_o File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/clinet.v Line: 47
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[32] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[33] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[34] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[35] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[36] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[37] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[38] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[39] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[40] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[41] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[42] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[43] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[44] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[45] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[46] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[47] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[48] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[49] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[0] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[1] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[2] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[3] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[4] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[5] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[6] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[7] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[8] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[9] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[10] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[11] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[12] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[13] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[14] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[15] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[16] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[17] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[50] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[51] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[52] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[53] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[54] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[55] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[56] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[57] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[58] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[59] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[60] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[61] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[62] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[0] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[63] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[18] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[19] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[20] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[21] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[22] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[23] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[24] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[25] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[26] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[27] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[28] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[29] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[30] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Warning (13012): Latch rooth:u_rooth_0|alu_core:u_alu_core_0|extends_reg[31] has unsafe behavior File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/alu_core.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal rooth:u_rooth_0|if_ex:u_if_ex_0|alu_op_o[3] File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_ex.v Line: 88
+Info (13000): Registers with preset signals will power-up high File: D:/rooth/fpga/altera/EP4CE10F17C8/rtl/core/if_as.v Line: 72
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 7 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/rooth/fpga/altera/EP4CE10F17C8/output_files/rooth.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "uart_debug_pin" File: D:/rooth/fpga/rtl/soc/rooth_soc.v Line: 39
-Info (21057): Implemented 10251 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
+Info (21057): Implemented 10250 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
     Info (21059): Implemented 8 output pins
     Info (21060): Implemented 16 bidirectional pins
     Info (21061): Implemented 10146 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 8 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 250 warnings
-    Info: Peak virtual memory: 4875 megabytes
-    Info: Processing ended: Sun Feb 26 15:02:06 2023
-    Info: Elapsed time: 00:00:32
-    Info: Total CPU time (on all processors): 00:00:41
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 249 warnings
+    Info: Peak virtual memory: 4874 megabytes
+    Info: Processing ended: Thu Mar 02 17:45:57 2023
+    Info: Elapsed time: 00:00:37
+    Info: Total CPU time (on all processors): 00:00:34
 
 
 +------------------------------------------+
