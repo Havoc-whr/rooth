@@ -22,7 +22,7 @@ module pc_reg (
     output reg  [`CPU_WIDTH-1:0]    curr_pc_o   // current pc addr
 );
 
-always @ (posedge clk or negedge rst_n) begin
+always @ (posedge clk) begin
     if(!rst_n)
         curr_pc_o <= `CPU_WIDTH'b0;
     else begin

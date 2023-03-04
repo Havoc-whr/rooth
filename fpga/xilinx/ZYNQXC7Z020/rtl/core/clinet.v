@@ -92,7 +92,7 @@ always @ (*) begin
 end
 
 // 写CSR寄存器状态切换
-always @ (posedge clk or negedge rst_n) begin
+always @ (posedge clk) begin
     if (~rst_n) begin
         csr_state <= S_CSR_IDLE;
         cause <= `CPU_WIDTH'b0;
@@ -163,7 +163,7 @@ always @ (posedge clk or negedge rst_n) begin
 end
 
 // 发出中断信号前，先写几个CSR寄存器
-always @ (posedge clk or negedge rst_n) begin
+always @ (posedge clk) begin
     if (~rst_n) begin
         we_o <= 1'b0;
         waddr_o <= `CSR_ADDR_WIDTH'b0;
@@ -204,7 +204,7 @@ always @ (posedge clk or negedge rst_n) begin
 end
 
 // 发出中断信号给ex模块
-always @ (posedge clk or negedge rst_n) begin
+always @ (posedge clk) begin
     if (~rst_n) begin
         int_assert_o <= 1'b0;
         int_addr_o <= `CPU_WIDTH'b0;

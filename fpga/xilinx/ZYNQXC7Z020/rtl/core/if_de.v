@@ -35,7 +35,7 @@ assign inst_o = (flow_flag == `FLOW_WORK) ? inst_i :
 				(flow_flag == `FLOW_REFRESH) ? `CPU_WIDTH'b0 : `CPU_WIDTH'b0;
 
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(!rst_n) begin
 			flow_flag <= `FLOW_REFRESH;
 			pc_adder_o <= `CPU_WIDTH'b0;

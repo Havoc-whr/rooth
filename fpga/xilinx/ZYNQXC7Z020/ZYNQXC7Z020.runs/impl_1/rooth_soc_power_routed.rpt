@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Fri Mar  3 01:06:40 2023
+| Date             : Sat Mar  4 19:47:40 2023
 | Host             : Z2-R running 64-bit major release  (build 9200)
 | Command          : report_power -file rooth_soc_power_routed.rpt -pb rooth_soc_power_summary_routed.pb -rpx rooth_soc_power_routed.rpx
 | Design           : rooth_soc
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.234        |
+| Total On-Chip Power (W)  | 0.292        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.126        |
-| Device Static (W)        | 0.108        |
+| Dynamic (W)              | 0.182        |
+| Device Static (W)        | 0.110        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 82.3         |
-| Junction Temperature (C) | 27.7         |
+| Max Ambient (C)          | 81.6         |
+| Junction Temperature (C) | 28.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,20 +53,20 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.006 |        5 |       --- |             --- |
-| Slice Logic    |     0.004 |    10405 |       --- |             --- |
-|   LUT as Logic |     0.004 |     5330 |     53200 |           10.02 |
+| Slice Logic    |     0.004 |    10468 |       --- |             --- |
+|   LUT as Logic |     0.003 |     5331 |     53200 |           10.02 |
 |   CARRY4       |    <0.001 |      224 |     13300 |            1.68 |
-|   Register     |    <0.001 |     3355 |    106400 |            3.15 |
+|   Register     |    <0.001 |     3358 |    106400 |            3.16 |
 |   BUFG         |    <0.001 |        4 |        32 |           12.50 |
 |   F7/F8 Muxes  |    <0.001 |      641 |     53200 |            1.20 |
-|   Others       |     0.000 |       76 |       --- |             --- |
-| Signals        |     0.006 |     7995 |       --- |             --- |
-| Block RAM      |     0.008 |     11.5 |       140 |            8.21 |
-| PLL            |     0.100 |        1 |         4 |           25.00 |
+|   Others       |     0.000 |      110 |       --- |             --- |
+| Signals        |     0.005 |     8102 |       --- |             --- |
+| Block RAM      |     0.005 |       22 |       140 |           15.71 |
+| PLL            |     0.160 |        1 |         4 |           25.00 |
 | DSPs           |    <0.001 |        4 |       220 |            1.82 |
-| I/O            |     0.001 |       31 |       125 |           24.80 |
-| Static Power   |     0.108 |          |           |                 |
-| Total          |     0.234 |          |           |                 |
+| I/O            |     0.002 |       31 |       125 |           24.80 |
+| Static Power   |     0.110 |          |           |                 |
+| Total          |     0.292 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,8 +76,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.040 |       0.032 |      0.008 |
-| Vccaux    |       1.800 |     0.062 |       0.051 |      0.011 |
+| Vccint    |       1.000 |     0.047 |       0.039 |      0.008 |
+| Vccaux    |       1.800 |     0.089 |       0.078 |      0.011 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -85,11 +85,11 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |
+| Vccbram   |       1.000 |     0.002 |       0.000 |      0.001 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.017 |       0.000 |      0.017 |
+| Vccpint   |       1.000 |     0.018 |       0.000 |      0.018 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -154,21 +154,21 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| rooth_soc              |     0.126 |
-|   clk_pll_inst         |     0.100 |
-|     inst               |     0.100 |
-|   data_mem_0           |     0.004 |
-|     U0                 |     0.004 |
-|       inst_blk_mem_gen |     0.004 |
-|   inst_mem_0           |     0.005 |
-|     U0                 |     0.005 |
-|       inst_blk_mem_gen |     0.005 |
+| rooth_soc              |     0.182 |
+|   clk_pll_inst         |     0.161 |
+|     inst               |     0.161 |
+|   data_mem_0           |     0.002 |
+|     U0                 |     0.002 |
+|       inst_blk_mem_gen |     0.002 |
+|   inst_mem_0           |     0.003 |
+|     U0                 |     0.003 |
+|       inst_blk_mem_gen |     0.003 |
 |   u_jtag_top           |     0.001 |
 |     u_jtag_dm          |     0.001 |
-|   u_rooth_0            |     0.013 |
+|   u_rooth_0            |     0.012 |
 |     u_div_0            |     0.001 |
 |     u_if_as_0          |     0.002 |
-|     u_if_ex_0          |     0.003 |
+|     u_if_ex_0          |     0.002 |
 |     u_if_wb_0          |     0.001 |
 |     u_regs_file_0      |     0.002 |
 +------------------------+-----------+

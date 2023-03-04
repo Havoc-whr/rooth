@@ -3,6 +3,8 @@ create_clock -period 20.000 -name refer_clk -waveform {0.000 10.000} -add [get_p
 #create_clock -period 20.000 -name clk -waveform {0.000 10.000} [get_nets clk]
 #create_clock -period 10.000 -name clk_double -waveform {0.000 5.000} [get_nets clk_double]
 
+#create_clock -name jtag_clk_pin -period 300 [get_ports {jtag_TCK}]
+
 set_property PACKAGE_PIN M20 [get_ports refer_rst_n]
 set_property IOSTANDARD LVCMOS33 [get_ports refer_rst_n]
 
@@ -72,3 +74,7 @@ set_property PACKAGE_PIN Y14 [get_ports {gpio[15]}]
 set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 set_property BITSTREAM.GENERAL.COMPRESS true [current_design]
+
+set_property SLEW FAST [get_ports spi_clk]
+set_property SLEW FAST [get_ports spi_mosi]
+set_property SLEW FAST [get_ports spi_ss]

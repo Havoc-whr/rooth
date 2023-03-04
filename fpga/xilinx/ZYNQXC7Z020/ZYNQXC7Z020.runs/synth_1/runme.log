@@ -15,122 +15,90 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-2
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 436 
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:60]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:61]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:62]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:47]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:48]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:49]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:51]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:52]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:54]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:55]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:56]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:72]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:73]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:74]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:75]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:76]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:77]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:78]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:79]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:80]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:81]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:82]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:83]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:84]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:85]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:86]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:87]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:90]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:91]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:92]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:93]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_top with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_top.v:46]
-WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_top with formal parameter declaration list [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_top.v:47]
+INFO: Helper process launched with PID 13116 
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:60]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:61]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:62]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:47]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:48]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:49]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:51]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:52]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:54]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:55]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:56]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:72]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:73]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:74]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:75]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:76]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:77]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:78]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:79]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:80]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:81]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:82]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:83]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:84]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:85]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:86]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:87]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:90]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:91]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:92]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:93]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_top with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_top.v:46]
+WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_top with formal parameter declaration list [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_top.v:47]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1018.371 ; gain = 251.445
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1018.445 ; gain = 250.996
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'rooth_soc' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:35]
-INFO: [Synth 8-6157] synthesizing module 'clk_pll' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/clk_pll_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_pll' (1#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/clk_pll_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'rooth' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/rooth.v:18]
-INFO: [Synth 8-6157] synthesizing module 'flow_ctrl' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/flow_ctrl.v:17]
-INFO: [Synth 8-6155] done synthesizing module 'flow_ctrl' (2#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/flow_ctrl.v:17]
-INFO: [Synth 8-6157] synthesizing module 'pc_reg' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/pc_reg.v:15]
-INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (3#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/pc_reg.v:15]
-INFO: [Synth 8-6157] synthesizing module 'if_de' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/if_de.v:18]
-INFO: [Synth 8-6155] done synthesizing module 'if_de' (4#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/if_de.v:18]
-INFO: [Synth 8-6157] synthesizing module 'decode' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/decode.v:16]
-INFO: [Synth 8-226] default block is never used [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/decode.v:71]
-INFO: [Synth 8-226] default block is never used [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/decode.v:93]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/decode.v:175]
-INFO: [Synth 8-6155] done synthesizing module 'decode' (5#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/decode.v:16]
-INFO: [Synth 8-6157] synthesizing module 'imm_gen' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/imm_gen.v:16]
-INFO: [Synth 8-6155] done synthesizing module 'imm_gen' (6#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/imm_gen.v:16]
-INFO: [Synth 8-6157] synthesizing module 'if_ex' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/if_ex.v:17]
-INFO: [Synth 8-6155] done synthesizing module 'if_ex' (7#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/if_ex.v:17]
-INFO: [Synth 8-6157] synthesizing module 'mux_alu' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/mux_alu.v:16]
-INFO: [Synth 8-6155] done synthesizing module 'mux_alu' (8#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/mux_alu.v:16]
-INFO: [Synth 8-6157] synthesizing module 'alu_core' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:16]
-INFO: [Synth 8-6155] done synthesizing module 'alu_core' (9#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:16]
-INFO: [Synth 8-6157] synthesizing module 'div' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/div.v:22]
+INFO: [Synth 8-6157] synthesizing module 'rooth_soc' [D:/Vivado_prj/ZYNQXC7Z020/rtl/soc/rooth_soc.v:35]
+INFO: [Synth 8-6157] synthesizing module 'clk_pll' [D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-6468-Z2-R/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_pll' (1#1) [D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-6468-Z2-R/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'rooth' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/rooth.v:18]
+INFO: [Synth 8-6157] synthesizing module 'flow_ctrl' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/flow_ctrl.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'flow_ctrl' (2#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/flow_ctrl.v:17]
+INFO: [Synth 8-6157] synthesizing module 'pc_reg' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/pc_reg.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (3#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/pc_reg.v:15]
+INFO: [Synth 8-6157] synthesizing module 'if_de' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/if_de.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'if_de' (4#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/if_de.v:18]
+INFO: [Synth 8-6157] synthesizing module 'decode' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/decode.v:16]
+INFO: [Synth 8-226] default block is never used [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/decode.v:71]
+INFO: [Synth 8-226] default block is never used [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/decode.v:93]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/decode.v:175]
+INFO: [Synth 8-6155] done synthesizing module 'decode' (5#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/decode.v:16]
+INFO: [Synth 8-6157] synthesizing module 'imm_gen' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/imm_gen.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'imm_gen' (6#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/imm_gen.v:16]
+INFO: [Synth 8-6157] synthesizing module 'if_ex' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/if_ex.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'if_ex' (7#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/if_ex.v:17]
+INFO: [Synth 8-6157] synthesizing module 'mux_alu' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/mux_alu.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'mux_alu' (8#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/mux_alu.v:16]
+INFO: [Synth 8-6157] synthesizing module 'alu_core' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/alu_core.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'alu_core' (9#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/alu_core.v:16]
+INFO: [Synth 8-6157] synthesizing module 'div' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/div.v:22]
 	Parameter STATE_IDLE bound to: 4'b0001 
 	Parameter STATE_START bound to: 4'b0010 
 	Parameter STATE_CALC bound to: 4'b0100 
 	Parameter STATE_END bound to: 4'b1000 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/div.v:85]
-INFO: [Synth 8-6155] done synthesizing module 'div' (10#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/div.v:22]
-INFO: [Synth 8-6157] synthesizing module 'if_as' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/if_as.v:17]
-INFO: [Synth 8-6155] done synthesizing module 'if_as' (11#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/if_as.v:17]
-INFO: [Synth 8-6157] synthesizing module 'alu_res_ctrl' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:16]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:75]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:107]
-INFO: [Synth 8-6155] done synthesizing module 'alu_res_ctrl' (12#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:16]
-INFO: [Synth 8-6157] synthesizing module 'if_wb' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/if_wb.v:17]
-INFO: [Synth 8-6155] done synthesizing module 'if_wb' (13#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/if_wb.v:17]
-INFO: [Synth 8-6157] synthesizing module 'reg_clash_fb' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/reg_clash_fb.v:16]
-INFO: [Synth 8-6155] done synthesizing module 'reg_clash_fb' (14#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/reg_clash_fb.v:16]
-INFO: [Synth 8-6157] synthesizing module 'regs_file' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:16]
-WARNING: [Synth 8-5788] Register register_reg[0] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[1] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[2] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[3] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[4] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[5] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[6] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[7] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[8] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[9] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[10] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[11] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[12] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[13] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[14] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[15] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[16] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[17] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[18] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[19] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[20] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[21] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[22] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[23] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[24] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[25] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[26] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[27] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[28] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[29] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[30] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-WARNING: [Synth 8-5788] Register register_reg[31] in module regs_file is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:42]
-INFO: [Synth 8-6155] done synthesizing module 'regs_file' (15#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/regs_file.v:16]
-INFO: [Synth 8-6157] synthesizing module 'csr_reg' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/csr_reg.v:16]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/csr_reg.v:67]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/csr_reg.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'csr_reg' (16#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/csr_reg.v:16]
-INFO: [Synth 8-6157] synthesizing module 'clinet' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/clinet.v:15]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/div.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'div' (10#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/div.v:22]
+INFO: [Synth 8-6157] synthesizing module 'if_as' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/if_as.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'if_as' (11#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/if_as.v:17]
+INFO: [Synth 8-6157] synthesizing module 'alu_res_ctrl' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:16]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:75]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:107]
+INFO: [Synth 8-6155] done synthesizing module 'alu_res_ctrl' (12#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:16]
+INFO: [Synth 8-6157] synthesizing module 'if_wb' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/if_wb.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'if_wb' (13#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/if_wb.v:17]
+INFO: [Synth 8-6157] synthesizing module 'reg_clash_fb' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/reg_clash_fb.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'reg_clash_fb' (14#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/reg_clash_fb.v:16]
+INFO: [Synth 8-6157] synthesizing module 'regs_file' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/regs_file.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'regs_file' (15#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/regs_file.v:16]
+INFO: [Synth 8-6157] synthesizing module 'csr_reg' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/csr_reg.v:16]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/csr_reg.v:67]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/csr_reg.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'csr_reg' (16#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/csr_reg.v:16]
+INFO: [Synth 8-6157] synthesizing module 'clinet' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/clinet.v:15]
 	Parameter S_INT_IDLE bound to: 4'b0001 
 	Parameter S_INT_SYNC_ASSERT bound to: 4'b0010 
 	Parameter S_INT_ASYNC_ASSERT bound to: 4'b0100 
@@ -140,9 +108,9 @@ INFO: [Synth 8-6157] synthesizing module 'clinet' [D:/rooth/fpga/xilinx/ZYNQXC7Z
 	Parameter S_CSR_MEPC bound to: 5'b00100 
 	Parameter S_CSR_MSTATUS_MRET bound to: 5'b01000 
 	Parameter S_CSR_MCAUSE bound to: 5'b10000 
-INFO: [Synth 8-6155] done synthesizing module 'clinet' (17#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/clinet.v:15]
-INFO: [Synth 8-6155] done synthesizing module 'rooth' (18#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/rooth.v:18]
-INFO: [Synth 8-6157] synthesizing module 'rib' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/bus/rib.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'clinet' (17#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/clinet.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'rooth' (18#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/rooth.v:18]
+INFO: [Synth 8-6157] synthesizing module 'rib' [D:/Vivado_prj/ZYNQXC7Z020/rtl/bus/rib.v:21]
 	Parameter slave_0 bound to: 4'b0000 
 	Parameter slave_1 bound to: 4'b0001 
 	Parameter slave_2 bound to: 4'b0010 
@@ -153,21 +121,21 @@ INFO: [Synth 8-6157] synthesizing module 'rib' [D:/rooth/fpga/xilinx/ZYNQXC7Z020
 	Parameter grant1 bound to: 2'b01 
 	Parameter grant2 bound to: 2'b10 
 	Parameter grant3 bound to: 2'b11 
-INFO: [Synth 8-226] default block is never used [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/bus/rib.v:161]
-INFO: [Synth 8-6155] done synthesizing module 'rib' (19#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/bus/rib.v:21]
-INFO: [Synth 8-6157] synthesizing module 'inst_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/inst_mem_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'inst_mem' (20#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/inst_mem_stub.v:6]
-WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (13) of module 'inst_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:245]
-INFO: [Synth 8-6157] synthesizing module 'data_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/data_mem_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'data_mem' (21#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-8640-Z2-R/realtime/data_mem_stub.v:6]
-WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (12) of module 'data_mem' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:255]
-INFO: [Synth 8-6157] synthesizing module 'timer' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/timer.v:21]
+INFO: [Synth 8-226] default block is never used [D:/Vivado_prj/ZYNQXC7Z020/rtl/bus/rib.v:161]
+INFO: [Synth 8-6155] done synthesizing module 'rib' (19#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/bus/rib.v:21]
+INFO: [Synth 8-6157] synthesizing module 'inst_mem' [D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-6468-Z2-R/realtime/inst_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'inst_mem' (20#1) [D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-6468-Z2-R/realtime/inst_mem_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'inst_mem' [D:/Vivado_prj/ZYNQXC7Z020/rtl/soc/rooth_soc.v:244]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-6468-Z2-R/realtime/data_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (21#1) [D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-6468-Z2-R/realtime/data_mem_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (13) of module 'data_mem' [D:/Vivado_prj/ZYNQXC7Z020/rtl/soc/rooth_soc.v:255]
+INFO: [Synth 8-6157] synthesizing module 'timer' [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/timer.v:21]
 	Parameter REG_CTRL bound to: 4'b0000 
 	Parameter REG_COUNT bound to: 4'b0100 
 	Parameter REG_VALUE bound to: 4'b1000 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/timer.v:79]
-INFO: [Synth 8-6155] done synthesizing module 'timer' (22#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/timer.v:21]
-INFO: [Synth 8-6157] synthesizing module 'uart' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/uart.v:19]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/timer.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'timer' (22#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/timer.v:21]
+INFO: [Synth 8-6157] synthesizing module 'uart' [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/uart.v:19]
 	Parameter BAUD_115200 bound to: 440 - type: integer 
 	Parameter S_IDLE bound to: 4'b0001 
 	Parameter S_START bound to: 4'b0010 
@@ -178,28 +146,28 @@ INFO: [Synth 8-6157] synthesizing module 'uart' [D:/rooth/fpga/xilinx/ZYNQXC7Z02
 	Parameter UART_BAUD bound to: 8'b00001000 
 	Parameter UART_TXDATA bound to: 8'b00001100 
 	Parameter UART_RXDATA bound to: 8'b00010000 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/uart.v:102]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/uart.v:183]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/uart.v:307]
-INFO: [Synth 8-6155] done synthesizing module 'uart' (23#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/uart.v:19]
-INFO: [Synth 8-6157] synthesizing module 'gpio' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/gpio.v:19]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/uart.v:102]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/uart.v:183]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/uart.v:307]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (23#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/uart.v:19]
+INFO: [Synth 8-6157] synthesizing module 'gpio' [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/gpio.v:19]
 	Parameter GPIO_CTRL bound to: 4'b0000 
 	Parameter GPIO_DATA bound to: 4'b0100 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/gpio.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'gpio' (24#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/gpio.v:19]
-INFO: [Synth 8-6157] synthesizing module 'spi' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/spi.v:19]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/gpio.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'gpio' (24#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/gpio.v:19]
+INFO: [Synth 8-6157] synthesizing module 'spi' [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/spi.v:19]
 	Parameter SPI_CTRL bound to: 4'b0000 
 	Parameter SPI_DATA bound to: 4'b0100 
 	Parameter SPI_STATUS bound to: 4'b1000 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/spi.v:140]
-INFO: [Synth 8-6155] done synthesizing module 'spi' (25#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/perips/spi.v:19]
-INFO: [Synth 8-6157] synthesizing module 'jtag_top' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_top.v:18]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/spi.v:140]
+INFO: [Synth 8-6155] done synthesizing module 'spi' (25#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/spi.v:19]
+INFO: [Synth 8-6157] synthesizing module 'jtag_top' [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_top.v:18]
 	Parameter DMI_ADDR_BITS bound to: 6 - type: integer 
 	Parameter DMI_DATA_BITS bound to: 32 - type: integer 
 	Parameter DMI_OP_BITS bound to: 2 - type: integer 
 	Parameter DM_RESP_BITS bound to: 40 - type: integer 
 	Parameter DTM_REQ_BITS bound to: 40 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'jtag_driver' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:23]
+INFO: [Synth 8-6157] synthesizing module 'jtag_driver' [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:23]
 	Parameter DMI_ADDR_BITS bound to: 6 - type: integer 
 	Parameter DMI_DATA_BITS bound to: 32 - type: integer 
 	Parameter DMI_OP_BITS bound to: 2 - type: integer 
@@ -231,22 +199,22 @@ INFO: [Synth 8-6157] synthesizing module 'jtag_driver' [D:/rooth/fpga/xilinx/ZYN
 	Parameter REG_IDCODE bound to: 5'b00001 
 	Parameter REG_DMI bound to: 5'b10001 
 	Parameter REG_DTMCS bound to: 5'b10000 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:162]
-INFO: [Synth 8-6157] synthesizing module 'full_handshake_tx' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/full_handshake_tx.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:162]
+INFO: [Synth 8-6157] synthesizing module 'full_handshake_tx' [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/full_handshake_tx.v:23]
 	Parameter DW bound to: 40 - type: integer 
 	Parameter STATE_IDLE bound to: 3'b001 
 	Parameter STATE_ASSERT bound to: 3'b010 
 	Parameter STATE_DEASSERT bound to: 3'b100 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/full_handshake_tx.v:114]
-INFO: [Synth 8-6155] done synthesizing module 'full_handshake_tx' (26#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/full_handshake_tx.v:23]
-INFO: [Synth 8-6157] synthesizing module 'full_handshake_rx' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/full_handshake_rx.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/full_handshake_tx.v:114]
+INFO: [Synth 8-6155] done synthesizing module 'full_handshake_tx' (26#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/full_handshake_tx.v:23]
+INFO: [Synth 8-6157] synthesizing module 'full_handshake_rx' [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/full_handshake_rx.v:23]
 	Parameter DW bound to: 40 - type: integer 
 	Parameter STATE_IDLE bound to: 2'b01 
 	Parameter STATE_DEASSERT bound to: 2'b10 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/full_handshake_rx.v:103]
-INFO: [Synth 8-6155] done synthesizing module 'full_handshake_rx' (27#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/full_handshake_rx.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'jtag_driver' (28#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:23]
-INFO: [Synth 8-6157] synthesizing module 'jtag_dm' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:27]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/full_handshake_rx.v:103]
+INFO: [Synth 8-6155] done synthesizing module 'full_handshake_rx' (27#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/full_handshake_rx.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'jtag_driver' (28#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_driver.v:23]
+INFO: [Synth 8-6157] synthesizing module 'jtag_dm' [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:27]
 	Parameter DMI_ADDR_BITS bound to: 6 - type: integer 
 	Parameter DMI_DATA_BITS bound to: 32 - type: integer 
 	Parameter DMI_OP_BITS bound to: 2 - type: integer 
@@ -265,17 +233,17 @@ INFO: [Synth 8-6157] synthesizing module 'jtag_dm' [D:/rooth/fpga/xilinx/ZYNQXC7
 	Parameter COMMAND bound to: 6'b010111 
 	Parameter DPC bound to: 16'b0000011110110001 
 	Parameter OP_SUCC bound to: 2'b00 
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:204]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:161]
-WARNING: [Synth 8-6014] Unused sequential element sbdata0_reg was removed.  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:150]
-WARNING: [Synth 8-6014] Unused sequential element command_reg was removed.  [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:151]
-INFO: [Synth 8-6155] done synthesizing module 'jtag_dm' (29#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:27]
-INFO: [Synth 8-6155] done synthesizing module 'jtag_top' (30#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_top.v:18]
-WARNING: [Synth 8-3848] Net m3_addr_i in module/entity rooth_soc does not have driver. [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:80]
-WARNING: [Synth 8-3848] Net m3_data_i in module/entity rooth_soc does not have driver. [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:81]
-WARNING: [Synth 8-3848] Net m3_req_i in module/entity rooth_soc does not have driver. [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:83]
-WARNING: [Synth 8-3848] Net m3_we_i in module/entity rooth_soc does not have driver. [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:84]
-INFO: [Synth 8-6155] done synthesizing module 'rooth_soc' (31#1) [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:35]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:204]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:161]
+WARNING: [Synth 8-6014] Unused sequential element sbdata0_reg was removed.  [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:150]
+WARNING: [Synth 8-6014] Unused sequential element command_reg was removed.  [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:151]
+INFO: [Synth 8-6155] done synthesizing module 'jtag_dm' (29#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'jtag_top' (30#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/jtag/jtag_top.v:18]
+WARNING: [Synth 8-3848] Net m3_addr_i in module/entity rooth_soc does not have driver. [D:/Vivado_prj/ZYNQXC7Z020/rtl/soc/rooth_soc.v:80]
+WARNING: [Synth 8-3848] Net m3_data_i in module/entity rooth_soc does not have driver. [D:/Vivado_prj/ZYNQXC7Z020/rtl/soc/rooth_soc.v:81]
+WARNING: [Synth 8-3848] Net m3_req_i in module/entity rooth_soc does not have driver. [D:/Vivado_prj/ZYNQXC7Z020/rtl/soc/rooth_soc.v:83]
+WARNING: [Synth 8-3848] Net m3_we_i in module/entity rooth_soc does not have driver. [D:/Vivado_prj/ZYNQXC7Z020/rtl/soc/rooth_soc.v:84]
+INFO: [Synth 8-6155] done synthesizing module 'rooth_soc' (31#1) [D:/Vivado_prj/ZYNQXC7Z020/rtl/soc/rooth_soc.v:35]
 WARNING: [Synth 8-3331] design spi has unconnected port addr_i[31]
 WARNING: [Synth 8-3331] design spi has unconnected port addr_i[30]
 WARNING: [Synth 8-3331] design spi has unconnected port addr_i[29]
@@ -378,7 +346,7 @@ WARNING: [Synth 8-3331] design timer has unconnected port addr_i[13]
 WARNING: [Synth 8-3331] design timer has unconnected port addr_i[12]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1101.484 ; gain = 334.559
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1103.336 ; gain = 335.887
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -391,62 +359,64 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1101.484 ; gain = 334.559
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1103.336 ; gain = 335.887
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1101.484 ; gain = 334.559
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1103.336 ; gain = 335.887
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.150 . Memory (MB): peak = 1101.484 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.197 . Memory (MB): peak = 1103.336 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem/inst_mem_in_context.xdc] for cell 'inst_mem_0'
-Finished Parsing XDC File [d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem/inst_mem_in_context.xdc] for cell 'inst_mem_0'
-Parsing XDC File [d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem/data_mem_in_context.xdc] for cell 'data_mem_0'
-Finished Parsing XDC File [d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem/data_mem_in_context.xdc] for cell 'data_mem_0'
-Parsing XDC File [d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc] for cell 'clk_pll_inst'
-Finished Parsing XDC File [d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc] for cell 'clk_pll_inst'
-Parsing XDC File [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc]
-WARNING: [Vivado 12-507] No nets matched 'jtag_TCK_IBUF'. [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc:43]
-Finished Parsing XDC File [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/rooth_soc_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/rooth_soc_propImpl.xdc].
+Parsing XDC File [d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc] for cell 'clk_pll_inst'
+Finished Parsing XDC File [d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc] for cell 'clk_pll_inst'
+Parsing XDC File [d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem/inst_mem_in_context.xdc] for cell 'inst_mem_0'
+Finished Parsing XDC File [d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem/inst_mem_in_context.xdc] for cell 'inst_mem_0'
+Parsing XDC File [d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem/data_mem_in_context.xdc] for cell 'data_mem_0'
+Finished Parsing XDC File [d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem/data_mem_in_context.xdc] for cell 'data_mem_0'
+Parsing XDC File [D:/Vivado_prj/ZYNQXC7Z020/rooth_xdc.xdc]
+WARNING: [Vivado 12-507] No nets matched 'jtag_TCK_IBUF'. [D:/Vivado_prj/ZYNQXC7Z020/rooth_xdc.xdc:45]
+Finished Parsing XDC File [D:/Vivado_prj/ZYNQXC7Z020/rooth_xdc.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/Vivado_prj/ZYNQXC7Z020/rooth_xdc.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/rooth_soc_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Vivado_prj/ZYNQXC7Z020/rooth_xdc.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/rooth_soc_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/rooth_soc_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1251.988 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1250.055 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1251.988 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1250.055 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1251.988 ; gain = 485.062
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1250.055 ; gain = 482.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1251.988 ; gain = 485.062
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1250.055 ; gain = 482.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for refer_clk. (constraint file  d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc, line 4).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for refer_clk. (constraint file  d:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for refer_clk. (constraint file  d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for refer_clk. (constraint file  d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll/clk_pll_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for clk_pll_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for inst_mem_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for data_mem_0. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for clk_pll_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 1251.988 ; gain = 485.062
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1250.055 ; gain = 482.605
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "jump_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5587] ROM size for "reg_wr_en_o" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5546] ROM "csr_wr_en_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5587] ROM size for "alu_res_op_o" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "extends_reg" is below threshold of ROM address width. It will be mapped to LUTs
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:45]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/alu_core.v:45]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'div'
 INFO: [Synth 8-802] inferred FSM for state register 'csr_state_reg' in module 'clinet'
 INFO: [Synth 8-5545] ROM "cause" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -454,9 +424,9 @@ INFO: [Synth 8-5546] ROM "waddr_o" won't be mapped to RAM because it is too spar
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_handshake_tx'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_handshake_rx'
 INFO: [Synth 8-802] inferred FSM for state register 'jtag_state_reg' in module 'jtag_driver'
-WARNING: [Synth 8-327] inferring latch for variable 'next_pc_o_reg' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/flow_ctrl.v:65]
-WARNING: [Synth 8-327] inferring latch for variable 'next_pc_four_o_reg' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/flow_ctrl.v:63]
-WARNING: [Synth 8-327] inferring latch for variable 'extends_reg_reg' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:45]
+WARNING: [Synth 8-327] inferring latch for variable 'next_pc_o_reg' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/flow_ctrl.v:65]
+WARNING: [Synth 8-327] inferring latch for variable 'next_pc_four_o_reg' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/flow_ctrl.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'extends_reg_reg' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/alu_core.v:45]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -467,7 +437,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'extends_reg_reg' [D:/rooth/
                STATE_END |                             1000 |                             1000
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'div'
-WARNING: [Synth 8-327] inferring latch for variable 'csr_wr_data_o_reg' [D:/rooth/fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:96]
+WARNING: [Synth 8-327] inferring latch for variable 'csr_wr_data_o_reg' [D:/Vivado_prj/ZYNQXC7Z020/rtl/core/alu_res_ctrl.v:96]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -518,7 +488,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'f
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'jtag_state_reg' using encoding 'one-hot' in module 'jtag_driver'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 1251.988 ; gain = 485.062
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1250.055 ; gain = 482.605
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -558,7 +528,7 @@ Detailed RTL Component Info :
 	   3 Input     40 Bit        Muxes := 3     
 	   2 Input     40 Bit        Muxes := 1     
 	   4 Input     32 Bit        Muxes := 36    
-	   2 Input     32 Bit        Muxes := 99    
+	   2 Input     32 Bit        Muxes := 98    
 	  16 Input     32 Bit        Muxes := 3     
 	   5 Input     32 Bit        Muxes := 10    
 	   3 Input     32 Bit        Muxes := 3     
@@ -603,14 +573,14 @@ Detailed RTL Component Info :
 	   4 Input      2 Bit        Muxes := 6     
 	  12 Input      2 Bit        Muxes := 2     
 	   5 Input      2 Bit        Muxes := 2     
-	   4 Input      1 Bit        Muxes := 55    
-	   2 Input      1 Bit        Muxes := 177   
+	   4 Input      1 Bit        Muxes := 56    
+	   2 Input      1 Bit        Muxes := 179   
 	   6 Input      1 Bit        Muxes := 3     
-	   5 Input      1 Bit        Muxes := 21    
 	  12 Input      1 Bit        Muxes := 2     
 	   7 Input      1 Bit        Muxes := 44    
 	  17 Input      1 Bit        Muxes := 1     
 	  16 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 20    
 	   3 Input      1 Bit        Muxes := 52    
 	   8 Input      1 Bit        Muxes := 8     
 	  10 Input      1 Bit        Muxes := 1     
@@ -646,9 +616,10 @@ Detailed RTL Component Info :
 +---Registers : 
 	               32 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
 	   4 Input     32 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
 Module if_de 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -753,7 +724,7 @@ Detailed RTL Component Info :
 	   3 Input     32 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 	   5 Input      1 Bit        Muxes := 1     
 	   3 Input      1 Bit        Muxes := 1     
 Module if_wb 
@@ -1080,16 +1051,16 @@ INFO: [Synth 8-3886] merging instance 'u_jtag_top/u_jtag_dm/dcsr_reg[29]' (FDCE)
 INFO: [Synth 8-3886] merging instance 'u_jtag_top/u_jtag_dm/dcsr_reg[30]' (FDCE) to 'u_jtag_top/u_jtag_dm/dcsr_reg[31]'
 INFO: [Synth 8-3886] merging instance 'u_jtag_top/u_jtag_dm/dcsr_reg[31]' (FDCE) to 'u_jtag_top/u_jtag_dm/dcsr_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_jtag_top/u_jtag_dm/tx/req_data_reg[0] )
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[2]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[31]'
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[4]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[5]'
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[5]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[6]'
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[6]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[7]'
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[7]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[8]'
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[8]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[9]'
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[9]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[10]'
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[10]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[11]'
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[11]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[12]'
-INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[12]' (FDCE) to 'u_rooth_0/u_clinet_0/cause_reg[13]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[2]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[31]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[4]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[5]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[5]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[6]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[6]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[7]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[7]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[8]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[8]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[9]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[9]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[10]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[10]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[11]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[11]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[12]'
+INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clinet_0/cause_reg[12]' (FDRE) to 'u_rooth_0/u_clinet_0/cause_reg[13]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_clinet_0/\cause_reg[30] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_div_0/\count_reg[31] )
@@ -1129,7 +1100,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uart_0/uart_status_reg[3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_spi_O/spi_status_reg[3] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:01:11 . Memory (MB): peak = 1251.988 ; gain = 485.062
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:16 . Memory (MB): peak = 1250.055 ; gain = 482.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1160,13 +1131,13 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'refer_clk'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:22 . Memory (MB): peak = 1251.988 ; gain = 485.062
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:14 ; elapsed = 00:01:27 . Memory (MB): peak = 1250.055 ; gain = 482.605
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:11 ; elapsed = 00:01:34 . Memory (MB): peak = 1376.148 ; gain = 609.223
+Finished Timing Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:01:40 . Memory (MB): peak = 1373.559 ; gain = 606.109
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1179,6 +1150,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][17] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][19] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][18] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][21] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][20] )
@@ -1188,13 +1160,16 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][24] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][27] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][19] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][29] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][30] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][28] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][8] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][12] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][15] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][14] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][31] )
@@ -1204,13 +1179,9 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][5] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][12] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\u_rooth_0/u_regs_file_0/register_reg[0][3] )
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:15 ; elapsed = 00:01:40 . Memory (MB): peak = 1463.625 ; gain = 696.699
+Finished Technology Mapping : Time (s): cpu = 00:01:32 ; elapsed = 00:01:47 . Memory (MB): peak = 1459.832 ; gain = 692.383
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1234,13 +1205,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:18 ; elapsed = 00:01:44 . Memory (MB): peak = 1468.379 ; gain = 701.453
+Finished IO Insertion : Time (s): cpu = 00:01:36 ; elapsed = 00:01:51 . Memory (MB): peak = 1464.527 ; gain = 697.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:18 ; elapsed = 00:01:44 . Memory (MB): peak = 1468.379 ; gain = 701.453
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:36 ; elapsed = 00:01:51 . Memory (MB): peak = 1464.527 ; gain = 697.078
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1259,25 +1230,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:37 ; elapsed = 00:01:52 . Memory (MB): peak = 1464.527 ; gain = 697.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:37 ; elapsed = 00:01:52 . Memory (MB): peak = 1464.527 ; gain = 697.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:37 ; elapsed = 00:01:52 . Memory (MB): peak = 1464.527 ; gain = 697.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:37 ; elapsed = 00:01:52 . Memory (MB): peak = 1464.527 ; gain = 697.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1303,17 +1274,17 @@ Report Cell Usage:
 |5     |CARRY4   |   224|
 |6     |DSP48E1  |     4|
 |7     |LUT1     |   404|
-|8     |LUT2     |   871|
-|9     |LUT3     |   378|
-|10    |LUT4     |   779|
-|11    |LUT5     |  1258|
-|12    |LUT6     |  2409|
+|8     |LUT2     |   874|
+|9     |LUT3     |   418|
+|10    |LUT4     |   753|
+|11    |LUT5     |  1257|
+|12    |LUT6     |  2384|
 |13    |MUXF7    |   450|
 |14    |MUXF8    |   191|
-|15    |FDCE     |  1752|
-|16    |FDPE     |    19|
-|17    |FDRE     |  1444|
-|18    |FDSE     |     8|
+|15    |FDCE     |   529|
+|16    |FDPE     |    11|
+|17    |FDRE     |  2668|
+|18    |FDSE     |    16|
 |19    |LD       |   129|
 |20    |IBUF     |     6|
 |21    |IOBUF    |    16|
@@ -1324,58 +1295,58 @@ Report Instance Areas:
 +------+---------------------+--------------------+------+
 |      |Instance             |Module              |Cells |
 +------+---------------------+--------------------+------+
-|1     |top                  |                    | 10421|
-|2     |  gpio_0             |gpio                |   117|
+|1     |top                  |                    | 10412|
+|2     |  gpio_0             |gpio                |   118|
 |3     |  timer_0            |timer               |   201|
-|4     |  u_jtag_top         |jtag_top            |  1295|
-|5     |    u_jtag_dm        |jtag_dm             |   896|
-|6     |      rx             |full_handshake_rx_0 |   455|
+|4     |  u_jtag_top         |jtag_top            |  1300|
+|5     |    u_jtag_dm        |jtag_dm             |   901|
+|6     |      rx             |full_handshake_rx_0 |   459|
 |7     |      tx             |full_handshake_tx_1 |    81|
 |8     |    u_jtag_driver    |jtag_driver         |   399|
 |9     |      rx             |full_handshake_rx   |    88|
 |10    |      tx             |full_handshake_tx   |    95|
-|11    |  u_rooth_0          |rooth               |  8282|
+|11    |  u_rooth_0          |rooth               |  8267|
 |12    |    u_alu_core_0     |alu_core            |   238|
-|13    |    u_alu_res_ctrl_0 |alu_res_ctrl        |    66|
-|14    |    u_clinet_0       |clinet              |   264|
+|13    |    u_alu_res_ctrl_0 |alu_res_ctrl        |    67|
+|14    |    u_clinet_0       |clinet              |   265|
 |15    |    u_csr_reg_0      |csr_reg             |   397|
 |16    |    u_div_0          |div                 |   737|
 |17    |    u_flow_ctrl_0    |flow_ctrl           |    72|
-|18    |    u_if_as_0        |if_as               |  1144|
+|18    |    u_if_as_0        |if_as               |  1136|
 |19    |    u_if_de_0        |if_de               |   328|
-|20    |    u_if_ex_0        |if_ex               |  1737|
-|21    |    u_if_wb_0        |if_wb               |   539|
+|20    |    u_if_ex_0        |if_ex               |  1728|
+|21    |    u_if_wb_0        |if_wb               |   538|
 |22    |    u_imm_gen_0      |imm_gen             |     6|
-|23    |    u_pc_reg_0       |pc_reg              |   413|
+|23    |    u_pc_reg_0       |pc_reg              |   414|
 |24    |    u_regs_file_0    |regs_file           |  2341|
 |25    |  u_spi_O            |spi                 |   171|
 |26    |  uart_0             |uart                |   254|
 +------+---------------------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:19 ; elapsed = 00:01:45 . Memory (MB): peak = 1468.379 ; gain = 701.453
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:37 ; elapsed = 00:01:52 . Memory (MB): peak = 1464.527 ; gain = 697.078
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 124 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:11 ; elapsed = 00:01:42 . Memory (MB): peak = 1468.379 ; gain = 550.949
-Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:46 . Memory (MB): peak = 1468.379 ; gain = 701.453
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:27 ; elapsed = 00:01:48 . Memory (MB): peak = 1464.527 ; gain = 550.359
+Synthesis Optimization Complete : Time (s): cpu = 00:01:37 ; elapsed = 00:01:53 . Memory (MB): peak = 1464.527 ; gain = 697.078
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.133 . Memory (MB): peak = 1468.379 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.182 . Memory (MB): peak = 1464.527 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1014 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1468.379 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1464.527 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 145 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
   LD => LDCE: 129 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-292 Infos, 180 Warnings, 0 Critical Warnings and 0 Errors encountered.
+292 Infos, 148 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:26 ; elapsed = 00:01:55 . Memory (MB): peak = 1468.379 ; gain = 997.719
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1468.379 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:45 ; elapsed = 00:02:02 . Memory (MB): peak = 1464.527 ; gain = 994.199
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1464.527 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/rooth_soc.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/rooth_soc.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file rooth_soc_utilization_synth.rpt -pb rooth_soc_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar  3 01:04:33 2023...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar  4 19:45:33 2023...

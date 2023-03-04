@@ -151,7 +151,6 @@ assign rst_n = refer_rst_n & locked_sig;
 clk_pll	clk_pll_inst (
 	.clk_in1 					( refer_clk 				),
 	.clk_out1 					( clk 						),
-	.clk_out2 					( clk_double 				),
 	.locked 					( locked_sig 				)
 );
 
@@ -244,7 +243,8 @@ inst_mem	inst_mem_0 (
 	.dina 					( s0_data_o 				),
 	.addra 				    ( {2'b0,s0_addr_o[`CPU_WIDTH-1:2]}),
 	.wea 					( s0_we_o 					),
-	.douta 					( s0_data_i 				)
+	.douta 					( s0_data_i 				),
+	.ena                    ( rst_n                     )
 );
 
 
@@ -253,7 +253,8 @@ data_mem	data_mem_0 (
 	.dina 					( s1_data_o 			    ),
 	.wea 					( s1_we_o 					),
 	.addra 				    ( {2'b0,s1_addr_o[`CPU_WIDTH-1:2]}),
-	.douta 					( s1_data_i 				)
+	.douta 					( s1_data_i 				),
+	.ena                    ( rst_n                     )
 );
 
 // timer模块例化
