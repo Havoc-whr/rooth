@@ -14,7 +14,6 @@ void delay()
 int main()
 {
     int cnt = 0;
-    int i,j;
     GPIO_REG(GPIO_CTRL) |= 0x2;  // gpio0输入模式
     GPIO_REG(GPIO_CTRL) |= 0x1 << 2;  // gpio1输出模式
     GPIO_REG(GPIO_CTRL) |= 0x1 << 4;  // gpio2输出模式

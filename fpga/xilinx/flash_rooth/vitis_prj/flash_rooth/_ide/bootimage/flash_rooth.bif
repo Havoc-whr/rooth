@@ -1,0 +1,6 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]D:/Vivado_prj/flash_rooth/vitis_prj/flash_rooth_wrapper/export/flash_rooth_wrapper/sw/flash_rooth_wrapper/boot/fsbl.elf
+	D:\Vivado_prj\flash_rooth\flash_rooth.runs\impl_1\flash_rooth_wrapper.bit
+}

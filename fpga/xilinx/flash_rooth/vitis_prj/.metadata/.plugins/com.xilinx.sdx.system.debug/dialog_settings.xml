@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="flash_rooth" key="programflash.hwplatform"/>
+	<item value="D:/Vivado_prj/flash_rooth/vitis_prj/flash_rooth_wrapper/export/flash_rooth_wrapper/sw/flash_rooth_wrapper/boot/fsbl.elf" key="flash_rooth-fsblFile"/>
+	<item value="qspi-x4-single" key="flash_rooth-flashType"/>
+	<item value="false" key="flash_rooth-verifyFlash"/>
+	<item value="false" key="flash_rooth-blankCheck"/>
+	<item value="" key="flash_rooth-offSet"/>
+	<item value="D:\Vivado_prj\flash_rooth\vitis_prj\flash_rooth\_ide\bootimage\BOOT.bin" key="flash_rooth-imgFile"/>
+	<item value="Auto Detect" key="flash_rooth-device"/>
+	<item value="Local" key="flash_rooth-target"/>
+</section>
