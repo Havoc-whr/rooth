@@ -66,7 +66,7 @@ module if_ex (
     output reg  [`WIDTH_RESCTRL-1:0]    alu_res_op_o
 );
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(!rst_n) begin
         pc_adder_o <= `CPU_WIDTH'b0;
         branch_o <= `WIDTH_BRANCH'b0;

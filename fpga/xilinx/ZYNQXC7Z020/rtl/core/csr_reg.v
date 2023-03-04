@@ -48,12 +48,12 @@ assign clint_csr_mtvec_o = mtvec;
 assign clint_csr_mepc_o = mepc;
 assign clint_csr_mstatus_o = mstatus;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(!rst_n) cycle <= `CPU_WIDTH*2'b0;
     else cycle <= cycle + 1'b1;
 end
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(!rst_n) begin
         mtvec <= `CPU_WIDTH'b0;
         mcause <= `CPU_WIDTH'b0;

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/inst_mem_synth_1'
+HD_PWD='D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/inst_mem_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

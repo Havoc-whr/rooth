@@ -38,7 +38,7 @@ module if_wb (
     output reg [`CPU_WIDTH-1:0]         pc_adder_o
 );
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(!rst_n) begin
         reg_wr_en_o <= 1'b0;
         reg_wr_adder_o <= `REG_ADDR_WIDTH'b0;

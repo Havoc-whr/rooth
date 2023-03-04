@@ -9,7 +9,7 @@
     <Object name="xc7z020_1" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
-      <Properties Property="PROGRAM.HW_BITSTREAM" value="D:/Vivado_prj/flash_rooth/flash_rooth.runs/impl_1/flash_rooth_wrapper.bit"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/rooth_soc.bit"/>
       <Properties Property="SLR.COUNT" value="1"/>
     </Object>
   </ObjectList>

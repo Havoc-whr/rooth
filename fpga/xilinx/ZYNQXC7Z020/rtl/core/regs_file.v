@@ -44,7 +44,7 @@ assign s11 = register[27];
 assign s10_o = s10[0];
 assign s11_o = s11[0];
 
-always  @(posedge clk or negedge rst_n) begin
+always  @(posedge clk) begin
     if(~rst_n) begin
     end
 	else begin

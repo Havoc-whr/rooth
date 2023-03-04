@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Mar  3 13:19:08 2023
+# Process ID: 9368
+# Current directory: D:/rooth/fpga/xilinx/ZYNQXC7Z020
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9864 D:\rooth\fpga\xilinx\ZYNQXC7Z020\ZYNQXC7Z020.xpr
+# Log file: D:/rooth/fpga/xilinx/ZYNQXC7Z020/vivado.log
+# Journal file: D:/rooth/fpga/xilinx/ZYNQXC7Z020\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.xpr
+update_compile_order -fileset sources_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {D:\Vivado_prj\flash_rooth\flash_rooth.runs\impl_1\flash_rooth_wrapper.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Vivado_prj/flash_rooth/flash_rooth.runs/impl_1/flash_rooth_wrapper.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+close_hw_manager
+close_project

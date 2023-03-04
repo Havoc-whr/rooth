@@ -52,7 +52,7 @@ module if_as (
 
 assign pr_acess_mem_flag_o = ((alu_res_op_i == `RESCTRL_MEM) || ((alu_res_op_i == `RESCTRL_REG) && (inst_i[6:0] == `INST_TYPE_IL))) ? 1'b1 : 1'b0;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(!rst_n) begin
         rs1_data_o <= `CPU_WIDTH'b0;
         rs2_data_o <= `CPU_WIDTH'b0;

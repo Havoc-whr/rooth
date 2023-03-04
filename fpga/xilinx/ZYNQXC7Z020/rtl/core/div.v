@@ -66,7 +66,7 @@ module div(
     wire[31:0] minuend_tmp = minuend_ge_divisor? minuend_sub_res[30:0]: minuend[30:0];
 
     // 状态机实现
-    always @ (posedge clk or negedge rst_n) begin
+    always @ (posedge clk) begin
         if (rst_n == 1'b0) begin
             state <= STATE_IDLE;
             ready_o <= 1'b0;

@@ -17,5 +17,5 @@ C_SRCS := \
 
 
 COMMON_DIR = ..
-TOOLCHAIN_DIR = ../../..
+TOOLCHAIN_DIR = ../..
 include ../common.mk
