@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1677930151">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1678025345">
   <File Type="PA-TCL" Name="rooth_soc.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="rooth_soc_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="rooth_soc_reports.tcl"/>

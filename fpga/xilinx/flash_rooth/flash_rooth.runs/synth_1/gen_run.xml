@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1677939644">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1678026393">
   <File Type="PA-TCL" Name="flash_rooth_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="flash_rooth_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="flash_rooth_wrapper_reports.tcl"/>
@@ -12,13 +12,6 @@
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/flash_rooth/flash_rooth.bd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/inst_mem/inst_mem.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -255,6 +248,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/program/spi_oled.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="flash_rooth_wrapper"/>
@@ -286,4 +285,5 @@
   <BlockFileSet Type="BlockSrcs" Name="flash_rooth_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="data_mem"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_pll"/>
+  <BlockFileSet Type="BlockSrcs" Name="inst_mem"/>
 </GenRun>

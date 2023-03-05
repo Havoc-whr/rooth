@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
--- Date        : Sat Mar  4 19:43:21 2023
+-- Date        : Sun Mar  5 21:46:53 2023
 -- Host        : Z2-R running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top inst_mem -prefix
+--               inst_mem_ inst_mem_stub.vhdl
 -- Design      : inst_mem
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-2

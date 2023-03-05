@@ -33,7 +33,8 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/Vivado_prj/flash_rooth/flash_rooth.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files D:/Vivado_prj/flash_rooth/program/demo.coe
-add_files d:/Vivado_prj/flash_rooth/program/spi_lcd.coe
+add_files D:/Vivado_prj/flash_rooth/program/spi_lcd.coe
+add_files d:/Vivado_prj/flash_rooth/program/spi_oled.coe
 read_verilog -library xil_defaultlib {
   D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/user/rtl/core/rooth_defines.v
   D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/user/rtl/core/alu_core.v
@@ -70,9 +71,6 @@ add_files D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/bd/flash_rooth/fl
 set_property used_in_implementation false [get_files -all d:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/bd/flash_rooth/ip/flash_rooth_processing_system7_0_0/flash_rooth_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/bd/flash_rooth/flash_rooth_ooc.xdc]
 
-read_ip -quiet D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/inst_mem/inst_mem.xci
-set_property used_in_implementation false [get_files -all d:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/inst_mem/inst_mem_ooc.xdc]
-
 read_ip -quiet D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/data_mem/data_mem.xci
 set_property used_in_implementation false [get_files -all d:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/data_mem/data_mem_ooc.xdc]
 
@@ -80,6 +78,9 @@ read_ip -quiet D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/clk_pll_1
 set_property used_in_implementation false [get_files -all d:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/clk_pll_1/clk_pll_board.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/clk_pll_1/clk_pll.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/clk_pll_1/clk_pll_ooc.xdc]
+
+read_ip -quiet D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/inst_mem/inst_mem.xci
+set_property used_in_implementation false [get_files -all d:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/inst_mem/inst_mem_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

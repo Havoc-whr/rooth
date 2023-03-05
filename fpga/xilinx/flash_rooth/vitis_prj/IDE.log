@@ -31,3 +31,14 @@
 22:33:31 INFO  : Invoking Bootgen: bootgen -image flash_rooth.bif -arch zynq -o D:/Vivado_prj/flash_rooth/vitis_prj/flash_rooth/_ide/bootimage/BOOT.bin -w on
 22:33:31 INFO  : Overwriting existing bif file D:/Vivado_prj/flash_rooth/vitis_prj/flash_rooth/_ide/bootimage/flash_rooth.bif
 22:33:33 INFO  : Bootgen command execution is done.
+22:22:45 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Vivado_prj\flash_rooth\vitis_prj\temp_xsdb_launch_script.tcl
+22:22:48 INFO  : XSCT server has started successfully.
+22:22:48 INFO  : Successfully done setting XSCT server connection channel  
+22:22:48 INFO  : plnx-install-location is set to ''
+22:22:48 INFO  : Successfully done setting workspace for the tool. 
+22:22:49 INFO  : Registering command handlers for Vitis TCF services
+22:22:49 INFO  : Successfully done query RDI_DATADIR 
+22:23:23 INFO  : Invoking Bootgen: bootgen -image flash_rooth.bif -arch zynq -o D:/Vivado_prj/flash_rooth/vitis_prj/flash_rooth/_ide/bootimage/BOOT.bin -w on
+22:23:25 INFO  : Bootgen command execution is done.
+22:33:38 INFO  : Invoking Bootgen: bootgen -image flash_rooth.bif -arch zynq -o D:/Vivado_prj/flash_rooth/vitis_prj/flash_rooth/_ide/bootimage/BOOT.bin -w on
+22:33:39 INFO  : Bootgen command execution is done.

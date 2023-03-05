@@ -19,15 +19,12 @@
 
 //-----------------OLED IIC端口定义----------------
 
-//#define OLED_SCLK_Clr() GPIO_WriteBit(GPIOF, GPIO_PIN_0, 0u) //GPIO_ResetBits(GPIOA,GPIO_Pin_5)//SCL
-//#define OLED_SCLK_Set() GPIO_WriteBit(GPIOF, GPIO_PIN_0, 1u) //GPIO_SetBits(GPIOA,GPIO_Pin_5)
-#define OLED_SCLK_Clr() GPIO_REG(GPIO_DATA) |= 0x2;  // GPIO1输出高
-#define OLED_SCLK_Set() GPIO_REG(GPIO_DATA) &= ~0x2;  // GPIO1输出低
+#define OLED_SCLK_Clr() GPIO_REG(GPIO_DATA) |= 0x8000;  // GPIO15输出高
+#define OLED_SCLK_Set() GPIO_REG(GPIO_DATA) &= ~0x8000;  // GPIO15输出低
 
-//#define OLED_SDIN_Clr() GPIO_WriteBit(GPIOF, GPIO_PIN_1, 0u) // GPIO_ResetBits(GPIOA,GPIO_Pin_7)//SDA
-//#define OLED_SDIN_Set() GPIO_WriteBit(GPIOF, GPIO_PIN_1, 1u) // GPIO_SetBits(GPIOA,GPIO_Pin_7)
-#define OLED_SDIN_Clr() GPIO_REG(GPIO_DATA) |= 0x4;  // GPIO2输出高
-#define OLED_SDIN_Set() GPIO_REG(GPIO_DATA) &= ~0x4;  // GPIO2输出低
+#define OLED_SDIN_Clr() GPIO_REG(GPIO_DATA) |= 0x4000;  // GPIO14输出高
+#define OLED_SDIN_Set() GPIO_REG(GPIO_DATA) &= ~0x4000;  // GPIO14输出低
+
 
 #define OLED_CMD  0	//写命令
 #define OLED_DATA 1	//写数据

@@ -79,9 +79,9 @@ set rc [catch {
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
   add_files D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/bd/flash_rooth/flash_rooth.bd
-  read_ip -quiet D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/inst_mem/inst_mem.xci
   read_ip -quiet D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/data_mem/data_mem.xci
   read_ip -quiet D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/clk_pll_1/clk_pll.xci
+  read_ip -quiet D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/ip/inst_mem/inst_mem.xci
   set_param project.isImplRun false
   read_xdc D:/Vivado_prj/flash_rooth/flash_rooth.srcs/sources_1/user/rooth_xdc.xdc
   set_param project.isImplRun true

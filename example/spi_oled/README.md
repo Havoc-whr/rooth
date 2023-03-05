@@ -1,0 +1,1 @@
+按照文件目录下的约束，ZYNQ_MINI_REVB开发板使用开发板的SPI的OLED屏幕运行恐龙小游戏demo

@@ -3,17 +3,18 @@ RISCV_ABI := ilp32
 RISCV_MCMODEL := medlow
 
 
-TARGET = spi_lcd
+TARGET = spi_oled
 
 
 #CFLAGS += -DSIMULATION
-#CFLAGS += -Os
+#CFLAGS += -O2
 #ASM_SRCS +=
 #LDFLAGS +=
 #INCLUDES += -I.
 
 C_SRCS := \
 	main.c \
+	./oled_drv/oled12864.c\
 
 
 COMMON_DIR = ..

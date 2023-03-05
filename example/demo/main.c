@@ -4,11 +4,11 @@
 #include "../include/gpio.h"
 #include "../include/utils.h"
 
-void delay()
+void delay(unsigned int ms)
 {
     int i,j;
-    for(i=0;i<600;i++)
-    for(j=0;j<1000;j++);
+    for(i=0;i<ms;i++)
+    for(j=0;j<2660;j++);
 }
 
 int main()
@@ -19,58 +19,26 @@ int main()
     GPIO_REG(GPIO_CTRL) |= 0x1 << 4;  // gpio2输出模式
     GPIO_REG(GPIO_CTRL) |= 0x1 << 6;  // gpio3输出模式
     GPIO_REG(GPIO_CTRL) |= 0x1 << 8;  // gpio4输出模式
-    while (1) {
-        for(;(cnt<4)&&(GPIO_REG(GPIO_DATA) & 0x1);cnt++)
+    while (1) 
+    {
+        if(!(GPIO_REG(GPIO_DATA) & 0x1))
         {
-            if(cnt == 3)
-            {
-                GPIO_REG(GPIO_DATA) &= 0x1;  // 拉低除GPIO0以外的IO
-                GPIO_REG(GPIO_DATA) |= 0x2;  // GPIO1输出高
-            }
-            else if(cnt == 2)
-            {
-                GPIO_REG(GPIO_DATA) &= 0x1;  // 拉低除GPIO0以外的IO
-                GPIO_REG(GPIO_DATA) |= 0x4;  // GPIO2输出高
-            }
-            else if(cnt == 1)
-            {
-                GPIO_REG(GPIO_DATA) &= 0x1;  // 拉低除GPIO0以外的IO
-                GPIO_REG(GPIO_DATA) |= 0x8;  // GPIO3输出高
-            }
-            else
-            {
-                GPIO_REG(GPIO_DATA) &= 0x1;  // 拉低除GPIO0以外的IO
-                GPIO_REG(GPIO_DATA) |= 0x10;  // GPIO4输出高
-            }
-            delay();
+            cnt++;
         }
-        for(;cnt<4&&(~(GPIO_REG(GPIO_DATA) & 0x1));cnt++)
+        else
         {
-            if(cnt == 0)
-            {
-                GPIO_REG(GPIO_DATA) &= 0x1;  // 拉低除GPIO0以外的IO
-                GPIO_REG(GPIO_DATA) |= 0x10; // GPIO4输出高
-            }
-            else if(cnt == 1)
-            {
-                GPIO_REG(GPIO_DATA) &= 0x1;  // 拉低除GPIO0以外的IO
-                GPIO_REG(GPIO_DATA) |= 0x2;  // GPIO1输出高
-            }
-            else if(cnt == 2)
-            {
-                GPIO_REG(GPIO_DATA) &= 0x1;  // 拉低除GPIO0以外的IO
-                GPIO_REG(GPIO_DATA) |= 0x4;  // GPIO2输出高
-            }
-            else
-            {
-                GPIO_REG(GPIO_DATA) &= 0x1;  // 拉低除GPIO0以外的IO
-                GPIO_REG(GPIO_DATA) |= 0x8;  // GPIO3输出高
-            }
-            delay();
+            cnt--;
         }
-        if(cnt>=4)
+        if(cnt>3)
         {
             cnt=0;
         }
+        if(cnt<0)
+        {
+            cnt=3;
+        }
+        GPIO_REG(GPIO_DATA) &= ~0x1f;  // 拉低全部LED_IO(1~4)
+        GPIO_REG(GPIO_DATA) |= (0x02 << cnt);
+        delay(1000);
     }
 }

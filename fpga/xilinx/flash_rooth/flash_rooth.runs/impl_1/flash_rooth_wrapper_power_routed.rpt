@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Sat Mar  4 22:25:52 2023
+| Date             : Sun Mar  5 22:31:56 2023
 | Host             : Z2-R running 64-bit major release  (build 9200)
 | Command          : report_power -file flash_rooth_wrapper_power_routed.rpt -pb flash_rooth_wrapper_power_summary_routed.pb -rpx flash_rooth_wrapper_power_routed.rpx
 | Design           : flash_rooth_wrapper
@@ -52,7 +52,7 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.006 |        5 |       --- |             --- |
+| Clocks         |     0.007 |        5 |       --- |             --- |
 | Slice Logic    |     0.003 |    10601 |       --- |             --- |
 |   LUT as Logic |     0.003 |     5360 |     53200 |           10.08 |
 |   CARRY4       |    <0.001 |      224 |     13300 |            1.68 |
@@ -60,7 +60,7 @@ Table of Contents
 |   BUFG         |    <0.001 |        4 |        32 |           12.50 |
 |   F7/F8 Muxes  |    <0.001 |      641 |     53200 |            1.20 |
 |   Others       |     0.000 |      243 |       --- |             --- |
-| Signals        |     0.005 |     8089 |       --- |             --- |
+| Signals        |     0.005 |     8087 |       --- |             --- |
 | Block RAM      |     0.005 |       22 |       140 |           15.71 |
 | PLL            |     0.160 |        1 |         4 |           25.00 |
 | DSPs           |    <0.001 |        4 |       220 |            1.82 |
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.053 |       0.038 |      0.015 |
+| Vccint    |       1.000 |     0.054 |       0.039 |      0.015 |
 | Vccaux    |       1.800 |     0.093 |       0.078 |      0.015 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |

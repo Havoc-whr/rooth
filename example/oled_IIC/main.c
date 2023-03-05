@@ -11,10 +11,8 @@
 void gpio_init()
 {
     GPIO_REG(GPIO_CTRL) |= 0x2;  // gpio0输入模式
-    GPIO_REG(GPIO_CTRL) |= 0x1 << 2;  // gpio1输出模式
-    GPIO_REG(GPIO_CTRL) |= 0x1 << 4;  // gpio2输出模式
-    GPIO_REG(GPIO_CTRL) |= 0x1 << 6;  // gpio3输出模式
-    GPIO_REG(GPIO_CTRL) |= 0x1 << 8;  // gpio4输出模式
+    GPIO_REG(GPIO_CTRL) |= 0x1 << 30;  // gpio15输出模式
+    GPIO_REG(GPIO_CTRL) |= 0x1 << 28;  // gpio14输出模式
 }
 void delay(unsigned int ms)
 {
