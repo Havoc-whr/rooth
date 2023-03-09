@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section name="Workbench">
-	<item value="D:\Vivado_prj\flash_rooth\flash_rooth.runs\impl_1" key="bootgen_files_selection"/>
-	<item value="D:\Vivado_prj\flash_rooth\vitis_prj\flash_rooth\_ide\bootimage" key="zynq_flash_files_selection"/>
-	<item value="D:\Vivado_prj\flash_rooth" key="scw_hwspec"/>
-</section>

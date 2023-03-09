@@ -17,45 +17,45 @@ module clinet (
     input                           rst_n,
 
     // from external-core
-    input [`INT_BUS]                int_flag_i,      // ä¸­æ–­è¾“å…¥ä¿¡å·
+    input [`INT_BUS]                int_flag_i,      // ÖĞ¶ÏÊäÈëĞÅºÅ
 
     // from pc_reg
-    input [`CPU_WIDTH-1:0]          pc_inst_addr_i,  // æŒ‡ä»¤åœ°å€ï¼Œæ¥è‡ªå–æŒ‡é˜¶æ®µ
+    input [`CPU_WIDTH-1:0]          pc_inst_addr_i,  // Ö¸ÁîµØÖ·£¬À´×ÔÈ¡Ö¸½×¶Î
     // from if_de
-    input [`CPU_WIDTH-1:0]          de_inst_addr_i,  // æŒ‡ä»¤åœ°å€ï¼Œæ¥è‡ªè¯‘ç é˜¶æ®µ
+    input [`CPU_WIDTH-1:0]          de_inst_addr_i,  // Ö¸ÁîµØÖ·£¬À´×ÔÒëÂë½×¶Î
     // from if_ex
-    input [`CPU_WIDTH-1:0]          ex_inst_addr_i,  // æŒ‡ä»¤åœ°å€ï¼Œæ¥è‡ªæ‰§è¡Œé˜¶æ®µ
+    input [`CPU_WIDTH-1:0]          ex_inst_addr_i,  // Ö¸ÁîµØÖ·£¬À´×ÔÖ´ĞĞ½×¶Î
     // from if_as
-    input [`CPU_WIDTH-1:0]          as_inst_addr_i,  // æŒ‡ä»¤åœ°å€ï¼Œæ¥è‡ªè®¿å­˜é˜¶æ®µ
+    input [`CPU_WIDTH-1:0]          as_inst_addr_i,  // Ö¸ÁîµØÖ·£¬À´×Ô·Ã´æ½×¶Î
 
     // from if_as_out
-    input [`CPU_WIDTH-1:0]          wb_inst_i,       // æŒ‡ä»¤å†…å®¹ï¼Œæ¥è‡ªå†™å›é˜¶æ®µ
-    input [`CPU_WIDTH-1:0]          wb_inst_addr_i,  // æŒ‡ä»¤åœ°å€ï¼Œæ¥è‡ªå†™å›é˜¶æ®µ
+    input [`CPU_WIDTH-1:0]          wb_inst_i,       // Ö¸ÁîÄÚÈİ£¬À´×ÔĞ´»Ø½×¶Î
+    input [`CPU_WIDTH-1:0]          wb_inst_addr_i,  // Ö¸ÁîµØÖ·£¬À´×ÔĞ´»Ø½×¶Î
 
     // from csr_reg
-    input [`CPU_WIDTH-1:0]          csr_mtvec,       // mtvecå¯„å­˜å™¨
-    input [`CPU_WIDTH-1:0]          csr_mepc,        // mepcå¯„å­˜å™¨
-    input [`CPU_WIDTH-1:0]          csr_mstatus,     // mstatuså¯„å­˜å™¨
+    input [`CPU_WIDTH-1:0]          csr_mtvec,       // mtvec¼Ä´æÆ÷
+    input [`CPU_WIDTH-1:0]          csr_mepc,        // mepc¼Ä´æÆ÷
+    input [`CPU_WIDTH-1:0]          csr_mstatus,     // mstatus¼Ä´æÆ÷
 
     // to csr_reg
-    output reg                      we_o,            // å†™CSRå¯„å­˜å™¨æ ‡å¿—
-    output reg[`CSR_ADDR_WIDTH-1:0] waddr_o,         // å†™CSRå¯„å­˜å™¨åœ°å€
-//    output reg[`CSR_ADDR_WIDTH-1:0] raddr_o,         // è¯»CSRå¯„å­˜å™¨åœ°å€
-    output reg[`CPU_WIDTH-1:0]      data_o,          // å†™CSRå¯„å­˜å™¨æ•°æ®
+    output reg                      we_o,            // Ğ´CSR¼Ä´æÆ÷±êÖ¾
+    output reg[`CSR_ADDR_WIDTH-1:0] waddr_o,         // Ğ´CSR¼Ä´æÆ÷µØÖ·
+//    output reg[`CSR_ADDR_WIDTH-1:0] raddr_o,         // ¶ÁCSR¼Ä´æÆ÷µØÖ·
+    output reg[`CPU_WIDTH-1:0]      data_o,          // Ğ´CSR¼Ä´æÆ÷Êı¾İ
 
     // to flow_ctrl
-    output                          hold_flag_o,     // æµæ°´çº¿æš‚åœæ ‡å¿—
-    output reg[`CPU_WIDTH-1:0]      int_addr_o,      // ä¸­æ–­å…¥å£åœ°å€
-    output reg                      int_assert_o     // ä¸­æ–­æ ‡å¿—
+    output                          hold_flag_o,     // Á÷Ë®ÏßÔİÍ£±êÖ¾
+    output reg[`CPU_WIDTH-1:0]      int_addr_o,      // ÖĞ¶ÏÈë¿ÚµØÖ·
+    output reg                      int_assert_o     // ÖĞ¶Ï±êÖ¾
 );
 
-// ä¸­æ–­çŠ¶æ€å®šä¹‰
+// ÖĞ¶Ï×´Ì¬¶¨Òå
 localparam S_INT_IDLE            = 4'b0001;
 localparam S_INT_SYNC_ASSERT     = 4'b0010;
 localparam S_INT_ASYNC_ASSERT    = 4'b0100;
 localparam S_INT_MRET            = 4'b1000;
 
-// å†™CSRå¯„å­˜å™¨çŠ¶æ€å®šä¹‰
+// Ğ´CSR¼Ä´æÆ÷×´Ì¬¶¨Òå
 localparam S_CSR_IDLE            = 5'b00001;
 localparam S_CSR_MSTATUS         = 5'b00010;
 localparam S_CSR_MEPC            = 5'b00100;
@@ -70,7 +70,7 @@ reg[31:0] cause;
 assign hold_flag_o = ((int_state != S_INT_IDLE) | (csr_state != S_CSR_IDLE))? 1'b1 : 1'b0;
 
 
-// ä¸­æ–­ä»²è£é€»è¾‘
+// ÖĞ¶ÏÖÙ²ÃÂß¼­
 always @ (*) begin
     if (~rst_n) begin
         int_state = S_INT_IDLE;
@@ -79,7 +79,7 @@ always @ (*) begin
         if (wb_inst_i == `INST_ECALL || wb_inst_i == `INST_EBREAK) begin
             int_state = S_INT_SYNC_ASSERT;
         end
-        else if (int_flag_i != `INT_NONE && csr_mstatus[3] == 1'b1) begin //csr_mstatus[3]ä¸ºå…¨å±€ä¸­æ–­ä½¿èƒ½æ ‡å¿—ä½
+        else if (int_flag_i != `INT_NONE && csr_mstatus[3] == 1'b1) begin //csr_mstatus[3]ÎªÈ«¾ÖÖĞ¶ÏÊ¹ÄÜ±êÖ¾Î»
             int_state = S_INT_ASYNC_ASSERT;
         end
         else if (wb_inst_i == `INST_MRET) begin
@@ -91,8 +91,8 @@ always @ (*) begin
     end
 end
 
-// å†™CSRå¯„å­˜å™¨çŠ¶æ€åˆ‡æ¢
-always @ (posedge clk) begin
+// Ğ´CSR¼Ä´æÆ÷×´Ì¬ÇĞ»»
+always @ (posedge clk or negedge rst_n) begin
     if (~rst_n) begin
         csr_state <= S_CSR_IDLE;
         cause <= `CPU_WIDTH'b0;
@@ -101,7 +101,7 @@ always @ (posedge clk) begin
     else begin
         case (csr_state)
             S_CSR_IDLE: begin
-                // åŒæ­¥ä¸­æ–­
+                // Í¬²½ÖĞ¶Ï
                 if (int_state == S_INT_SYNC_ASSERT) begin
                     csr_state <= S_CSR_MEPC;
                     inst_addr <= wb_inst_addr_i;
@@ -116,16 +116,13 @@ always @ (posedge clk) begin
                             cause <= 32'd10;
                         end
                     endcase
-                // å¼‚æ­¥ä¸­æ–­
+                // Òì²½ÖĞ¶Ï
                 end
                 else if (int_state == S_INT_ASYNC_ASSERT) begin
-                    // å®šæ—¶å™¨ä¸­æ–­
+                    // ¶¨Ê±Æ÷ÖĞ¶Ï
                     cause <= 32'h80000004;
                     csr_state <= S_CSR_MEPC;
-                    if (wb_inst_addr_i) begin
-                        inst_addr <= wb_inst_addr_i - 32'h4;
-                    end
-                    else if (as_inst_addr_i) begin
+                    if (as_inst_addr_i) begin
                         inst_addr <= as_inst_addr_i - 32'h4;
                     end
                     else if (ex_inst_addr_i) begin
@@ -137,7 +134,7 @@ always @ (posedge clk) begin
                     else begin
                         inst_addr <= pc_inst_addr_i;
                     end
-                // ä¸­æ–­è¿”å›
+                // ÖĞ¶Ï·µ»Ø
                 end
                 else if (int_state == S_INT_MRET) begin
                     csr_state <= S_CSR_MSTATUS_MRET;
@@ -162,36 +159,36 @@ always @ (posedge clk) begin
     end
 end
 
-// å‘å‡ºä¸­æ–­ä¿¡å·å‰ï¼Œå…ˆå†™å‡ ä¸ªCSRå¯„å­˜å™¨
-always @ (posedge clk) begin
+// ·¢³öÖĞ¶ÏĞÅºÅÇ°£¬ÏÈĞ´¼¸¸öCSR¼Ä´æÆ÷
+always @ (posedge clk or negedge rst_n) begin
     if (~rst_n) begin
         we_o <= 1'b0;
         waddr_o <= `CSR_ADDR_WIDTH'b0;
         data_o <= `CPU_WIDTH'b0;
     end else begin
         case (csr_state)
-            // å°†mepcå¯„å­˜å™¨çš„å€¼è®¾ä¸ºå½“å‰æŒ‡ä»¤åœ°å€
+            // ½«mepc¼Ä´æÆ÷µÄÖµÉèÎªµ±Ç°Ö¸ÁîµØÖ·
             S_CSR_MEPC: begin
                 we_o <= 1'b1;
-                waddr_o <= `CSR_MEPC;
+                waddr_o <= {20'h0, `CSR_MEPC};
                 data_o <= inst_addr;
             end
-            // å†™ä¸­æ–­äº§ç”Ÿçš„åŸå› 
+            // Ğ´ÖĞ¶Ï²úÉúµÄÔ­Òò
             S_CSR_MCAUSE: begin
                 we_o <= 1'b1;
-                waddr_o <= `CSR_MCAUSE;
+                waddr_o <= {20'h0, `CSR_MCAUSE};
                 data_o <= cause;
             end
-            // å…³é—­å…¨å±€ä¸­æ–­
+            // ¹Ø±ÕÈ«¾ÖÖĞ¶Ï
             S_CSR_MSTATUS: begin
                 we_o <= 1'b1;
-                waddr_o <= `CSR_MSTATUS;
+                waddr_o <= {20'h0, `CSR_MSTATUS};
                 data_o <= {csr_mstatus[31:4], 1'b0, csr_mstatus[2:0]};
             end
-            // ä¸­æ–­è¿”å›
+            // ÖĞ¶Ï·µ»Ø
             S_CSR_MSTATUS_MRET: begin
                 we_o <= 1'b1;
-                waddr_o <= `CSR_MSTATUS;
+                waddr_o <= {20'h0, `CSR_MSTATUS};
                 data_o <= {csr_mstatus[31:4], csr_mstatus[7], csr_mstatus[2:0]};
             end
             default: begin
@@ -203,19 +200,19 @@ always @ (posedge clk) begin
     end
 end
 
-// å‘å‡ºä¸­æ–­ä¿¡å·ç»™exæ¨¡å—
-always @ (posedge clk) begin
+// ·¢³öÖĞ¶ÏĞÅºÅ¸øexÄ£¿é
+always @ (posedge clk or negedge rst_n) begin
     if (~rst_n) begin
         int_assert_o <= 1'b0;
         int_addr_o <= `CPU_WIDTH'b0;
     end else begin
         case (csr_state)
-            // å‘å‡ºä¸­æ–­è¿›å…¥ä¿¡å·.å†™å®Œmcauseå¯„å­˜å™¨æ‰èƒ½å‘
+            // ·¢³öÖĞ¶Ï½øÈëĞÅºÅ.Ğ´Íêmcause¼Ä´æÆ÷²ÅÄÜ·¢
             S_CSR_MCAUSE: begin
                 int_assert_o <= 1'b1;
                 int_addr_o <= csr_mtvec;
             end
-            // å‘å‡ºä¸­æ–­è¿”å›ä¿¡å·
+            // ·¢³öÖĞ¶Ï·µ»ØĞÅºÅ
             S_CSR_MSTATUS_MRET: begin
                 int_assert_o <= 1'b1;
                 int_addr_o <= csr_mepc;

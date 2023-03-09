@@ -15,7 +15,7 @@
  */
 
 
-// spi masteræ¨¡å—
+// spi masterÄ£¿é
 module spi(
 
     input wire clk,
@@ -27,19 +27,19 @@ module spi(
 
     output reg[31:0] data_o,
 
-    output reg spi_mosi,             // spiæ§åˆ¶å™¨è¾“å‡ºã€spiè®¾å¤‡è¾“å…¥ä¿¡å·
-    input wire spi_miso,             // spiæ§åˆ¶å™¨è¾“å…¥ã€spiè®¾å¤‡è¾“å‡ºä¿¡å·
-    output wire spi_ss,              // spiè®¾å¤‡ç‰‡é€‰
-    output reg spi_clk               // spiè®¾å¤‡æ—¶é’Ÿï¼Œæœ€å¤§é¢‘ç‡ä¸ºè¾“å…¥clkçš„ä¸€åŠ
+    output reg spi_mosi,             // spi¿ØÖÆÆ÷Êä³ö¡¢spiÉè±¸ÊäÈëĞÅºÅ
+    input wire spi_miso,             // spi¿ØÖÆÆ÷ÊäÈë¡¢spiÉè±¸Êä³öĞÅºÅ
+    output wire spi_ss,              // spiÉè±¸Æ¬Ñ¡
+    output reg spi_clk               // spiÉè±¸Ê±ÖÓ£¬×î´óÆµÂÊÎªÊäÈëclkµÄÒ»°ë
 
     );
 
 
-    localparam SPI_CTRL   = 4'h0;    // spi_ctrlå¯„å­˜å™¨åœ°å€åç§»
-    localparam SPI_DATA   = 4'h4;    // spi_dataå¯„å­˜å™¨åœ°å€åç§»
-    localparam SPI_STATUS = 4'h8;    // spi_statuså¯„å­˜å™¨åœ°å€åç§»
+    localparam SPI_CTRL   = 4'h0;    // spi_ctrl¼Ä´æÆ÷µØÖ·Æ«ÒÆ
+    localparam SPI_DATA   = 4'h4;    // spi_data¼Ä´æÆ÷µØÖ·Æ«ÒÆ
+    localparam SPI_STATUS = 4'h8;    // spi_status¼Ä´æÆ÷µØÖ·Æ«ÒÆ
 
-    // spiæ§åˆ¶å¯„å­˜å™¨
+    // spi¿ØÖÆ¼Ä´æÆ÷
     // addr: 0x00
     // [0]: 1: enable, 0: disable
     // [1]: CPOL
@@ -47,32 +47,32 @@ module spi(
     // [3]: select slave, 1: select, 0: deselect
     // [15:8]: clk div
     reg[31:0] spi_ctrl;
-    // spiæ•°æ®å¯„å­˜å™¨
+    // spiÊı¾İ¼Ä´æÆ÷
     // addr: 0x04
     // [7:0] cmd or inout data
     reg[31:0] spi_data;
-    // spiçŠ¶æ€å¯„å­˜å™¨
+    // spi×´Ì¬¼Ä´æÆ÷
     // addr: 0x08
     // [0]: 1: busy, 0: idle
     reg[31:0] spi_status;
 
-    reg[8:0] clk_cnt;               // åˆ†é¢‘è®¡æ•°
-    reg en;                         // ä½¿èƒ½ï¼Œå¼€å§‹ä¼ è¾“ä¿¡å·ï¼Œä¼ è¾“æœŸé—´ä¸€ç›´æœ‰æ•ˆ
-    reg[4:0] spi_clk_edge_cnt;      // spi clkæ—¶é’Ÿæ²¿çš„ä¸ªæ•°
-    reg spi_clk_edge_level;         // spi clkæ²¿ç”µå¹³
-    reg[7:0] rdata;                 // ä»spiè®¾å¤‡è¯»å›æ¥çš„æ•°æ®
-    reg done;                       // ä¼ è¾“å®Œæˆä¿¡å·
-    reg[3:0] bit_index;             // æ•°æ®bitç´¢å¼•
+    reg[8:0] clk_cnt;               // ·ÖÆµ¼ÆÊı
+    reg en;                         // Ê¹ÄÜ£¬¿ªÊ¼´«ÊäĞÅºÅ£¬´«ÊäÆÚ¼äÒ»Ö±ÓĞĞ§
+    reg[4:0] spi_clk_edge_cnt;      // spi clkÊ±ÖÓÑØµÄ¸öÊı
+    reg spi_clk_edge_level;         // spi clkÑØµçÆ½
+    reg[7:0] rdata;                 // ´ÓspiÉè±¸¶Á»ØÀ´µÄÊı¾İ
+    reg done;                       // ´«ÊäÍê³ÉĞÅºÅ
+    reg[3:0] bit_index;             // Êı¾İbitË÷Òı
     wire[8:0] div_cnt;
 
 
-    assign spi_ss = ~spi_ctrl[3];   // SPIè®¾å¤‡ç‰‡é€‰ä¿¡å·
+    assign spi_ss = ~spi_ctrl[3];   // SPIÉè±¸Æ¬Ñ¡ĞÅºÅ
 
-    assign div_cnt = spi_ctrl[15:8];// 0: 2åˆ†é¢‘ï¼Œ1ï¼š4åˆ†é¢‘ï¼Œ2ï¼š8åˆ†é¢‘ï¼Œ3ï¼š16åˆ†é¢‘ï¼Œ4ï¼š32åˆ†é¢‘ï¼Œä»¥æ­¤ç±»æ¨
+    assign div_cnt = spi_ctrl[15:8];// 0: 2·ÖÆµ£¬1£º4·ÖÆµ£¬2£º8·ÖÆµ£¬3£º16·ÖÆµ£¬4£º32·ÖÆµ£¬ÒÔ´ËÀàÍÆ
 
 
-    // äº§ç”Ÿä½¿èƒ½ä¿¡å·
-    // ä¼ è¾“æœŸé—´ä¸€ç›´æœ‰æ•ˆ
+    // ²úÉúÊ¹ÄÜĞÅºÅ
+    // ´«ÊäÆÚ¼äÒ»Ö±ÓĞĞ§
     always @ (posedge clk) begin
         if (rst == 1'b0) begin
             en <= 1'b0;
@@ -87,7 +87,7 @@ module spi(
         end
     end
 
-    // å¯¹è¾“å…¥æ—¶é’Ÿè¿›è¡Œè®¡æ•°
+    // ¶ÔÊäÈëÊ±ÖÓ½øĞĞ¼ÆÊı
     always @ (posedge clk) begin
         if (rst == 1'b0) begin
             clk_cnt <= 9'h0;
@@ -102,14 +102,14 @@ module spi(
         end
     end
 
-    // å¯¹spi clkæ²¿è¿›è¡Œè®¡æ•°
-    // æ¯å½“è®¡æ•°åˆ°åˆ†é¢‘å€¼æ—¶äº§ç”Ÿä¸€ä¸ªä¸Šå‡æ²¿è„‰å†²
+    // ¶Ôspi clkÑØ½øĞĞ¼ÆÊı
+    // Ã¿µ±¼ÆÊıµ½·ÖÆµÖµÊ±²úÉúÒ»¸öÉÏÉıÑØÂö³å
     always @ (posedge clk) begin
         if (rst == 1'b0) begin
             spi_clk_edge_cnt <= 5'h0;
             spi_clk_edge_level <= 1'b0;
         end else if (en == 1'b1) begin
-            // è®¡æ•°è¾¾åˆ°åˆ†é¢‘å€¼
+            // ¼ÆÊı´ïµ½·ÖÆµÖµ
             if (clk_cnt == div_cnt) begin
                 if (spi_clk_edge_cnt == 5'd17) begin
                     spi_clk_edge_cnt <= 5'h0;
@@ -127,7 +127,7 @@ module spi(
         end
     end
 
-    // bitåºåˆ—
+    // bitĞòÁĞ
     always @ (posedge clk) begin
         if (rst == 1'b0) begin
             spi_clk <= 1'b0;
@@ -138,23 +138,23 @@ module spi(
             if (en) begin
                 if (spi_clk_edge_level == 1'b1) begin
                     case (spi_clk_edge_cnt)
-                        // ç¬¬å¥‡æ•°ä¸ªæ—¶é’Ÿæ²¿
+                        // µÚÆæÊı¸öÊ±ÖÓÑØ
                         1, 3, 5, 7, 9, 11, 13, 15: begin
                             spi_clk <= ~spi_clk;
                             if (spi_ctrl[2] == 1'b1) begin
-                                spi_mosi <= spi_data[bit_index];   // é€å‡º1bitæ•°æ®
+                                spi_mosi <= spi_data[bit_index];   // ËÍ³ö1bitÊı¾İ
                                 bit_index <= bit_index - 1'b1;
                             end else begin
-                                rdata <= {rdata[6:0], spi_miso};   // è¯»1bitæ•°æ®
+                                rdata <= {rdata[6:0], spi_miso};   // ¶Á1bitÊı¾İ
                             end
                         end
-                        // ç¬¬å¶æ•°ä¸ªæ—¶é’Ÿæ²¿
+                        // µÚÅ¼Êı¸öÊ±ÖÓÑØ
                         2, 4, 6, 8, 10, 12, 14, 16: begin
                             spi_clk <= ~spi_clk;
                             if (spi_ctrl[2] == 1'b1) begin
-                                rdata <= {rdata[6:0], spi_miso};   // è¯»1bitæ•°æ®
+                                rdata <= {rdata[6:0], spi_miso};   // ¶Á1bitÊı¾İ
                             end else begin
-                                spi_mosi <= spi_data[bit_index];   // é€å‡º1bitæ•°æ®
+                                spi_mosi <= spi_data[bit_index];   // ËÍ³ö1bitÊı¾İ
                                 bit_index <= bit_index - 1'b1;
                             end
                         end
@@ -164,10 +164,10 @@ module spi(
                     endcase
                 end
             end else begin
-                // åˆå§‹çŠ¶æ€
+                // ³õÊ¼×´Ì¬
                 spi_clk <= spi_ctrl[1];
                 if (spi_ctrl[2] == 1'b0) begin
-                    spi_mosi <= spi_data[7];           // é€å‡ºæœ€é«˜ä½æ•°æ®
+                    spi_mosi <= spi_data[7];           // ËÍ³ö×î¸ßÎ»Êı¾İ
                     bit_index <= 4'h6;
                 end else begin
                     bit_index <= 4'h7;
@@ -176,7 +176,7 @@ module spi(
         end
     end
 
-    // äº§ç”Ÿç»“æŸ(å®Œæˆ)ä¿¡å·
+    // ²úÉú½áÊø(Íê³É)ĞÅºÅ
     always @ (posedge clk) begin
         if (rst == 1'b0) begin
             done <= 1'b0;
@@ -211,7 +211,7 @@ module spi(
                 endcase
             end else begin
                 spi_ctrl[0] <= 1'b0;
-                // å‘é€å®Œæˆåæ›´æ–°æ•°æ®å¯„å­˜å™¨
+                // ·¢ËÍÍê³Éºó¸üĞÂÊı¾İ¼Ä´æÆ÷
                 if (done == 1'b1) begin
                     spi_data <= {24'h0, rdata};
                 end

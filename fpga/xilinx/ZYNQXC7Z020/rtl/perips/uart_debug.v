@@ -15,10 +15,10 @@
  */
 
 
-// clk = 50MHzæ—¶å¯¹åº”çš„æ³¢ç‰¹ç‡åˆ†é¢‘ç³»æ•°
+// clk = 50MHzÊ±¶ÔÓ¦µÄ²¨ÌØÂÊ·ÖÆµÏµÊı
 `define UART_BAUD_115200        32'h1B8
 
-// ä¸²å£å¯„å­˜å™¨åœ°å€
+// ´®¿Ú¼Ä´æÆ÷µØÖ·
 `define UART_CTRL_REG           32'h30000000
 `define UART_STATUS_REG         32'h30000004
 `define UART_BAUD_REG           32'h30000008
@@ -28,25 +28,25 @@
 `define UART_TX_BUSY_FLAG       32'h1
 `define UART_RX_OVER_FLAG       32'h2
 
-// ç¬¬ä¸€ä¸ªåŒ…çš„å¤§å°
+// µÚÒ»¸ö°üµÄ´óĞ¡
 `define UART_FIRST_PACKET_LEN   8'd131
-// å…¶ä»–åŒ…çš„å¤§å°(æ¯æ¬¡çƒ§å†™çš„å­—èŠ‚æ•°)
+// ÆäËû°üµÄ´óĞ¡(Ã¿´ÎÉÕĞ´µÄ×Ö½ÚÊı)
 `define UART_REMAIN_PACKET_LEN  8'd131
 
 `define UART_RESP_ACK           32'h6
 `define UART_RESP_NAK           32'h15
 
-// çƒ§å†™èµ·å§‹åœ°å€
+// ÉÕĞ´ÆğÊ¼µØÖ·
 `define ROM_START_ADDR          32'h0
 
 
-// ä¸²å£æ›´æ–°å›ºä»¶æ¨¡å—
+// ´®¿Ú¸üĞÂ¹Ì¼şÄ£¿é
 module uart_debug(
 
-    input wire clk,                // æ—¶é’Ÿä¿¡å·
-    input wire rst,                // å¤ä½ä¿¡å·
+    input wire clk,                // Ê±ÖÓĞÅºÅ
+    input wire rst,                // ¸´Î»ĞÅºÅ
 
-    input wire debug_en_i,         // æ¨¡å—ä½¿èƒ½ä¿¡å·
+    input wire debug_en_i,         // Ä£¿éÊ¹ÄÜĞÅºÅ
 
     output wire req_o,
     output reg mem_we_o,
@@ -57,7 +57,7 @@ module uart_debug(
     );
 
 
-    // çŠ¶æ€
+    // ×´Ì¬
     localparam S_IDLE                    = 14'h0001;
     localparam S_INIT_UART_BAUD          = 14'h0002;
     localparam S_CLEAR_UART_RX_OVER_FLAG = 14'h0004;
@@ -75,7 +75,7 @@ module uart_debug(
 
     reg[13:0] state;
 
-    // å­˜æ”¾ä¸²å£æ¥æ”¶åˆ°çš„æ•°æ®
+    // ´æ·Å´®¿Ú½ÓÊÕµ½µÄÊı¾İ
     reg[7:0] rx_data[0:131];
     reg[7:0] rec_bytes_index;
     reg[7:0] need_to_rec_bytes;
@@ -93,7 +93,7 @@ module uart_debug(
     reg[7:0] crc_byte_index;
 
 
-    // å‘æ€»çº¿è¯·æ±‚ä¿¡å·
+    // Ïò×ÜÏßÇëÇóĞÅºÅ
     assign req_o = (rst == 1'b1 && debug_en_i == 1'b1)? 1'b1: 1'b0;
 
 
@@ -212,7 +212,7 @@ module uart_debug(
         end
     end
 
-    // æ•°æ®åŒ…çš„å¤§å°
+    // Êı¾İ°üµÄ´óĞ¡
     always @ (posedge clk) begin
         if (rst == 1'b0 || debug_en_i == 1'b0) begin
             need_to_rec_bytes <= 8'h0;
@@ -228,7 +228,7 @@ module uart_debug(
         end
     end
 
-    // è¯»æ¥æ”¶åˆ°çš„ä¸²å£æ•°æ®
+    // ¶Á½ÓÊÕµ½µÄ´®¿ÚÊı¾İ
     always @ (posedge clk) begin
         if (rst == 1'b0 || debug_en_i == 1'b0) begin
             rec_bytes_index <= 8'h0;
@@ -248,7 +248,7 @@ module uart_debug(
         end
     end
 
-    // å›ºä»¶å¤§å°
+    // ¹Ì¼ş´óĞ¡
     always @ (posedge clk) begin
         if (rst == 1'b0 || debug_en_i == 1'b0) begin
             fw_file_size <= 32'h0;
@@ -261,7 +261,7 @@ module uart_debug(
         end
     end
 
-    // çƒ§å†™å›ºä»¶
+    // ÉÕĞ´¹Ì¼ş
     always @ (posedge clk) begin
         if (rst == 1'b0 || debug_en_i == 1'b0) begin
             write_mem_addr <= 32'h0;
@@ -371,7 +371,7 @@ module uart_debug(
         end
     end
 
-    // CRCè®¡ç®—
+    // CRC¼ÆËã
     always @ (posedge clk) begin
         if (rst == 1'b0 || debug_en_i == 1'b0) begin
             crc_result <= 16'h0;

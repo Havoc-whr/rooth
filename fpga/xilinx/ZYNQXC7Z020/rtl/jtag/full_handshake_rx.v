@@ -14,28 +14,28 @@
  limitations under the License.                                          
  */
 
-// æ•°æ®æ¥æ”¶ç«¯æ¨¡å—
-// è·¨æ—¶é’ŸåŸŸä¼ è¾“ï¼Œå…¨(å››æ¬¡)æ¡æ‰‹åè®®
+// Êı¾İ½ÓÊÕ¶ËÄ£¿é
+// ¿çÊ±ÖÓÓò´«Êä£¬È«(ËÄ´Î)ÎÕÊÖĞ­Òé
 // req = 1
 // ack_o = 1
 // req = 0
 // ack_o = 0
 module full_handshake_rx #(
-    parameter DW = 32)(             // RXè¦æ¥æ”¶æ•°æ®çš„ä½å®½
+    parameter DW = 32)(             // RXÒª½ÓÊÕÊı¾İµÄÎ»¿í
 
-    input wire clk,                 // RXç«¯æ—¶é’Ÿä¿¡å·
-    input wire rst_n,               // RXç«¯å¤ä½ä¿¡å·
+    input wire clk,                 // RX¶ËÊ±ÖÓĞÅºÅ
+    input wire rst_n,               // RX¶Ë¸´Î»ĞÅºÅ
 
     // from tx
-    input wire req_i,               // TXç«¯è¯·æ±‚ä¿¡å·
-    input wire[DW-1:0] req_data_i,  // TXç«¯è¾“å…¥æ•°æ®
+    input wire req_i,               // TX¶ËÇëÇóĞÅºÅ
+    input wire[DW-1:0] req_data_i,  // TX¶ËÊäÈëÊı¾İ
 
     // to tx
-    output wire ack_o,              // RXç«¯åº”ç­”TXç«¯ä¿¡å·
+    output wire ack_o,              // RX¶ËÓ¦´ğTX¶ËĞÅºÅ
 
     // to rx
-    output wire[DW-1:0] recv_data_o,// RXç«¯æ¥æ”¶åˆ°çš„æ•°æ®
-    output wire recv_rdy_o          // RXç«¯æ˜¯å¦æ¥æ”¶åˆ°æ•°æ®ä¿¡å·
+    output wire[DW-1:0] recv_data_o,// RX¶Ë½ÓÊÕµ½µÄÊı¾İ
+    output wire recv_rdy_o          // RX¶ËÊÇ·ñ½ÓÊÕµ½Êı¾İĞÅºÅ
 
     );
 
@@ -57,7 +57,7 @@ module full_handshake_rx #(
 
     always @ (*) begin
         case (state)
-            // ç­‰å¾…TXè¯·æ±‚ä¿¡å·req=1
+            // µÈ´ıTXÇëÇóĞÅºÅreq=1
             STATE_IDLE: begin
                 if (req == 1'b1) begin
                     state_next = STATE_DEASSERT;
@@ -65,7 +65,7 @@ module full_handshake_rx #(
                     state_next = STATE_IDLE;
                 end
             end
-            // ç­‰å¾…req=0
+            // µÈ´ıreq=0
             STATE_DEASSERT: begin
                 if (req) begin
                     state_next = STATE_DEASSERT;
@@ -79,7 +79,7 @@ module full_handshake_rx #(
         endcase
     end
 
-    // å°†è¯·æ±‚ä¿¡å·æ‰“ä¸¤æ‹è¿›è¡ŒåŒæ­¥
+    // ½«ÇëÇóĞÅºÅ´òÁ½ÅÄ½øĞĞÍ¬²½
     always @ (posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             req_d <= 1'b0;
@@ -104,14 +104,14 @@ module full_handshake_rx #(
                 STATE_IDLE: begin
                     if (req == 1'b1) begin
                         ack <= 1'b1;
-                        recv_rdy <= 1'b1;           // è¿™ä¸ªä¿¡å·åªä¼šæŒç»­ä¸€ä¸ªæ—¶é’Ÿ
-                        recv_data <= req_data_i;    // è¿™ä¸ªä¿¡å·åªä¼šæŒç»­ä¸€ä¸ªæ—¶é’Ÿ
+                        recv_rdy <= 1'b1;           // Õâ¸öĞÅºÅÖ»»á³ÖĞøÒ»¸öÊ±ÖÓ
+                        recv_data <= req_data_i;    // Õâ¸öĞÅºÅÖ»»á³ÖĞøÒ»¸öÊ±ÖÓ
                     end
                 end
                 STATE_DEASSERT: begin
                     recv_rdy <= 1'b0;
                     recv_data <= {(DW){1'b0}};
-                    // reqæ’¤é”€åackä¹Ÿæ’¤é”€
+                    // req³·ÏúºóackÒ²³·Ïú
                     if (req == 1'b0) begin
                         ack <= 1'b0;
                     end

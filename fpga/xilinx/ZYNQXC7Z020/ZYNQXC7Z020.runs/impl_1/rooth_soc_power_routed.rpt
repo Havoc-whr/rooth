@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Sun Mar  5 22:13:19 2023
+| Date             : Wed Mar  8 22:42:17 2023
 | Host             : Z2-R running 64-bit major release  (build 9200)
 | Command          : report_power -file rooth_soc_power_routed.rpt -pb rooth_soc_power_summary_routed.pb -rpx rooth_soc_power_routed.rpx
 | Design           : rooth_soc
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.292        |
+| Total On-Chip Power (W)  | 0.293        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.182        |
+| Dynamic (W)              | 0.183        |
 | Device Static (W)        | 0.110        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 81.6         |
@@ -52,21 +52,21 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.007 |        5 |       --- |             --- |
-| Slice Logic    |     0.004 |    10468 |       --- |             --- |
-|   LUT as Logic |     0.003 |     5341 |     53200 |           10.04 |
-|   CARRY4       |    <0.001 |      224 |     13300 |            1.68 |
-|   Register     |    <0.001 |     3358 |    106400 |            3.16 |
+| Clocks         |     0.006 |        5 |       --- |             --- |
+| Slice Logic    |     0.004 |    10295 |       --- |             --- |
+|   LUT as Logic |     0.003 |     5238 |     53200 |            9.85 |
+|   CARRY4       |    <0.001 |      216 |     13300 |            1.62 |
+|   Register     |    <0.001 |     3387 |    106400 |            3.18 |
+|   F7/F8 Muxes  |    <0.001 |      484 |     53200 |            0.91 |
 |   BUFG         |    <0.001 |        4 |        32 |           12.50 |
-|   F7/F8 Muxes  |    <0.001 |      641 |     53200 |            1.20 |
-|   Others       |     0.000 |      110 |       --- |             --- |
-| Signals        |     0.005 |     8105 |       --- |             --- |
+|   Others       |     0.000 |      109 |       --- |             --- |
+| Signals        |     0.006 |     8258 |       --- |             --- |
 | Block RAM      |     0.005 |       22 |       140 |           15.71 |
 | PLL            |     0.160 |        1 |         4 |           25.00 |
 | DSPs           |    <0.001 |        4 |       220 |            1.82 |
-| I/O            |     0.002 |       31 |       125 |           24.80 |
+| I/O            |     0.002 |       29 |       125 |           23.20 |
 | Static Power   |     0.110 |          |           |                 |
-| Total          |     0.292 |          |           |                 |
+| Total          |     0.293 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.048 |       0.039 |      0.008 |
+| Vccint    |       1.000 |     0.049 |       0.040 |      0.008 |
 | Vccaux    |       1.800 |     0.089 |       0.078 |      0.011 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -154,7 +154,7 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| rooth_soc              |     0.182 |
+| rooth_soc              |     0.183 |
 |   clk_pll_inst         |     0.161 |
 |     inst               |     0.161 |
 |   data_mem_0           |     0.002 |
@@ -165,12 +165,12 @@ Table of Contents
 |       inst_blk_mem_gen |     0.003 |
 |   u_jtag_top           |     0.001 |
 |     u_jtag_dm          |     0.001 |
-|   u_rooth_0            |     0.012 |
+|   u_rooth_0            |     0.013 |
 |     u_div_0            |     0.001 |
-|     u_if_as_0          |     0.002 |
+|     u_if_as_0          |     0.001 |
 |     u_if_ex_0          |     0.003 |
-|     u_if_wb_0          |     0.001 |
-|     u_regs_file_0      |     0.002 |
+|     u_if_wb_0          |     0.002 |
+|     u_regs_file_0      |     0.003 |
 +------------------------+-----------+
 
 

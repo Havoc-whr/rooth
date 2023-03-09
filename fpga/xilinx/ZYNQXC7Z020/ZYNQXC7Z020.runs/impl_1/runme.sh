@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.runs/impl_1'
+HD_PWD='D:/rooth/fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
+/bin/touch .write_bitstream.begin.rst
 EAStep vivado -log rooth_soc.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source rooth_soc.tcl -notrace
 
 

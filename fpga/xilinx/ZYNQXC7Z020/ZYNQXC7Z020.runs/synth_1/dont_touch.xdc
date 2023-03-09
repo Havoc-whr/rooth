@@ -3,5 +3,8 @@
 
 # XDC: D:/Vivado_prj/ZYNQXC7Z020/rooth_xdc.xdc
 
+# IP: ip/inst_mem/inst_mem.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==inst_mem || ORIG_REF_NAME==inst_mem} -quiet] -quiet
+
 # IP: ip/clk_pll/clk_pll.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==clk_pll || ORIG_REF_NAME==clk_pll} -quiet] -quiet

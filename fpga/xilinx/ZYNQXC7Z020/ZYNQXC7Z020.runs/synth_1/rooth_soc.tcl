@@ -17,7 +17,9 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param tcl.collectionResultDisplayLimit 0
+set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7z020clg400-2
 
 set_param project.singleFileAddWarning.threshold 0
@@ -67,13 +69,13 @@ read_verilog -library xil_defaultlib {
   D:/Vivado_prj/ZYNQXC7Z020/rtl/perips/uart.v
   D:/Vivado_prj/ZYNQXC7Z020/rtl/soc/rooth_soc.v
 }
+read_ip -quiet D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem.xci
+set_property used_in_implementation false [get_files -all d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem_ooc.xdc]
+
 read_ip -quiet D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll.xci
 set_property used_in_implementation false [get_files -all d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll_board.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll.xdc]
 set_property used_in_implementation false [get_files -all d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/clk_pll/clk_pll_ooc.xdc]
-
-read_ip -quiet D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem.xci
-set_property used_in_implementation false [get_files -all d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/inst_mem/inst_mem_ooc.xdc]
 
 read_ip -quiet D:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem.xci
 set_property used_in_implementation false [get_files -all d:/Vivado_prj/ZYNQXC7Z020/ZYNQXC7Z020.srcs/sources_1/ip/data_mem/data_mem_ooc.xdc]

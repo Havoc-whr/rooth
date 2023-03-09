@@ -14,31 +14,31 @@
  limitations under the License.                                          
  */
 
-// æ•°æ®å‘é€ç«¯æ¨¡å—
-// è·¨æ—¶é’ŸåŸŸä¼ è¾“ï¼Œå…¨(å››æ¬¡)æ¡æ‰‹åè®®
+// Êı¾İ·¢ËÍ¶ËÄ£¿é
+// ¿çÊ±ÖÓÓò´«Êä£¬È«(ËÄ´Î)ÎÕÊÖĞ­Òé
 // req_o = 1
 // ack = 1
 // req_o = 0
 // ack = 0
 module full_handshake_tx #(
-    parameter DW = 32)(             // TXè¦å‘é€æ•°æ®çš„ä½å®½
+    parameter DW = 32)(             // TXÒª·¢ËÍÊı¾İµÄÎ»¿í
 
-    input wire clk,                 // TXç«¯æ—¶é’Ÿä¿¡å·
-    input wire rst_n,               // TXç«¯å¤ä½ä¿¡å·
+    input wire clk,                 // TX¶ËÊ±ÖÓĞÅºÅ
+    input wire rst_n,               // TX¶Ë¸´Î»ĞÅºÅ
 
     // from rx
-    input wire ack_i,               // RXç«¯åº”ç­”ä¿¡å·
+    input wire ack_i,               // RX¶ËÓ¦´ğĞÅºÅ
 
     // from tx
-    input wire req_i,               // TXç«¯è¯·æ±‚ä¿¡å·ï¼Œåªéœ€æŒç»­ä¸€ä¸ªæ—¶é’Ÿ
-    input wire[DW-1:0] req_data_i,  // TXç«¯è¦å‘é€çš„æ•°æ®ï¼Œåªéœ€æŒç»­ä¸€ä¸ªæ—¶é’Ÿ
+    input wire req_i,               // TX¶ËÇëÇóĞÅºÅ£¬Ö»Ğè³ÖĞøÒ»¸öÊ±ÖÓ
+    input wire[DW-1:0] req_data_i,  // TX¶ËÒª·¢ËÍµÄÊı¾İ£¬Ö»Ğè³ÖĞøÒ»¸öÊ±ÖÓ
 
     // to tx
-    output wire idle_o,             // TXç«¯æ˜¯å¦ç©ºé—²ä¿¡å·ï¼Œç©ºé—²æ‰èƒ½å‘æ•°æ®
+    output wire idle_o,             // TX¶ËÊÇ·ñ¿ÕÏĞĞÅºÅ£¬¿ÕÏĞ²ÅÄÜ·¢Êı¾İ
 
     // to rx
-    output wire req_o,              // TXç«¯è¯·æ±‚ä¿¡å·
-    output wire[DW-1:0] req_data_o  // TXç«¯è¦å‘é€çš„æ•°æ®
+    output wire req_o,              // TX¶ËÇëÇóĞÅºÅ
+    output wire[DW-1:0] req_data_o  // TX¶ËÒª·¢ËÍµÄÊı¾İ
 
     );
 
@@ -68,7 +68,7 @@ module full_handshake_tx #(
                     state_next = STATE_IDLE;
                 end
             end
-            // ç­‰å¾…ack=1
+            // µÈ´ıack=1
             STATE_ASSERT: begin
                 if (!ack) begin
                     state_next = STATE_ASSERT;
@@ -76,7 +76,7 @@ module full_handshake_tx #(
                     state_next = STATE_DEASSERT;
                 end
             end
-            // ç­‰å¾…ack=0
+            // µÈ´ıack=0
             STATE_DEASSERT: begin
                 if (!ack) begin
                     state_next = STATE_IDLE;
@@ -90,7 +90,7 @@ module full_handshake_tx #(
         endcase
     end
 
-    // å°†åº”ç­”ä¿¡å·æ‰“ä¸¤æ‹è¿›è¡ŒåŒæ­¥
+    // ½«Ó¦´ğĞÅºÅ´òÁ½ÅÄ½øĞĞÍ¬²½
     always @ (posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             ack_d <= 1'b0;
@@ -112,7 +112,7 @@ module full_handshake_tx #(
             req_data <= {(DW){1'b0}};
         end else begin
             case (state)
-                // é”å­˜TXè¯·æ±‚æ•°æ®ï¼Œåœ¨æ”¶åˆ°ackä¹‹å‰ä¸€ç›´ä¿æŒæœ‰æ•ˆ
+                // Ëø´æTXÇëÇóÊı¾İ£¬ÔÚÊÕµ½ackÖ®Ç°Ò»Ö±±£³ÖÓĞĞ§
                 STATE_IDLE: begin
                     if (req_i == 1'b1) begin
                         idle <= 1'b0;
@@ -123,7 +123,7 @@ module full_handshake_tx #(
                         req <= 1'b0;
                     end
                 end
-                // æ”¶åˆ°RXçš„ackä¹‹åæ’¤é”€TXè¯·æ±‚
+                // ÊÕµ½RXµÄackÖ®ºó³·ÏúTXÇëÇó
                 STATE_ASSERT: begin
                     if (ack == 1'b1) begin
                         req <= 1'b0;

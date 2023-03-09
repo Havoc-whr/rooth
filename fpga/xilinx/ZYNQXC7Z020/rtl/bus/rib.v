@@ -17,83 +17,83 @@
 `include "../core/rooth_defines.v"
 
 
-// RIBæ€»çº¿æ¨¡å—
+// RIB×ÜÏßÄ£¿é
 module rib(
 
     input wire clk,
     input wire rst,
 
     // master 0 interface
-    input wire[`CPU_WIDTH-1:0] m0_addr_i,     // ä¸»è®¾å¤‡0è¯»ã€å†™åœ°å€
-    input wire[`CPU_WIDTH-1:0] m0_data_i,         // ä¸»è®¾å¤‡0å†™æ•°æ®
-    output reg[`CPU_WIDTH-1:0] m0_data_o,         // ä¸»è®¾å¤‡0è¯»å–åˆ°çš„æ•°æ®
-    input wire m0_req_i,                   // ä¸»è®¾å¤‡0è®¿é—®è¯·æ±‚æ ‡å¿—
-    input wire m0_we_i,                    // ä¸»è®¾å¤‡0å†™æ ‡å¿—
+    input wire[`CPU_WIDTH-1:0] m0_addr_i,     // Ö÷Éè±¸0¶Á¡¢Ğ´µØÖ·
+    input wire[`CPU_WIDTH-1:0] m0_data_i,         // Ö÷Éè±¸0Ğ´Êı¾İ
+    output reg[`CPU_WIDTH-1:0] m0_data_o,         // Ö÷Éè±¸0¶ÁÈ¡µ½µÄÊı¾İ
+    input wire m0_req_i,                   // Ö÷Éè±¸0·ÃÎÊÇëÇó±êÖ¾
+    input wire m0_we_i,                    // Ö÷Éè±¸0Ğ´±êÖ¾
 
     // master 1 interface
-    input wire[`CPU_WIDTH-1:0] m1_addr_i,     // ä¸»è®¾å¤‡1è¯»ã€å†™åœ°å€
-    input wire[`CPU_WIDTH-1:0] m1_data_i,         // ä¸»è®¾å¤‡1å†™æ•°æ®
-    output reg[`CPU_WIDTH-1:0] m1_data_o,         // ä¸»è®¾å¤‡1è¯»å–åˆ°çš„æ•°æ®
-    input wire m1_req_i,                   // ä¸»è®¾å¤‡1è®¿é—®è¯·æ±‚æ ‡å¿—
-    input wire m1_we_i,                    // ä¸»è®¾å¤‡1å†™æ ‡å¿—
+    input wire[`CPU_WIDTH-1:0] m1_addr_i,     // Ö÷Éè±¸1¶Á¡¢Ğ´µØÖ·
+    input wire[`CPU_WIDTH-1:0] m1_data_i,         // Ö÷Éè±¸1Ğ´Êı¾İ
+    output reg[`CPU_WIDTH-1:0] m1_data_o,         // Ö÷Éè±¸1¶ÁÈ¡µ½µÄÊı¾İ
+    input wire m1_req_i,                   // Ö÷Éè±¸1·ÃÎÊÇëÇó±êÖ¾
+    input wire m1_we_i,                    // Ö÷Éè±¸1Ğ´±êÖ¾
 
     // master 2 interface
-    input wire[`CPU_WIDTH-1:0] m2_addr_i,     // ä¸»è®¾å¤‡2è¯»ã€å†™åœ°å€
-    input wire[`CPU_WIDTH-1:0] m2_data_i,         // ä¸»è®¾å¤‡2å†™æ•°æ®
-    output reg[`CPU_WIDTH-1:0] m2_data_o,         // ä¸»è®¾å¤‡2è¯»å–åˆ°çš„æ•°æ®
-    input wire m2_req_i,                   // ä¸»è®¾å¤‡2è®¿é—®è¯·æ±‚æ ‡å¿—
-    input wire m2_we_i,                    // ä¸»è®¾å¤‡2å†™æ ‡å¿—
+    input wire[`CPU_WIDTH-1:0] m2_addr_i,     // Ö÷Éè±¸2¶Á¡¢Ğ´µØÖ·
+    input wire[`CPU_WIDTH-1:0] m2_data_i,         // Ö÷Éè±¸2Ğ´Êı¾İ
+    output reg[`CPU_WIDTH-1:0] m2_data_o,         // Ö÷Éè±¸2¶ÁÈ¡µ½µÄÊı¾İ
+    input wire m2_req_i,                   // Ö÷Éè±¸2·ÃÎÊÇëÇó±êÖ¾
+    input wire m2_we_i,                    // Ö÷Éè±¸2Ğ´±êÖ¾
 
     // master 3 interface
-    input wire[`CPU_WIDTH-1:0] m3_addr_i,     // ä¸»è®¾å¤‡3è¯»ã€å†™åœ°å€
-    input wire[`CPU_WIDTH-1:0] m3_data_i,         // ä¸»è®¾å¤‡3å†™æ•°æ®
-    output reg[`CPU_WIDTH-1:0] m3_data_o,         // ä¸»è®¾å¤‡3è¯»å–åˆ°çš„æ•°æ®
-    input wire m3_req_i,                   // ä¸»è®¾å¤‡3è®¿é—®è¯·æ±‚æ ‡å¿—
-    input wire m3_we_i,                    // ä¸»è®¾å¤‡3å†™æ ‡å¿—
+    input wire[`CPU_WIDTH-1:0] m3_addr_i,     // Ö÷Éè±¸3¶Á¡¢Ğ´µØÖ·
+    input wire[`CPU_WIDTH-1:0] m3_data_i,         // Ö÷Éè±¸3Ğ´Êı¾İ
+    output reg[`CPU_WIDTH-1:0] m3_data_o,         // Ö÷Éè±¸3¶ÁÈ¡µ½µÄÊı¾İ
+    input wire m3_req_i,                   // Ö÷Éè±¸3·ÃÎÊÇëÇó±êÖ¾
+    input wire m3_we_i,                    // Ö÷Éè±¸3Ğ´±êÖ¾
 
     // slave 0 interface
-    output reg[`CPU_WIDTH-1:0] s0_addr_o,     // ä»è®¾å¤‡0è¯»ã€å†™åœ°å€
-    output reg[`CPU_WIDTH-1:0] s0_data_o,         // ä»è®¾å¤‡0å†™æ•°æ®
-    input wire[`CPU_WIDTH-1:0] s0_data_i,         // ä»è®¾å¤‡0è¯»å–åˆ°çš„æ•°æ®
-    output reg s0_we_o,                    // ä»è®¾å¤‡0å†™æ ‡å¿—
+    output reg[`CPU_WIDTH-1:0] s0_addr_o,     // ´ÓÉè±¸0¶Á¡¢Ğ´µØÖ·
+    output reg[`CPU_WIDTH-1:0] s0_data_o,         // ´ÓÉè±¸0Ğ´Êı¾İ
+    input wire[`CPU_WIDTH-1:0] s0_data_i,         // ´ÓÉè±¸0¶ÁÈ¡µ½µÄÊı¾İ
+    output reg s0_we_o,                    // ´ÓÉè±¸0Ğ´±êÖ¾
 
     // slave 1 interface
-    output reg[`CPU_WIDTH-1:0] s1_addr_o,     // ä»è®¾å¤‡1è¯»ã€å†™åœ°å€
-    output reg[`CPU_WIDTH-1:0] s1_data_o,         // ä»è®¾å¤‡1å†™æ•°æ®
-    input wire[`CPU_WIDTH-1:0] s1_data_i,         // ä»è®¾å¤‡1è¯»å–åˆ°çš„æ•°æ®
-    output reg s1_we_o,                    // ä»è®¾å¤‡1å†™æ ‡å¿—
+    output reg[`CPU_WIDTH-1:0] s1_addr_o,     // ´ÓÉè±¸1¶Á¡¢Ğ´µØÖ·
+    output reg[`CPU_WIDTH-1:0] s1_data_o,         // ´ÓÉè±¸1Ğ´Êı¾İ
+    input wire[`CPU_WIDTH-1:0] s1_data_i,         // ´ÓÉè±¸1¶ÁÈ¡µ½µÄÊı¾İ
+    output reg s1_we_o,                    // ´ÓÉè±¸1Ğ´±êÖ¾
 
     // slave 2 interface
-    output reg[`CPU_WIDTH-1:0] s2_addr_o,     // ä»è®¾å¤‡2è¯»ã€å†™åœ°å€
-    output reg[`CPU_WIDTH-1:0] s2_data_o,         // ä»è®¾å¤‡2å†™æ•°æ®
-    input wire[`CPU_WIDTH-1:0] s2_data_i,         // ä»è®¾å¤‡2è¯»å–åˆ°çš„æ•°æ®
-    output reg s2_we_o,                    // ä»è®¾å¤‡2å†™æ ‡å¿—
+    output reg[`CPU_WIDTH-1:0] s2_addr_o,     // ´ÓÉè±¸2¶Á¡¢Ğ´µØÖ·
+    output reg[`CPU_WIDTH-1:0] s2_data_o,         // ´ÓÉè±¸2Ğ´Êı¾İ
+    input wire[`CPU_WIDTH-1:0] s2_data_i,         // ´ÓÉè±¸2¶ÁÈ¡µ½µÄÊı¾İ
+    output reg s2_we_o,                    // ´ÓÉè±¸2Ğ´±êÖ¾
 
     // slave 3 interface
-    output reg[`CPU_WIDTH-1:0] s3_addr_o,     // ä»è®¾å¤‡3è¯»ã€å†™åœ°å€
-    output reg[`CPU_WIDTH-1:0] s3_data_o,         // ä»è®¾å¤‡3å†™æ•°æ®
-    input wire[`CPU_WIDTH-1:0] s3_data_i,         // ä»è®¾å¤‡3è¯»å–åˆ°çš„æ•°æ®
-    output reg s3_we_o,                    // ä»è®¾å¤‡3å†™æ ‡å¿—
+    output reg[`CPU_WIDTH-1:0] s3_addr_o,     // ´ÓÉè±¸3¶Á¡¢Ğ´µØÖ·
+    output reg[`CPU_WIDTH-1:0] s3_data_o,         // ´ÓÉè±¸3Ğ´Êı¾İ
+    input wire[`CPU_WIDTH-1:0] s3_data_i,         // ´ÓÉè±¸3¶ÁÈ¡µ½µÄÊı¾İ
+    output reg s3_we_o,                    // ´ÓÉè±¸3Ğ´±êÖ¾
 
     // slave 4 interface
-    output reg[`CPU_WIDTH-1:0] s4_addr_o,     // ä»è®¾å¤‡4è¯»ã€å†™åœ°å€
-    output reg[`CPU_WIDTH-1:0] s4_data_o,         // ä»è®¾å¤‡4å†™æ•°æ®
-    input wire[`CPU_WIDTH-1:0] s4_data_i,         // ä»è®¾å¤‡4è¯»å–åˆ°çš„æ•°æ®
-    output reg s4_we_o,                    // ä»è®¾å¤‡4å†™æ ‡å¿—
+    output reg[`CPU_WIDTH-1:0] s4_addr_o,     // ´ÓÉè±¸4¶Á¡¢Ğ´µØÖ·
+    output reg[`CPU_WIDTH-1:0] s4_data_o,         // ´ÓÉè±¸4Ğ´Êı¾İ
+    input wire[`CPU_WIDTH-1:0] s4_data_i,         // ´ÓÉè±¸4¶ÁÈ¡µ½µÄÊı¾İ
+    output reg s4_we_o,                    // ´ÓÉè±¸4Ğ´±êÖ¾
 
     // slave 5 interface
-    output reg[`CPU_WIDTH-1:0] s5_addr_o,     // ä»è®¾å¤‡5è¯»ã€å†™åœ°å€
-    output reg[`CPU_WIDTH-1:0] s5_data_o,         // ä»è®¾å¤‡5å†™æ•°æ®
-    input wire[`CPU_WIDTH-1:0] s5_data_i,         // ä»è®¾å¤‡5è¯»å–åˆ°çš„æ•°æ®
-    output reg s5_we_o,                    // ä»è®¾å¤‡5å†™æ ‡å¿—
+    output reg[`CPU_WIDTH-1:0] s5_addr_o,     // ´ÓÉè±¸5¶Á¡¢Ğ´µØÖ·
+    output reg[`CPU_WIDTH-1:0] s5_data_o,         // ´ÓÉè±¸5Ğ´Êı¾İ
+    input wire[`CPU_WIDTH-1:0] s5_data_i,         // ´ÓÉè±¸5¶ÁÈ¡µ½µÄÊı¾İ
+    output reg s5_we_o,                    // ´ÓÉè±¸5Ğ´±êÖ¾
 
-    output reg hold_flag_o                 // æš‚åœæµæ°´çº¿æ ‡å¿—
+    output reg hold_flag_o                 // ÔİÍ£Á÷Ë®Ïß±êÖ¾
 
     );
 
 
-    // è®¿é—®åœ°å€çš„æœ€é«˜4ä½å†³å®šè¦è®¿é—®çš„æ˜¯å“ªä¸€ä¸ªä»è®¾å¤‡
-    // å› æ­¤æœ€å¤šæ”¯æŒ16ä¸ªä»è®¾å¤‡
+    // ·ÃÎÊµØÖ·µÄ×î¸ß4Î»¾ö¶¨Òª·ÃÎÊµÄÊÇÄÄÒ»¸ö´ÓÉè±¸
+    // Òò´Ë×î¶àÖ§³Ö16¸ö´ÓÉè±¸
     parameter [3:0]slave_0 = 4'b0000;
     parameter [3:0]slave_1 = 4'b0001;
     parameter [3:0]slave_2 = 4'b0010;
@@ -110,12 +110,12 @@ module rib(
     reg[1:0] grant;
 
 
-    // ä¸»è®¾å¤‡è¯·æ±‚ä¿¡å·
+    // Ö÷Éè±¸ÇëÇóĞÅºÅ
     assign req = {m3_req_i, m2_req_i, m1_req_i, m0_req_i};
 
-    // ä»²è£é€»è¾‘
-    // å›ºå®šä¼˜å…ˆçº§ä»²è£æœºåˆ¶
-    // ä¼˜å…ˆçº§ç”±é«˜åˆ°ä½ï¼šä¸»è®¾å¤‡3ï¼Œä¸»è®¾å¤‡0ï¼Œä¸»è®¾å¤‡2ï¼Œä¸»è®¾å¤‡1
+    // ÖÙ²ÃÂß¼­
+    // ¹Ì¶¨ÓÅÏÈ¼¶ÖÙ²Ã»úÖÆ
+    // ÓÅÏÈ¼¶ÓÉ¸ßµ½µÍ£ºÖ÷Éè±¸3£¬Ö÷Éè±¸0£¬Ö÷Éè±¸2£¬Ö÷Éè±¸1
     always @ (*) begin
         if (req[3]) begin
             grant = grant3;
@@ -132,7 +132,7 @@ module rib(
         end
     end
 
-    // æ ¹æ®ä»²è£ç»“æœï¼Œé€‰æ‹©(è®¿é—®)å¯¹åº”çš„ä»è®¾å¤‡
+    // ¸ù¾İÖÙ²Ã½á¹û£¬Ñ¡Ôñ(·ÃÎÊ)¶ÔÓ¦µÄ´ÓÉè±¸
     always @ (*) begin
         m0_data_o = `CPU_WIDTH'b0;
         m1_data_o = `CPU_WIDTH'b0;

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Mar  5 22:12:15 2023
+| Date         : Wed Mar  8 22:41:00 2023
 | Host         : Z2-R running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file rooth_soc_control_sets_placed.rpt
 | Design       : rooth_soc
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |   100 |
-|    Minimum number of control sets                        |   100 |
+| Total control sets                                       |   101 |
+|    Minimum number of control sets                        |   101 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   122 |
+| Unused register locations in slices containing registers |   109 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,7 +39,7 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |   100 |
+| Total control sets |   101 |
 | >= 0 to < 4        |     4 |
 | >= 4 to < 6        |     8 |
 | >= 6 to < 8        |     0 |
@@ -47,7 +47,7 @@ Table of Contents
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     1 |
-| >= 16              |    81 |
+| >= 16              |    82 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,121 +58,122 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             143 |           83 |
-| No           | No                    | Yes                    |              55 |           18 |
-| No           | Yes                   | No                     |             272 |          105 |
-| Yes          | No                    | No                     |            1002 |          691 |
-| Yes          | No                    | Yes                    |             485 |          147 |
-| Yes          | Yes                   | No                     |            1401 |          612 |
+| No           | No                    | No                     |             142 |           78 |
+| No           | No                    | Yes                    |             122 |           58 |
+| No           | Yes                   | No                     |             204 |           76 |
+| Yes          | No                    | No                     |            1032 |          684 |
+| Yes          | No                    | Yes                    |             525 |          164 |
+| Yes          | Yes                   | No                     |            1362 |          583 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------------------------------+------------------------------------------------------------+-------------------------------------------+------------------+----------------+
-|               Clock Signal               |                        Enable Signal                       |              Set/Reset Signal             | Slice Load Count | Bel Load Count |
-+------------------------------------------+------------------------------------------------------------+-------------------------------------------+------------------+----------------+
-|  clk_pll_inst/inst/clk_out1              | u_spi_O/spi_mosi_i_1_n_3                                   | u_rooth_0/u_if_as_0/SR[0]                 |                1 |              1 |
-|  clk_pll_inst/inst/clk_out1              | uart_0/tx_reg_i_2_n_3                                      | uart_0/tx_reg_i_1_n_3                     |                1 |              1 |
-|  u_rooth_0/u_if_ex_0/next_pc_four_o4_out |                                                            |                                           |                1 |              1 |
-| ~jtag_TCK_IBUF_BUFG                      |                                                            | u_jtag_top/u_jtag_driver/jtag_TDO_i_1_n_3 |                1 |              1 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_div_0/state[3]_i_1_n_3                         | u_rooth_0/u_if_as_0/SR[0]                 |                2 |              4 |
-|  clk_pll_inst/inst/clk_out1              | uart_0/bit_cnt[3]_i_1_n_3                                  | uart_0/tx_reg_i_1_n_3                     |                1 |              4 |
-|  clk_pll_inst/inst/clk_out1              | uart_0/rx_clk_cnt0                                         | uart_0/rx_data                            |                1 |              4 |
-|  clk_pll_inst/inst/clk_out1              | uart_0/state[3]_i_1__0_n_3                                 | u_rooth_0/u_if_as_0/SR[0]                 |                1 |              4 |
-| ~jtag_TCK_IBUF_BUFG                      | u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg_n_3_[9] | u_jtag_top/u_jtag_driver/ir_reg           |                1 |              5 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_4[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |                1 |              5 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_clinet_0/csr_state[4]_i_1_n_3                  | u_rooth_0/u_if_as_0/SR[0]                 |                2 |              5 |
-|  clk_pll_inst/inst/clk_out1              | u_spi_O/clk_cnt0                                           | u_spi_O/spi_clk_edge_cnt[4]_i_1_n_3       |                2 |              5 |
-|  clk_pll_inst/inst/clk_out1              | u_spi_O/rdata[7]_i_1_n_3                                   | u_rooth_0/u_if_as_0/SR[0]                 |                4 |              8 |
-|  clk_pll_inst/inst/clk_out1              | uart_0/E[0]                                                | u_rooth_0/u_if_as_0/SR[0]                 |                2 |              8 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_pc_reg_0/E[0]                                  | u_rooth_0/u_if_as_0/SR[0]                 |                6 |              8 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_as_0/alu_res_o_reg[28]_3[0]                 |                                           |                2 |              8 |
-|  clk_pll_inst/inst/clk_out1              | uart_0/rx_data[7]_i_1_n_3                                  | uart_0/rx_data                            |                2 |              8 |
-|  clk_pll_inst/inst/clk_out1              |                                                            | u_spi_O/clk_cnt[8]_i_1_n_3                |                3 |              9 |
-|  clk_pll_inst/inst/clk_out1              |                                                            |                                           |               11 |             14 |
-|  clk_pll_inst/inst/clk_out1              |                                                            | uart_0/rx_clk_cnt[0]_i_1_n_3              |                4 |             16 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_as_0/p_1_in[0]                              | u_rooth_0/u_if_as_0/SR[0]                 |               12 |             16 |
-|  clk_pll_inst/inst/clk_out1              | uart_0/cycle_cnt[0]_i_2_n_3                                | uart_0/cycle_cnt[0]_i_1_n_3               |                4 |             16 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_6[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |                8 |             20 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_pc_reg_0/E[0]                                  | u_rooth_0/u_if_as_0/done_reg[0]           |               17 |             24 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_pc_reg_0/p_1_in__0[0]                          | u_rooth_0/u_if_as_0/SR[0]                 |               22 |             30 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_as_0/alu_res_o_reg[28]_2[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               23 |             31 |
-|  jtag_TCK_IBUF_BUFG                      |                                                            | u_rooth_0/u_if_as_0/SR[0]                 |                7 |             31 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_clinet_0/E[0]                                  | u_jtag_top/u_jtag_dm/SR[0]                |                9 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_clinet_0/we_o_reg_1[0]                         | u_rooth_0/u_if_as_0/SR[0]                 |               14 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_clinet_0/we_o_reg_2[0]                         | u_rooth_0/u_if_as_0/SR[0]                 |                9 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_clinet_0/we_o_reg_0[0]                         | u_rooth_0/u_if_as_0/SR[0]                 |               13 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_div_0/div_remain[31]_i_1_n_3                   | u_rooth_0/u_if_as_0/SR[0]                 |               14 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_div_0/dividend_r[31]_i_1_n_3                   | u_rooth_0/u_if_as_0/SR[0]                 |               17 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_div_0/divisor_r[31]_i_1_n_3                    | u_rooth_0/u_if_as_0/SR[0]                 |               19 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_div_0/minuend[31]_i_1_n_3                      | u_rooth_0/u_if_as_0/SR[0]                 |               10 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/E[0]                               | u_rooth_0/u_if_as_0/SR[0]                 |               15 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_ex_0/E[0]                                   | u_rooth_0/u_if_as_0/SR[0]                 |                8 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_ex_0/dm_halt_req_reg[0]                     | u_rooth_0/u_if_as_0/SR[0]                 |               25 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/csr_wr_adder_o_reg[6]_0[0]             | u_rooth_0/u_if_as_0/SR[0]                 |               13 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/csr_wr_adder_o_reg[0]_1[0]             | u_rooth_0/u_if_as_0/SR[0]                 |               10 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/csr_wr_adder_o_reg[0]_0[0]             | u_rooth_0/u_if_as_0/SR[0]                 |               11 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_0[0]                     |                                           |               22 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_8[0]                     |                                           |               25 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_3[0]                     |                                           |               24 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_10[0]                    |                                           |               23 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_1[0]                     |                                           |               25 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_4[0]                     |                                           |               23 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg[0]                       |                                           |               24 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_5[0]                     |                                           |               21 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_2[0]                     |                                           |               21 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_8[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               17 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_7[0]                     |                                           |               21 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_2[0]             |                                           |               24 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[1]_0[0]             |                                           |               23 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_0[0]             |                                           |               15 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_1[0]             |                                           |               22 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[1]_3[0]             |                                           |               20 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_1[0]             |                                           |               17 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[4]_1[0]             |                                           |               22 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[4]_2[0]             |                                           |               21 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[4]_0[0]             |                                           |               28 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_1[0]             |                                           |               30 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_3[0]             |                                           |               15 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_0[0]             |                                           |               29 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_4[0]             |                                           |               30 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_2[0]             |                                           |               18 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_3[0]             |                                           |               28 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_0[0]             |                                           |               17 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[1]_1[0]             |                                           |               14 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[1]_2[0]             |                                           |               18 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_pc_reg_0/curr_pc_o_reg[1]_0[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               22 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_pc_reg_0/curr_pc_o_reg[3]_6[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               18 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_pc_reg_0/curr_pc_o_reg[3]_3[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               20 |             32 |
-|  clk_pll_inst/inst/clk_out1              |                                                            | timer_0/timer_count[0]_i_1_n_3            |                8 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/recv_data_reg[2]_1[0]              | u_rooth_0/u_if_as_0/SR[0]                 |               14 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/recv_data_reg[38]_0[0]             | u_rooth_0/u_if_as_0/SR[0]                 |                8 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_6[0]                     |                                           |               22 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_3[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               13 |             32 |
-|  n_2_2108_BUFG                           |                                                            |                                           |               20 |             32 |
-|  n_1_1_BUFG                              |                                                            |                                           |               17 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_5[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               14 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_7[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               11 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_pc_reg_0/curr_pc_o_reg[3]_4[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               12 |             32 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_2[0]             |                                           |               21 |             33 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_wb_0/dm_reg_we_reg_9[0]                     |                                           |               26 |             33 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_div_0/result_o[31]_i_1_n_3                     | u_rooth_0/u_if_as_0/SR[0]                 |               14 |             33 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_clinet_0/p_1_in[2]                             | u_rooth_0/u_if_as_0/SR[0]                 |               16 |             36 |
-|  jtag_TCK_IBUF_BUFG                      | u_jtag_top/u_jtag_driver/rx/E[0]                           | u_rooth_0/u_if_as_0/SR[0]                 |                6 |             38 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/tx/req_data                           | u_rooth_0/u_if_as_0/SR[0]                 |                6 |             38 |
-|  jtag_TCK_IBUF_BUFG                      | u_jtag_top/u_jtag_driver/rx/recv_rdy                       | u_rooth_0/u_if_as_0/SR[0]                 |                7 |             39 |
-|  jtag_TCK_IBUF_BUFG                      | u_jtag_top/u_jtag_driver/shift_reg                         | u_jtag_top/u_jtag_driver/shift_reg0       |               12 |             40 |
-|  jtag_TCK_IBUF_BUFG                      | u_jtag_top/u_jtag_driver/tx/req_data__0                    | u_rooth_0/u_if_as_0/SR[0]                 |                9 |             40 |
-|  jtag_TCK_IBUF_BUFG                      | u_jtag_top/u_jtag_driver/tx/E[0]                           | u_rooth_0/u_if_as_0/SR[0]                 |                9 |             40 |
-|  clk_pll_inst/inst/clk_out1              | u_jtag_top/u_jtag_dm/rx/recv_data                          | u_rooth_0/u_if_as_0/SR[0]                 |                9 |             41 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_div_0/count[30]_i_1_n_3                        | u_rooth_0/u_if_as_0/SR[0]                 |               16 |             63 |
-|  n_0_1438_BUFG                           |                                                            |                                           |               34 |             64 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_ex_0/inst_o[31]_i_1__0_n_3                  | u_rooth_0/u_if_as_0/SR[0]                 |               45 |            142 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_as_0/int_assert_o_reg[0]                    | u_rooth_0/u_if_as_0/SR[0]                 |               58 |            147 |
-|  clk_pll_inst/inst/clk_out1              | u_rooth_0/u_if_ex_0/dm_halt_req_reg_rep_8[0]               | u_rooth_0/u_if_as_0/SR[0]                 |              103 |            214 |
-|  clk_pll_inst/inst/clk_out1              |                                                            | u_rooth_0/u_if_as_0/SR[0]                 |              100 |            238 |
-+------------------------------------------+------------------------------------------------------------+-------------------------------------------+------------------+----------------+
++-------------------------------------------+------------------------------------------------------------+-------------------------------------------+------------------+----------------+
+|                Clock Signal               |                        Enable Signal                       |              Set/Reset Signal             | Slice Load Count | Bel Load Count |
++-------------------------------------------+------------------------------------------------------------+-------------------------------------------+------------------+----------------+
+|  clk_pll_inst/inst/clk_out1               | u_spi_O/spi_mosi_i_1_n_3                                   | u_rooth_0/u_if_as_0/SR[0]                 |                1 |              1 |
+|  clk_pll_inst/inst/clk_out1               | uart_0/tx_reg_i_2_n_3                                      | uart_0/tx_reg_i_1_n_3                     |                1 |              1 |
+|  u_rooth_0/u_if_ex_0/next_pc_four_o12_out |                                                            | u_rooth_0/u_clinet_0/client_int_assert_o  |                1 |              1 |
+| ~jtag_TCK_IBUF_BUFG                       |                                                            | u_jtag_top/u_jtag_driver/jtag_TDO_i_1_n_3 |                1 |              1 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_div_0/state[3]_i_1_n_3                         | u_rooth_0/u_if_as_0/SR[0]                 |                2 |              4 |
+|  clk_pll_inst/inst/clk_out1               | uart_0/bit_cnt[3]_i_1_n_3                                  | uart_0/tx_reg_i_1_n_3                     |                1 |              4 |
+|  clk_pll_inst/inst/clk_out1               | uart_0/rx_clk_cnt0                                         | uart_0/rx_data                            |                1 |              4 |
+|  clk_pll_inst/inst/clk_out1               | uart_0/state[3]_i_1__0_n_3                                 | u_rooth_0/u_if_as_0/SR[0]                 |                2 |              4 |
+|  clk_pll_inst/inst/clk_out1               | u_spi_O/clk_cnt0                                           | u_spi_O/spi_clk_edge_cnt[4]_i_1_n_3       |                2 |              5 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_4[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |                2 |              5 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/client_hold_flag_o                     | u_rooth_0/u_if_as_0/SR[0]                 |                2 |              5 |
+| ~jtag_TCK_IBUF_BUFG                       | u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg_n_3_[9] | u_jtag_top/u_jtag_driver/ir_reg           |                1 |              5 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_as_0/alu_res_o_reg[28]_3[0]                 |                                           |                2 |              8 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_pc_reg_0/E[0]                                  | u_rooth_0/u_if_as_0/SR[0]                 |                3 |              8 |
+|  clk_pll_inst/inst/clk_out1               | uart_0/E[0]                                                | u_rooth_0/u_if_as_0/SR[0]                 |                4 |              8 |
+|  clk_pll_inst/inst/clk_out1               | u_spi_O/rdata[7]_i_1_n_3                                   | u_rooth_0/u_if_as_0/SR[0]                 |                2 |              8 |
+|  clk_pll_inst/inst/clk_out1               | uart_0/rx_data[7]_i_1_n_3                                  | uart_0/rx_data                            |                3 |              8 |
+|  clk_pll_inst/inst/clk_out1               |                                                            | u_spi_O/clk_cnt[8]_i_1_n_3                |                3 |              9 |
+|  clk_pll_inst/inst/clk_out1               |                                                            |                                           |               10 |             14 |
+|  clk_pll_inst/inst/clk_out1               |                                                            | uart_0/rx_clk_cnt[0]_i_1_n_3              |                4 |             16 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_as_0/p_1_in[0]                              | u_rooth_0/u_if_as_0/SR[0]                 |               16 |             16 |
+|  clk_pll_inst/inst/clk_out1               | uart_0/cycle_cnt[0]_i_2_n_3                                | uart_0/cycle_cnt[0]_i_1_n_3               |                4 |             16 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_6[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |                9 |             20 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_pc_reg_0/E[0]                                  | u_rooth_0/u_if_as_0/done_reg[0]           |               17 |             24 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_pc_reg_0/p_1_in__0[0]                          | u_rooth_0/u_if_as_0/SR[0]                 |               23 |             30 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_as_0/alu_res_o_reg[28]_2[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               27 |             31 |
+|  jtag_TCK_IBUF_BUFG                       |                                                            | u_rooth_0/u_if_as_0/SR[0]                 |                9 |             31 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_div_0/dividend_r[31]_i_1_n_3                   | u_rooth_0/u_if_as_0/SR[0]                 |               22 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_div_0/divisor_r[31]_i_1_n_3                    | u_rooth_0/u_if_as_0/SR[0]                 |               18 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_div_0/minuend[31]_i_1_n_3                      | u_rooth_0/u_if_as_0/SR[0]                 |               11 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_5[0]             |                                           |               18 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_7[0]             |                                           |               17 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_8[0]             |                                           |               21 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[4]_1[0]             |                                           |               22 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_6[0]             |                                           |               20 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_2[0]             |                                           |               26 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_6[0]             |                                           |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_5[0]             |                                           |               24 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_4[0]             |                                           |               23 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_1[0]             |                                           |               17 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_3[0]             |                                           |               24 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_4[0]             |                                           |               25 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_3[0]             |                                           |               22 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_6[0]             |                                           |               23 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_7[0]             |                                           |               21 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_1[0]             |                                           |               26 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_7[0]             |                                           |               17 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_1[0]             |                                           |               17 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_4[0]             |                                           |               29 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_0[0]             |                                           |               22 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_7[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               13 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[1]_1[0]             |                                           |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[4]_0[0]             |                                           |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_8[0]             |                                           |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_8[0]             |                                           |               26 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[4]_2[0]             |                                           |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_0[0]             |                                           |               16 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_3[0]             |                                           |               20 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[1]_0[0]             |                                           |               20 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_2[0]             |                                           |               22 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_5[0]             |                                           |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_ex_0/E[0]                                   | u_rooth_0/u_if_as_0/SR[0]                 |               12 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_ex_0/int_assert_o_reg_0[0]                  | u_jtag_top/u_jtag_dm/SR[0]                |                5 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_ex_0/int_assert_o_reg_1[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               27 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/E[0]                                   |                                           |               27 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/csr_wr_adder_o_reg[0]_0[0]             | u_rooth_0/u_if_as_0/SR[0]                 |                9 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/csr_wr_adder_o_reg[6]_0[0]             | u_rooth_0/u_if_as_0/SR[0]                 |                6 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/csr_wr_adder_o_reg[0]_1[0]             | u_rooth_0/u_if_as_0/SR[0]                 |                8 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_pc_reg_0/curr_pc_o_reg[3]_3[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               23 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_pc_reg_0/curr_pc_o_reg[3]_6[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               30 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_pc_reg_0/curr_pc_o_reg[3]_4[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1               |                                                            | timer_0/timer_count[0]_i_1_n_3            |                8 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/recv_data_reg[2]_1[0]              | u_rooth_0/u_if_as_0/SR[0]                 |               11 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_3[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               17 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_5[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               14 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/recv_data_reg[38]_0[0]             | u_rooth_0/u_if_as_0/SR[0]                 |               11 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_8[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               14 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/E[0]                               | u_rooth_0/u_if_as_0/SR[0]                 |               13 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_clinet_0/E[0]                                  | u_rooth_0/u_if_as_0/SR[0]                 |               10 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_2[0]             |                                           |               23 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_clinet_0/we_o_reg_0[0]                         | u_rooth_0/u_if_as_0/SR[0]                 |               13 |             32 |
+|  n_1_6_BUFG                               |                                                            |                                           |               13 |             32 |
+|  n_2_2102_BUFG                            |                                                            |                                           |               18 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_clinet_0/we_o_reg_1[0]                         | u_rooth_0/u_if_as_0/SR[0]                 |                8 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_div_0/div_remain[31]_i_1_n_3                   | u_rooth_0/u_if_as_0/SR[0]                 |               14 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_pc_reg_0/curr_pc_o_reg[1]_0[0]                 | u_rooth_0/u_if_as_0/SR[0]                 |               26 |             32 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_div_0/result_o[31]_i_1_n_3                     | u_rooth_0/u_if_as_0/SR[0]                 |               11 |             33 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_clinet_0/p_1_in[2]                             | u_rooth_0/u_if_as_0/SR[0]                 |               13 |             35 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/tx/req_data                           | u_rooth_0/u_if_as_0/SR[0]                 |                8 |             38 |
+|  jtag_TCK_IBUF_BUFG                       | u_jtag_top/u_jtag_driver/rx/E[0]                           | u_rooth_0/u_if_as_0/SR[0]                 |                9 |             38 |
+|  jtag_TCK_IBUF_BUFG                       | u_jtag_top/u_jtag_driver/rx/recv_rdy                       | u_rooth_0/u_if_as_0/SR[0]                 |                7 |             39 |
+|  jtag_TCK_IBUF_BUFG                       | u_jtag_top/u_jtag_driver/tx/E[0]                           | u_rooth_0/u_if_as_0/SR[0]                 |                8 |             40 |
+|  jtag_TCK_IBUF_BUFG                       | u_jtag_top/u_jtag_driver/tx/req_data__0                    | u_rooth_0/u_if_as_0/SR[0]                 |                6 |             40 |
+|  jtag_TCK_IBUF_BUFG                       | u_jtag_top/u_jtag_driver/shift_reg                         | u_jtag_top/u_jtag_driver/shift_reg0       |               12 |             40 |
+|  clk_pll_inst/inst/clk_out1               | u_jtag_top/u_jtag_dm/rx/recv_data                          | u_rooth_0/u_if_as_0/SR[0]                 |                7 |             41 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_div_0/count[30]_i_1_n_3                        | u_rooth_0/u_if_as_0/SR[0]                 |               19 |             63 |
+|  n_0_1433_BUFG                            |                                                            |                                           |               37 |             64 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_ex_0/inst_o[31]_i_1_n_3                     | u_rooth_0/u_if_as_0/SR[0]                 |               51 |            144 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_wb_0/reg_wr_en_o_i_1_n_3                    | u_rooth_0/u_if_as_0/SR[0]                 |               56 |            147 |
+|  clk_pll_inst/inst/clk_out1               | u_rooth_0/u_if_ex_0/int_assert_o_reg_2[0]                  | u_rooth_0/u_if_as_0/SR[0]                 |               63 |            214 |
+|  clk_pll_inst/inst/clk_out1               |                                                            | u_rooth_0/u_if_as_0/SR[0]                 |              108 |            236 |
++-------------------------------------------+------------------------------------------------------------+-------------------------------------------+------------------+----------------+
 
 

@@ -8,7 +8,7 @@
 // Last Modified : 2022-08-12 11:51
 // ---------------------------------------------------------------------------------
 // Description   : 
-// 瀵规寚浠よ繘琛岃瘧鐮侊紝骞朵骇鐢熸帶鍒朵俊鍙峰畬鎴愭寚浠ょ殑鎵ц
+// 对指令进行译码，并产生控制信号完成指令的执行
 //
 // -FHDR----------------------------------------------------------------------------
 `include "rooth_defines.v"
@@ -34,7 +34,7 @@ module decode(
     output reg          [`ALU_OP_WIDTH-1:0]     alu_op_o,
     output reg          [`ALU_SRC_WIDTH-1:0]    alu_src_sel_o,
 
-    output reg          [`WIDTH_RESCTRL-1:0]    alu_res_op_o // alu缁撴灉鏁版嵁娴佸悜
+    output reg          [`WIDTH_RESCTRL-1:0]    alu_res_op_o // alu结果数据流向
 );
 
 wire    [`OPCODE_WIDTH-1:0]opcode = inst_i[6:0];

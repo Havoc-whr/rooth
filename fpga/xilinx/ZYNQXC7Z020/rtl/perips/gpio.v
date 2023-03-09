@@ -15,7 +15,7 @@
  */
 
 
-// GPIOæ¨¡å—
+// GPIOÄ£¿é
 module gpio(
 
     input wire clk,
@@ -34,15 +34,15 @@ module gpio(
     );
 
 
-    // GPIOæŽ§åˆ¶å¯„å­˜å™¨
+    // GPIO¿ØÖÆ¼Ä´æÆ÷
     localparam GPIO_CTRL = 4'h0;
-    // GPIOæ•°æ®å¯„å­˜å™¨
+    // GPIOÊý¾Ý¼Ä´æÆ÷
     localparam GPIO_DATA = 4'h4;
 
-    // æ¯2ä½æŽ§åˆ¶1ä¸ªIOçš„æ¨¡å¼ï¼Œæœ€å¤šæ”¯æŒ16ä¸ªIO
-    // 0: é«˜é˜»ï¼Œ1ï¼šè¾“å‡ºï¼Œ2ï¼šè¾“å…¥
+    // Ã¿2Î»¿ØÖÆ1¸öIOµÄÄ£Ê½£¬×î¶àÖ§³Ö16¸öIO
+    // 0: ¸ß×è£¬1£ºÊä³ö£¬2£ºÊäÈë
     reg[31:0] gpio_ctrl;
-    // è¾“å…¥è¾“å‡ºæ•°æ®
+    // ÊäÈëÊä³öÊý¾Ý
     reg[31:0] gpio_data;
 
 
@@ -50,7 +50,7 @@ module gpio(
     assign reg_data = gpio_data;
 
 
-    // å†™å¯„å­˜å™¨
+    // Ð´¼Ä´æÆ÷
     always @ (posedge clk) begin
         if (rst == 1'b0) begin
             gpio_data <= 32'h0;
@@ -118,7 +118,7 @@ module gpio(
         end
     end
 
-    // è¯»å¯„å­˜å™¨
+    // ¶Á¼Ä´æÆ÷
     always @ (*) begin
         if (rst == 1'b0) begin
             data_o = 32'h0;

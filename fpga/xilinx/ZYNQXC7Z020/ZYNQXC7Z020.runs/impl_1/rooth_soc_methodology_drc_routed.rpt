@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Mar  5 22:13:16 2023
+| Date         : Wed Mar  8 22:42:13 2023
 | Host         : Z2-R running 64-bit major release  (build 9200)
 | Command      : report_methodology -file rooth_soc_methodology_drc_routed.rpt -pb rooth_soc_methodology_drc_routed.pb -rpx rooth_soc_methodology_drc_routed.rpx
 | Design       : rooth_soc
@@ -23,14 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 395
+             Violations found: 393
 +-----------+------------------+--------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                            | Violations |
 +-----------+------------------+--------------------------------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                            | 234        |
 | LUTAR-1   | Warning          | LUT drives async reset alert                           | 1          |
 | SYNTH-10  | Warning          | Wide multiplier                                        | 4          |
-| TIMING-18 | Warning          | Missing input or output delay                          | 26         |
+| TIMING-18 | Warning          | Missing input or output delay                          | 24         |
 | TIMING-20 | Warning          | Non-clocked latch                                      | 129        |
 | XDCC-1    | Warning          | Scoped Clock constraint overwritten with the same name | 1          |
 +-----------+------------------+--------------------------------------------------------+------------+
@@ -1209,7 +1209,7 @@ Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell u_rooth_0/u_if_as_0/pc_adder_o[31]_i_1__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[10]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[11]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[12]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[13]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[14]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[15]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[1]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[2]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[3]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[4]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[5]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[6]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[7]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[8]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[9]/CLR (the first 15 of 540 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_rooth_0/u_if_as_0/pc_adder_o[31]_i_1__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[10]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[11]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[12]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[13]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[14]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[15]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[1]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[2]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[3]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[4]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[5]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[6]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[7]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[8]/CLR, u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg[9]/CLR (the first 15 of 647 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 SYNTH-10#1 Warning
@@ -1334,30 +1334,20 @@ Related violations: <none>
 
 TIMING-18#21 Warning
 Missing input or output delay  
-An output delay is missing on over relative to clock(s) refer_clk
+An output delay is missing on spi_clk relative to clock(s) refer_clk
 Related violations: <none>
 
 TIMING-18#22 Warning
 Missing input or output delay  
-An output delay is missing on spi_clk relative to clock(s) refer_clk
+An output delay is missing on spi_mosi relative to clock(s) refer_clk
 Related violations: <none>
 
 TIMING-18#23 Warning
 Missing input or output delay  
-An output delay is missing on spi_mosi relative to clock(s) refer_clk
-Related violations: <none>
-
-TIMING-18#24 Warning
-Missing input or output delay  
 An output delay is missing on spi_ss relative to clock(s) refer_clk
 Related violations: <none>
 
-TIMING-18#25 Warning
-Missing input or output delay  
-An output delay is missing on succ relative to clock(s) refer_clk
-Related violations: <none>
-
-TIMING-18#26 Warning
+TIMING-18#24 Warning
 Missing input or output delay  
 An output delay is missing on uart_tx_pin relative to clock(s) refer_clk
 Related violations: <none>

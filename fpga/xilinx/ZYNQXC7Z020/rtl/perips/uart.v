@@ -15,7 +15,7 @@
  */
 
 
-// ä¸²å£æ¨¡å—(é»˜è®¤: 115200, 8 N 1)
+// ´®¿ÚÄ£¿é(Ä¬ÈÏ: 115200, 8 N 1)
 module uart(
 
 	input wire clk,
@@ -32,7 +32,7 @@ module uart(
     );
 
 
-    // 50MHzæ—¶é’Ÿï¼Œæ³¢ç‰¹ç‡115200bpså¯¹åº”çš„åˆ†é¢‘ç³»æ•°
+    // 50MHzÊ±ÖÓ£¬²¨ÌØÂÊ115200bps¶ÔÓ¦µÄ·ÖÆµÏµÊı
     localparam BAUD_115200 = 32'h1B8;
 
     localparam S_IDLE       = 4'b0001;
@@ -52,9 +52,9 @@ module uart(
     reg rx_q0;
     reg rx_q1;
     wire rx_negedge;
-    reg rx_start;                      // RXä½¿èƒ½
-    reg[3:0] rx_clk_edge_cnt;          // clkæ—¶é’Ÿæ²¿çš„ä¸ªæ•°
-    reg rx_clk_edge_level;             // clkæ²¿ç”µå¹³
+    reg rx_start;                      // RXÊ¹ÄÜ
+    reg[3:0] rx_clk_edge_cnt;          // clkÊ±ÖÓÑØµÄ¸öÊı
+    reg rx_clk_edge_level;             // clkÑØµçÆ½
     reg rx_done;
     reg[15:0] rx_clk_cnt;
     reg[15:0] rx_div_cnt;
@@ -89,7 +89,7 @@ module uart(
     assign tx_pin = tx_reg;
 
 
-    // å†™å¯„å­˜å™¨
+    // Ğ´¼Ä´æÆ÷
     always @ (posedge clk) begin
         if (rst_n == 1'b0) begin
             uart_ctrl <= 32'h0;
@@ -132,7 +132,7 @@ module uart(
         end
     end
 
-    // è¯»å¯„å­˜å™¨
+    // ¶Á¼Ä´æÆ÷
     always @ (*) begin
         if (rst_n == 1'b0) begin
             data_o = 32'h0;
@@ -157,7 +157,7 @@ module uart(
         end
     end
 
-    // *************************** TXå‘é€ ****************************
+    // *************************** TX·¢ËÍ ****************************
 
     always @ (posedge clk) begin
         if (rst_n == 1'b0) begin
@@ -206,9 +206,9 @@ module uart(
         end
     end
 
-    // *************************** RXæ¥æ”¶ ****************************
+    // *************************** RX½ÓÊÕ ****************************
 
-    // ä¸‹é™æ²¿æ£€æµ‹(æ£€æµ‹èµ·å§‹ä¿¡å·)
+    // ÏÂ½µÑØ¼ì²â(¼ì²âÆğÊ¼ĞÅºÅ)
     assign rx_negedge = rx_q1 && ~rx_q0;
 
 
@@ -222,7 +222,7 @@ module uart(
         end
     end
 
-    // å¼€å§‹æ¥æ”¶æ•°æ®ä¿¡å·ï¼Œæ¥æ”¶æœŸé—´ä¸€ç›´æœ‰æ•ˆ
+    // ¿ªÊ¼½ÓÊÕÊı¾İĞÅºÅ£¬½ÓÊÕÆÚ¼äÒ»Ö±ÓĞĞ§
     always @ (posedge clk) begin
         if (rst_n == 1'b0) begin
             rx_start <= 1'b0;
@@ -243,7 +243,7 @@ module uart(
         if (rst_n == 1'b0) begin
             rx_div_cnt <= 16'h0;
         end else begin
-            // ç¬¬ä¸€ä¸ªæ—¶é’Ÿæ²¿åªéœ€æ³¢ç‰¹ç‡åˆ†é¢‘ç³»æ•°çš„ä¸€åŠ
+            // µÚÒ»¸öÊ±ÖÓÑØÖ»Ğè²¨ÌØÂÊ·ÖÆµÏµÊıµÄÒ»°ë
             if (rx_start == 1'b1 && rx_clk_edge_cnt == 4'h0) begin
                 rx_div_cnt <= {1'b0, uart_baud[15:1]};
             end else begin
@@ -252,12 +252,12 @@ module uart(
         end
     end
 
-    // å¯¹æ—¶é’Ÿè¿›è¡Œè®¡æ•°
+    // ¶ÔÊ±ÖÓ½øĞĞ¼ÆÊı
     always @ (posedge clk) begin
         if (rst_n == 1'b0) begin
             rx_clk_cnt <= 16'h0;
         end else if (rx_start == 1'b1) begin
-            // è®¡æ•°è¾¾åˆ°åˆ†é¢‘å€¼
+            // ¼ÆÊı´ïµ½·ÖÆµÖµ
             if (rx_clk_cnt == rx_div_cnt) begin
                 rx_clk_cnt <= 16'h0;
             end else begin
@@ -268,22 +268,22 @@ module uart(
         end
     end
 
-    // æ¯å½“æ—¶é’Ÿè®¡æ•°è¾¾åˆ°åˆ†é¢‘å€¼æ—¶äº§ç”Ÿä¸€ä¸ªä¸Šå‡æ²¿è„‰å†²
+    // Ã¿µ±Ê±ÖÓ¼ÆÊı´ïµ½·ÖÆµÖµÊ±²úÉúÒ»¸öÉÏÉıÑØÂö³å
     always @ (posedge clk) begin
         if (rst_n == 1'b0) begin
             rx_clk_edge_cnt <= 4'h0;
             rx_clk_edge_level <= 1'b0;
         end else if (rx_start == 1'b1) begin
-            // è®¡æ•°è¾¾åˆ°åˆ†é¢‘å€¼
+            // ¼ÆÊı´ïµ½·ÖÆµÖµ
             if (rx_clk_cnt == rx_div_cnt) begin
-                // æ—¶é’Ÿæ²¿ä¸ªæ•°è¾¾åˆ°æœ€å¤§å€¼
+                // Ê±ÖÓÑØ¸öÊı´ïµ½×î´óÖµ
                 if (rx_clk_edge_cnt == 4'd9) begin
                     rx_clk_edge_cnt <= 4'h0;
                     rx_clk_edge_level <= 1'b0;
                 end else begin
-                    // æ—¶é’Ÿæ²¿ä¸ªæ•°åŠ 1
+                    // Ê±ÖÓÑØ¸öÊı¼Ó1
                     rx_clk_edge_cnt <= rx_clk_edge_cnt + 1'b1;
-                    // äº§ç”Ÿä¸Šå‡æ²¿è„‰å†²
+                    // ²úÉúÉÏÉıÑØÂö³å
                     rx_clk_edge_level <= 1'b1;
                 end
             end else begin
@@ -295,24 +295,24 @@ module uart(
         end
     end
 
-    // bitåºåˆ—
+    // bitĞòÁĞ
     always @ (posedge clk) begin
         if (rst_n == 1'b0) begin
             rx_data <= 8'h0;
             rx_over <= 1'b0;
         end else begin
             if (rx_start == 1'b1) begin
-                // ä¸Šå‡æ²¿
+                // ÉÏÉıÑØ
                 if (rx_clk_edge_level == 1'b1) begin
                     case (rx_clk_edge_cnt)
-                        // èµ·å§‹ä½
+                        // ÆğÊ¼Î»
                         1: begin
 
                         end
-                        // æ•°æ®ä½
+                        // Êı¾İÎ»
                         2, 3, 4, 5, 6, 7, 8, 9: begin
                             rx_data <= rx_data | (rx_pin << (rx_clk_edge_cnt - 2));
-                            // æœ€åä¸€ä½æ¥æ”¶å®Œæˆï¼Œç½®ä½æ¥æ”¶å®Œæˆæ ‡å¿—
+                            // ×îºóÒ»Î»½ÓÊÕÍê³É£¬ÖÃÎ»½ÓÊÕÍê³É±êÖ¾
                             if (rx_clk_edge_cnt == 4'h9) begin
                                 rx_over <= 1'b1;
                             end

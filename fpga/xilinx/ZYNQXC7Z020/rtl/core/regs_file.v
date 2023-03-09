@@ -27,24 +27,15 @@ module regs_file(
     input   [`REG_ADDR_WIDTH-1:0]   reg2_rd_adder_i,
     output reg   [`CPU_WIDTH-1:0]   reg2_rd_data_o,
     // jtag
-    input wire                      jtag_we_i,      // å†™å¯„å­˜å™¨æ ‡å¿—
-    input wire[`REG_ADDR_WIDTH-1:0] jtag_addr_i,    // è¯»ã€å†™å¯„å­˜å™¨åœ°å€
-    input wire[`CPU_WIDTH-1:0]      jtag_data_i,    // å†™å¯„å­˜å™¨æ•°æ®
-    output reg[`CPU_WIDTH-1:0]      jtag_data_o,    // è¯»å¯„å­˜å™¨æ•°æ®
-	 output wire                     s10_o,
-    output wire                     s11_o
+    input wire                      jtag_we_i,      // Ğ´¼Ä´æÆ÷±êÖ¾
+    input wire[`REG_ADDR_WIDTH-1:0] jtag_addr_i,    // ¶Á¡¢Ğ´¼Ä´æÆ÷µØÖ·
+    input wire[`CPU_WIDTH-1:0]      jtag_data_i,    // Ğ´¼Ä´æÆ÷Êı¾İ
+    output reg[`CPU_WIDTH-1:0]      jtag_data_o     // ¶Á¼Ä´æÆ÷Êı¾İ
 );
 
 reg [`REG_NUM-1:0]    register[0:`REG_DATA_DEPTH-1];
 
-wire [`CPU_WIDTH-1:0] s10;
-wire [`CPU_WIDTH-1:0] s11;
-assign s10 = register[26];
-assign s11 = register[27];
-assign s10_o = s10[0];
-assign s11_o = s11[0];
-
-always  @(posedge clk) begin
+always  @(posedge clk or negedge rst_n) begin
     if(~rst_n) begin
     end
 	else begin
@@ -74,7 +65,7 @@ always @(*) begin
     end
 end
 
-// jtagè¯»å¯„å­˜å™¨
+// jtag¶Á¼Ä´æÆ÷
 always @ (*) begin
     if (jtag_addr_i == `REG_ADDR_WIDTH'b0) begin
         jtag_data_o = `CPU_WIDTH'b0;

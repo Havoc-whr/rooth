@@ -8,10 +8,10 @@
 // Last Modified : 2023-01-14 18:32
 // ---------------------------------------------------------------------------------
 // Description   : 
-// RISC-V32IæŒ‡ä»¤å¤„ç†å™¨æ ¸é¡¶å±‚æ–‡ä»¶
-// è¯­æ³•è§„èŒƒï¼šiåç¼€è¡¨ç¤ºç»„åˆé€»è¾‘æ¨¡å—è¾“å…¥ï¼Œoåç¼€è¡¨ç¤ºç»„åˆé€»è¾‘æ¨¡å—è¾“å‡ºã€‚å¯¹äºæ—¶åºé€»è¾‘ifæ¨¡å—ï¼Œå…¶
-//          è¾“å…¥ä¿¡å·ä¸ºç»„åˆé€»è¾‘è¾“å‡ºï¼Œè¾“å‡ºä¸ºç»„åˆé€»è¾‘æ¨¡å—è¾“å…¥,tè¡¨ç¤ºæ—¶åºé€»è¾‘ä¹‹é—´ç›´æ¥ä¼ é€’å‰ç¼€
-//          è¡¨ç¤ºä¿¡å·ä½œç”¨æ‰€å¤„äºçš„æŒ‡ä»¤å‘¨æœŸé˜¶æ®µ
+// RISC-V32IÖ¸Áî´¦ÀíÆ÷ºË¶¥²ãÎÄ¼ş
+// Óï·¨¹æ·¶£ºiºó×º±íÊ¾×éºÏÂß¼­Ä£¿éÊäÈë£¬oºó×º±íÊ¾×éºÏÂß¼­Ä£¿éÊä³ö¡£¶ÔÓÚÊ±ĞòÂß¼­ifÄ£¿é£¬Æä
+//          ÊäÈëĞÅºÅÎª×éºÏÂß¼­Êä³ö£¬Êä³öÎª×éºÏÂß¼­Ä£¿éÊäÈë,t±íÊ¾Ê±ĞòÂß¼­Ö®¼äÖ±½Ó´«µİÇ°×º
+//          ±íÊ¾ĞÅºÅ×÷ÓÃËù´¦ÓÚµÄÖ¸ÁîÖÜÆÚ½×¶Î
 // -FHDR----------------------------------------------------------------------------
 `include "rooth_defines.v"
 
@@ -33,12 +33,11 @@ module rooth(
 
     input                           jtag_reset_flag_i,
     input                           jtag_halt_flag_i,
-    input                           jtag_we_i,      // å†™å¯„å­˜å™¨æ ‡å¿—
-    input  [`REG_ADDR_WIDTH-1:0]    jtag_addr_i,    // è¯»ã€å†™å¯„å­˜å™¨åœ°å€
-    input  [`CPU_WIDTH-1:0]         jtag_data_i,    // å†™å¯„å­˜å™¨æ•°æ®
-    output [`CPU_WIDTH-1:0]         jtag_data_o,    // è¯»å¯„å­˜å™¨æ•°æ®
-	 output wire             			s10_o,
-    output wire             			s11_o
+    input                           jtag_we_i,      // Ğ´¼Ä´æÆ÷±êÖ¾
+    input  [`REG_ADDR_WIDTH-1:0]    jtag_addr_i,    // ¶Á¡¢Ğ´¼Ä´æÆ÷µØÖ·
+    input  [`CPU_WIDTH-1:0]         jtag_data_i,    // Ğ´¼Ä´æÆ÷Êı¾İ
+    output [`CPU_WIDTH-1:0]         jtag_data_o     // ¶Á¼Ä´æÆ÷Êı¾İ
+
 );
 
 // pc_reg
@@ -89,7 +88,7 @@ wire [`CSR_ADDR_WIDTH-1:0]   ex_csr_rd_adder_i;
 wire [`CPU_WIDTH-1:0]        csr_mtvec_o;
 wire [`CPU_WIDTH-1:0]        csr_mepc_o;
 wire [`CPU_WIDTH-1:0]        csr_mstatus_o;
-//wire [`CPU_WIDTH-1:0]        client_csr_rd_data_o; //æœªä½¿ç”¨
+//wire [`CPU_WIDTH-1:0]        client_csr_rd_data_o; //Î´Ê¹ÓÃ
 
 //mux_alu
 wire [`ALU_SRC_WIDTH-1:0]   ex_alu_src_sel_i;
@@ -185,12 +184,11 @@ wire [`CPU_WIDTH-1:0]       ctrl_csr_rd_data;
 wire                         client_csr_wr_en_o;
 wire [`CSR_ADDR_WIDTH-1:0]   client_csr_wr_adder_o;
 wire [`CPU_WIDTH-1:0]        client_csr_wr_data_o;
-//wire [`CSR_ADDR_WIDTH-1:0]        client_csr_rd_adder_o;
 wire                         client_hold_flag_o;
 wire [`CPU_WIDTH-1:0]        client_int_addr_o;
 wire                         client_int_assert_o;
 
-// ä¾‹åŒ–
+// Àı»¯
 assign ex_pc_adder = ex_pc_adder_i;
 assign ex_imm = ex_imm_i;
 
@@ -224,7 +222,7 @@ flow_ctrl u_flow_ctrl_0(
 pc_reg u_pc_reg_0(
     .clk                            ( clk                         ),
     .rst_n                          ( rst_n                       ),
-	 .jtag_reset_flag_i              ( jtag_reset_flag_i           ),
+    .jtag_reset_flag_i              ( jtag_reset_flag_i           ),
     .flow_pc_i                      ( flow_pc                     ),
     .next_pc_four_i                 ( next_pc_four                ),
     .next_pc_i                      ( next_pc                     ),
@@ -379,7 +377,7 @@ if_as u_if_as_0(
     .acess_mem_flag_o               ( acess_mem_flag_o            )
 );
 
-//æ•°æ®å­˜å‚¨å™¨
+//Êı¾İ´æ´¢Æ÷
 assign data_mem_addr_o = as_data_mem_addr;
 assign data_mem_wr_en_o = as_data_mem_wr_en;
 assign data_mem_data_in_o = as_data_mem_data_in;
@@ -470,9 +468,7 @@ regs_file u_regs_file_0(
     .jtag_we_i                      ( jtag_we_i                   ),  
     .jtag_addr_i                    ( jtag_addr_i                 ),
     .jtag_data_i                    ( jtag_data_i                 ),
-    .jtag_data_o                    ( jtag_data_o                 ),
-	 .s10_o                          ( s10_o                       ),
-    .s11_o                          ( s11_o                       )
+    .jtag_data_o                    ( jtag_data_o                 ) 
 );
 
 csr_reg u_csr_reg_0(
@@ -486,8 +482,6 @@ csr_reg u_csr_reg_0(
     .client_csr_wr_en_i             ( client_csr_wr_en_o          ),
     .client_csr_wr_adder_i          ( client_csr_wr_adder_o       ),
     .client_csr_wr_data_i           ( client_csr_wr_data_o        ),
-//    .client_csr_rd_adder_i          ( client_csr_rd_adder_o       ),
-//    .client_csr_rd_data_o           ( client_csr_rd_data_o        ),
     .clint_csr_mtvec_o              ( csr_mtvec_o                 ),
     .clint_csr_mepc_o               ( csr_mepc_o                  ),
     .clint_csr_mstatus_o            ( csr_mstatus_o               )
@@ -508,7 +502,6 @@ clinet u_clinet_0(
     .csr_mstatus                    ( csr_mstatus_o               ),
     .we_o                           ( client_csr_wr_en_o          ),
     .waddr_o                        ( client_csr_wr_adder_o       ),
-//    .raddr_o                        ( client_csr_rd_adder_o       ),
     .data_o                         ( client_csr_wr_data_o        ),
     .hold_flag_o                    ( client_hold_flag_o          ),
     .int_addr_o                     ( client_int_addr_o           ),

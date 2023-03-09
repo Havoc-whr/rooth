@@ -11,48 +11,25 @@
 //
 // -FHDR----------------------------------------------------------------------------
 `include "../core/rooth_defines.v"
-/*`include "../core/alu_core.v"
-`include "../core/div.v"
-`include "../core/rooth.v"
-`include "../bus/rib.v"
-`include "../perips/inst_mem.v"
-`include "../perips/data_mem.v"
-`include "../core/flow_ctrl.v"
-`include "../core/pc_reg.v"
-`include "../core/if_de.v"
-`include "../core/decode.v"
-`include "../core/imm_gen.v"
-`include "../core/if_ex.v"
-`include "../core/mux_alu.v"
-`include "../core/if_as.v"
-`include "../core/alu_res_ctrl.v"
-`include "../core/if_wb.v"
-`include "../core/reg_clash_fb.v"
-`include "../core/regs_file.v"
-`include "../core/csr_reg.v"
-`include "../core/clinet.v"*/
 
 module rooth_soc(
     input                   refer_clk,
     input                   refer_rst_n,
-
-	 input						 uart_debug_pin,
+    
+    input					uart_debug_pin,
     inout       [15:0]      gpio,
-    output                  uart_tx_pin, // UART鍙戦?佸紩鑴?
-    input                   uart_rx_pin, // UART鎺ユ敹寮曡剼
+    output                  uart_tx_pin,  // UART发送引脚
+    input                   uart_rx_pin,  // UART接收引脚
 
-    input                   spi_miso,    // spi鎺у埗鍣ㄨ緭鍑恒?乻pi璁惧杈撳叆淇″彿鑴?
-    output                  spi_mosi,    // spi鎺у埗鍣ㄨ緭鍏ャ?乻pi璁惧杈撳嚭淇″彿鑴?
-    output                  spi_ss,      // spi璁惧鐗囬??
-    output                  spi_clk,     // spi璁惧鏃堕挓锛屾渶澶ч鐜囦负杈撳叆clk鐨勪竴鍗?
-	 input wire              jtag_TCK,     // JTAG TCK寮曡剼
-    input wire              jtag_TMS,     // JTAG TMS寮曡剼
-    input wire              jtag_TDI,     // JTAG TDI寮曡剼
-    output wire             jtag_TDO,     // JTAG TDO寮曡剼
-    output wire             halted_ind,
-	 
-	 output wire 				 over,        // 娴嬭瘯鏄惁瀹屾垚淇″彿
-    output wire 				 succ         // 娴嬭瘯鏄惁鎴愬姛淇″彿
+    input                   spi_miso,     // spi控制器输出、spi设备输入信号脚
+    output                  spi_mosi,     // spi控制器输入、spi设备输出信号脚
+    output                  spi_ss,       // spi设备片选
+    output                  spi_clk,      // spi设备时钟，最大频率为输入clk的一半
+    input wire              jtag_TCK,     // JTAG TCK引脚
+    input wire              jtag_TMS,     // JTAG TMS引脚
+    input wire              jtag_TDI,     // JTAG TDI引脚
+    output wire             jtag_TDO,     // JTAG TDO引脚
+    output wire             halted_ind
 ); 
 
 // master 0 interface data_mem
@@ -147,7 +124,7 @@ assign halted_ind = ~jtag_halt_req_o;
 assign rst_n = refer_rst_n & locked_sig;
 
 
-//鏃堕挓鍒嗛锛岃皟鐢≒LL鐨刬p鏍?
+//PLL IP CORE
 clk_pll	clk_pll_inst (
 	.clk_in1 					( refer_clk 				),
 	.clk_out1 					( clk 						),
@@ -172,9 +149,7 @@ rooth u_rooth_0(
     .jtag_data_i        ( jtag_reg_data_o       ),
     .jtag_data_o        ( jtag_reg_data_i       ),
     .jtag_halt_flag_i   ( jtag_halt_req_o       ),
-    .jtag_reset_flag_i  ( jtag_reset_req_o      ),
-	 .s10_o              ( over                  ),
-    .s11_o              ( succ                  )
+    .jtag_reset_flag_i  ( jtag_reset_req_o      )
 );
 
 rib u_rib_0(
@@ -257,7 +232,7 @@ data_mem	data_mem_0 (
 	.ena                    ( rst_n                     )
 );
 
-// timer妯″潡渚嬪寲
+// timer模块例化
 timer timer_0(
     .clk                    ( clk                       ),
     .rst_n                  ( rst_n                     ),
@@ -268,7 +243,7 @@ timer timer_0(
     .int_sig_o              ( timer0_int                )
 );
 
-// uart妯″潡渚嬪寲
+// uart模块例化
 uart uart_0(
     .clk					   ( clk					      ),
     .rst_n              ( rst_n                 ),
@@ -329,7 +304,7 @@ assign io_in[14] = gpio[14];
 assign gpio[15] = (gpio_ctrl[31:30] == 2'b01)? gpio_data[15]: 1'bz;
 assign io_in[15] = gpio[15];
 
-// gpio妯″潡渚嬪寲
+// gpio模块例化
 gpio gpio_0(
     .clk                    ( clk                       ),
     .rst                    ( rst_n                     ),
@@ -356,19 +331,6 @@ spi u_spi_O(
     .spi_clk					 ( spi_clk						  )              
 
 );
-
-//master
-// 涓插彛涓嬭浇妯″潡渚嬪寲
-/*uart_debug u_uart_debug(
-    .clk                    ( clk                       ),
-    .rst                    ( rst_n                     ),
-    .debug_en_i             ( uart_debug_pin            ),
-    .req_o                  ( m3_req_i                  ),
-    .mem_we_o               ( m3_we_i                   ),
-    .mem_addr_o             ( m3_addr_i                 ),
-    .mem_wdata_o            ( m3_data_i                 ),
-    .mem_rdata_i            ( m3_data_o                 )
-);*/
 
 jtag_top #(
     .DMI_ADDR_BITS(6),

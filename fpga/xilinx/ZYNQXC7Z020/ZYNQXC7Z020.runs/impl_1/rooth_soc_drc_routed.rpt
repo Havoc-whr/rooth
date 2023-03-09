@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Mar  5 22:13:11 2023
+| Date         : Wed Mar  8 22:42:09 2023
 | Host         : Z2-R running 64-bit major release  (build 9200)
 | Command      : report_drc -file rooth_soc_drc_routed.rpt -pb rooth_soc_drc_routed.pb -rpx rooth_soc_drc_routed.rpx
 | Design       : rooth_soc
@@ -128,7 +128,7 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net u_rooth_0/u_if_ex_0/next_pc_four_o4_out is a gated clock net sourced by a combinational pin u_rooth_0/u_if_ex_0/next_pc_four_o_reg_i_2/O, cell u_rooth_0/u_if_ex_0/next_pc_four_o_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net u_rooth_0/u_if_ex_0/next_pc_four_o12_out is a gated clock net sourced by a combinational pin u_rooth_0/u_if_ex_0/next_pc_four_o_reg_i_2/O, cell u_rooth_0/u_if_ex_0/next_pc_four_o_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PLCK-12#1 Warning

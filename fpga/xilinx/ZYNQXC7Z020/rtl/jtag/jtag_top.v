@@ -14,7 +14,7 @@
  limitations under the License.                                          
  */
 
-// JTAGé¡¶å±‚æ¨¡å—
+// JTAG¶¥²ãÄ£¿é
 module jtag_top #(
     parameter DMI_ADDR_BITS = 6,
     parameter DMI_DATA_BITS = 32,

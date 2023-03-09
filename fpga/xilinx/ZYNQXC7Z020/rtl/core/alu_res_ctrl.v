@@ -8,7 +8,7 @@
 // Last Modified : 2023-01-08 14:55
 // ---------------------------------------------------------------------------------
 // Description   : 
-// å†³å®šå­˜å‚¨æ•°æ®æœ€ç»ˆæµå‘ 
+// ¾ö¶¨´æ´¢Êı¾İ×îÖÕÁ÷Ïò 
 //
 // -FHDR----------------------------------------------------------------------------
 `include "rooth_defines.v"
@@ -67,7 +67,7 @@ always @(*) begin
     data_mem_data_o = `CPU_WIDTH'b0;
     reg_wr_data_o = `CPU_WIDTH'b0;
     data_mem_req_o = 1'b0;
-    if(alu_res_op_i == `RESCTRL_MEM) begin // è®¿å­˜
+    if(alu_res_op_i == `RESCTRL_MEM) begin // ·Ã´æ
         data_mem_addr_o = alu_res_i;
         data_mem_req_o = 1'b1;
         if(inv_access_mem_hold_o)begin
@@ -90,7 +90,7 @@ always @(*) begin
             endcase
         end
     end
-    else if(alu_res_op_i == `RESCTRL_CSR) begin // å†™CSR
+    else if(alu_res_op_i == `RESCTRL_CSR) begin // Ğ´CSR
         reg_wr_data_o = csr_rd_data_i;
         case(funct3_i)
             `INST_CSRRW: csr_wr_data_o = rs1_data_i;
@@ -105,7 +105,7 @@ always @(*) begin
             data_mem_addr_o = alu_res_i;
             if(inv_access_mem_hold_o)begin
                 case(funct3_i)
-                    `INST_LB://ç¬¦å·ä½æ‰©å±•
+                    `INST_LB://·ûºÅÎ»À©Õ¹
                         case (mem_addr_index)
                             2'b00: reg_wr_data_o = {{24{data_mem_data_i[7]}},data_mem_data_i[7:0]};
                             2'b01: reg_wr_data_o = {{24{data_mem_data_i[15]}},data_mem_data_i[15:8]};
@@ -119,7 +119,7 @@ always @(*) begin
                         endcase
                     `INST_LW:
                         reg_wr_data_o = data_mem_data_i[31:0];
-                    `INST_LBU://é«˜ä½è¡¥é›¶
+                    `INST_LBU://¸ßÎ»²¹Áã
                         case (mem_addr_index)
                             2'b00: reg_wr_data_o = {24'h0, data_mem_data_i[7:0]};
                             2'b01: reg_wr_data_o = {24'h0, data_mem_data_i[15:8]};

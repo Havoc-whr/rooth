@@ -7,7 +7,7 @@
 // Created On    : 2022-08-11 16:20
 // Last Modified : 2023-01-14 21:22
 // ---------------------------------------------------------------------------------
-// Description   :ÊµÅÊ∞¥Á∫øÊéßÂà∂Ê®°ÂùóÔºåÁî®‰∫éÊµÅÊ∞¥Á∫øÊöÇÂÅúÁ≠â
+// Description   :¡˜ÀÆœﬂøÿ÷∆ƒ£øÈ£¨”√”⁄¡˜ÀÆœﬂ‘›Õ£µ»
 // 
 //
 //
@@ -33,9 +33,9 @@ module flow_ctrl (
     input                           pr_acess_mem_flag_i,
     
     // from client 
-    input                           client_hold_flag_i, // ÊµÅÊ∞¥Á∫øÊöÇÂÅúÊ†áÂøó
-    input    [`CPU_WIDTH-1:0]       client_int_addr_i,  // ‰∏≠Êñ≠ÂÖ•Âè£Âú∞ÂùÄ
-    input                           client_int_assert_i,// ‰∏≠Êñ≠Ê†áÂøó
+    input                           client_hold_flag_i, // ¡˜ÀÆœﬂ‘›Õ£±Í÷æ
+    input    [`CPU_WIDTH-1:0]       client_int_addr_i,  // ÷–∂œ»Îø⁄µÿ÷∑
+    input                           client_int_assert_i,// ÷–∂œ±Í÷æ
 
     output reg [`CPU_WIDTH-1:0]     next_pc_o,          // next pc addr
     output reg                      next_pc_four_o,       
@@ -47,12 +47,14 @@ module flow_ctrl (
 );
 
 always @( *) begin
-    if(jtag_halt_flag_i) begin
-        flow_pc_o = `FLOW_STOP;
-        flow_de_o = `FLOW_STOP;
-        flow_ex_o = `FLOW_STOP;
-        flow_as_o = `FLOW_STOP;
-        flow_wb_o = `FLOW_STOP;
+    if(client_int_assert_i) begin
+        next_pc_o = client_int_addr_i;
+        next_pc_four_o = 1'b0;
+        flow_pc_o = `FLOW_WORK;
+        flow_de_o = `FLOW_REFRESH;
+        flow_ex_o = `FLOW_REFRESH;
+        flow_as_o = `FLOW_REFRESH;
+        flow_wb_o = `FLOW_REFRESH;
     end
     else if(client_hold_flag_i) begin
         flow_pc_o = `FLOW_STOP;
@@ -60,23 +62,6 @@ always @( *) begin
         flow_ex_o = `FLOW_STOP;
         flow_as_o = `FLOW_STOP;
         flow_wb_o = `FLOW_STOP;
-        next_pc_four_o = 1'b0;
-        if(client_int_assert_i) begin
-            next_pc_o = client_int_addr_i;
-            flow_pc_o = `FLOW_WORK;
-            flow_de_o = `FLOW_REFRESH;
-            flow_ex_o = `FLOW_REFRESH;
-            flow_as_o = `FLOW_REFRESH;
-            flow_wb_o = `FLOW_REFRESH;
-        end
-        else begin
-            flow_pc_o = `FLOW_STOP;
-            flow_de_o = `FLOW_STOP;
-            flow_ex_o = `FLOW_STOP;
-            flow_as_o = `FLOW_STOP;
-            flow_wb_o = `FLOW_STOP;
-            next_pc_four_o = 1'b0;
-        end
     end
     else if(access_mem_hold_i) begin
         flow_pc_o = `FLOW_STOP;
@@ -177,6 +162,13 @@ always @( *) begin
             default:
                 next_pc_four_o = 1'b1;
         endcase
+    end
+    else if(jtag_halt_flag_i) begin
+        flow_pc_o = `FLOW_STOP;
+        flow_de_o = `FLOW_STOP;
+        flow_ex_o = `FLOW_STOP;
+        flow_as_o = `FLOW_STOP;
+        flow_wb_o = `FLOW_STOP;
     end
     else begin 
         flow_pc_o = `FLOW_WORK;
