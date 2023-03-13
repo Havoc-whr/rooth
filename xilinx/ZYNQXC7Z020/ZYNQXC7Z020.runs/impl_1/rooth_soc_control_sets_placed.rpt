@@ -1,0 +1,206 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Sun Mar 12 15:26:57 2023
+| Host         : Z2-R running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file rooth_soc_control_sets_placed.rpt
+| Design       : rooth_soc
+| Device       : xc7z020
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   128 |
+|    Minimum number of control sets                        |   128 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   206 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   128 |
+| >= 0 to < 4        |    11 |
+| >= 4 to < 6        |    12 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |     7 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    92 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             146 |           79 |
+| No           | No                    | Yes                    |             168 |           79 |
+| No           | Yes                   | No                     |             209 |           75 |
+| Yes          | No                    | No                     |            1043 |          718 |
+| Yes          | No                    | Yes                    |             764 |          236 |
+| Yes          | Yes                   | No                     |            1368 |          579 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++---------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+
+|                       Clock Signal                      |                          Enable Signal                          |                   Set/Reset Signal                  | Slice Load Count | Bel Load Count |
++---------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+
+|  clk_pll_inst/inst/clk_out1                             | uart_0/tx_reg_i_2_n_3                                           | uart_0/tx_reg_i_1_n_3                               |                1 |              1 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_boot_ctrl/sec_num_cnt[7]_i_1_n_3             | u_sd_boot_top/u_sd_boot_ctrl/sec_num_cnt[5]_i_1_n_3 |                1 |              1 |
+|  clk_pll_inst/inst/clk_out1                             | u_spi_O/spi_mosi_i_1_n_3                                        | u_rooth_0/u_csr_reg_0/SR[0]                         |                1 |              1 |
+| ~jtag_TCK_IBUF_BUFG                                     |                                                                 | u_jtag_top/u_jtag_driver/jtag_TDO_i_1_n_3           |                1 |              1 |
+|  u_rooth_0/u_if_ex_0/next_pc_four_o12_out               |                                                                 | u_rooth_0/u_clinet_0/int_assert_o                   |                1 |              1 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_boot_ctrl/start_wait[7]_i_1_n_3              | u_sd_boot_top/u_sd_boot_ctrl/start_wait[5]_i_1_n_3  |                1 |              2 |
+| ~cur_state_reg[6]_i_2_n_3                               |                                                                 | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                1 |              2 |
+|  u_sd_boot_top/u_sd_boot_ctrl/ena_reg_i_1_n_3           |                                                                 | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                1 |              2 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_boot_ctrl/start_wait[7]_i_1_n_3              | u_sd_boot_top/u_sd_boot_ctrl/start_wait[3]_i_1_n_3  |                2 |              3 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_boot_ctrl/start_wait[7]_i_1_n_3              |                                                     |                1 |              3 |
+|  u_sd_boot_top/u_sd_boot_ctrl/next_state_reg[2]_i_2_n_3 |                                                                 | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                1 |              3 |
+|  clk_pll_inst/inst/clk_out2                             | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/rx_flag_reg_n_3           | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                1 |              4 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/rd_ctrl_cnt[3]_i_1_n_3    | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                1 |              4 |
+|  clk_pll_inst/inst/clk_out1                             | uart_0/bit_cnt[3]_i_1_n_3                                       | uart_0/tx_reg_i_1_n_3                               |                1 |              4 |
+|  clk_pll_inst/inst/clk_out1                             | uart_0/rx_clk_cnt0                                              | uart_0/rx_data                                      |                1 |              4 |
+|  clk_pll_inst/inst/clk_out1                             | uart_0/state[3]_i_1__0_n_3                                      | u_rooth_0/u_csr_reg_0/SR[0]                         |                2 |              4 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_div_0/state[3]_i_1_n_3                              | u_rooth_0/u_csr_reg_0/SR[0]                         |                4 |              4 |
+| ~cur_state_reg[6]_i_2_n_3                               | u_sd_boot_top/u_sd_ctrl_top/u_sd_init/res_data[47]_i_1_n_3      |                                                     |                2 |              4 |
+|  clk_pll_inst/inst/clk_out2                             |                                                                 | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                2 |              5 |
+| ~jtag_TCK_IBUF_BUFG                                     | u_jtag_top/u_jtag_driver/FSM_onehot_jtag_state_reg_n_3_[9]      | u_jtag_top/u_jtag_driver/ir_reg                     |                1 |              5 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_2[0]                       | u_rooth_0/u_csr_reg_0/SR[0]                         |                1 |              5 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/client_hold_flag_o                          | u_rooth_0/u_csr_reg_0/SR[0]                         |                4 |              5 |
+|  clk_pll_inst/inst/clk_out1                             | u_spi_O/clk_cnt0                                                | u_spi_O/spi_clk_edge_cnt[4]_i_1_n_3                 |                1 |              5 |
+|  clk_pll_inst/inst/clk_out2                             | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/res_bit_cnt[5]_i_1__0_n_3 | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                2 |              6 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/cmd_bit_cnt[5]_i_1_n_3    | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                2 |              6 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_boot_ctrl/sec_num_cnt[7]_i_1_n_3             |                                                     |                2 |              6 |
+|  cur_state_reg[6]_i_2_n_3                               | u_sd_boot_top/u_sd_ctrl_top/u_sd_init/cmd_bit_cnt               | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                2 |              6 |
+|  clk_pll_inst/inst/clk_out1                             | uart_0/rx_data[7]_i_1_n_3                                       | uart_0/rx_data                                      |                3 |              8 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_as_0/uart_status_reg[0][0]                       |                                                     |                1 |              8 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_pc_reg_0/done_reg[0]                                | u_rooth_0/u_csr_reg_0/SR[0]                         |                3 |              8 |
+|  clk_pll_inst/inst/clk_out1                             | u_spi_O/rdata[7]_i_1_n_3                                        | u_rooth_0/u_csr_reg_0/SR[0]                         |                1 |              8 |
+|  clk_pll_inst/inst/clk_out1                             | uart_0/E[0]                                                     | u_rooth_0/u_csr_reg_0/SR[0]                         |                2 |              8 |
+|  clk_pll_inst/inst/clk_out1                             |                                                                 | u_spi_O/clk_cnt[8]_i_1_n_3                          |                3 |              9 |
+|  clk_pll_inst/inst/clk_out2                             | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/rx_data_cnt[8]_i_1_n_3    | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                3 |              9 |
+|  cur_state_reg[6]_i_2_n_3                               |                                                                 | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                8 |             11 |
+|  cur_state_reg[6]_i_2_n_3                               | u_sd_boot_top/u_sd_ctrl_top/u_sd_init/poweron_cnt               | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                8 |             13 |
+|  clk_pll_inst/inst/clk_out1                             | uart_0/cycle_cnt[0]_i_2_n_3                                     | uart_0/cycle_cnt[0]_i_1_n_3                         |                4 |             16 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_as_0/p_1_in[0]                                   | u_rooth_0/u_csr_reg_0/SR[0]                         |                8 |             16 |
+|  clk_pll_inst/inst/clk_out1                             |                                                                 | uart_0/rx_clk_cnt[0]_i_1_n_3                        |                4 |             16 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/rx_en_t                   | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                4 |             16 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_boot_ctrl/data_b[15]_i_1_n_3                 | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                7 |             16 |
+|  clk_pll_inst/inst/clk_out2                             | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/p_0_in                    | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                3 |             16 |
+|  cur_state_reg[6]_i_2_n_3                               | u_sd_boot_top/u_sd_ctrl_top/u_sd_init/over_time_cnt             | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                4 |             16 |
+|  clk_pll_inst/inst/clk_out1                             |                                                                 |                                                     |               12 |             18 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_4[0]                       | u_rooth_0/u_csr_reg_0/SR[0]                         |                7 |             20 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_pc_reg_0/done_reg[0]                                | u_rooth_0/u_if_as_0/done_reg[0]                     |               19 |             24 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_boot_ctrl/sec_adder_cnt[8]_i_1_n_3           | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                8 |             24 |
+|  clk_pll_inst/inst/clk_out1                             |                                                                 | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |               12 |             28 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/p_1_in__0[0]                            | u_rooth_0/u_csr_reg_0/SR[0]                         |               20 |             30 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_as_0/alu_res_o_reg[28]_1[0]                      | u_rooth_0/u_csr_reg_0/SR[0]                         |               22 |             31 |
+|  jtag_TCK_IBUF_BUFG                                     |                                                                 | u_rooth_0/u_csr_reg_0/SR[0]                         |                9 |             31 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_clinet_0/we_o_reg_2[0]                              | u_rooth_0/u_csr_reg_0/SR[0]                         |               18 |             32 |
+|  clk_pll_inst/inst/clk_out1                             |                                                                 | timer_0/timer_count[0]_i_1_n_3                      |                8 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_3[0]                       | u_rooth_0/u_csr_reg_0/SR[0]                         |                8 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_div_0/div_remain[31]_i_1_n_3                        | u_rooth_0/u_csr_reg_0/SR[0]                         |               10 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_div_0/dividend_r[31]_i_1_n_3                        | u_rooth_0/u_csr_reg_0/SR[0]                         |               16 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_div_0/divisor_r[31]_i_1_n_3                         | u_rooth_0/u_csr_reg_0/SR[0]                         |               14 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_div_0/minuend[31]_i_1_n_3                           | u_rooth_0/u_csr_reg_0/SR[0]                         |               11 |             32 |
+|  n_1_6_BUFG                                             |                                                                 |                                                     |               20 |             32 |
+|  n_2_2115_BUFG                                          |                                                                 |                                                     |               20 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_8[0]                  |                                                     |               21 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_clinet_0/we_o_reg_1[0]                              | u_rooth_0/u_csr_reg_0/SR[0]                         |               18 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_clinet_0/we_o_reg_0[0]                              | u_rooth_0/u_csr_reg_0/SR[0]                         |               14 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/E[0]                                    | u_rooth_0/u_csr_reg_0/SR[0]                         |               17 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_data_reg[38]_0[0]                  | u_rooth_0/u_csr_reg_0/SR[0]                         |               12 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_data_reg[39]_0[0]                  | u_rooth_0/u_csr_reg_0/SR[0]                         |                9 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_6[0]                       | u_rooth_0/u_csr_reg_0/SR[0]                         |               16 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_3[0]                  |                                                     |               24 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_1[0]                  |                                                     |               25 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[4]_1[0]                  |                                                     |               29 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_8[0]                  |                                                     |               16 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_6[0]                  |                                                     |               26 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_2[0]                  |                                                     |               21 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_7[0]                  |                                                     |               25 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[4]_0[0]                  |                                                     |               24 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_4[0]                  |                                                     |               21 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_2[0]                  |                                                     |               26 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_5[0]                  |                                                     |               22 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_4[0]                  |                                                     |               18 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_2[0]                  |                                                     |               28 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_4[0]                  |                                                     |               20 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_pc_reg_0/E[0]                                       | u_rooth_0/u_csr_reg_0/SR[0]                         |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_pc_reg_0/curr_pc_o_reg[3]_5[0]                      | u_rooth_0/u_csr_reg_0/SR[0]                         |               20 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_1[0]                  |                                                     |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_pc_reg_0/alu_res_op_o_reg[1][0]                     | u_rooth_0/u_csr_reg_0/SR[0]                         |               15 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_7[0]                  |                                                     |               24 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[1]_0[0]                  |                                                     |               28 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_1[0]                  |                                                     |               22 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[1]_1[0]                  |                                                     |               21 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_3[0]                  |                                                     |               22 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_0[0]                  |                                                     |               25 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_8[0]                  |                                                     |               20 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_7[0]                  |                                                     |               19 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_5[0]                  |                                                     |               18 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_5[0]                  |                                                     |               16 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[0]_0[0]                  |                                                     |               20 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_boot_ctrl/rd_sec_addr[31]_i_1_n_3            | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |               10 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[4]_2[0]                  |                                                     |               21 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_0[0]                  |                                                     |               22 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[2]_6[0]                  |                                                     |               24 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/csr_wr_adder_o_reg[6]_0[0]                  | u_rooth_0/u_csr_reg_0/SR[0]                         |               13 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/csr_wr_adder_o_reg[0]_1[0]                  | u_rooth_0/u_csr_reg_0/SR[0]                         |               13 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/csr_wr_adder_o_reg[0]_0[0]                  | u_rooth_0/u_csr_reg_0/SR[0]                         |               16 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/E[0]                                        |                                                     |               25 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_ex_0/int_assert_o_reg_0[0]                       | u_jtag_top/u_jtag_dm/I3                             |                8 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_ex_0/E[0]                                        | u_rooth_0/u_csr_reg_0/SR[0]                         |               11 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_wb_0/reg_wr_adder_o_reg[3]_6[0]                  |                                                     |               20 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_0[0]                       | u_rooth_0/u_csr_reg_0/SR[0]                         |               14 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_1[0]                       | u_rooth_0/u_csr_reg_0/SR[0]                         |               13 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_rdy_reg_5[0]                       | u_rooth_0/u_csr_reg_0/SR[0]                         |               13 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_ex_0/int_assert_o_reg_1[0]                       | u_rooth_0/u_csr_reg_0/SR[0]                         |               17 |             32 |
+|  clk_pll_inst/inst/clk_out1                             | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/cmd_rd[39]_i_1_n_3        | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |               13 |             33 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_div_0/result_o[31]_i_1_n_3                          | u_rooth_0/u_csr_reg_0/SR[0]                         |               17 |             33 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_clinet_0/p_1_in[2]                                  | u_rooth_0/u_csr_reg_0/SR[0]                         |               15 |             35 |
+| ~cur_state_reg[6]_i_2_n_3                               | u_sd_boot_top/u_sd_ctrl_top/u_sd_init/res_data[47]_i_1_n_3      | u_sd_boot_top/u_sd_ctrl_top/u_sd_read/soc_rst_key_n |                9 |             38 |
+|  jtag_TCK_IBUF_BUFG                                     | u_jtag_top/u_jtag_driver/rx/E[0]                                | u_rooth_0/u_csr_reg_0/SR[0]                         |               11 |             38 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/tx/req_data                                | u_rooth_0/u_csr_reg_0/SR[0]                         |                7 |             38 |
+|  jtag_TCK_IBUF_BUFG                                     | u_jtag_top/u_jtag_driver/rx/recv_rdy                            | u_rooth_0/u_csr_reg_0/SR[0]                         |                8 |             39 |
+|  jtag_TCK_IBUF_BUFG                                     | u_jtag_top/u_jtag_driver/tx/req_data__0                         | u_rooth_0/u_csr_reg_0/SR[0]                         |                6 |             40 |
+|  jtag_TCK_IBUF_BUFG                                     | u_jtag_top/u_jtag_driver/tx/E[0]                                | u_rooth_0/u_csr_reg_0/SR[0]                         |                9 |             40 |
+|  jtag_TCK_IBUF_BUFG                                     | u_jtag_top/u_jtag_driver/shift_reg                              | u_jtag_top/u_jtag_driver/shift_reg0                 |               13 |             40 |
+|  clk_pll_inst/inst/clk_out1                             | u_jtag_top/u_jtag_dm/rx/recv_data                               | u_rooth_0/u_csr_reg_0/SR[0]                         |                6 |             41 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_div_0/count[30]_i_1_n_3                             | u_rooth_0/u_csr_reg_0/SR[0]                         |               16 |             63 |
+|  n_0_1445_BUFG                                          |                                                                 |                                                     |               27 |             64 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_ex_0/inst_o[31]_i_1_n_3                          | u_rooth_0/u_csr_reg_0/SR[0]                         |               43 |            144 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_clinet_0/E[0]                                       | u_rooth_0/u_csr_reg_0/SR[0]                         |               78 |            147 |
+|  clk_pll_inst/inst/clk_out1                             | u_rooth_0/u_if_ex_0/int_assert_o_reg_2[0]                       | u_rooth_0/u_csr_reg_0/SR[0]                         |               64 |            214 |
+|  clk_pll_inst/inst/clk_out1                             |                                                                 | u_rooth_0/u_csr_reg_0/SR[0]                         |              103 |            236 |
++---------------------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+
+
+

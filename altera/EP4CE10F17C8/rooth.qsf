@@ -1,0 +1,123 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+# Date created = 11:07:41  January 27, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		rooth_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE10F17C8
+set_global_assignment -name TOP_LEVEL_ENTITY rooth_soc
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:07:41  JANUARY 27, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Standard Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE par/stp1.stp
+set_location_assignment PIN_F8 -to gpio[0]
+set_location_assignment PIN_D11 -to gpio[1]
+set_location_assignment PIN_A4 -to spi_clk
+set_location_assignment PIN_A7 -to spi_ss
+set_location_assignment PIN_A5 -to spi_miso
+set_location_assignment PIN_A6 -to spi_mosi
+set_location_assignment PIN_N5 -to uart_rx_pin
+set_location_assignment PIN_M7 -to uart_tx_pin
+set_location_assignment PIN_M1 -to refer_rst_n
+set_location_assignment PIN_E1 -to refer_clk
+set_location_assignment PIN_R5 -to gpio[15]
+set_location_assignment PIN_T6 -to gpio[14]
+set_location_assignment PIN_R4 -to gpio[13]
+set_location_assignment PIN_C11 -to gpio[2]
+set_location_assignment PIN_E10 -to gpio[3]
+set_location_assignment PIN_F9 -to gpio[4]
+set_location_assignment PIN_P1 -to gpio[5]
+set_location_assignment PIN_T2 -to gpio[6]
+set_location_assignment PIN_R1 -to gpio[7]
+set_location_assignment PIN_T3 -to gpio[8]
+set_location_assignment PIN_P3 -to gpio[9]
+set_location_assignment PIN_T4 -to gpio[10]
+set_location_assignment PIN_R3 -to gpio[11]
+set_location_assignment PIN_T5 -to gpio[12]
+set_location_assignment PIN_F3 -to jtag_TCK
+set_location_assignment PIN_F2 -to jtag_TDO
+set_location_assignment PIN_F1 -to jtag_TDI
+set_location_assignment PIN_D1 -to jtag_TMS
+set_location_assignment PIN_E8 -to over
+set_location_assignment PIN_D9 -to succ
+set_location_assignment PIN_E9 -to halted_ind
+set_global_assignment -name QIP_FILE ip_core/inst_mem/inst_mem.qip
+set_global_assignment -name QIP_FILE ip_core/data_mem/data_mem.qip
+set_global_assignment -name QIP_FILE ip_core/clk_pll/clk_pll.qip
+set_global_assignment -name VERILOG_FILE rtl/soc/rooth_soc.v
+set_global_assignment -name VERILOG_FILE rtl/perips/uart.v
+set_global_assignment -name VERILOG_FILE rtl/perips/timer.v
+set_global_assignment -name VERILOG_FILE rtl/perips/spi.v
+set_global_assignment -name VERILOG_FILE rtl/perips/gpio.v
+set_global_assignment -name VERILOG_FILE rtl/jtag/jtag_top.v
+set_global_assignment -name VERILOG_FILE rtl/jtag/jtag_driver.v
+set_global_assignment -name VERILOG_FILE rtl/jtag/jtag_dm.v
+set_global_assignment -name VERILOG_FILE rtl/jtag/full_handshake_tx.v
+set_global_assignment -name VERILOG_FILE rtl/jtag/full_handshake_rx.v
+set_global_assignment -name VERILOG_FILE rtl/bus/rib.v
+set_global_assignment -name VERILOG_FILE rtl/core/rooth_defines.v
+set_global_assignment -name VERILOG_FILE rtl/core/rooth.v
+set_global_assignment -name VERILOG_FILE rtl/core/regs_file.v
+set_global_assignment -name VERILOG_FILE rtl/core/reg_clash_fb.v
+set_global_assignment -name VERILOG_FILE rtl/core/pc_reg.v
+set_global_assignment -name VERILOG_FILE rtl/core/mux_alu.v
+set_global_assignment -name VERILOG_FILE rtl/core/imm_gen.v
+set_global_assignment -name VERILOG_FILE rtl/core/if_wb.v
+set_global_assignment -name VERILOG_FILE rtl/core/if_ex.v
+set_global_assignment -name VERILOG_FILE rtl/core/if_de.v
+set_global_assignment -name VERILOG_FILE rtl/core/if_as.v
+set_global_assignment -name VERILOG_FILE rtl/core/flow_ctrl.v
+set_global_assignment -name VERILOG_FILE rtl/core/div.v
+set_global_assignment -name VERILOG_FILE rtl/core/decode.v
+set_global_assignment -name VERILOG_FILE rtl/core/csr_reg.v
+set_global_assignment -name VERILOG_FILE rtl/core/clinet.v
+set_global_assignment -name VERILOG_FILE rtl/core/alu_res_ctrl.v
+set_global_assignment -name VERILOG_FILE rtl/core/alu_core.v
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,5 +1,0 @@
-Start Parser FileList: /home/eda/Project/rvseed_2/core/vtags.db/parser_out/parser_tmp.fileslist
-FILE:/home/eda/Project/rvseed_2/core/vtags.db/parser_out/parser_tmp.fileslist
-FILE:/home/eda/Project/rvseed_2/tb/tb_rvseed.v
-RTL WARNING 15-0: include file not found: "rvseed_defines.v"
-WARNING 66-20: UnKnown COMMON_WORD = `SIM_PERIOD

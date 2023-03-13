@@ -1,0 +1,15 @@
+
+
+D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/timer.v
+
+Feb 02 11PM:43:24>: MegaWizard Plug-In Manager does not recognize D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/timer.v as a wizard-generated
+custom megafunction variation.
+
+Do you want to use a wizard to overwrite it?
+
+D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/timer.v
+
+Feb 02 11PM:43:25>: MegaWizard Plug-In Manager does not recognize D:/rooth/fpga/altera/EP4CE10F17C8/rtl/perips/timer.v as a wizard-generated
+custom megafunction variation.
+
+Do you want to use a wizard to overwrite it?

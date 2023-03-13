@@ -1,0 +1,135 @@
+Flow report for rooth
+Thu Mar 02 17:48:21 2023
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Thu Mar 02 17:48:13 2023           ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                      ; rooth                                           ;
+; Top-level Entity Name              ; rooth_soc                                       ;
+; Family                             ; Cyclone IV E                                    ;
+; Device                             ; EP4CE10F17C8                                    ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 8,897 / 10,320 ( 86 % )                         ;
+;     Total combinational functions  ; 8,532 / 10,320 ( 83 % )                         ;
+;     Dedicated logic registers      ; 3,212 / 10,320 ( 31 % )                         ;
+; Total registers                    ; 3212                                            ;
+; Total pins                         ; 31 / 180 ( 17 % )                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 262,144 / 423,936 ( 62 % )                      ;
+; Embedded Multiplier 9-bit elements ; 8 / 46 ( 17 % )                                 ;
+; Total PLLs                         ; 1 / 2 ( 50 % )                                  ;
++------------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 03/02/2023 17:45:21 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; rooth               ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 193675815591789.167775032101252        ; --            ; --          ; --         ;
+; ENABLE_SIGNALTAP                    ; On                                     ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
+; MISC_FILE                           ; ip_core/inst_mem/inst_mem_inst.v       ; --            ; --          ; --         ;
+; MISC_FILE                           ; ip_core/inst_mem/inst_mem_bb.v         ; --            ; --          ; --         ;
+; MISC_FILE                           ; ip_core/data_mem/data_mem_inst.v       ; --            ; --          ; --         ;
+; MISC_FILE                           ; ip_core/data_mem/data_mem_bb.v         ; --            ; --          ; --         ;
+; MISC_FILE                           ; ip_core/clk_pll/clk_pll_inst.v         ; --            ; --          ; --         ;
+; MISC_FILE                           ; ip_core/clk_pll/clk_pll_bb.v           ; --            ; --          ; --         ;
+; MISC_FILE                           ; ip_core/clk_pll/clk_pll.ppf            ; --            ; --          ; --         ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; rooth_soc   ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; rooth_soc   ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; rooth_soc   ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; rooth_soc                              ; rooth         ; --          ; --         ;
+; USE_SIGNALTAP_FILE                  ; par/stp1.stp                           ; --            ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:35     ; 1.0                     ; 4874 MB             ; 00:00:33                           ;
+; Fitter               ; 00:02:11     ; 1.1                     ; 5923 MB             ; 00:02:01                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4705 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.9                     ; 4891 MB             ; 00:00:06                           ;
+; Total                ; 00:02:53     ; --                      ; --                  ; 00:02:41                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; Z2-R             ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Z2-R             ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Z2-R             ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Z2-R             ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off rooth -c rooth
+quartus_fit --read_settings_files=off --write_settings_files=off rooth -c rooth
+quartus_asm --read_settings_files=off --write_settings_files=off rooth -c rooth
+quartus_sta rooth -c rooth
+
+
+
