@@ -4,12 +4,18 @@
 
 ### 最新更新使用cyclone IV FPGA的RAM IP核作为指令和数据存储器，通过RAM IP核暂时只支持初始化方式下载程序，提供程序bin转mif工具(rooth/fpga/altera/EP4CE10F17C8/porgram)。程序demo在example文件夹下，使用了tinyriscv的外设以及配套的demo，编译方法参考tinyriscv项目。
 
+---
+
 ## 2. VCS仿真测试运行方式说明，在[VCS目录](https://gitee.com/havocsite/rooth/tree/master/VCS#如何运行)下查看。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677426750198.jpg)
 
-## 3. NCLaunch运行测试，在[nclaunch目录](https://gitee.com/havocsite/rooth/tree/master/nclaunch)下查看。
+---
 
+## 3. NCLaunch运行测试，在[nclaunch目录](https://gitee.com/havocsite/rooth/tree/master/nclaunch)下查看。
+---
+## 4. FPGA相关设计迁移到[fpga分支](https://gitee.com/havocsite/rooth/tree/fpga/)下。
+---
 ## 指令支持：
 
 | 序号 |  指令   | 类型 | 测试 | 备注 |
