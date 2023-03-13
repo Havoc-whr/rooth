@@ -46,7 +46,7 @@ assign access_mem_hold_o = (~inv_access_mem_hold_o) && acess_mem_flag_i;
 
 assign mem_addr_index = alu_res_i[1:0] & 2'b11;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(~rst_n) begin
         inv_access_mem_hold_o <= 1'b0;
     end

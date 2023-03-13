@@ -11,47 +11,31 @@
 //
 // -FHDR----------------------------------------------------------------------------
 `include "../core/rooth_defines.v"
-/*`include "../core/alu_core.v"
-`include "../core/div.v"
-`include "../core/rooth.v"
-`include "../bus/rib.v"
-`include "../perips/inst_mem.v"
-`include "../perips/data_mem.v"
-`include "../core/flow_ctrl.v"
-`include "../core/pc_reg.v"
-`include "../core/if_de.v"
-`include "../core/decode.v"
-`include "../core/imm_gen.v"
-`include "../core/if_ex.v"
-`include "../core/mux_alu.v"
-`include "../core/if_as.v"
-`include "../core/alu_res_ctrl.v"
-`include "../core/if_wb.v"
-`include "../core/reg_clash_fb.v"
-`include "../core/regs_file.v"
-`include "../core/csr_reg.v"
-`include "../core/clinet.v"*/
 
 module rooth_soc(
     input                   refer_clk,
     input                   refer_rst_n,
-
+    input                   soc_rst_key_n,
+    
     inout       [15:0]      gpio,
-    output                  uart_tx_pin, // UART发送引脚
-    input                   uart_rx_pin, // UART接收引脚
+    output                  uart_tx_pin,  // UART发送引脚
+    input                   uart_rx_pin,  // UART接收引脚
 
-    input                   spi_miso,    // spi控制器输出、spi设备输入信号脚
-    output                  spi_mosi,    // spi控制器输入、spi设备输出信号脚
-    output                  spi_ss,      // spi设备片选
-    output                  spi_clk,     // spi设备时钟，最大频率为输入clk的一半
-	 input wire              jtag_TCK,     // JTAG TCK引脚
+    input                   spi_miso,     // spi控制器输出、spi设备输入信号脚
+    output                  spi_mosi,     // spi控制器输入、spi设备输出信号脚
+    output                  spi_ss,       // spi设备片选
+    output                  spi_clk,      // spi设备时钟，最大频率为输入clk的一半
+    input wire              jtag_TCK,     // JTAG TCK引脚
     input wire              jtag_TMS,     // JTAG TMS引脚
     input wire              jtag_TDI,     // JTAG TDI引脚
     output wire             jtag_TDO,     // JTAG TDO引脚
-    output wire             halted_ind,
-	 
-	 output wire 				 over,        // 测试是否完成信号
-    output wire 				 succ         // 测试是否成功信号
+    //SD卡接口
+    input                   sd_miso,      //SD卡SPI串行输入数据信号
+    output                  sd_clk,       //SD卡SPI时钟信号
+    output                  sd_cs,        //SD卡SPI片选信号
+    output                  sd_mosi,      //SD卡SPI串行输出数据信号
+    input                   key_ctrl,
+    output wire             halted_ind
 ); 
 
 // master 0 interface data_mem
@@ -134,25 +118,33 @@ wire[`CPU_WIDTH-1:0]        jtag_reg_data_i;
 wire                        jtag_halt_req_o;
 wire                        jtag_reset_req_o;
 
+wire                        boot_compelete;
+
 assign int_flag_i = {7'h0, timer0_int};
 
 
 wire clk;
 wire clk_double;
+wire clk_double_180deg;
 wire rst_n;
+wire core_rst_n;
+
 wire locked_sig;
 
 assign halted_ind = ~jtag_halt_req_o;
-assign rst_n = refer_rst_n & locked_sig;
+assign rst_n = soc_rst_key_n & refer_rst_n & locked_sig;
+assign soc_rst_n =  soc_rst_key_n & locked_sig;
 
 
-//时钟分频，调用PLL的ip核
+//PLL IP CORE
 clk_pll	clk_pll_inst (
-	.inclk0 					( refer_clk 				),
-	.c0 						( clk 						),
-	.c1 						( clk_double 				),
-	.locked 					( locked_sig 				)
+	.inclk0 						( refer_clk 				),
+	.c0 							( clk 						),
+	.c1               		( clk_double_180deg     ),
+	.c2               		( clk_double	     		),
+	.locked 						( locked_sig 				)
 );
+
 
 
 rooth u_rooth_0(
@@ -172,9 +164,7 @@ rooth u_rooth_0(
     .jtag_data_i        ( jtag_reg_data_o       ),
     .jtag_data_o        ( jtag_reg_data_i       ),
     .jtag_halt_flag_i   ( jtag_halt_req_o       ),
-    .jtag_reset_flag_i  ( jtag_reset_req_o      ),
-	 .s10_o              ( over                  ),
-    .s11_o              ( succ                  )
+    .jtag_reset_flag_i  ( jtag_reset_req_o      )
 );
 
 rib u_rib_0(
@@ -238,15 +228,22 @@ rib u_rib_0(
     .hold_flag_o        ( bus_hold_flag         )
 );
 
-inst_mem	inst_mem_0 (
-	.clock 					( clk 						),
-	.data 					( s0_data_o 				),
-	.rdaddress 				( {2'b0,s0_addr_o[`CPU_WIDTH-1:2]}),
-	.wraddress 				( {2'b0,s0_addr_o[`CPU_WIDTH-1:2]}),
-	.wren 					( s0_we_o 					),
-	.q 						( s0_data_i 				)
+sd_boot_top #(
+    .FLASH           (16)
+)u_sd_boot_top(
+    .clk_ref            (clk_double),
+    .clk_ref_180deg     (clk_double_180deg),
+    .rst_n              (soc_rst_n),
+	.key_ctrl            (key_ctrl),
+    .sd_miso            (sd_miso),
+    .sd_clk             (sd_clk),
+    .sd_cs              (sd_cs),
+    .sd_mosi            (sd_mosi),
+    .inst_mem_wr_en_i   (s0_we_o),
+    .inst_mem_adder_i   ({2'b0,s0_addr_o[`CPU_WIDTH-1:2]}),
+    .inst_mem_data_i    (s0_data_o),
+    .inst_mem_data_o    (s0_data_i)
 );
-
 
 data_mem	data_mem_0 (
 	.clock 					( clk_double 				),

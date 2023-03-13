@@ -14,8 +14,6 @@
  limitations under the License.                                          
  */
 
-`include "../core/rooth_defines.v"
-
 
 // 32 bits count up timer module
 module timer(

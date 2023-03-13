@@ -48,12 +48,12 @@ assign clint_csr_mtvec_o = mtvec;
 assign clint_csr_mepc_o = mepc;
 assign clint_csr_mstatus_o = mstatus;
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(!rst_n) cycle <= `CPU_WIDTH*2'b0;
     else cycle <= cycle + 1'b1;
 end
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if(!rst_n) begin
         mtvec <= `CPU_WIDTH'b0;
         mcause <= `CPU_WIDTH'b0;
@@ -104,22 +104,5 @@ always @( *) begin
     end
 end
 
-/*always @( *) begin
-    if((client_csr_rd_adder_i == client_csr_wr_adder_i) && (client_csr_wr_en_i))
-        client_csr_rd_data_o = client_csr_wr_data_i;
-    else begin
-        case(csr_rd_adder_i) 
-            `CSR_CYCLE: client_csr_rd_data_o = cycle[`CPU_WIDTH-1:0];
-            `CSR_CYCLEH: client_csr_rd_data_o = cycle[`CPU_WIDTH*2-1:`CPU_WIDTTH];
-            `CSR_MTVEC: client_csr_rd_data_o = mtvec;
-            `CSR_MCAUSE: client_csr_rd_data_o = mcause;
-            `CSR_MEPC: client_csr_rd_data_o = mepc;
-            `CSR_MIE: client_csr_rd_data_o =  mie;
-            `CSR_MSTATUS: client_csr_rd_data_o = mstatus;
-            `CSR_MSCRATCH: client_csr_rd_data_o = mscratch;
-            default : client_csr_rd_data_o = `CPU_WIDTH'b0;
-        endcase
-    end
-end*/
 
 endmodule //csr_reg

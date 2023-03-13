@@ -17,7 +17,6 @@ module rooth_soc(
     input                   refer_rst_n,
     input                   soc_rst_key_n,
     
-    input					uart_debug_pin,
     inout       [15:0]      gpio,
     output                  uart_tx_pin,  // UART发送引脚
     input                   uart_rx_pin,  // UART接收引脚

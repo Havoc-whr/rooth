@@ -36,9 +36,8 @@ module rooth(
     input                           jtag_we_i,      // 写寄存器标志
     input  [`REG_ADDR_WIDTH-1:0]    jtag_addr_i,    // 读、写寄存器地址
     input  [`CPU_WIDTH-1:0]         jtag_data_i,    // 写寄存器数据
-    output [`CPU_WIDTH-1:0]         jtag_data_o,    // 读寄存器数据
-	 output wire             			s10_o,
-    output wire             			s11_o
+    output [`CPU_WIDTH-1:0]         jtag_data_o     // 读寄存器数据
+
 );
 
 // pc_reg
@@ -185,7 +184,6 @@ wire [`CPU_WIDTH-1:0]       ctrl_csr_rd_data;
 wire                         client_csr_wr_en_o;
 wire [`CSR_ADDR_WIDTH-1:0]   client_csr_wr_adder_o;
 wire [`CPU_WIDTH-1:0]        client_csr_wr_data_o;
-//wire [`CSR_ADDR_WIDTH-1:0]        client_csr_rd_adder_o;
 wire                         client_hold_flag_o;
 wire [`CPU_WIDTH-1:0]        client_int_addr_o;
 wire                         client_int_assert_o;
@@ -224,7 +222,7 @@ flow_ctrl u_flow_ctrl_0(
 pc_reg u_pc_reg_0(
     .clk                            ( clk                         ),
     .rst_n                          ( rst_n                       ),
-	 .jtag_reset_flag_i              ( jtag_reset_flag_i           ),
+    .jtag_reset_flag_i              ( jtag_reset_flag_i           ),
     .flow_pc_i                      ( flow_pc                     ),
     .next_pc_four_i                 ( next_pc_four                ),
     .next_pc_i                      ( next_pc                     ),
@@ -470,9 +468,7 @@ regs_file u_regs_file_0(
     .jtag_we_i                      ( jtag_we_i                   ),  
     .jtag_addr_i                    ( jtag_addr_i                 ),
     .jtag_data_i                    ( jtag_data_i                 ),
-    .jtag_data_o                    ( jtag_data_o                 ),
-	 .s10_o                          ( s10_o                       ),
-    .s11_o                          ( s11_o                       )
+    .jtag_data_o                    ( jtag_data_o                 ) 
 );
 
 csr_reg u_csr_reg_0(
@@ -486,8 +482,6 @@ csr_reg u_csr_reg_0(
     .client_csr_wr_en_i             ( client_csr_wr_en_o          ),
     .client_csr_wr_adder_i          ( client_csr_wr_adder_o       ),
     .client_csr_wr_data_i           ( client_csr_wr_data_o        ),
-//    .client_csr_rd_adder_i          ( client_csr_rd_adder_o       ),
-//    .client_csr_rd_data_o           ( client_csr_rd_data_o        ),
     .clint_csr_mtvec_o              ( csr_mtvec_o                 ),
     .clint_csr_mepc_o               ( csr_mepc_o                  ),
     .clint_csr_mstatus_o            ( csr_mstatus_o               )
@@ -508,7 +502,6 @@ clinet u_clinet_0(
     .csr_mstatus                    ( csr_mstatus_o               ),
     .we_o                           ( client_csr_wr_en_o          ),
     .waddr_o                        ( client_csr_wr_adder_o       ),
-//    .raddr_o                        ( client_csr_rd_adder_o       ),
     .data_o                         ( client_csr_wr_data_o        ),
     .hold_flag_o                    ( client_hold_flag_o          ),
     .int_addr_o                     ( client_int_addr_o           ),

@@ -24,15 +24,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "sd_clk",
+					"strict" : false
+				},
+				{
+					"name" : "sd_cs",
+					"strict" : false
+				},
+				{
+					"name" : "sd_mosi",
+					"strict" : false
+				},
+				{
 					"name" : "halted_ind",
-					"strict" : false
-				},
-				{
-					"name" : "over",
-					"strict" : false
-				},
-				{
-					"name" : "succ",
 					"strict" : false
 				},
 				{
@@ -104,6 +108,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "soc_rst_key_n",
+					"strict" : false
+				},
+				{
 					"name" : "jtag_TCK",
 					"strict" : false
 				},
@@ -121,6 +129,10 @@
 				},
 				{
 					"name" : "uart_rx_pin",
+					"strict" : false
+				},
+				{
+					"name" : "sd_miso",
 					"strict" : false
 				}
 			]

@@ -47,12 +47,14 @@ module flow_ctrl (
 );
 
 always @( *) begin
-    if(jtag_halt_flag_i) begin
-        flow_pc_o = `FLOW_STOP;
-        flow_de_o = `FLOW_STOP;
-        flow_ex_o = `FLOW_STOP;
-        flow_as_o = `FLOW_STOP;
-        flow_wb_o = `FLOW_STOP;
+    if(client_int_assert_i) begin
+        next_pc_o = client_int_addr_i;
+        next_pc_four_o = 1'b0;
+        flow_pc_o = `FLOW_WORK;
+        flow_de_o = `FLOW_REFRESH;
+        flow_ex_o = `FLOW_REFRESH;
+        flow_as_o = `FLOW_REFRESH;
+        flow_wb_o = `FLOW_REFRESH;
     end
     else if(client_hold_flag_i) begin
         flow_pc_o = `FLOW_STOP;
@@ -60,23 +62,6 @@ always @( *) begin
         flow_ex_o = `FLOW_STOP;
         flow_as_o = `FLOW_STOP;
         flow_wb_o = `FLOW_STOP;
-        next_pc_four_o = 1'b0;
-        if(client_int_assert_i) begin
-            next_pc_o = client_int_addr_i;
-            flow_pc_o = `FLOW_WORK;
-            flow_de_o = `FLOW_REFRESH;
-            flow_ex_o = `FLOW_REFRESH;
-            flow_as_o = `FLOW_REFRESH;
-            flow_wb_o = `FLOW_REFRESH;
-        end
-        else begin
-            flow_pc_o = `FLOW_STOP;
-            flow_de_o = `FLOW_STOP;
-            flow_ex_o = `FLOW_STOP;
-            flow_as_o = `FLOW_STOP;
-            flow_wb_o = `FLOW_STOP;
-            next_pc_four_o = 1'b0;
-        end
     end
     else if(access_mem_hold_i) begin
         flow_pc_o = `FLOW_STOP;
@@ -177,6 +162,13 @@ always @( *) begin
             default:
                 next_pc_four_o = 1'b1;
         endcase
+    end
+    else if(jtag_halt_flag_i) begin
+        flow_pc_o = `FLOW_STOP;
+        flow_de_o = `FLOW_STOP;
+        flow_ex_o = `FLOW_STOP;
+        flow_as_o = `FLOW_STOP;
+        flow_wb_o = `FLOW_STOP;
     end
     else begin 
         flow_pc_o = `FLOW_WORK;
