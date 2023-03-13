@@ -20,7 +20,6 @@ module tinyriscv_soc_tb;
     reg clk;
     reg rst_n;
 
-wire uart_debug_pin;
 wire [15:0] gpio;
 wire uart_tx_pin;
 wire uart_rx_pin;
@@ -117,7 +116,6 @@ wire [`CPU_WIDTH-1:0] t6_x31   = u_rooth_soc_0.u_rooth_0. u_regs_file_0. registe
 rooth_soc u_rooth_soc_0(
     .clk            (clk),
     .rst_n          (rst_n),
-    .uart_debug_pin (uart_debug_pin),
     .gpio           (gpio),
     .uart_tx_pin    (uart_tx_pin),
     .uart_rx_pin    (uart_rx_pin),

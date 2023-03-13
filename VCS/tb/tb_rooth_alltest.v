@@ -19,7 +19,6 @@ module tb_rooth_alltest ();
 reg                  clk;
 reg                  rst_n; 
 
-wire uart_debug_pin;
 wire [15:0] gpio;
 wire uart_tx_pin;
 wire uart_rx_pin;
@@ -228,7 +227,6 @@ endtask
 rooth_soc u_rooth_soc_0(
     .clk            (clk),
     .rst_n          (rst_n),
-    .uart_debug_pin (uart_debug_pin),
     .gpio           (gpio),
     .uart_tx_pin    (uart_tx_pin),
     .uart_rx_pin    (uart_rx_pin),

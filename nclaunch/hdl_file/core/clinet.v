@@ -12,6 +12,7 @@
 //
 // -FHDR----------------------------------------------------------------------------
 `include "./hdl_file/soc/rooth_defines.v"
+
 module clinet (
     input                           clk,
     input                           rst_n,
@@ -122,10 +123,7 @@ always @ (posedge clk or negedge rst_n) begin
                     // 定时器中断
                     cause <= 32'h80000004;
                     csr_state <= S_CSR_MEPC;
-                    if (wb_inst_addr_i) begin
-                        inst_addr <= wb_inst_addr_i - 32'h4;
-                    end
-                    else if (as_inst_addr_i) begin
+                    if (as_inst_addr_i) begin
                         inst_addr <= as_inst_addr_i - 32'h4;
                     end
                     else if (ex_inst_addr_i) begin
@@ -173,25 +171,25 @@ always @ (posedge clk or negedge rst_n) begin
             // 将mepc寄存器的值设为当前指令地址
             S_CSR_MEPC: begin
                 we_o <= 1'b1;
-                waddr_o <= `CSR_MEPC;
+                waddr_o <= {20'h0, `CSR_MEPC};
                 data_o <= inst_addr;
             end
             // 写中断产生的原因
             S_CSR_MCAUSE: begin
                 we_o <= 1'b1;
-                waddr_o <= `CSR_MCAUSE;
+                waddr_o <= {20'h0, `CSR_MCAUSE};
                 data_o <= cause;
             end
             // 关闭全局中断
             S_CSR_MSTATUS: begin
                 we_o <= 1'b1;
-                waddr_o <= `CSR_MSTATUS;
+                waddr_o <= {20'h0, `CSR_MSTATUS};
                 data_o <= {csr_mstatus[31:4], 1'b0, csr_mstatus[2:0]};
             end
             // 中断返回
             S_CSR_MSTATUS_MRET: begin
                 we_o <= 1'b1;
-                waddr_o <= `CSR_MSTATUS;
+                waddr_o <= {20'h0, `CSR_MSTATUS};
                 data_o <= {csr_mstatus[31:4], csr_mstatus[7], csr_mstatus[2:0]};
             end
             default: begin

@@ -16,7 +16,6 @@ module rooth_soc(
     input                   clk,
     input                   rst_n,
     
-    input					uart_debug_pin,
     inout       [15:0]      gpio,
     output                  uart_tx_pin,  // UART发送引脚
     input                   uart_rx_pin,  // UART接收引脚
@@ -313,18 +312,6 @@ spi u_spi_O(
     .spi_ss					( spi_ss					),             
     .spi_clk				( spi_clk					)              
 
-);
-
-// 串口下载模块例化
-uart_debug u_uart_debug(
-    .clk                    ( clk                       ),
-    .rst                    ( rst_n                     ),
-    .debug_en_i             ( uart_debug_pin            ),
-    .req_o                  ( m3_req_i                  ),
-    .mem_we_o               ( m3_we_i                   ),
-    .mem_addr_o             ( m3_addr_i                 ),
-    .mem_wdata_o            ( m3_data_i                 ),
-    .mem_rdata_i            ( m3_data_o                 )
 );
 
 jtag_top #(
