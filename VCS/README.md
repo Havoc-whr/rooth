@@ -53,7 +53,7 @@
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677418988813.jpg)
 
-3. 选择测试程序所在的目录，对于ADD测试程序选择`1`选择rv32i。具体对应isa_test/riscv-compliance/build_generated目录下的四个文件夹，要运行文件夹下的测试程序，需要设计支持RISC-V对应的指令子集，例如ADD测试在rv32i目录下，需要设计支持RV32I指令。
+3. 选择测试程序所在的目录，对于ADD测试程序选择`1`选择rv32i。具体对应isa_test/riscv-compliance/build_generated目录下的四个文件夹，要运行文件夹下的测试程序，需要设计支持RISC-V对应的指令子集，例如ADD测试在rv32i目录下，需要设计支持RV32I指令,全部测试运行结果在[项目根目录的介绍](https://gitee.com/havocsite/rooth#指令兼容性测试结果)中已全部列出。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677419298059.jpg)
 
