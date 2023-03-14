@@ -30,9 +30,9 @@ fpga分支，使用片上ram资源作为存储器。
 
 第二种初始化方式需要将工具链编译生成的bin文件转换成mif文件，并且修改RAM的IP核设计后重新综合，bin转mif文件的方式是通过python脚本实现，脚本编译生成的可执行文件存放在/program路径下，将需要转换的bin文件放在同一目录下双击运行可执行文件输入文件名回车即可生成mif文件。
 
-![](https://gitee.com/havocsite/rooth/raw/fpga/images/Clip_20230314_131709.png)
+![](https://gitee.com/havocsite/rooth/raw/fpga/images/imags_20230314_131709.png)
 
-第三种初始化方式解决了掉电丢失以及RAM初始化重新综合时间过程的问题，为了保证运行效率，这里选择在上电后将程序从SD卡载入RAM中运行，而不是通过映射总线地址的方式直接在SD卡中运行程序，要注意的是目前SD卡启动模块载入程序的扇区地址需要在设计中指定，暂不支持检索程序扇区地址的功能。![](https://gitee.com/havocsite/rooth/raw/fpga/images/Clip_20230314_131413.png)
+第三种初始化方式解决了掉电丢失以及RAM初始化重新综合时间过程的问题，为了保证运行效率，这里选择在上电后将程序从SD卡载入RAM中运行，而不是通过映射总线地址的方式直接在SD卡中运行程序，要注意的是目前SD卡启动模块载入程序的扇区地址需要在设计中指定，暂不支持检索程序扇区地址的功能。![](https://gitee.com/havocsite/rooth/raw/fpga/images/imags_20230314_131413.png)
 
 
 
