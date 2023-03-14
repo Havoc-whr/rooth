@@ -14,65 +14,73 @@
 ---
 ## 4. FPGA相关设计迁移到[fpga分支](https://gitee.com/havocsite/rooth/tree/fpga/)下。
 ---
-## 指令支持：
+## 指令兼容性测试结果：
 
-| 序号 |  指令   | 类型 | 测试 | 备注 |
-| :--: | :-----: | :--: | :--: | :--: |
-|  1   |   ADD   |  R   | PASS |      |
-|  2   |   SUB   |  R   | PASS |      |
-|  3   |   XOR   |  R   | PASS |      |
-|  4   |   OR    |  R   | PASS |      |
-|  5   |   AND   |  R   | PASS |      |
-|  6   |   SLL   |  R   | PASS |      |
-|  7   |   SRL   |  R   | PASS |      |
-|  8   |   SRA   |  R   | PASS |      |
-|  9   |   SLT   |  R   | PASS |      |
-|  10  |  SLTU   |  R   | PASS |      |
-|  11  |  ADDI   |  I   | PASS |      |
-|  12  |  XORI   |  I   | PASS |      |
-|  13  |   ORI   |  I   | PASS |      |
-|  14  |  ANDI   |  I   | PASS |      |
-|  15  |  SLLI   |  I   | PASS |      |
-|  16  |  SRLI   |  I   | PASS |      |
-|  17  |  SRAI   |  I   | PASS |      |
-|  18  |  SLTI   |  I   | PASS |      |
-|  19  |  SLTIU  |  I   | PASS |      |
-|  20  |   LB    |  I   | PASS |      |
-|  21  |   LH    |  I   | PASS |      |
-|  22  |   LW    |  I   | PASS |      |
-|  23  |   LBU   |  I   | PASS |      |
-|  24  |   LHU   |  I   | PASS |      |
-|  25  |   SB    |  S   | PASS |      |
-|  26  |   SH    |  S   | PASS |      |
-|  27  |   SW    |  S   | PASS |      |
-|  28  |   BEQ   |  B   | PASS |      |
-|  29  |   BNE   |  B   | PASS |      |
-|  30  |   BLT   |  B   | PASS |      |
-|  31  |   BGE   |  B   | PASS |      |
-|  32  |  BLTU   |  B   | PASS |      |
-|  33  |  BGEU   |  B   | PASS |      |
-|  34  |   JAL   |  J   | PASS |      |
-|  35  |  JALR   |  J   | PASS |      |
-|  36  |   LUI   |  U   | PASS |      |
-|  37  |  AUIPC  |  U   | PASS |      |
-|  38  |  ECALL  |  I   | PASS |      |
-|  39  | EBREAK  |  I   | PASS |      |
-|  40  |  CSRRW  |  I   | PASS |      |
-|  41  |  CSRRS  |  I   | PASS |      |
-|  42  |  CSRRC  |  I   | PASS |      |
-|  43  | CSRRWI  |  I   | PASS |      |
-|  44  | CSRRSI  |  I   | PASS |      |
-|  45  | CSRRCI  |  I   | PASS |      |
-|  46  | FENCE.I |  I   | PASS |      |
-|  47  |   MUL   |  R   | PASS |      |
-|  48  |  MULH   |  R   | PASS |      |
-|  49  | MULHSU  |  R   | PASS |      |
-|  50  |  MULHU  |  R   | PASS |      |
-|  51  |   DIV   |  R   | PASS |      |
-|  52  |  DIVU   |  R   | PASS |      |
-|  53  |   REM   |  R   | PASS |      |
-|  54  |  REMU   |  R   | PASS |      |
-
+| 序号 |  指令   | 类型 | 测试 |   所属子集   |
+| :--: | :-----: | :--: | :--: | :----------: |
+|  1   |   ADD   |  R   | PASS |    rv32i     |
+|  2   |   SUB   |  R   | PASS |    rv32i     |
+|  3   |   XOR   |  R   | PASS |    rv32i     |
+|  4   |   OR    |  R   | PASS |    rv32i     |
+|  5   |   AND   |  R   | PASS |    rv32i     |
+|  6   |   SLL   |  R   | PASS |    rv32i     |
+|  7   |   SRL   |  R   | PASS |    rv32i     |
+|  8   |   SRA   |  R   | PASS |    rv32i     |
+|  9   |   SLT   |  R   | PASS |    rv32i     |
+|  10  |  SLTU   |  R   | PASS |    rv32i     |
+|  11  |  ADDI   |  I   | PASS |    rv32i     |
+|  12  |  XORI   |  I   | PASS |    rv32i     |
+|  13  |   ORI   |  I   | PASS |    rv32i     |
+|  14  |  ANDI   |  I   | PASS |    rv32i     |
+|  15  |  SLLI   |  I   | PASS |    rv32i     |
+|  16  |  SRLI   |  I   | PASS |    rv32i     |
+|  17  |  SRAI   |  I   | PASS |    rv32i     |
+|  18  |  SLTI   |  I   | PASS |    rv32i     |
+|  19  |  SLTIU  |  I   | PASS |    rv32i     |
+|  20  |  SLTU  |  I   | PASS |    rv32i     |
+|  21  |   LB    |  I   | PASS |    rv32i     |
+|  22  |   LH    |  I   | PASS |    rv32i     |
+|  23  |   LW    |  I   | PASS |    rv32i     |
+|  24  |   LBU   |  I   | PASS |    rv32i     |
+|  25  |   LHU   |  I   | PASS |    rv32i     |
+|  26  |   SB    |  S   | PASS |    rv32i     |
+|  27  |   SH    |  S   | PASS |    rv32i     |
+|  28  |   SW    |  S   | PASS |    rv32i     |
+|  29  |   BEQ   |  B   | PASS |    rv32i     |
+|  30  |   BNE   |  B   | PASS |    rv32i     |
+|  31  |   BLT   |  B   | PASS |    rv32i     |
+|  32  |   BGE   |  B   | PASS |    rv32i     |
+|  33  |  BGEU   |  B   | PASS |    rv32i     |
+|  34  |   JAL   |  J   | PASS |    rv32i     |
+|  35  |  JALR   |  J   | PASS |    rv32i     |
+|  36  |   LUI   |  U   | PASS |    rv32i     |
+|  37  |  AUIPC  |  U   | PASS |    rv32i     |
+|  38  |  ECALL  |  I   | PASS |    rv32i     |
+|  39  | EBREAK  |  I   | PASS |    rv32i     |
+|  40  | DELAY_SLOTS  |  I   | PASS |    rv32i     |
+|  41  | ENDIANESS  |  I   | PASS |    rv32i     |
+|  42  | IO  |  I   | PASS |    rv32i     |
+|  43  | MISALIGN_JMP  |  I   | **FAIL** |    rv32i     |
+|  44  | MISALIGN_LDST  |  I   | **FAIL** |    rv32i     |
+|  45  | NOP  |  I   | PASS |    rv32i     |
+|  46  | RF_size  |  I   | PASS |    rv32i     |
+|  47  | RF_width  |  I   | PASS |    rv32i     |
+|  48  | RF_x0  |  I   | PASS |    rv32i     |
+|  49  |  CSRRW  |  I   | PASS |  rv32Zicsr   |
+|  50  |  CSRRS  |  I   | PASS |  rv32Zicsr   |
+|  51  |  CSRRC  |  I   | PASS |  rv32Zicsr   |
+|  52  | CSRRWI  |  I   | PASS |  rv32Zicsr   |
+|  53  | CSRRSI  |  I   | PASS |  rv32Zicsr   |
+|  54  | CSRRCI  |  I   | PASS |  rv32Zicsr   |
+|  55  | FENCE.I |  I   | PASS | rv32Zifencei |
+|  56  |   MUL   |  R   | PASS |    rv32im    |
+|  57  |  MULH   |  R   | PASS |    rv32im    |
+|  58  | MULHSU  |  R   | PASS |    rv32im    |
+|  59  |  MULHU  |  R   | PASS |    rv32im    |
+|  60  |   DIV   |  R   | PASS |    rv32im    |
+|  61  |  DIVU   |  R   | PASS |    rv32im    |
+|  62  |   REM   |  R   | PASS |    rv32im    |
+|  63  |  REMU   |  R   | PASS |    rv32im    |
 
 
 [tinyriscv]:https://gitee.com/liangkangnan/tinyriscv?_from=gitee_search#431-%E8%BF%90%E8%A1%8C%E6%97%A7%E7%9A%84%E6%8C%87%E4%BB%A4%E6%B5%8B%E8%AF%95%E7%A8%8B%E5%BA%8F "tinyriscv"
