@@ -101,3 +101,26 @@ JTAG下载步骤：
 
 存储器同样使用片上的RAM资源，经过测试使用片上的Block RAM不添加输出缓冲器的条件下数据读写正常，相比Altera平台测试使用的开发板有更加宽裕的片上RAM资源，故可以运行一些编译后产生更大二进制文件的程序，进行更加完善的验证测试。
 
+### 综合后的报告：
+
+时钟约束为50MHz条件下，查看综合与布局布线后时序分析等报告。
+
+1. 建立时间
+
+![](https://gitee.com/havocsite/rooth/raw/fpga/images/imags_20230314_215658.png)
+
+2. 保持时间
+
+![](https://gitee.com/havocsite/rooth/raw/fpga/images/imags_20230314_215719.png)
+
+3. 资源占用情况
+
+![](https://gitee.com/havocsite/rooth/raw/fpga/images/imags_20230314_215740.png)
+
+### 编译下载程序：
+
+1. 首先要搭建交叉编译的环境，参考博客[riscv各种版本gcc工具链编译与安装-weiqi7777](http://blog.chinaaet.com/weiqi7777/p/5100062001)或直接查看risc-v的GNU工具链的托管仓库[riscv-collab/riscv-gnu-toolchain: GNU toolchain for RISC-V, including GCC (github.com)](https://github.com/riscv-collab/riscv-gnu-toolchain)。
+
+2. 将编译好的工具链的的路径更改到example/common.mk文件中，common.mk被各例程下的makefile所引用，配置了基本的外设库以及编译的编译器的路径。
+3. 进入example目录下的例程中打开终端，输入`make`进行编译。
+4. 将编译生成的bin文件下载到处理器。
