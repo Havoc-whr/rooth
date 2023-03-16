@@ -142,11 +142,11 @@ RSIC-V与ARM、X86等传统商业架构相比，最大的优势之一就是开�
 
 RISC-V的核心指令格式以及RV32I指令在riscv-card、中文手册和其他相关资料中都有讲解。riscv-card中清晰列出了各种指令格式以及RV32I指令。
 
-![imags_20230316_221308](D:\rooth\rooth-master\images\imags_20230316_221308.png)
+![](https://gitee.com/havocsite/rooth/raw/master/images/imags_20230316_221308.png)
 
 以RV32I中的ADD加法指令为例，属于R型指令，Opcode为0110011，funct7为0x00，处理器要完成的操作是rd=rs1+rs2，即将源操作数寄存器1中的数据与源操作数寄存器2中的数据相加，存入目标寄存器rd。
 
-![imags_20230316_220521](D:\rooth\rooth-master\images\imags_20230316_220521.png)
+![](https://gitee.com/havocsite/rooth/raw/master/images/imags_20230316_220521.png)
 
 找到上面描述指令格式的表格，可以看到R-type从右侧低位开始，依次是opcode、rd、funct3、rs1、rs2、funct7，这里就是32位指令编码的划分。
 
