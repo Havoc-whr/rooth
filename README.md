@@ -172,6 +172,10 @@ RISC-V的核心指令格式以及RV32I指令在riscv-card、中文手册和其�
 
 了解了这些，已经大致可以知道处理器是如何理解一条32的指令编码了。首先，处理器要根据Opcode确定指令类型，在确定的指令类型范围内根据funct3和fucnt7确定具体的指令，根据源操作数寄存器地址，从相应的寄存器读出数据，经过计算，将计算结果写入目标寄存器。
 
+除R型之外，还有I、S、B、J、U型指令，I型指令为立即数指令，imm即为立即数，与R型相比，I型指令的源操作数有一位直接来自于指令编码，不需要从相应地址的寄存器读出数据，但需要将立即数扩展成32位之后再进行运算，保证数据位宽的一致性。此外,其他类型指令中M[rs1+imm]表示的是数据存储器，rs1+imm为存储器的地址，PC为指令计数器的值，也就是当前指令在存储器中的地址。
+
+## 处理器设计：
+
 [riscv]: https://riscv.org/china/	"RISC-V"
 [riscv-arch-test]: https://github.com/riscv-non-isa/riscv-arch-test	"riscv-arch-test"
 [suite]: https://github.com/riscv-non-isa/riscv-arch-test/tags?after=2.0	"suite"
