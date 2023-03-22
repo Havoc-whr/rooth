@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date             : Sun Mar 12 15:28:19 2023
+| Date             : Wed Mar 22 14:22:09 2023
 | Host             : Z2-R running 64-bit major release  (build 9200)
 | Command          : report_power -file rooth_soc_power_routed.rpt -pb rooth_soc_power_summary_routed.pb -rpx rooth_soc_power_routed.rpx
 | Design           : rooth_soc
@@ -54,14 +54,14 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.007 |        6 |       --- |             --- |
 | Slice Logic             |     0.004 |    10946 |       --- |             --- |
-|   LUT as Logic          |     0.003 |     5514 |     53200 |           10.36 |
+|   LUT as Logic          |     0.003 |     5513 |     53200 |           10.36 |
 |   CARRY4                |    <0.001 |      239 |     13300 |            1.80 |
 |   Register              |    <0.001 |     3698 |    106400 |            3.48 |
 |   F7/F8 Muxes           |    <0.001 |      473 |     53200 |            0.89 |
 |   BUFG                  |    <0.001 |        5 |        32 |           15.63 |
 |   LUT as Shift Register |    <0.001 |        2 |     17400 |            0.01 |
 |   Others                |     0.000 |      116 |       --- |             --- |
-| Signals                 |     0.006 |     8837 |       --- |             --- |
+| Signals                 |     0.006 |     8823 |       --- |             --- |
 | Block RAM               |     0.002 |     22.5 |       140 |           16.07 |
 | PLL                     |     0.155 |        1 |         4 |           25.00 |
 | DSPs                    |    <0.001 |        4 |       220 |            1.82 |
