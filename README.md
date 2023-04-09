@@ -178,7 +178,7 @@ RISC-V的核心指令格式以及RV32I指令在riscv-card、中文手册和其�
 
 处理器内核在一个指令周期内要完成的工作按照顺序大致可分为五个部分，分别是取指、译码、执行、访存和写回。五个部分的工作在时间上有明显的先后顺序，即一条指令从存储器中读出经过译码，控制各个模块完成运算，运算结果分别被存入内存或内核中的通用寄存器。
 
-![](D:\rooth\rooth-master\images\flow.png)
+![](https://gitee.com/havocsite/rooth/raw/master/images/flow.png)
 
 有了明确任务划分，设计的实现上也就可以划分为五个模块逐一实现。在不考虑实际工作频率的前提下，仅验证内核逻辑功能设计，最简单的方式是首先实现一个单周期的处理器，从取值到最终执行完成完全由组合逻辑完成，指令和数据存储器也同样使用HDL实现，这样的好处是可以在一个时钟周期完成取指和访存、写回等操作，暂时不考虑存储器读写时序，专注于对指令支持的实现和验证。在功能验证正确后，通过在不同模块之间添加触发器和流水线控制模块支持不同读写时序的存储器和流水线功能。
 
@@ -186,11 +186,11 @@ RISC-V的核心指令格式以及RV32I指令在riscv-card、中文手册和其�
 
 该部分主要模块有PC（指令计数器）以及执行分支跳转的数据选择器。主要工作是控制指令地址的产生，根据指令地址读出指令并输出。
 
-![](D:\rooth\rooth-master\images\PC.png)
+![](https://gitee.com/havocsite/rooth/raw/master/images/PC.png)
 
 指令地址由两部分来源，其一个是PC计数器计数产生在无分支跳转命令时顺序累加，其二则是外部输入，主要由指令部分产生的分支跳转操作码。后续可拓展输入来源，例如外部中断入口和返回函数的指令地址。
 
-![](D:\rooth\rooth-master\images\pc_flow.png)
+![](https://gitee.com/havocsite/rooth/raw/master/images/pc_flow.png)
 
 ##### 输入
 
@@ -208,7 +208,7 @@ PC及MUX操作码：由执行阶段产生，用于控制指令地址的产生。
 
 该部分分为decode和imm_generate两个模块，根据指令格式进行译码操作，产生对应操作码控制执行模块工作。其中decode为主要模块，该部分按照opcode确定指令类型，根据指令类型的不同按照指令格式中的funct3和funct7段确定具体指令。当指令类型为非R型指令时，imm_generate根据指令类型对指令中的立即数段进行扩展，扩展成32位的操作数。
 
-![](D:\rooth\rooth-master\images\decode_flow.png)
+![](https://gitee.com/havocsite/rooth/raw/master/images/decode_flow.png)
 
 ##### 译码部分主要RTL代码形式：
 
@@ -331,11 +331,13 @@ end
 
 对于CSR操作指令的立即数，根据中文手册中的说明，立即数需要进行的时零扩展，即高位补零。但在后期测试中发现，CSRRCI指令按照零扩展方式并不能通过指令测试。这时再回到中午手册中比较文字描述和上方式子中的描述，发现需要对zimm取反，目前还未找到具体原因，以及为何要进行取反。但按照取反运算产生的结果可以通过指令兼容性测试程序。
 
-![imags_20230409_172749](D:\rooth\rooth-master\images\imags_20230409_172749.png)
+![imags_20230409_172749](https://gitee.com/havocsite/rooth/raw/master/images/imags_20230409_172749.png)
 
 #### 执行：
 
 该部分主要由输入数据选择器、ALU、和输出数据选择器组成。
+
+![](https://gitee.com/havocsite/rooth/raw/master/images/ex_flow.png)
 
 
 
