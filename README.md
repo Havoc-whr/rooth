@@ -176,7 +176,168 @@ RISC-V的核心指令格式以及RV32I指令在riscv-card、中文手册和其�
 
 ## 处理器设计：
 
-### ......
+处理器内核在一个指令周期内要完成的工作按照顺序大致可分为五个部分，分别是取指、译码、执行、访存和写回。五个部分的工作在时间上有明显的先后顺序，即一条指令从存储器中读出经过译码，控制各个模块完成运算，运算结果分别被存入内存或内核中的通用寄存器。
+
+![](D:\rooth\rooth-master\images\flow.png)
+
+有了明确任务划分，设计的实现上也就可以划分为五个模块逐一实现。在不考虑实际工作频率的前提下，仅验证内核逻辑功能设计，最简单的方式是首先实现一个单周期的处理器，从取值到最终执行完成完全由组合逻辑完成，指令和数据存储器也同样使用HDL实现，这样的好处是可以在一个时钟周期完成取指和访存、写回等操作，暂时不考虑存储器读写时序，专注于对指令支持的实现和验证。在功能验证正确后，通过在不同模块之间添加触发器和流水线控制模块支持不同读写时序的存储器和流水线功能。
+
+#### 取指：
+
+该部分主要模块有PC（指令计数器）以及执行分支跳转的数据选择器。主要工作是控制指令地址的产生，根据指令地址读出指令并输出。
+
+![](D:\rooth\rooth-master\images\PC.png)
+
+指令地址由两部分来源，其一个是PC计数器计数产生在无分支跳转命令时顺序累加，其二则是外部输入，主要由指令部分产生的分支跳转操作码。后续可拓展输入来源，例如外部中断入口和返回函数的指令地址。
+
+![](D:\rooth\rooth-master\images\pc_flow.png)
+
+##### 输入
+
+PC及MUX操作码：由执行阶段产生，用于控制指令地址的产生。
+
+目标跳转指令地址：由执行阶段计算产生的跳转地址。
+
+##### 输出
+
+指令：用于后续译码、执行等操作。
+
+指令地址：当指令为B型指令需要用到PC值时，作为操作数。
+
+#### 译码：
+
+该部分分为decode和imm_generate两个模块，根据指令格式进行译码操作，产生对应操作码控制执行模块工作。其中decode为主要模块，该部分按照opcode确定指令类型，根据指令类型的不同按照指令格式中的funct3和funct7段确定具体指令。当指令类型为非R型指令时，imm_generate根据指令类型对指令中的立即数段进行扩展，扩展成32位的操作数。
+
+![](D:\rooth\rooth-master\images\decode_flow.png)
+
+##### 译码部分主要RTL代码形式：
+
+```verilog
+always  @(*)begin
+    branch_o = `WIDTH_BRANCH'b0;
+    jump_o  =   `WIDTH_JUMP'b0;
+    reg_wr_en_o = 1'b0;
+    reg_wr_adder_o = `REG_ADDR_WIDTH'b0;
+    reg1_rd_adder_o = `REG_ADDR_WIDTH'b0;
+    reg2_rd_adder_o = `REG_ADDR_WIDTH'b0;
+    imm_gen_op_o = `IMM_GEN_OP_WIDTH'b111;
+    alu_op_o = `ALU_OP_WIDTH'b0;
+    alu_src_sel_o = `ALU_SRC_WIDTH'b0;
+    alu_res_op_o = `WIDTH_RESCTRL'b11; //null
+    csr_wr_en_o = 1'b0;
+    csr_wr_adder_o = `CSR_ADDR_WIDTH'b0;
+    csr_rd_adder_o = `CSR_ADDR_WIDTH'b0;
+    case(opcode)
+        `INST_TYPE_R: begin
+            reg_wr_en_o     = 1'b1;
+            alu_res_op_o = `WIDTH_RESCTRL'b0;
+            reg1_rd_adder_o  = rs1;
+            reg2_rd_adder_o  = rs2;
+            reg_wr_adder_o   = rd;
+            alu_src_sel_o = `ALU_SRC_REG;
+            if(funct7 != `FUNCT7_INST_M) begin
+                case (funct3)
+                    `INST_ADD_SUB: 
+                        alu_op_o = (funct7 == `FUNCT7_INST_ADD) ? `ALU_ADD : `ALU_SUB;
+                    `INST_XOR:
+                        alu_op_o = `ALU_XOR;
+                    `INST_OR:
+                        alu_op_o = `ALU_OR;
+                    `INST_AND:
+                        alu_op_o = `ALU_AND;
+                    `INST_SLL:
+                        alu_op_o = `ALU_SLL;
+                    `INST_SRL_SRA:
+                        alu_op_o = (funct7 == `FUNCT7_INST_SRL) ? `ALU_SRL : `ALU_SRA;//sra:msb_extends
+                    `INST_SLT:
+                        alu_op_o = `ALU_SLT;
+                    `INST_SLTU:
+                        alu_op_o = `ALU_SLTU;//zero-extends
+                    default: 
+                        alu_op_o = `ALU_NULL;
+                endcase
+            end
+            else begin
+                case (funct3)
+                    `INST_MUL: 
+                        alu_op_o = `ALU_MUL;
+                    `INST_MULH:
+                        alu_op_o = `ALU_MULH;
+                    `INST_MULHSU:
+                        alu_op_o = `ALU_MULHSU;
+                    `INST_MULHU:
+                        alu_op_o = `ALU_MULHU;
+                    `INST_DIV:
+                        alu_op_o = `ALU_DIV;
+                    `INST_DIVU:
+                        alu_op_o = `ALU_DIVU;//sra:msb_extends
+                    `INST_REM:
+                        alu_op_o = `ALU_REM;
+                    `INST_REMU:
+                        alu_op_o = `ALU_REMU;//zero-extends
+                    default:
+                        alu_op_o = `ALU_NULL;
+                endcase
+            end
+        end
+end
+```
+
+按照上面的描述形式，跟据rsic-card依次实现不同类型、不同指令的译码工作并输出控制ALU源操作数选择、PC跳转以及ALU运算结果数据流向的控制编码。
+
+---
+
+各个编码的含义及作用：
+
+- **branch_o 、 jump_o**：B和J型指令产生分支跳转的标志信号
+- **reg_wr_en_o、reg_wr_adder_o**：通用寄存器写使能和写地址信号
+- **reg1_rd_adder_o、reg2_rd_adder_o**：通用寄存器读地址信号
+- **imm_gen_op_o**：立即数扩展操作码，按照指令类型产生立即数并进行扩展
+- **alu_op_o**：ALU运算操作码，控制ALU进行不同类型的运算
+- **alu_src_sel_o**：ALU源操作数选择码，控制用于选择ALU源操作数的数据选择器
+- **alu_res_op_o**：控制运算结果存储位置，根据类型将结果存入内存、通用寄存器、CSR寄存器或直接作为取指地址等
+- **csr_wr_en_o、csr_wr_adder_o**：CSR寄存器写使能和写地址
+- **csr_rd_adder_o**：CSR寄存器读地址
+
+---
+
+##### 立即数扩展：
+
+根据risc-card的指令格式，将立即数扩展至32位，经过比较和查阅资料，可以发现无论是何种类型的指令，只要是存在立即数的指令类型，立即数的（符号位）最高位都都对应了指令的最高位即31位，按照符号位扩展的方式，对立即数高位补符号位、低位补零。
+
+```verilog
+always  @(*) begin
+    imm_o = `CPU_WIDTH'b0;
+    case(imm_gen_op_i)
+        `IMM_GEN_I:
+            imm_o = {{20{inst_i[31]}},inst_i[31:20]};
+        `IMM_GEN_S:
+            imm_o = {{20{inst_i[31]}},inst_i[31:25],inst_i[11:7]};
+        `IMM_GEN_B:
+            imm_o = {{20{inst_i[31]}},inst_i[7],inst_i[30:25],inst_i[11:8],1'b0};
+        `IMM_GEN_U:
+            imm_o = {inst_i[31:12],{12{1'b0}}};
+        `IMM_GEN_J:
+            imm_o = {{12{inst_i[31]}},inst_i[19:12],inst_i[20],inst_i[30:21],1'b0};
+        `IMM_GEN_CSRRWI:
+            imm_o = {{27{1'b0}},{inst_i[19:15]}};
+        `IMM_GEN_CSRRSI:
+            imm_o = {{27{1'b0}},{inst_i[19:15]}};
+        `IMM_GEN_CSRRCI:
+            imm_o = ~{{27{1'b0}},{inst_i[19:15]}};
+    endcase
+end
+```
+
+对于CSR操作指令的立即数，根据中文手册中的说明，立即数需要进行的时零扩展，即高位补零。但在后期测试中发现，CSRRCI指令按照零扩展方式并不能通过指令测试。这时再回到中午手册中比较文字描述和上方式子中的描述，发现需要对zimm取反，目前还未找到具体原因，以及为何要进行取反。但按照取反运算产生的结果可以通过指令兼容性测试程序。
+
+![imags_20230409_172749](D:\rooth\rooth-master\images\imags_20230409_172749.png)
+
+#### 执行：
+
+该部分主要由输入数据选择器、ALU、和输出数据选择器组成。
+
+
 
 [riscv]: https://riscv.org/china/	"RISC-V"
 [riscv-arch-test]: https://github.com/riscv-non-isa/riscv-arch-test	"riscv-arch-test"
