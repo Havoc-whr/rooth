@@ -383,6 +383,8 @@ end
 
 到这里，处理器内核的设计基本上已经完成了，后续添加总线、外设，以及添加中断处理器模块，通过流水线控制模块可以很方便地暂停模块整条或任意哪级流水线，以便于使用总线接口时序和等待中断处理等。
 
+# ...
+
 [riscv]: https://riscv.org/china/	"RISC-V"
 [riscv-arch-test]: https://github.com/riscv-non-isa/riscv-arch-test	"riscv-arch-test"
 [suite]: https://github.com/riscv-non-isa/riscv-arch-test/tags?after=2.0	"suite"
