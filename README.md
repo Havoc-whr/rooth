@@ -106,7 +106,7 @@ RISC-V凭借其开源特点以及后发优势，经过十多年的发展，逐�
 
 [jameslzhu/riscv-card: An unofficial assembly reference for RISC-V. (github.com)](https://github.com/jameslzhu/riscv-card)
 
-[RISC-V-中文手册-v2p1](http://www.havocsite.top:8081/d/DSM/home/RISC-V-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C-v2p1.pdf?sign=cz1enoDbGvqQGEX8I1mt5nnh9sm6RCAE2LHSeymhwKU=:0)
+[RISC-V-中文读本-v2p1](http://www.havocsite.top:8081/d/DSM/home/RISC-V-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C-v2p1.pdf?sign=cz1enoDbGvqQGEX8I1mt5nnh9sm6RCAE2LHSeymhwKU=:0)
 
 ## RISC-V特点：
 
