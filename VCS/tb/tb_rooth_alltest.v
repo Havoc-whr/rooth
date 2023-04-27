@@ -5,13 +5,12 @@
 // Filename      : tb_rooth_alltest.v
 // Author        : whr
 // Created On    : 2022-06-29 20:08
-// Last Modified : 2023-01-14 21:42
+// Last Modified : 2023-04-27 18:01
 // ---------------------------------------------------------------------------------
 // Description   : 
 // RISC-V RV32I指令集测试
 //
 // -FHDR----------------------------------------------------------------------------
-`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
 `timescale 1ns / 1ps
 
 module tb_rooth_alltest ();

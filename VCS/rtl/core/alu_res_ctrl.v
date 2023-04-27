@@ -5,13 +5,12 @@
 // Filename      : alu_res_ctrl.v
 // Author        : whr
 // Created On    : 2022-07-16 09:34
-// Last Modified : 2023-01-08 14:55
+// Last Modified : 2023-04-27 18:00
 // ---------------------------------------------------------------------------------
 // Description   : 
 // 决定存储数据最终流向 
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
 
 module alu_res_ctrl(
     input                                   clk,
@@ -67,6 +66,7 @@ always @(*) begin
     data_mem_data_o = `CPU_WIDTH'b0;
     reg_wr_data_o = `CPU_WIDTH'b0;
     data_mem_req_o = 1'b0;
+    csr_wr_data_o = `CPU_WIDTH'b0;
     if(alu_res_op_i == `RESCTRL_MEM) begin // 访存
         data_mem_addr_o = alu_res_i;
         data_mem_req_o = 1'b1;

@@ -30,7 +30,7 @@
 `include "reg_clash_fb.v"
 `include "regs_file.v"
 `include "csr_reg.v"
-`include "clinet.v"
+`include "clint.v"
 `include "spi.v"
 `include "timer.v"
 `include "uart.v"

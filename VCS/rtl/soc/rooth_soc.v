@@ -5,12 +5,11 @@
 // Filename      : rooth.v
 // Author        : whr
 // Created On    : 2022-07-01 23:14
-// Last Modified : 2023-01-14 17:01
+// Last Modified : 2023-04-27 18:03
 // ---------------------------------------------------------------------------------
 // Description   : 
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
 module rooth_soc(
     input                   clk,
     input                   rst_n,

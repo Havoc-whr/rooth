@@ -5,14 +5,13 @@
 // Filename      : tb_rooth_compliance.v
 // Author        : whr
 // Created On    : 2023-01-23 11:12:33
-// Last Modified : 2023-01-23 11:30:29
+// Last Modified : 2023-04-27 18:01
 // ---------------------------------------------------------------------------------
 // Description   :
 // 
 //
 //
 // -FHDR----------------------------------------------------------------------------
-`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
 
 // testbench module
 module tinyriscv_soc_tb;

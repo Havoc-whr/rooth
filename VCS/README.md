@@ -16,6 +16,10 @@
 
 ### 2.1 运行单个指令测试程序
 
+测试项目仓库：[GitHub - riscv-software-src/riscv-tests](https://github.com/riscv-software-src/riscv-tests)
+
+#### 运行方式：
+
 1. 进入VCS/verification/，打开file_list文件，在文件最下方将tb_rooth.v取消注释，并将其他testbench文件路径注释掉，保存并退出。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677416493358.jpg)
@@ -44,6 +48,8 @@
 ### 2.3 运行更加完善的新的指令测试程序
 
 对于前面的指令测试程序，会在程序的最后将标准结果与仿真结果进行比较，用于判断运行结果的正确性。而新的更加完善的指令测试程序会被分成若干子程序，并且将若干子程序的运行结果存放的数据/指令存储器中，程序运行结束后，将存储器中的数据与标准结果进行对比，从而将验证结果精确到对每一个子程序，进而验证设计的规范性。该测试项目仍在不断更新完善，具体程序设计可以查看其github仓库中的介绍：[riscv-arch-test/TestFormatSpec.adoc at main · riscv-non-isa/riscv-arch-test (github.com)](https://github.com/riscv-non-isa/riscv-arch-test/blob/main/spec/TestFormatSpec.adoc)
+
+#### 运行方式：
 
 1. 进入VCS/verification/，打开file_list文件，在文件最下方将tb_rooth_compliance.v取消注释，并将其他testbench文件路径注释掉，保存并退出。
 

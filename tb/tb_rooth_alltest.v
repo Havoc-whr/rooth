@@ -195,8 +195,7 @@ endtask
 
 rooth_soc u_rooth_soc_0(
     .clk                            ( clk                           ),
-    .rst_n                          ( rst_n                         ),
-    .int_flag_i                     ( 8'b0                          )
+    .rst_n                          ( rst_n                         )
 );
 
 // iverilog 

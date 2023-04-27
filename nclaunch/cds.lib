@@ -1,0 +1,2 @@
+define worklib /home/havoc/Project/rooth/rooth-master/nclaunch/INCA_libs/worklib
+include $CDS_INST_DIR/tools/inca/files/cds.lib

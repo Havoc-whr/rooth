@@ -5,13 +5,12 @@
 // Filename      : csr_reg.v
 // Author        : whr
 // Created On    : 2022-08-10 23:08
-// Last Modified : 2023-01-14 17:07
+// Last Modified : 2023-04-27 18:00
 // ---------------------------------------------------------------------------------
 // Description   : 
 //  
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
 
 module csr_reg (
     input                           clk,
@@ -24,12 +23,12 @@ module csr_reg (
     
     output reg [`CPU_WIDTH-1:0]     csr_rd_data_o,
 
-    input                           client_csr_wr_en_i,
-    input [`CSR_ADDR_WIDTH-1:0]     client_csr_wr_adder_i,
-    input [`CPU_WIDTH-1:0]          client_csr_wr_data_i,
-//    input [`CSR_ADDER_WIDTH-1:0]    client_csr_rd_adder_i,
+    input                           clint_csr_wr_en_i,
+    input [`CSR_ADDR_WIDTH-1:0]     clint_csr_wr_adder_i,
+    input [`CPU_WIDTH-1:0]          clint_csr_wr_data_i,
+//    input [`CSR_ADDER_WIDTH-1:0]    clint_csr_rd_adder_i,
 
-//    output reg [`CPU_WIDTH-1:0]     client_csr_rd_data_o,
+//    output reg [`CPU_WIDTH-1:0]     clint_csr_rd_data_o,
 
     output wire [`CPU_WIDTH-1:0]    clint_csr_mtvec_o,
     output wire [`CPU_WIDTH-1:0]    clint_csr_mepc_o,
@@ -63,14 +62,14 @@ always @(posedge clk or negedge rst_n) begin
         mscratch <= `CPU_WIDTH'b0;
     end
     else begin
-        if(client_csr_wr_en_i) begin
-            case(client_csr_wr_adder_i)
-                `CSR_MTVEC: mtvec <= client_csr_wr_data_i;
-                `CSR_MCAUSE: mcause <= client_csr_wr_data_i;
-                `CSR_MEPC: mepc <= client_csr_wr_data_i;
-                `CSR_MIE: mie <= client_csr_wr_data_i;
-                `CSR_MSTATUS: mstatus <= client_csr_wr_data_i;
-                `CSR_MSCRATCH: mscratch <= client_csr_wr_data_i;
+        if(clint_csr_wr_en_i) begin
+            case(clint_csr_wr_adder_i)
+                `CSR_MTVEC: mtvec <= clint_csr_wr_data_i;
+                `CSR_MCAUSE: mcause <= clint_csr_wr_data_i;
+                `CSR_MEPC: mepc <= clint_csr_wr_data_i;
+                `CSR_MIE: mie <= clint_csr_wr_data_i;
+                `CSR_MSTATUS: mstatus <= clint_csr_wr_data_i;
+                `CSR_MSCRATCH: mscratch <= clint_csr_wr_data_i;
             endcase
         end
         else if(csr_wr_en_i) begin
@@ -105,19 +104,19 @@ always @( *) begin
 end
 
 /*always @( *) begin
-    if((client_csr_rd_adder_i == client_csr_wr_adder_i) && (client_csr_wr_en_i))
-        client_csr_rd_data_o = client_csr_wr_data_i;
+    if((clint_csr_rd_adder_i == clint_csr_wr_adder_i) && (clint_csr_wr_en_i))
+        clint_csr_rd_data_o = clint_csr_wr_data_i;
     else begin
         case(csr_rd_adder_i) 
-            `CSR_CYCLE: client_csr_rd_data_o = cycle[`CPU_WIDTH-1:0];
-            `CSR_CYCLEH: client_csr_rd_data_o = cycle[`CPU_WIDTH*2-1:`CPU_WIDTTH];
-            `CSR_MTVEC: client_csr_rd_data_o = mtvec;
-            `CSR_MCAUSE: client_csr_rd_data_o = mcause;
-            `CSR_MEPC: client_csr_rd_data_o = mepc;
-            `CSR_MIE: client_csr_rd_data_o =  mie;
-            `CSR_MSTATUS: client_csr_rd_data_o = mstatus;
-            `CSR_MSCRATCH: client_csr_rd_data_o = mscratch;
-            default : client_csr_rd_data_o = `CPU_WIDTH'b0;
+            `CSR_CYCLE: clint_csr_rd_data_o = cycle[`CPU_WIDTH-1:0];
+            `CSR_CYCLEH: clint_csr_rd_data_o = cycle[`CPU_WIDTH*2-1:`CPU_WIDTTH];
+            `CSR_MTVEC: clint_csr_rd_data_o = mtvec;
+            `CSR_MCAUSE: clint_csr_rd_data_o = mcause;
+            `CSR_MEPC: clint_csr_rd_data_o = mepc;
+            `CSR_MIE: clint_csr_rd_data_o =  mie;
+            `CSR_MSTATUS: clint_csr_rd_data_o = mstatus;
+            `CSR_MSCRATCH: clint_csr_rd_data_o = mscratch;
+            default : clint_csr_rd_data_o = `CPU_WIDTH'b0;
         endcase
     end
 end*/

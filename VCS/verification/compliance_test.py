@@ -57,9 +57,8 @@ def main():
     f.close()
 
     # 2.编译rtl文件
-    makevcs_cmd = ['make']
-    process = subprocess.Popen(makevcs_cmd)
-    process.wait(timeout=5)
+    process = subprocess.Popen('make vcsnew',shell=True)
+    process.wait(timeout=20)
 
     # 3.比较结果
     print('\033[1;34m1:rv32i')

@@ -25,7 +25,7 @@
 ../rtl/core/reg_clash_fb.v
 ../rtl/core/regs_file.v
 ../rtl/core/csr_reg.v
-../rtl/core/clinet.v
+../rtl/core/clint.v
 ../rtl/core/rooth.v
 ../rtl/soc/rib.v
 ../rtl/soc/rooth_soc.v
@@ -36,4 +36,4 @@
 # 测试单个指令，测试程序在tb/tb_rooth.v中设定
 #../tb/tb_rooth.v
 # 运行新的更加完善的指令测试程序（单独运行指定的一个指令测试程序）
-../tb/tb_rooth_compliance.v 
+#../tb/tb_rooth_compliance.v 

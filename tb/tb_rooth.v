@@ -12,7 +12,6 @@
 //
 // -FHDR----------------------------------------------------------------------------
 `timescale 1ns / 1ps
-`include "../rtl/rooth_soc.v"
 `include "../rtl/rooth_defines.v"
 
 module tb_rooth ();
@@ -60,7 +59,7 @@ initial begin
     rst_n = 1'b1;
     # (`SIM_PERIOD)
     rst_n = 1'b0;
-    inst_name = "../tb/ADD";
+    inst_name = "ADD";
     inst_test(inst_name);
     #(`SIM_PERIOD * 50);
     $finish;

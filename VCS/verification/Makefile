@@ -1,15 +1,29 @@
 default: \
 		clean \
-		vcs
+		vcsall
 #-------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------
 # VCS
-vcs   :
+vcsnew   :
 	vcs  \
-		-f file_list \
+	  -f file_list ../tb/tb_rooth_compliance.v  \
         -timescale=1ns/1ns \
         -full64  -R  +vc  +v2k  -sverilog  -debug_access+all -fsdb +define+FSDB \
         |tee vcs.log
+vcsall   :
+	vcs  \
+	  -f file_list ../tb/tb_rooth_alltest.v  \
+        -timescale=1ns/1ns \
+        -full64  -R  +vc  +v2k  -sverilog  -debug_access+all -fsdb +define+FSDB \
+        |tee vcs.log
+vcsone   :
+	vcs  \
+	  -f file_list ../tb/tb_rooth.v \
+        -timescale=1ns/1ns \
+        -full64  -R  +vc  +v2k  -sverilog  -debug_access+all -fsdb +define+FSDB \
+        |tee vcs.log
+vcs   :
+	python3 ./compliance_test.py $(isa)
 #-------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------
 all: \

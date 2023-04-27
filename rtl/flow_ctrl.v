@@ -32,10 +32,10 @@ module flow_ctrl (
     input                           access_mem_hold_i,
     input                           pr_acess_mem_flag_i,
     
-    // from client 
-    input                           client_hold_flag_i, // 流水线暂停标志
-    input    [`CPU_WIDTH-1:0]       client_int_addr_i,  // 中断入口地址
-    input                           client_int_assert_i,// 中断标志
+    // from clint 
+    input                           clint_hold_flag_i, // 流水线暂停标志
+    input    [`CPU_WIDTH-1:0]       clint_int_addr_i,  // 中断入口地址
+    input                           clint_int_assert_i,// 中断标志
 
     output reg [`CPU_WIDTH-1:0]     next_pc_o,          // next pc addr
     output reg                      next_pc_four_o,       
@@ -47,16 +47,18 @@ module flow_ctrl (
 );
 
 always @( *) begin
-    if(client_int_assert_i) begin
+    next_pc_four_o = 1'b0;
+    next_pc_o = `CPU_WIDTH'b0;
+    if(clint_int_assert_i) begin
         next_pc_four_o = 1'b0;
-        next_pc_o = client_int_addr_i;
+        next_pc_o = clint_int_addr_i;
         flow_pc_o = `FLOW_WORK;
         flow_de_o = `FLOW_REFRESH;
         flow_ex_o = `FLOW_REFRESH;
         flow_as_o = `FLOW_REFRESH;
         flow_wb_o = `FLOW_REFRESH;
     end
-    else if(client_hold_flag_i) begin
+    else if(clint_hold_flag_i) begin
         flow_pc_o = `FLOW_STOP;
         flow_de_o = `FLOW_STOP;
         flow_ex_o = `FLOW_STOP;

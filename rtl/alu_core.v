@@ -5,7 +5,7 @@
 // Filename      : alu.v
 // Author        : whr
 // Created On    : 2022-07-02 20:58
-// Last Modified : 2023-01-25 11:13
+// Last Modified : 2023-04-27 17:50
 // ---------------------------------------------------------------------------------
 // Description   :ALU核心单元，仅用与数据的运算，源操作数的选择由选择器模块控
 // 制
@@ -54,6 +54,7 @@ always @(*) begin
     less_o = 1'b0;
     more_zero_o = 1'b0;
     alu_busy_o = 1'b0;
+    extends_reg = `CPU_DOUBLE_WIDTH'b0;
     case(alu_op_i)
         `ALU_ADD:
             alu_res_o = alu_src1_i + alu_src2_i;
