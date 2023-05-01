@@ -47,7 +47,7 @@
 
 #### 运行方式：
 
-1. 进入VCS/verification/目录，打开终端,运行python脚本，以运行ADD测试程序为例输入`make vcs isa=ADD`
+1. 进入VCS/verification/目录，打开终端,运行python脚本，以运行ADD测试程序为例，输入`make vcs isa=ADD`
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677418988813.jpg)
 
