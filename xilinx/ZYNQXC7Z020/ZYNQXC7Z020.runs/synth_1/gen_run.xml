@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1679465832">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-2" LaunchTime="1682675319">
   <File Type="PA-TCL" Name="rooth_soc.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="rooth_soc_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="rooth_soc_reports.tcl"/>
@@ -11,6 +11,13 @@
   <File Type="VDS-TIMING-PB" Name="rooth_soc_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clk_pll/clk_pll.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/rtl/core/rooth_defines.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -32,7 +39,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/rtl/core/clinet.v">
+    <File Path="$PPRDIR/rtl/core/clint.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -286,6 +293,5 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="data_mem"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_pll"/>
   <BlockFileSet Type="BlockSrcs" Name="inst_mem"/>
 </GenRun>

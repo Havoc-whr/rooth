@@ -69,7 +69,7 @@ current_state.SD_INITIAL 0 0 0
 current_state.SD_RSD_WRAM 0 1 1 
 current_state.SD_IDLE 1 0 1 
 
-State Machine - |rooth_soc|rooth:u_rooth_0|clinet:u_clinet_0|csr_state
+State Machine - |rooth_soc|rooth:u_rooth_0|clint:u_clint_0|csr_state
 Name csr_state.S_CSR_MCAUSE csr_state.S_CSR_MSTATUS_MRET csr_state.S_CSR_MEPC csr_state.S_CSR_MSTATUS csr_state.S_CSR_IDLE 
 csr_state.S_CSR_IDLE 0 0 0 0 0 
 csr_state.S_CSR_MSTATUS 0 0 0 1 1 

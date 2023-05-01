@@ -46,7 +46,7 @@ assign access_mem_hold_o = (~inv_access_mem_hold_o) && acess_mem_flag_i;
 
 assign mem_addr_index = alu_res_i[1:0] & 2'b11;
 
-always @(posedge clk) begin
+always @(posedge clk or negedge rst_n) begin
     if(~rst_n) begin
         inv_access_mem_hold_o <= 1'b0;
     end
@@ -67,6 +67,7 @@ always @(*) begin
     data_mem_data_o = `CPU_WIDTH'b0;
     reg_wr_data_o = `CPU_WIDTH'b0;
     data_mem_req_o = 1'b0;
+    csr_wr_data_o = `CPU_WIDTH'b0;
     if(alu_res_op_i == `RESCTRL_MEM) begin // 访存
         data_mem_addr_o = alu_res_i;
         data_mem_req_o = 1'b1;

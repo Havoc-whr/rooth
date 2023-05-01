@@ -88,7 +88,7 @@ wire [`CSR_ADDR_WIDTH-1:0]   ex_csr_rd_adder_i;
 wire [`CPU_WIDTH-1:0]        csr_mtvec_o;
 wire [`CPU_WIDTH-1:0]        csr_mepc_o;
 wire [`CPU_WIDTH-1:0]        csr_mstatus_o;
-//wire [`CPU_WIDTH-1:0]        client_csr_rd_data_o; //未使用
+//wire [`CPU_WIDTH-1:0]        clint_csr_rd_data_o; //未使用
 
 //mux_alu
 wire [`ALU_SRC_WIDTH-1:0]   ex_alu_src_sel_i;
@@ -180,13 +180,14 @@ wire [`CPU_WIDTH-1:0]       ctrl_reg1_rd_data;
 wire [`CPU_WIDTH-1:0]       ctrl_reg2_rd_data;
 wire [`CPU_WIDTH-1:0]       ctrl_csr_rd_data;
 
-// clinet
-wire                         client_csr_wr_en_o;
-wire [`CSR_ADDR_WIDTH-1:0]   client_csr_wr_adder_o;
-wire [`CPU_WIDTH-1:0]        client_csr_wr_data_o;
-wire                         client_hold_flag_o;
-wire [`CPU_WIDTH-1:0]        client_int_addr_o;
-wire                         client_int_assert_o;
+// clint
+wire                         clint_csr_wr_en_o;
+wire [`CSR_ADDR_WIDTH-1:0]   clint_csr_wr_adder_o;
+wire [`CPU_WIDTH-1:0]        clint_csr_wr_data_o;
+//wire [`CSR_ADDR_WIDTH-1:0]        clint_csr_rd_adder_o;
+wire                         clint_hold_flag_o;
+wire [`CPU_WIDTH-1:0]        clint_int_addr_o;
+wire                         clint_int_assert_o;
 
 // 例化
 assign ex_pc_adder = ex_pc_adder_i;
@@ -206,9 +207,9 @@ flow_ctrl u_flow_ctrl_0(
     .access_mem_hold_i              ( access_mem_hold_o           ),
     .pr_acess_mem_flag_i            ( pr_acess_mem_flag_o         ),
     .alu_busy_i                     ( alu_busy_o                  ),
-    .client_hold_flag_i             ( client_hold_flag_o          ),
-    .client_int_addr_i              ( client_int_addr_o           ),
-    .client_int_assert_i            ( client_int_assert_o         ),
+    .clint_hold_flag_i             ( clint_hold_flag_o          ),
+    .clint_int_addr_i              ( clint_int_addr_o           ),
+    .clint_int_assert_i            ( clint_int_assert_o         ),
     .next_pc_o                      ( next_pc                     ),
     .next_pc_four_o                 ( next_pc_four                ),
     .flow_pc_o                      ( flow_pc                     ),
@@ -479,15 +480,17 @@ csr_reg u_csr_reg_0(
     .csr_wr_data_i                  ( wb_csr_wr_data              ),
     .csr_rd_adder_i                 ( ctrl_csr_rd_adder           ),
     .csr_rd_data_o                  ( ctrl_csr_rd_data            ),
-    .client_csr_wr_en_i             ( client_csr_wr_en_o          ),
-    .client_csr_wr_adder_i          ( client_csr_wr_adder_o       ),
-    .client_csr_wr_data_i           ( client_csr_wr_data_o        ),
+    .clint_csr_wr_en_i             ( clint_csr_wr_en_o          ),
+    .clint_csr_wr_adder_i          ( clint_csr_wr_adder_o       ),
+    .clint_csr_wr_data_i           ( clint_csr_wr_data_o        ),
+//    .clint_csr_rd_adder_i          ( clint_csr_rd_adder_o       ),
+//    .clint_csr_rd_data_o           ( clint_csr_rd_data_o        ),
     .clint_csr_mtvec_o              ( csr_mtvec_o                 ),
     .clint_csr_mepc_o               ( csr_mepc_o                  ),
     .clint_csr_mstatus_o            ( csr_mstatus_o               )
 );
 
-clinet u_clinet_0(
+clint u_clint_0(
     .clk                            ( clk                         ),
     .rst_n                          ( rst_n                       ),
     .int_flag_i                     ( int_flag_i                  ),
@@ -500,12 +503,13 @@ clinet u_clinet_0(
     .csr_mtvec                      ( csr_mtvec_o                 ),
     .csr_mepc                       ( csr_mepc_o                  ),
     .csr_mstatus                    ( csr_mstatus_o               ),
-    .we_o                           ( client_csr_wr_en_o          ),
-    .waddr_o                        ( client_csr_wr_adder_o       ),
-    .data_o                         ( client_csr_wr_data_o        ),
-    .hold_flag_o                    ( client_hold_flag_o          ),
-    .int_addr_o                     ( client_int_addr_o           ),
-    .int_assert_o                   ( client_int_assert_o         )
+    .we_o                           ( clint_csr_wr_en_o          ),
+    .waddr_o                        ( clint_csr_wr_adder_o       ),
+//    .raddr_o                        ( clint_csr_rd_adder_o       ),
+    .data_o                         ( clint_csr_wr_data_o        ),
+    .hold_flag_o                    ( clint_hold_flag_o          ),
+    .int_addr_o                     ( clint_int_addr_o           ),
+    .int_assert_o                   ( clint_int_assert_o         )
 );
 
 

@@ -16,28 +16,28 @@
 
 `include "rooth_defines.v"
 
-// é™¤æ³•æ¨¡å—
-// è¯•å•†æ³•å®ç°32ä½æ•´æ•°é™¤æ³•
-// æ¯æ¬¡é™¤æ³•è¿ç®—è‡³å°‘éœ€è¦33ä¸ªæ—¶é’Ÿå‘¨æœŸæ‰èƒ½å®Œæˆ
+// ³ı·¨Ä£¿é
+// ÊÔÉÌ·¨ÊµÏÖ32Î»ÕûÊı³ı·¨
+// Ã¿´Î³ı·¨ÔËËãÖÁÉÙĞèÒª33¸öÊ±ÖÓÖÜÆÚ²ÅÄÜÍê³É
 module div(
 
     input wire                      clk,
     input wire                      rst_n,
 
     // from ex
-    input wire[`CPU_WIDTH-1:0]      dividend_i,      // è¢«é™¤æ•°
-    input wire[`CPU_WIDTH-1:0]      divisor_i,       // é™¤æ•°
+    input wire[`CPU_WIDTH-1:0]      dividend_i,      // ±»³ıÊı
+    input wire[`CPU_WIDTH-1:0]      divisor_i,       // ³ıÊı
     input wire                      start_i,                
-    input wire[`FUNCT3_WIDTH-1:0]   op_i,            // å…·ä½“æ˜¯å“ªä¸€æ¡æŒ‡ä»¤
+    input wire[`FUNCT3_WIDTH-1:0]   op_i,            // ¾ßÌåÊÇÄÄÒ»ÌõÖ¸Áî
 
     // to ex
-    output reg[`CPU_WIDTH-1:0]      result_o,        // é™¤æ³•ç»“æœ
-    output reg                      ready_o,         // è¿ç®—ç»“æŸä¿¡å·
-    output reg                      busy_o           // æ­£åœ¨è¿ç®—ä¿¡å·
+    output reg[`CPU_WIDTH-1:0]      result_o,        // ³ı·¨½á¹û
+    output reg                      ready_o,         // ÔËËã½áÊøĞÅºÅ
+    output reg                      busy_o           // ÕıÔÚÔËËãĞÅºÅ
 
     );
 
-    // çŠ¶æ€å®šä¹‰
+    // ×´Ì¬¶¨Òå
     localparam STATE_IDLE  = 4'b0001;
     localparam STATE_START = 4'b0010;
     localparam STATE_CALC  = 4'b0100;
@@ -65,7 +65,7 @@ module div(
     wire[31:0] div_result_tmp = minuend_ge_divisor? ({div_result[30:0], 1'b1}): ({div_result[30:0], 1'b0});
     wire[31:0] minuend_tmp = minuend_ge_divisor? minuend_sub_res[30:0]: minuend[30:0];
 
-    // çŠ¶æ€æœºå®ç°
+    // ×´Ì¬»úÊµÏÖ
     always @ (posedge clk) begin
         if (rst_n == 1'b0) begin
             state <= STATE_IDLE;
@@ -103,7 +103,7 @@ module div(
 
                 STATE_START: begin
                     if (start_i == 1'b1) begin
-                        // é™¤æ•°ä¸º0
+                        // ³ıÊıÎª0
                         if (divisor_r == `CPU_WIDTH'b0) begin
                             if (op_div | op_divu) begin
                                 result_o <= 32'hffffffff;
@@ -113,7 +113,7 @@ module div(
                             ready_o <= 1'b1;
                             state <= STATE_IDLE;
                             busy_o <= 1'b0;
-                        // é™¤æ•°ä¸ä¸º0
+                        // ³ıÊı²»Îª0
                         end
                         else begin
                             busy_o <= 1'b1;
@@ -122,9 +122,9 @@ module div(
                             div_result <= `CPU_WIDTH'b0;
                             div_remain <= `CPU_WIDTH'b0;
 
-                            // DIVå’ŒREMè¿™ä¸¤æ¡æŒ‡ä»¤æ˜¯æœ‰ç¬¦å·æ•°è¿ç®—æŒ‡ä»¤
+                            // DIVºÍREMÕâÁ½ÌõÖ¸ÁîÊÇÓĞ·ûºÅÊıÔËËãÖ¸Áî
                             if (op_div | op_rem) begin
-                                // è¢«é™¤æ•°æ±‚è¡¥ç 
+                                // ±»³ıÊıÇó²¹Âë
                                 if (dividend_r[31] == 1'b1) begin
                                     dividend_r <= dividend_invert;
                                     minuend <= dividend_invert[31];
@@ -132,7 +132,7 @@ module div(
                                 else begin
                                     minuend <= dividend_r[31];
                                 end
-                                // é™¤æ•°æ±‚è¡¥ç 
+                                // ³ıÊıÇó²¹Âë
                                 if (divisor_r[31] == 1'b1) begin
                                     divisor_r <= divisor_invert;
                                 end
@@ -141,7 +141,7 @@ module div(
                                 minuend <= dividend_r[31];
                             end
 
-                            // è¿ç®—ç»“æŸåæ˜¯å¦è¦å¯¹ç»“æœå–è¡¥ç 
+                            // ÔËËã½áÊøºóÊÇ·ñÒª¶Ô½á¹ûÈ¡²¹Âë
                             if ((op_div && (dividend_r[31] ^ divisor_r[31] == 1'b1))
                                 || (op_rem && (dividend_r[31] == 1'b1))) begin
                                 invert_result <= 1'b1;

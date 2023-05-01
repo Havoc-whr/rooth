@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:D:/Vivado_prj/ZYNQXC7Z020/rooth_xdc.xdc rfile:../../../rooth_xdc.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rooth_xdc.xdc rfile:../../../rooth_xdc.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN K17 IOSTANDARD LVCMOS33} [get_ports refer_clk]
 set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]

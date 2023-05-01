@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date                      : Wed Mar 22 14:20:27 2023
+| Date                      : Fri Apr 28 17:51:38 2023
 | Host                      : Z2-R running 64-bit major release  (build 9200)
 | Command                   : report_io -file rooth_soc_io_placed.rpt
 | Design                    : rooth_soc
