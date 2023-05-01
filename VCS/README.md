@@ -20,27 +20,23 @@
 
 #### 运行方式：
 
-1. 进入VCS/verification/，打开file_list文件，在文件最下方将tb_rooth.v取消注释，并将其他testbench文件路径注释掉，保存并退出。
-
-![](https://gitee.com/havocsite/rooth/raw/master/images/1677416493358.jpg)
-
-   2. 这里可以进入VCS/tb/目录查看tb_rooth.v文件，可以修改需要运行的仿真测试程序，程序存放在/VCS/inst_test/目录下，修改后保存退出。
+1. 进入VCS/tb/目录查看tb_rooth.v文件，可以修改需要运行的仿真测试程序，程序存放在/VCS/inst_test/目录下，修改后保存退出。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677416694773.jpg)
 
-3.  然后回到VCS/verification/目录，打开终端输入`make clean`命令清除前一次仿真生成的文件，最后输入`make vcsone`运行，等待终端输出。
+2.  然后回到VCS/verification/目录，打开终端输入`make clean`命令清除前一次仿真生成的文件，最后输入`make vcsone`运行，等待终端输出。
 3.  若运行成功，则会输出PASS。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677417129440.jpg)
 
-5. 运行结束后，在终端输入`make verdi`可以查看仿真过程中的波形。
+4. 运行结束后，在终端输入`make verdi`可以查看仿真过程中的波形。
 ![](https://gitee.com/havocsite/rooth/raw/master/images/IC_EDA-2023-02-26-21-17-49.png)
 ### 2.2 运行全部指令测试
 
 前面指令测试每次运行都需要修改testbench文件并重新输入指令，可以运行tb_rooth_alltest.v将isa_test中的测试程序依次运行并输出结果。
 
 1. 同样，打开file_list文件，在文件最下方将tb_rooth_alltest.v取消注释，并将其他testbench文件路径注释掉，保存并退出。
-2. 进入VCS/verification/目录，打开终端输入`make clean`命令清除前一次仿真生成的文件，最后输入`make vcs`运行，等待终端输出。
+2. 进入VCS/verification/目录，打开终端输入`make clean`命令清除前一次仿真生成的文件，最后输入`make vcsall`运行，等待终端输出。
 3. 若运行成功，会看到终端打印出PASS，若未通过测试，testbench文件会在运行第一个未通过的测试的程序时终止。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677417965825.jpg)
@@ -51,19 +47,15 @@
 
 #### 运行方式：
 
-1. 进入VCS/verification/，打开file_list文件，在文件最下方将tb_rooth_compliance.v取消注释，并将其他testbench文件路径注释掉，保存并退出。
-
-![](https://gitee.com/havocsite/rooth/raw/master/images/1677416316976.jpg)
-
-2. 进入VCS/verification/目录，打开终端,运行python脚本，以运行ADD测试程序为例输入`python3 ./compliance_test.py ADD`
+1. 进入VCS/verification/目录，打开终端,运行python脚本，以运行ADD测试程序为例输入`make vcs isa=ADD`
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677418988813.jpg)
 
-3. 选择测试程序所在的目录，对于ADD测试程序选择`1`选择rv32i。具体对应isa_test/riscv-compliance/build_generated目录下的四个文件夹，要运行文件夹下的测试程序，需要设计支持RISC-V对应的指令子集，例如ADD测试在rv32i目录下，需要设计支持RV32I指令,全部测试运行结果在[项目根目录的介绍](https://gitee.com/havocsite/rooth#指令兼容性测试结果)中已全部列出。
+2. 选择测试程序所在的目录，对于ADD测试程序选择`1`选择rv32i。具体对应isa_test/riscv-compliance/build_generated目录下的四个文件夹，要运行文件夹下的测试程序，需要设计支持RISC-V对应的指令子集，例如ADD测试在rv32i目录下，需要设计支持RV32I指令,全部测试运行结果在[项目根目录的介绍](https://gitee.com/havocsite/rooth#指令兼容性测试结果)中已全部列出。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677419298059.jpg)
 
-4. 若运行成功则会输出PASS，否则输出FAIL。
+3. 若运行成功则会输出PASS，否则输出FAIL。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677419494275.jpg)
 
