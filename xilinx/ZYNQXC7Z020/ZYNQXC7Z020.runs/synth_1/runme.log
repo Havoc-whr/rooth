@@ -15,7 +15,7 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-2
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4720 
+INFO: Helper process launched with PID 12856 
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:60]
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:61]
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_dm with formal parameter declaration list [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_dm.v:62]
@@ -50,11 +50,11 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_driver with 
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_top with formal parameter declaration list [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_top.v:46]
 WARNING: [Synth 8-2507] parameter declaration becomes local in jtag_top with formal parameter declaration list [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/jtag/jtag_top.v:47]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1018.637 ; gain = 251.328
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1018.375 ; gain = 251.727
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'rooth_soc' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:15]
-INFO: [Synth 8-6157] synthesizing module 'clk_pll' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-7840-Z2-R/realtime/clk_pll_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_pll' (1#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-7840-Z2-R/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_pll' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11340-Z2-R/realtime/clk_pll_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_pll' (1#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11340-Z2-R/realtime/clk_pll_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'rooth' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/rooth.v:18]
 INFO: [Synth 8-6157] synthesizing module 'flow_ctrl' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/flow_ctrl.v:17]
 INFO: [Synth 8-6155] done synthesizing module 'flow_ctrl' (2#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/flow_ctrl.v:17]
@@ -75,7 +75,6 @@ INFO: [Synth 8-6157] synthesizing module 'mux_alu' [D:/rooth/rooth-fpga/xilinx/Z
 INFO: [Synth 8-6155] done synthesizing module 'mux_alu' (8#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/mux_alu.v:16]
 INFO: [Synth 8-6157] synthesizing module 'alu_core' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:16]
 INFO: [Synth 8-6155] done synthesizing module 'alu_core' (9#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:16]
-WARNING: [Synth 8-7023] instance 'u_alu_core_0' of module 'alu_core' has 15 connections declared, but only 13 given [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/rooth.v:315]
 INFO: [Synth 8-6157] synthesizing module 'div' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/div.v:22]
 	Parameter STATE_IDLE bound to: 4'b0001 
 	Parameter STATE_START bound to: 4'b0010 
@@ -142,8 +141,8 @@ INFO: [Synth 8-6157] synthesizing module 'sd_boot_ctrl' [D:/rooth/rooth-fpga/xil
 	Parameter READ_RSD_WRAM bound to: 3'b010 
 	Parameter READ_IDLE bound to: 3'b100 
 INFO: [Synth 8-155] case statement is not full and has no default [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/sd_boot/sd_boot_ctrl.v:101]
-INFO: [Synth 8-6157] synthesizing module 'inst_mem' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-7840-Z2-R/realtime/inst_mem_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'inst_mem' (20#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-7840-Z2-R/realtime/inst_mem_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'inst_mem' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11340-Z2-R/realtime/inst_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'inst_mem' (20#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11340-Z2-R/realtime/inst_mem_stub.v:6]
 WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'inst_mem' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/sd_boot/sd_boot_ctrl.v:254]
 WARNING: [Synth 8-689] width (32) of port connection 'addrb' does not match port width (15) of module 'inst_mem' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/sd_boot/sd_boot_ctrl.v:260]
 WARNING: [Synth 8-6014] Unused sequential element key_reg was removed.  [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/sd_boot/sd_boot_ctrl.v:142]
@@ -182,8 +181,8 @@ WARNING: [Synth 8-6014] Unused sequential element res_data_reg was removed.  [D:
 INFO: [Synth 8-6155] done synthesizing module 'sd_read' (24#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/sd_boot/sd_read.v:12]
 INFO: [Synth 8-6155] done synthesizing module 'sd_ctrl_top' (25#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/sd_boot/sd_ctrl_top.v:12]
 INFO: [Synth 8-6155] done synthesizing module 'sd_boot_top' (26#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/sd_boot/sd_boot_top.v:12]
-INFO: [Synth 8-6157] synthesizing module 'data_mem' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-7840-Z2-R/realtime/data_mem_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'data_mem' (27#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-7840-Z2-R/realtime/data_mem_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11340-Z2-R/realtime/data_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (27#1) [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/.Xil/Vivado-11340-Z2-R/realtime/data_mem_stub.v:6]
 WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (13) of module 'data_mem' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/soc/rooth_soc.v:257]
 INFO: [Synth 8-6157] synthesizing module 'timer' [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/perips/timer.v:21]
 	Parameter REG_CTRL bound to: 4'b0000 
@@ -402,7 +401,7 @@ WARNING: [Synth 8-3331] design timer has unconnected port addr_i[13]
 WARNING: [Synth 8-3331] design timer has unconnected port addr_i[12]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1109.254 ; gain = 341.945
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1109.043 ; gain = 342.395
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -415,12 +414,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1109.254 ; gain = 341.945
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1109.043 ; gain = 342.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1109.254 ; gain = 341.945
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1109.043 ; gain = 342.395
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.161 . Memory (MB): peak = 1109.254 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.188 . Memory (MB): peak = 1109.043 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -441,20 +440,20 @@ Parsing XDC File [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_
 Finished Parsing XDC File [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1253.770 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1255.293 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1253.770 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1255.293 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1253.770 ; gain = 486.461
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1255.293 ; gain = 488.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1253.770 ; gain = 486.461
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1255.293 ; gain = 488.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -465,7 +464,7 @@ Applied set_property DONT_TOUCH = true for clk_pll_inst. (constraint file  auto 
 Applied set_property DONT_TOUCH = true for data_mem_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for u_sd_boot_top/u_sd_boot_ctrl/u_inst_mem_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1253.770 ; gain = 486.461
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1255.293 ; gain = 488.645
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "jump_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5587] ROM size for "reg_wr_en_o" is below threshold of ROM address width. It will be mapped to LUTs
@@ -566,7 +565,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'state_reg' in module 'f
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'jtag_state_reg' using encoding 'one-hot' in module 'jtag_driver'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1253.770 ; gain = 486.461
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1255.293 ; gain = 488.645
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1266,72 +1265,7 @@ INFO: [Synth 8-3886] merging instance 'u_rooth_0/u_clint_0/cause_reg[23]' (FDCE)
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_clint_0/\cause_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_div_0/\count_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[32] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[33] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[34] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[35] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[36] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[37] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[38] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[39] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[40] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[41] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[42] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[43] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[44] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[45] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[46] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[47] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[48] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[49] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[50] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[51] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[52] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[53] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[54] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[55] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[56] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[57] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[58] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[59] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[60] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[61] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[62] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[63] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[8] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_clint_0/\waddr_o_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/\extends_reg_reg[31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_rooth_0/u_alu_core_0/extends_flag_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[4] )
@@ -1359,10 +1293,67 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[28] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[29] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[14] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_0/\uart_rx_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[40] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[39] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[38] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[37] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[35] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[34] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/cmd_wr_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_data_t_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_read/cmd_rd_reg[41] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_write/wr_en_d0_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_sd_boot_top/\u_sd_ctrl_top/u_sd_init/cur_state_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (uart_0/\uart_status_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (u_spi_O/\spi_status_reg[3] )
 WARNING: [Synth 8-3332] Sequential element (u_sd_boot_ctrl/next_state_reg[3]) is unused and will be removed from module sd_boot_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:08 . Memory (MB): peak = 1253.770 ; gain = 486.461
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:28 . Memory (MB): peak = 1255.293 ; gain = 488.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1382,6 +1373,14 @@ Note: The table above is a preliminary report that shows the DSPs inferred at th
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1393,13 +1392,13 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'refer_clk'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 1253.770 ; gain = 486.461
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:35 ; elapsed = 00:01:39 . Memory (MB): peak = 1255.293 ; gain = 488.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1343.242 ; gain = 575.934
+Finished Timing Optimization : Time (s): cpu = 00:01:50 ; elapsed = 00:01:54 . Memory (MB): peak = 1377.898 ; gain = 611.250
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1410,8 +1409,16 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/rtl/core/alu_core.v:49]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:34 ; elapsed = 00:01:36 . Memory (MB): peak = 1476.969 ; gain = 709.660
+Finished Technology Mapping : Time (s): cpu = 00:01:58 ; elapsed = 00:02:02 . Memory (MB): peak = 1496.789 ; gain = 730.141
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1435,13 +1442,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:38 ; elapsed = 00:01:39 . Memory (MB): peak = 1481.520 ; gain = 714.211
+Finished IO Insertion : Time (s): cpu = 00:02:02 ; elapsed = 00:02:06 . Memory (MB): peak = 1502.238 ; gain = 735.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:38 ; elapsed = 00:01:39 . Memory (MB): peak = 1481.520 ; gain = 714.211
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:02 ; elapsed = 00:02:06 . Memory (MB): peak = 1502.238 ; gain = 735.590
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1460,25 +1467,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:39 ; elapsed = 00:01:40 . Memory (MB): peak = 1481.520 ; gain = 714.211
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:03 ; elapsed = 00:02:07 . Memory (MB): peak = 1502.238 ; gain = 735.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:39 ; elapsed = 00:01:40 . Memory (MB): peak = 1481.520 ; gain = 714.211
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:03 ; elapsed = 00:02:07 . Memory (MB): peak = 1502.238 ; gain = 735.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:39 ; elapsed = 00:01:40 . Memory (MB): peak = 1481.520 ; gain = 714.211
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:03 ; elapsed = 00:02:08 . Memory (MB): peak = 1502.238 ; gain = 735.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:39 ; elapsed = 00:01:40 . Memory (MB): peak = 1481.520 ; gain = 714.211
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:03 ; elapsed = 00:02:08 . Memory (MB): peak = 1502.238 ; gain = 735.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1516,75 +1523,77 @@ Report Cell Usage:
 |2     |data_mem |     1|
 |3     |inst_mem |     1|
 |4     |BUFG     |     2|
-|5     |CARRY4   |   211|
-|6     |LUT1     |   272|
-|7     |LUT2     |   964|
-|8     |LUT3     |   292|
-|9     |LUT4     |  1053|
-|10    |LUT5     |   744|
-|11    |LUT6     |  2496|
-|12    |MUXF7    |   397|
-|13    |MUXF8    |    45|
-|14    |SRL16E   |     1|
-|15    |SRLC32E  |     1|
-|16    |FDCE     |  1171|
-|17    |FDPE     |    19|
-|18    |FDRE     |  2352|
-|19    |FDSE     |    15|
-|20    |LDC      |     3|
-|21    |LDP      |     2|
-|22    |IBUF     |     8|
-|23    |IOBUF    |    16|
-|24    |OBUF     |     9|
+|5     |CARRY4   |   239|
+|6     |DSP48E1  |     4|
+|7     |LUT1     |   400|
+|8     |LUT2     |  1027|
+|9     |LUT3     |   364|
+|10    |LUT4     |  1106|
+|11    |LUT5     |   761|
+|12    |LUT6     |  2599|
+|13    |MUXF7    |   402|
+|14    |MUXF8    |    45|
+|15    |SRL16E   |     1|
+|16    |SRLC32E  |     1|
+|17    |FDCE     |  1236|
+|18    |FDPE     |    19|
+|19    |FDRE     |  2352|
+|20    |FDSE     |    15|
+|21    |LDC      |     3|
+|22    |LDP      |     2|
+|23    |IBUF     |     8|
+|24    |IOBUF    |    16|
+|25    |OBUF     |     9|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+---------------------+--------------------+------+
 |      |Instance             |Module              |Cells |
 +------+---------------------+--------------------+------+
-|1     |top                  |                    | 10156|
+|1     |top                  |                    | 10694|
 |2     |  gpio_0             |gpio                |    96|
-|3     |  timer_0            |timer               |   201|
-|4     |  u_jtag_top         |jtag_top            |  1268|
-|5     |    u_jtag_dm        |jtag_dm             |   869|
-|6     |      rx             |full_handshake_rx_0 |   415|
+|3     |  timer_0            |timer               |   203|
+|4     |  u_jtag_top         |jtag_top            |  1267|
+|5     |    u_jtag_dm        |jtag_dm             |   868|
+|6     |      rx             |full_handshake_rx_0 |   412|
 |7     |      tx             |full_handshake_tx_1 |    81|
 |8     |    u_jtag_driver    |jtag_driver         |   399|
 |9     |      rx             |full_handshake_rx   |    87|
 |10    |      tx             |full_handshake_tx   |    94|
-|11    |  u_rooth_0          |rooth               |  7372|
-|12    |    u_alu_res_ctrl_0 |alu_res_ctrl        |    92|
-|13    |    u_clint_0        |clint               |   265|
-|14    |    u_csr_reg_0      |csr_reg             |   350|
-|15    |    u_div_0          |div                 |   768|
-|16    |    u_if_as_0        |if_as               |  1253|
-|17    |    u_if_de_0        |if_de               |   325|
-|18    |    u_if_ex_0        |if_ex               |  1329|
-|19    |    u_if_wb_0        |if_wb               |   356|
-|20    |    u_imm_gen_0      |imm_gen             |     6|
-|21    |    u_pc_reg_0       |pc_reg              |   346|
-|22    |    u_regs_file_0    |regs_file           |  2282|
-|23    |  u_sd_boot_top      |sd_boot_top         |   724|
-|24    |    u_sd_boot_ctrl   |sd_boot_ctrl        |   303|
-|25    |    u_sd_ctrl_top    |sd_ctrl_top         |   421|
-|26    |      u_sd_init      |sd_init             |   230|
-|27    |      u_sd_read      |sd_read             |   191|
-|28    |  u_spi_O            |spi                 |   171|
-|29    |  uart_0             |uart                |   253|
+|11    |  u_rooth_0          |rooth               |  7908|
+|12    |    u_alu_core_0     |alu_core            |   240|
+|13    |    u_alu_res_ctrl_0 |alu_res_ctrl        |    94|
+|14    |    u_clint_0        |clint               |   265|
+|15    |    u_csr_reg_0      |csr_reg             |   353|
+|16    |    u_div_0          |div                 |   768|
+|17    |    u_if_as_0        |if_as               |  1243|
+|18    |    u_if_de_0        |if_de               |   325|
+|19    |    u_if_ex_0        |if_ex               |  1617|
+|20    |    u_if_wb_0        |if_wb               |   359|
+|21    |    u_imm_gen_0      |imm_gen             |     6|
+|22    |    u_pc_reg_0       |pc_reg              |   349|
+|23    |    u_regs_file_0    |regs_file           |  2289|
+|24    |  u_sd_boot_top      |sd_boot_top         |   724|
+|25    |    u_sd_boot_ctrl   |sd_boot_ctrl        |   303|
+|26    |    u_sd_ctrl_top    |sd_ctrl_top         |   421|
+|27    |      u_sd_init      |sd_init             |   230|
+|28    |      u_sd_read      |sd_read             |   191|
+|29    |  u_spi_O            |spi                 |   172|
+|30    |  uart_0             |uart                |   253|
 +------+---------------------+--------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:39 ; elapsed = 00:01:40 . Memory (MB): peak = 1481.520 ; gain = 714.211
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:03 ; elapsed = 00:02:08 . Memory (MB): peak = 1502.238 ; gain = 735.590
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 193 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:29 ; elapsed = 00:01:37 . Memory (MB): peak = 1481.520 ; gain = 569.695
-Synthesis Optimization Complete : Time (s): cpu = 00:01:39 ; elapsed = 00:01:41 . Memory (MB): peak = 1481.520 ; gain = 714.211
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:52 ; elapsed = 00:02:03 . Memory (MB): peak = 1502.238 ; gain = 589.340
+Synthesis Optimization Complete : Time (s): cpu = 00:02:03 ; elapsed = 00:02:08 . Memory (MB): peak = 1502.238 ; gain = 735.590
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.128 . Memory (MB): peak = 1481.520 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 674 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.146 . Memory (MB): peak = 1502.238 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 711 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1481.520 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1502.238 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 21 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
@@ -1592,12 +1601,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDP => LDPE: 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-337 Infos, 163 Warnings, 0 Critical Warnings and 0 Errors encountered.
+345 Infos, 162 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:47 ; elapsed = 00:01:49 . Memory (MB): peak = 1481.520 ; gain = 1011.230
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1481.520 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:11 ; elapsed = 00:02:17 . Memory (MB): peak = 1502.238 ; gain = 1031.137
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1502.238 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/rooth/rooth-fpga/xilinx/ZYNQXC7Z020/ZYNQXC7Z020.runs/synth_1/rooth_soc.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file rooth_soc_utilization_synth.rpt -pb rooth_soc_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Apr 28 17:50:38 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon May  1 21:01:18 2023...
