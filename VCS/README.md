@@ -28,7 +28,7 @@
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677416694773.jpg)
 
-3.  然后回到VCS/verification/目录，打开终端输入`make clean`命令清除前一次仿真生成的文件，最后输入`make vcs`运行，等待终端输出。
+3.  然后回到VCS/verification/目录，打开终端输入`make clean`命令清除前一次仿真生成的文件，最后输入`make vcsone`运行，等待终端输出。
 3.  若运行成功，则会输出PASS。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677417129440.jpg)

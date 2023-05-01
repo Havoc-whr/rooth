@@ -74,7 +74,7 @@ initial begin
     rst_n = 1'b1;
     # (`SIM_PERIOD)
     rst_n = 1'b0;
-    inst_name = "../inst_test/FENCE_I";
+    inst_name = "../inst_test/MUL";
     inst_test(inst_name);
     #(`SIM_PERIOD * 50);
 	 $finish;

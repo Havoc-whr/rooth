@@ -312,6 +312,8 @@ mux_alu u_mux_alu_0(
 );
 
 alu_core u_alu_core_0(
+    .clk                            ( clk                         ),
+    .rst_n                          ( rst_n                       ),
     .alu_op_i                       ( ex_alu_op_i                 ),
     .alu_src1_i                     ( ex_alu_src1                 ),
     .alu_src2_i                     ( ex_alu_src2                 ),
