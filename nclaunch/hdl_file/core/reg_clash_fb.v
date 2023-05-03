@@ -12,7 +12,6 @@
 //
 // -FHDR----------------------------------------------------------------------------
 `include "./hdl_file/soc/rooth_defines.v"
-
 module reg_clash_fb (
     input                               as_reg_wr_en_i,
     input [`REG_ADDR_WIDTH-1:0]         as_reg_wr_adder_i,
@@ -28,6 +27,8 @@ module reg_clash_fb (
     input [`CSR_ADDR_WIDTH-1:0]         wb_csr_wr_adder_i,
     input [`CPU_WIDTH-1:0]              wb_csr_wr_data_i, 
 
+    input                               ex_alu_src_sel_i,
+    input                               fc_no_writing_mem_i,
     input [`CSR_ADDR_WIDTH-1:0]         csr_rd_adder_i,
     input [`REG_ADDR_WIDTH-1:0]         reg1_rd_adder_i,
     input [`REG_ADDR_WIDTH-1:0]         reg2_rd_adder_i,
@@ -41,11 +42,17 @@ module reg_clash_fb (
     output reg [`CPU_WIDTH-1:0]         csr_rd_data_o,
     output reg [`REG_ADDR_WIDTH-1:0]    reg1_rd_adder_o,
     output reg [`REG_ADDR_WIDTH-1:0]    reg2_rd_adder_o,
-    output reg [`CSR_ADDR_WIDTH-1:0]    csr_rd_adder_o
+    output reg [`CSR_ADDR_WIDTH-1:0]    csr_rd_adder_o,
+    output wire                         flow_wait_fc_o
 );
+reg flow_wait_fc_1;
+reg flow_wait_fc_2;
+
+assign flow_wait_fc_o = flow_wait_fc_2 || flow_wait_fc_1;
 
 // reg1
 always @( *) begin 
+    flow_wait_fc_1 = 1'b0;
     if(reg1_rd_adder_i == `REG_ADDR_WIDTH'b0) begin
         reg1_rd_adder_o = `REG_ADDR_WIDTH'b0;
         reg1_rd_data_o = `CPU_WIDTH'b0;
@@ -53,6 +60,8 @@ always @( *) begin
     else if(as_reg_wr_en_i && (reg1_rd_adder_i == as_reg_wr_adder_i)) begin
         reg1_rd_adder_o = `REG_ADDR_WIDTH'b0;
         reg1_rd_data_o = as_reg_wr_data_i;
+        if((~ex_alu_src_sel_i) & fc_no_writing_mem_i) flow_wait_fc_1 = 1'b1;
+        else flow_wait_fc_1 = 1'b0;
     end
     else if(wb_reg_wr_en_i && (reg1_rd_adder_i == wb_reg_wr_adder_i)) begin
         reg1_rd_adder_o = `REG_ADDR_WIDTH'b0;
@@ -66,6 +75,7 @@ end
 
 // reg2
 always @( *) begin
+    flow_wait_fc_2 = 1'b0;
     if(reg2_rd_adder_i == `REG_ADDR_WIDTH'b0) begin
         reg2_rd_adder_o = `REG_ADDR_WIDTH'b0;
         reg2_rd_data_o = `CPU_WIDTH'b0;
@@ -73,6 +83,8 @@ always @( *) begin
     else if(as_reg_wr_en_i && (reg2_rd_adder_i == as_reg_wr_adder_i)) begin
         reg2_rd_adder_o = `REG_ADDR_WIDTH'b0;
         reg2_rd_data_o = as_reg_wr_data_i;
+        if((~ex_alu_src_sel_i) & fc_no_writing_mem_i) flow_wait_fc_2 = 1'b1;
+        else flow_wait_fc_2 = 1'b0;
     end
     else if(wb_reg_wr_en_i && (reg2_rd_adder_i == wb_reg_wr_adder_i)) begin
         reg2_rd_adder_o = `REG_ADDR_WIDTH'b0;

@@ -1,3 +1,8 @@
 ncelab: 15.10-s010: (c) Copyright 1995-2015 Cadence Design Systems, Inc.
-ncelab: Memory Usage - 38.8M program + 15.8M data = 54.6M total (Peak 57.0M)
-ncelab: CPU Usage - 0.1s system + 0.1s user = 0.2s total (0.1s, 100.0% cpu)
+if_fc u_if_fc_0(
+              |
+ncelab: *W,CUVWSP (./hdl_file/core/rooth.v,359|14): 1 output port was not connected:
+ncelab: (./hdl_file/core/if_fc.v,49): acess_mem_flag_o
+
+ncelab: Memory Usage - 38.8M program + 15.9M data = 54.7M total (Peak 57.0M)
+ncelab: CPU Usage - 0.1s system + 0.1s user = 0.2s total (0.2s, 100.0% cpu)

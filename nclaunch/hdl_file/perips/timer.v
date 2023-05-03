@@ -14,7 +14,7 @@
  limitations under the License.                                          
  */
 
-`include "./hdl_file/soc/rooth_defines.v"
+//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
 
 
 // 32 bits count up timer module

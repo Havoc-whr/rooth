@@ -1,0 +1,175 @@
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+array unset createdGroup
+array set createdGroup {}
+#
+# Groups
+#
+if {[catch {group get -using [list Group 1]}]} {
+set createdGroup([list Group 1]) 1
+catch {group new -name {Group 1} -overlay 0}
+}
+if {[catch {group get -using [list Group 2]}]} {
+set createdGroup([list Group 2]) 1
+catch {group new -name {Group 2} -overlay 0}
+}
+if {[catch {group get -using [list Group 3]}]} {
+set createdGroup([list Group 3]) 1
+catch {group new -name {Group 3} -overlay 0}
+}
+if {[catch {group get -using [list Group 4]}]} {
+set createdGroup([list Group 4]) 1
+catch {group new -name {Group 4} -overlay 0}
+}
+if {[catch {group get -using [list Group 5]}]} {
+set createdGroup([list Group 5]) 1
+catch {group new -name {Group 5} -overlay 0}
+}
+if {[catch {group get -using [list Group 6]}]} {
+set createdGroup([list Group 6]) 1
+catch {group new -name {Group 6} -overlay 0}
+}
+if {[info exists createdGroup([list Group 1])]} {
+group using {Group 1}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.inst_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.pc_adder_i[31:0]}]} ]
+}
+
+if {[info exists createdGroup([list Group 2])]} {
+group using {Group 2}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.inst_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.pc_adder_o[31:0]}]} ]
+}
+
+if {[info exists createdGroup([list Group 3])]} {
+group using {Group 3}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex_0.inst_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex_0.pc_adder_o[31:0]}]} ]
+}
+
+if {[info exists createdGroup([list Group 4])]} {
+group using {Group 4}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_fc_0.inst_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_fc_0.pc_adder_o[31:0]}]} ]
+}
+
+if {[info exists createdGroup([list Group 5])]} {
+group using {Group 5}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.inst_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.pc_adder_o[31:0]}]} ]
+}
+
+if {[info exists createdGroup([list Group 6])]} {
+group using {Group 6}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+group insert \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.pc_adder_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.s10_x26[31:0]}]} ] \
+    [subst  {[format {tb_rooth.s11_x27[31:0]}]} ] \
+    [subst  {[format {tb_rooth.a4_x14[31:0]}]} ] \
+    [subst  {[format {tb_rooth.a5_x15[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_fetch_0.no_writing_mem_o}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_fetch_0.acess_mem_flag}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_fetch_0.access_mem_hold_o}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.data_mem_addr_o[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_rooth_0.data_mem_data_out_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_bus_0.s1_data_i[31:0]}]} ] \
+    [subst  {[format {tb_rooth.u_rooth_soc_0.u_bus_0.s0_data_i[31:0]}]} ]
+}
+
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.clk}]}
+	} ]]
+
+set groupId0 [waveform add -groups {{Group 1}}]
+
+
+set groupId0 [waveform add -groups {{Group 2}}]
+
+
+set groupId0 [waveform add -groups {{Group 3}}]
+
+
+set groupId0 [waveform add -groups {{Group 4}}]
+
+
+set groupId0 [waveform add -groups {{Group 5}}]
+
+
+set groupId0 [waveform add -groups {{Group 6}}]
+waveform hierarchy collapse $groupId0
+
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rooth_0.data_mem_addr_o[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rooth_0.data_mem_data_out_i[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_bus_0.s0_data_i[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_bus_0.s1_data_i[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_bus_0.current_m0_data_o[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_bus_0.grant[1:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_fetch_0.access_mem_hold_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_fetch_0.acess_mem_flag}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.u_rooth_soc_0.u_rooth_0.u_fetch_0.no_writing_mem_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.a5_x15[31:0]}]}
+	} ]]
+waveform format $id -radix %d
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.a4_x14[31:0]}]}
+	} ]]
+waveform format $id -radix %d
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.s11_x27[31:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {tb_rooth.s10_x26[31:0]}]}
+	} ]]
+
+waveform xview limits 1606274ps 1734274ps

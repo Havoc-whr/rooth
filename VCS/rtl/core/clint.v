@@ -5,12 +5,13 @@
 // Filename      : clint.v
 // Author        : whr
 // Created On    : 2023-01-14 9:37
-// Last Modified : 2023-04-27 18:00
+// Last Modified : 2023-01-14 18:24
 // ---------------------------------------------------------------------------------
 // Description   : 
 // 
 //
 // -FHDR----------------------------------------------------------------------------
+//`include "../soc/rooth_defines.v"
 module clint (
     input                           clk,
     input                           rst_n,

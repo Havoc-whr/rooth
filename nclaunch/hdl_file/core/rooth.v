@@ -5,7 +5,7 @@
 // Filename      : rooth.v
 // Author        : whr
 // Created On    : 2022-07-01 23:14
-// Last Modified : 2023-04-27 18:01
+// Last Modified : 2023-01-14 18:32
 // ---------------------------------------------------------------------------------
 // Description   : 
 // RISC-V32I指令处理器核顶层文件
@@ -112,7 +112,7 @@ wire [`CPU_WIDTH-1:0]     div_result_o;
 wire                      div_res_ready_o;
 wire                      div_busy_o;
 
-//alu_res_ctrl
+//fetch
 wire  [`CPU_WIDTH-1:0]      as_rs1_data_i;
 wire  [`CPU_WIDTH-1:0]      as_rs2_data_i;
 wire  [`CPU_WIDTH-1:0]      as_csr_rd_data_i;
@@ -122,6 +122,7 @@ wire  [`OPCODE_WIDTH-1:0]   as_opcode_i;
 wire  [`WIDTH_RESCTRL-1:0]  as_alu_res_op_i;
 wire  [`CPU_WIDTH-1:0]      as_alu_res_i;
 wire                        access_mem_hold_o;
+wire                        as_no_writing_mem_o;
 
 wire  [`CPU_WIDTH-1:0]  as_data_mem_addr;
 wire                    as_data_mem_req_o;
@@ -134,12 +135,13 @@ wire [`CPU_WIDTH-1:0]   ex_reg1_rd_data_o;
 wire [`CPU_WIDTH-1:0]   ex_reg2_rd_data_o;
 wire [`CPU_WIDTH-1:0]   ex_csr_rd_data_o;
 wire [`CPU_WIDTH-1:0]   ex_imm_t;
+wire [1:0]              as_mem_addr_index_o;
 
-//if_as
+//if_fc
 wire [`CPU_WIDTH-1:0]   as_inst_o;
 wire [`CPU_WIDTH-1:0]   as_pc_adder_o;
 wire                    acess_mem_flag_o;
-wire                    pr_acess_mem_flag_o;
+wire                    pr_acess_instmem_o;
 
 //data_mem
 wire  [`CPU_WIDTH-1:0]  as_data_mem_data_out;
@@ -151,14 +153,21 @@ wire                        as_csr_wr_en_i;
 wire [`CSR_ADDR_WIDTH-1:0]  as_csr_wr_adder_i;
 wire                        wb_reg_wr_en;
 wire [`REG_ADDR_WIDTH-1:0]  wb_reg_wr_adder;
-wire [`CPU_WIDTH-1:0]       wb_reg_wr_data;
 wire                        wb_csr_wr_en;
 wire [`CSR_ADDR_WIDTH-1:0]  wb_csr_wr_adder;
 wire [`CPU_WIDTH-1:0]       wb_csr_wr_data;
 wire [`CPU_WIDTH-1:0]       wb_inst_o;
 wire [`CPU_WIDTH-1:0]       wb_pc_adder_o;
 
-//flow_ctrl
+
+//wb_mux
+wire                        wb_no_writing_mem_i;
+wire [1:0]                  wb_mem_addr_index_i;
+wire [`CPU_WIDTH-1:0]       wb_reg_wr_data_i;
+wire [`FUNCT3_WIDTH-1:0]    wb_funct3_i;
+wire [`CPU_WIDTH-1:0]       wb_reg_wr_data_o;
+
+//pipeline_ctrl
 wire [`WIDTH_JUMP-1:0]    ex_jump;
 wire [`CPU_WIDTH-1:0]     ex_imm;
 wire [`WIDTH_BRANCH-1:0]  ex_branch;
@@ -178,6 +187,7 @@ wire [`CSR_ADDR_WIDTH-1:0]  ctrl_csr_rd_adder;
 wire [`CPU_WIDTH-1:0]       ctrl_reg1_rd_data;
 wire [`CPU_WIDTH-1:0]       ctrl_reg2_rd_data;
 wire [`CPU_WIDTH-1:0]       ctrl_csr_rd_data;
+wire                        flow_wait_fc_o;
 
 // clint
 wire                         clint_csr_wr_en_o;
@@ -192,7 +202,7 @@ wire                         clint_int_assert_o;
 assign ex_pc_adder = ex_pc_adder_i;
 assign ex_imm = ex_imm_i;
 
-flow_ctrl u_flow_ctrl_0(
+pipeline_ctrl u_pipeline_ctrl_0(
     .jtag_halt_flag_i               ( jtag_halt_flag_i            ),
     .branch_i                       ( ex_branch                   ),
     .pc_adder_i                     ( ex_pc_adder                 ),
@@ -204,11 +214,12 @@ flow_ctrl u_flow_ctrl_0(
     .reg1_rd_data_i                 ( ex_reg1_rd_data             ),
     .bus_wait_i                     ( bus_hold_flag               ),
     .access_mem_hold_i              ( access_mem_hold_o           ),
-    .pr_acess_mem_flag_i            ( pr_acess_mem_flag_o         ),
+    .pr_acess_instmem_i             ( pr_acess_instmem_o          ),
     .alu_busy_i                     ( alu_busy_o                  ),
-    .clint_hold_flag_i             ( clint_hold_flag_o          ),
-    .clint_int_addr_i              ( clint_int_addr_o           ),
-    .clint_int_assert_i            ( clint_int_assert_o         ),
+    .clint_hold_flag_i              ( clint_hold_flag_o           ),
+    .clint_int_addr_i               ( clint_int_addr_o            ),
+    .clint_int_assert_i             ( clint_int_assert_o          ),
+    .flow_wait_fc                   ( flow_wait_fc_o              ),
     .next_pc_o                      ( next_pc                     ),
     .next_pc_four_o                 ( next_pc_four                ),
     .flow_pc_o                      ( flow_pc                     ),
@@ -312,8 +323,6 @@ mux_alu u_mux_alu_0(
 );
 
 alu_core u_alu_core_0(
-    .clk                            ( clk                         ),
-    .rst_n                          ( rst_n                       ),
     .alu_op_i                       ( ex_alu_op_i                 ),
     .alu_src1_i                     ( ex_alu_src1                 ),
     .alu_src2_i                     ( ex_alu_src2                 ),
@@ -347,7 +356,7 @@ assign ex_reg2_rd_data_o = ex_reg2_rd_data;
 assign ex_csr_rd_data_o = ex_csr_rd_data;
 assign ex_imm_t = ex_imm_i;
 
-if_as u_if_as_0(
+if_fc u_if_fc_0(
     .clk                            ( clk                         ),
     .rst_n                          ( rst_n                       ),
     .flow_as_i                      ( flow_as                     ),
@@ -375,8 +384,7 @@ if_as u_if_as_0(
     .csr_wr_en_o                    ( as_csr_wr_en_i              ),
     .csr_wr_adder_o                 ( as_csr_wr_adder_i           ),
     .csr_rd_data_o                  ( as_csr_rd_data_i            ),
-    .pr_acess_mem_flag_o            ( pr_acess_mem_flag_o         ),
-    .acess_mem_flag_o               ( acess_mem_flag_o            )
+    .pr_acess_instmem_o             ( pr_acess_instmem_o          )
 );
 
 //数据存储器
@@ -386,7 +394,7 @@ assign data_mem_data_in_o = as_data_mem_data_in;
 assign as_data_mem_data_out = data_mem_data_out_i;
 assign data_mem_req_o = as_data_mem_req_o;
 
-alu_res_ctrl u_alu_res_ctrl_0(
+fetch u_fetch_0(
     .clk                            ( clk                         ),
     .rst_n                          ( rst_n                       ),
     .rs1_data_i                     ( as_rs1_data_i               ),
@@ -404,8 +412,9 @@ alu_res_ctrl u_alu_res_ctrl_0(
     .data_mem_data_o                ( as_data_mem_data_in         ),
     .reg_wr_data_o                  ( as_reg_wr_data_o            ),
     .csr_wr_data_o                  ( as_csr_wr_data_o            ),
-    .acess_mem_flag_i               ( acess_mem_flag_o            ),
-    .access_mem_hold_o              ( access_mem_hold_o           )
+    .access_mem_hold_o              ( access_mem_hold_o           ),
+    .mem_addr_index_o               ( as_mem_addr_index_o         ),
+    .no_writing_mem_o               ( as_no_writing_mem_o         )
 );
 
 if_wb u_if_wb_0(
@@ -419,15 +428,30 @@ if_wb u_if_wb_0(
     .reg_wr_data_i                  ( as_reg_wr_data_o            ),
     .csr_wr_en_i                    ( as_csr_wr_en_i              ),
     .csr_wr_adder_i                 ( as_csr_wr_adder_i           ),
+    .mem_addr_index_i               ( as_mem_addr_index_o         ),
+    .no_writing_mem_i               ( as_no_writing_mem_o         ),
     .csr_wr_data_i                  ( as_csr_wr_data_o            ),
     .reg_wr_en_o                    ( wb_reg_wr_en                ),
     .reg_wr_adder_o                 ( wb_reg_wr_adder             ),
-    .reg_wr_data_o                  ( wb_reg_wr_data              ),
+    .reg_wr_data_o                  ( wb_reg_wr_data_i            ),
     .csr_wr_en_o                    ( wb_csr_wr_en                ),
     .csr_wr_adder_o                 ( wb_csr_wr_adder             ),
     .csr_wr_data_o                  ( wb_csr_wr_data              ),
     .inst_o                         ( wb_inst_o                   ),
-    .pc_adder_o                     ( wb_pc_adder_o               )
+    .pc_adder_o                     ( wb_pc_adder_o               ),
+    .mem_addr_index_o               ( wb_mem_addr_index_i         ),
+    .no_writing_mem_o               ( wb_no_writing_mem_i         )
+);
+
+assign wb_funct3_i = wb_inst_o[14:12];
+
+writeback u_writeback_0(
+    .wb_reg_wr_data_i               ( wb_reg_wr_data_i            ),
+    .no_writing_mem_i               ( wb_no_writing_mem_i         ),
+    .data_mem_data_i                ( data_mem_data_out_i         ),
+    .funct3_i                       ( wb_funct3_i                 ),
+    .mem_addr_index_i               ( wb_mem_addr_index_i         ),
+    .reg_wr_data_o                  ( wb_reg_wr_data_o            )
 );
 
 reg_clash_fb u_reg_clash_fb_0(
@@ -439,10 +463,12 @@ reg_clash_fb u_reg_clash_fb_0(
     .as_csr_wr_data_i               ( as_csr_wr_data_o            ),
     .wb_reg_wr_en_i                 ( wb_reg_wr_en                ),
     .wb_reg_wr_adder_i              ( wb_reg_wr_adder             ),
-    .wb_reg_wr_data_i               ( wb_reg_wr_data              ),
+    .wb_reg_wr_data_i               ( wb_reg_wr_data_o            ),
     .wb_csr_wr_en_i                 ( wb_csr_wr_en                ),
     .wb_csr_wr_adder_i              ( wb_csr_wr_adder             ),
     .wb_csr_wr_data_i               ( wb_csr_wr_data              ),
+    .ex_alu_src_sel_i               ( ex_alu_src_sel_i[2]         ),
+    .fc_no_writing_mem_i            ( as_no_writing_mem_o         ),
     .csr_rd_adder_i                 ( ex_csr_rd_adder_i           ),
     .reg1_rd_adder_i                ( ex_reg1_rd_adder_i          ),
     .reg2_rd_adder_i                ( ex_reg2_rd_adder_i          ),
@@ -454,7 +480,8 @@ reg_clash_fb u_reg_clash_fb_0(
     .csr_rd_data_o                  ( ex_csr_rd_data              ),
     .reg1_rd_adder_o                ( ctrl_reg1_rd_adder          ),
     .reg2_rd_adder_o                ( ctrl_reg2_rd_adder          ),
-    .csr_rd_adder_o                 ( ctrl_csr_rd_adder           )
+    .csr_rd_adder_o                 ( ctrl_csr_rd_adder           ),
+    .flow_wait_fc_o                 ( flow_wait_fc_o              )
 );
 
 regs_file u_regs_file_0(
@@ -462,7 +489,7 @@ regs_file u_regs_file_0(
     .rst_n                          ( rst_n                       ),
     .reg_wr_en_i                    ( wb_reg_wr_en                ),
     .reg_wr_adder_i                 ( wb_reg_wr_adder             ),
-    .reg_wr_data_i                  ( wb_reg_wr_data              ),
+    .reg_wr_data_i                  ( wb_reg_wr_data_o            ),
     .reg1_rd_adder_i                ( ctrl_reg1_rd_adder          ),
     .reg1_rd_data_o                 ( ctrl_reg1_rd_data           ),
     .reg2_rd_adder_i                ( ctrl_reg2_rd_adder          ),
@@ -481,9 +508,9 @@ csr_reg u_csr_reg_0(
     .csr_wr_data_i                  ( wb_csr_wr_data              ),
     .csr_rd_adder_i                 ( ctrl_csr_rd_adder           ),
     .csr_rd_data_o                  ( ctrl_csr_rd_data            ),
-    .clint_csr_wr_en_i             ( clint_csr_wr_en_o          ),
-    .clint_csr_wr_adder_i          ( clint_csr_wr_adder_o       ),
-    .clint_csr_wr_data_i           ( clint_csr_wr_data_o        ),
+    .clint_csr_wr_en_i              ( clint_csr_wr_en_o           ),
+    .clint_csr_wr_adder_i           ( clint_csr_wr_adder_o        ),
+    .clint_csr_wr_data_i            ( clint_csr_wr_data_o         ),
 //    .clint_csr_rd_adder_i          ( clint_csr_rd_adder_o       ),
 //    .clint_csr_rd_data_o           ( clint_csr_rd_data_o        ),
     .clint_csr_mtvec_o              ( csr_mtvec_o                 ),

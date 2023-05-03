@@ -1,1 +1,0 @@
-data = {'DefineList': [], 'IncdirList': [], 'VtagsIncdirList': ['/home/eda/Project/rooth/core']}

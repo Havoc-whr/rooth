@@ -54,7 +54,7 @@ always  @(*)begin
     reg2_rd_adder_o = `REG_ADDR_WIDTH'b0;
     imm_gen_op_o = `IMM_GEN_OP_WIDTH'b111;
     alu_op_o = `ALU_OP_WIDTH'b0;
-    alu_src_sel_o = `ALU_SRC_WIDTH'b0;
+    alu_src_sel_o = `ALU_SRC_WIDTH'b111;
     alu_res_op_o = `WIDTH_RESCTRL'b11; //null
     csr_wr_en_o = 1'b0;
     csr_wr_adder_o = `CSR_ADDR_WIDTH'b0;
@@ -316,7 +316,7 @@ always  @(*)begin
             reg2_rd_adder_o = `REG_ADDR_WIDTH'b0;
             imm_gen_op_o = `IMM_GEN_OP_WIDTH'b111;
             alu_op_o = `ALU_OP_WIDTH'b0;
-            alu_src_sel_o = `ALU_SRC_WIDTH'b0;
+            alu_src_sel_o = `ALU_SRC_WIDTH'b111;
             alu_res_op_o = `WIDTH_RESCTRL'b11; //null
             csr_wr_en_o = 1'b0;
             csr_wr_adder_o = `CSR_ADDR_WIDTH'b0;

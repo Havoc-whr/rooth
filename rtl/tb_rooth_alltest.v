@@ -138,14 +138,16 @@ initial begin
     inst_test(inst_name);
     inst_name = "../tb/REMU";
     inst_test(inst_name);
-    /*inst_name = "../tb/FENCE_I";
+    inst_name = "../tb/FENCE_I";
     inst_test(inst_name);
     inst_name = "../tb/SB";
     inst_test(inst_name);
     inst_name = "../tb/SH";
     inst_test(inst_name);
     inst_name = "../tb/SW";
-    inst_test(inst_name);*/
+    inst_test(inst_name);
+    inst_name = "../tb/CTEST";
+    inst_test(inst_name);
     #(`SIM_PERIOD * 50);
     $display("~~~~~~~~~~~~~~~~~~~ TEST_PASS ~~~~~~~~~~~~~~~~~~~");
     $display("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

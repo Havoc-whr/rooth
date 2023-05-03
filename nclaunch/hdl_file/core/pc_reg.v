@@ -11,7 +11,6 @@
 //
 // -FHDR----------------------------------------------------------------------------
 `include "./hdl_file/soc/rooth_defines.v"
-
 module pc_reg (
     input                           clk,        // system clock
     input                           rst_n,      // active low reset

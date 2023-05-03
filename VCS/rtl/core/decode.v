@@ -11,7 +11,7 @@
 // 对指令进行译码，并产生控制信号完成指令的执行
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+//`include "../soc/rooth_defines.v"
 
 module decode(
     input               [`CPU_WIDTH-1:0]        inst_i,

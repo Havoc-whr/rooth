@@ -1274,7 +1274,7 @@ Disassembly of section .text:
     1300:	15c7a703          	lw	a4,348(a5) # 1000115c <COVER+0x400>
     1304:	fce42e23          	sw	a4,-36(s0)
     1308:	15c78713          	addi	a4,a5,348
-    130c:	00472703          	lw	a4,4(a4) # 8004 <_data_lma+0x5fdc>
+    130c:	00472703          	lw	a4,4(a4) # 8004 <__stack_size+0x4004>
     1310:	fee42023          	sw	a4,-32(s0)
     1314:	15c78793          	addi	a5,a5,348
     1318:	0087c783          	lbu	a5,8(a5)
@@ -1697,7 +1697,7 @@ Disassembly of section .text:
     196c:	8241a703          	lw	a4,-2012(gp) # 10001624 <xfunc_out>
     1970:	fef44783          	lbu	a5,-17(s0)
     1974:	00078513          	mv	a0,a5
-    1978:	000700e7          	jalr	a4 # 4000 <_data_lma+0x1fd8>
+    1978:	000700e7          	jalr	a4 # 4000 <__stack_size>
     197c:	01c12083          	lw	ra,28(sp)
     1980:	01812403          	lw	s0,24(sp)
     1984:	02010113          	addi	sp,sp,32
@@ -2219,7 +2219,7 @@ Disassembly of section .data:
 1000009a:	0204                	addi	s1,sp,256
 1000009c:	3e00                	fld	fs0,56(a2)
 1000009e:	4951                	li	s2,20
-100000a0:	3e45                	jal	ffffc50 <_data_lma+0xfffdc28>
+100000a0:	3e45                	jal	ffffc50 <__stack_size+0xfffbc50>
 100000a2:	0000                	unimp
 100000a4:	7f42                	flw	ft10,48(sp)
 100000a6:	0040                	addi	s0,sp,4
@@ -2233,16 +2233,16 @@ Disassembly of section .data:
 100000b8:	107f                	0x107f
 100000ba:	2700                	fld	fs0,8(a4)
 100000bc:	4545                	li	a0,17
-100000be:	3945                	jal	ffffd6e <_data_lma+0xfffdd46>
+100000be:	3945                	jal	ffffd6e <__stack_size+0xfffbd6e>
 100000c0:	3c00                	fld	fs0,56(s0)
 100000c2:	494a                	lw	s2,144(sp)
-100000c4:	3049                	jal	ffff946 <_data_lma+0xfffd91e>
+100000c4:	3049                	jal	ffff946 <__stack_size+0xfffb946>
 100000c6:	0100                	addi	s0,sp,128
 100000c8:	0971                	addi	s2,s2,28
 100000ca:	0305                	addi	t1,t1,1
 100000cc:	3600                	fld	fs0,40(a2)
 100000ce:	4949                	li	s2,18
-100000d0:	3649                	jal	ffffc52 <_data_lma+0xfffdc2a>
+100000d0:	3649                	jal	ffffc52 <__stack_size+0xfffbc52>
 100000d2:	0600                	addi	s0,sp,768
 100000d4:	4949                	li	s2,18
 100000d6:	1e29                	addi	t3,t3,-22
@@ -2266,13 +2266,13 @@ Disassembly of section .data:
 100000fa:	0609                	addi	a2,a2,2
 100000fc:	3200                	fld	fs0,32(a2)
 100000fe:	5949                	li	s2,-14
-10000100:	3e51                	jal	ffffc94 <_data_lma+0xfffdc6c>
+10000100:	3e51                	jal	ffffc94 <__stack_size+0xfffbc94>
 10000102:	7c00                	flw	fs0,56(s0)
 10000104:	1112                	slli	sp,sp,0x24
 10000106:	7c12                	flw	fs8,36(sp)
 10000108:	7f00                	flw	fs0,56(a4)
 1000010a:	4949                	li	s2,18
-1000010c:	3649                	jal	ffffc8e <_data_lma+0xfffdc66>
+1000010c:	3649                	jal	ffffc8e <__stack_size+0xfffbc8e>
 1000010e:	3e00                	fld	fs0,56(a2)
 10000110:	4141                	li	sp,16
 10000112:	2241                	jal	10000292 <F8X16+0x2e>
@@ -2308,7 +2308,7 @@ Disassembly of section .data:
 10000154:	7f10                	flw	fa2,56(a4)
 10000156:	3e00                	fld	fs0,56(a2)
 10000158:	4141                	li	sp,16
-1000015a:	3e41                	jal	ffffcea <_data_lma+0xfffdcc2>
+1000015a:	3e41                	jal	ffffcea <__stack_size+0xfffbcea>
 1000015c:	7f00                	flw	fs0,56(a4)
 1000015e:	0909                	addi	s2,s2,2
 10000160:	0609                	addi	a2,a2,2
@@ -2320,7 +2320,7 @@ Disassembly of section .data:
 1000016c:	4629                	li	a2,10
 1000016e:	4600                	lw	s0,8(a2)
 10000170:	4949                	li	s2,18
-10000172:	3149                	jal	ffffdf4 <_data_lma+0xfffddcc>
+10000172:	3149                	jal	ffffdf4 <__stack_size+0xfffbdf4>
 10000174:	0100                	addi	s0,sp,128
 10000176:	7f01                	lui	t5,0xfffe0
 10000178:	0101                	addi	sp,sp,0
@@ -2822,7 +2822,7 @@ Disassembly of section .data:
 100005c8:	c800                	sw	s0,16(s0)
 100005ca:	0838                	addi	a4,sp,24
 100005cc:	0000                	unimp
-100005ce:	010e3807          	fld	fa6,16(t3) # 1a010 <_data_lma+0x17fe8>
+100005ce:	010e3807          	fld	fa6,16(t3) # 1a010 <__stack_size+0x16010>
 100005d2:	0000                	unimp
 100005d4:	08f8                	addi	a4,sp,92
 100005d6:	f800                	fsw	fs0,48(s0)
@@ -2965,7 +2965,7 @@ Disassembly of section .data:
 1000071a:	0080                	addi	s0,sp,64
 1000071c:	3f20                	fld	fs0,120(a4)
 1000071e:	0224                	addi	s1,sp,264
-10000720:	302d                	jal	fffff4a <_data_lma+0xfffdf22>
+10000720:	302d                	jal	fffff4a <__stack_size+0xfffbf4a>
 10000722:	0020                	addi	s0,sp,8
 10000724:	0800                	addi	s0,sp,16
 10000726:	f808                	fsw	fa0,48(s0)
@@ -3646,7 +3646,7 @@ Disassembly of section .data:
 10000d0a:	88ff                	0x88ff
 10000d0c:	ff00002f          	0xff00002f
 10000d10:	06ff                	0x6ff
-10000d12:	          	sw	t6,-30(s8) # 19fe2 <_data_lma+0x17fba>
+10000d12:	          	sw	t6,-30(s8) # 19fe2 <__stack_size+0x15fe2>
 
 10000d14 <RESTART>:
 10000d14:	fffc                	fsw	fa5,124(a5)
@@ -4073,7 +4073,7 @@ Disassembly of section .bss:
 
 Disassembly of section .stack:
 
-10006000 <__freertos_irq_stack_top-0x2000>:
+10004000 <__freertos_irq_stack_top-0x4000>:
 	...
 
 Disassembly of section .comment:

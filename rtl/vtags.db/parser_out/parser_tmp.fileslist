@@ -1,3 +1,0 @@
-+parser_out_dir+/home/eda/Project/rvseed_2/core/vtags.db/parser_out/pub/
-+parser_file_standalone+1
--v /home/eda/Project/rvseed_2/tb/tb_rvseed.v -s parser_tb_rvseed_v_4.py

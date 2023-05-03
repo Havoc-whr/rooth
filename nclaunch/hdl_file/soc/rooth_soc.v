@@ -5,11 +5,12 @@
 // Filename      : rooth.v
 // Author        : whr
 // Created On    : 2022-07-01 23:14
-// Last Modified : 2023-04-27 18:03
+// Last Modified : 2023-01-14 17:01
 // ---------------------------------------------------------------------------------
 // Description   : 
 //
 // -FHDR----------------------------------------------------------------------------
+`include "../soc/rooth_defines.v"
 module rooth_soc(
     input                   clk,
     input                   rst_n,
@@ -133,9 +134,9 @@ rooth u_rooth_0(
     .jtag_halt_flag_i   ( jtag_halt_req_o       ),
     .jtag_reset_flag_i  ( jtag_reset_req_o      )
 );
-rib u_rib_0(
+bus u_bus_0(
     .clk                ( clk                   ),
-    .rst                ( rst_n                 ),
+    .rst_n              ( rst_n                 ),
 
     .m0_addr_i          ( m0_addr_i             ),
     .m0_data_i          ( m0_data_i             ),
@@ -144,10 +145,7 @@ rib u_rib_0(
     .m0_we_i            ( m0_we_i               ),
 
     .m1_addr_i          ( m1_addr_i             ),
-    .m1_data_i          ( `CPU_WIDTH'b0         ),
     .m1_data_o          ( m1_data_o             ),
-    .m1_req_i           ( 1'b1                  ),
-    .m1_we_i            ( 1'b0                  ),
 
     .m2_addr_i          ( m2_addr_i             ),
     .m2_data_i          ( m2_data_i             ),
@@ -225,8 +223,8 @@ timer timer_0(
 
 // uart模块例化
 uart uart_0(
-    .clk					( clk					    ),
-    .rst_n                  ( rst_n                     ),
+    .clk					( clk					    	),
+    .rst_n                  		( rst_n                     		),
     .we_i					( s3_we_o					),
     .addr_i					( s3_addr_o					),
     .data_i					( s3_data_o					),
@@ -337,3 +335,4 @@ jtag_top #(
 );
 
 endmodule
+

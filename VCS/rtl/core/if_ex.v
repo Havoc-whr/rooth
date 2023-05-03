@@ -12,7 +12,7 @@
 //
 // -FHDR----------------------------------------------------------------------------
 
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+//`include "../soc/rooth_defines.v"
 
 module if_ex (
     input                               clk,

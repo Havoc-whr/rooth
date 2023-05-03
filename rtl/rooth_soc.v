@@ -13,19 +13,20 @@
 `include "rooth_defines.v"
 `include "alu_core.v"
 `include "div.v"
+`include "writeback.v"
 `include "rooth.v"
-`include "rib.v"
+`include "bus.v"
 `include "inst_mem.v"
 `include "data_mem.v"
-`include "flow_ctrl.v"
+`include "pipeline_ctrl.v"
 `include "pc_reg.v"
 `include "if_de.v"
 `include "decode.v"
 `include "imm_gen.v"
 `include "if_ex.v"
 `include "mux_alu.v"
-`include "if_as.v"
-`include "alu_res_ctrl.v"
+`include "if_fc.v"
+`include "fetch.v"
 `include "if_wb.v"
 `include "reg_clash_fb.v"
 `include "regs_file.v"
@@ -160,9 +161,9 @@ rooth u_rooth_0(
     .jtag_halt_flag_i   ( jtag_halt_req_o       ),
     .jtag_reset_flag_i  ( jtag_reset_req_o      )
 );
-rib u_rib_0(
+bus u_bus_0(
     .clk                ( clk                   ),
-    .rst                ( rst_n                 ),
+    .rst_n              ( rst_n                 ),
 
     .m0_addr_i          ( m0_addr_i             ),
     .m0_data_i          ( m0_data_i             ),
@@ -171,10 +172,7 @@ rib u_rib_0(
     .m0_we_i            ( m0_we_i               ),
 
     .m1_addr_i          ( m1_addr_i             ),
-    .m1_data_i          ( `CPU_WIDTH'b0         ),
     .m1_data_o          ( m1_data_o             ),
-    .m1_req_i           ( 1'b1                  ),
-    .m1_we_i            ( 1'b0                  ),
 
     .m2_addr_i          ( m2_addr_i             ),
     .m2_data_i          ( m2_data_i             ),

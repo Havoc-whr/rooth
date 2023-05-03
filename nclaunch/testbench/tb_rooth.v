@@ -5,19 +5,17 @@
 // Filename      : tb_rooth.v
 // Author        : whr
 // Created On    : 2022-06-29 20:08
-// Last Modified : 2023-01-14 19:46
+// Last Modified : 2023-04-27 18:01
 // ---------------------------------------------------------------------------------
 // Description   : 
 //
 //
 // -FHDR----------------------------------------------------------------------------
-`timescale 1ns / 1ps
 `include "./hdl_file/soc/rooth_defines.v"
-
 module tb_rooth ();
 
 reg                  clk;
-reg                  rst_n;
+reg                  rst_n; 
 
 wire [15:0] gpio;
 wire uart_tx_pin;
@@ -33,7 +31,9 @@ wire jtag_TDI;
 wire jtag_TDO;
 wire halted_ind;
 
-reg [20*8-1:0]        inst_name;
+
+
+reg [30*8-1:0]        inst_name;
 
 wire [`CPU_WIDTH-1:0] zero_x0  = u_rooth_soc_0.u_rooth_0. u_regs_file_0. register[0];
 wire [`CPU_WIDTH-1:0] ra_x1    = u_rooth_soc_0.u_rooth_0. u_regs_file_0. register[1];
@@ -76,7 +76,7 @@ initial begin
     inst_name = "./inst_test/CTEST";
     inst_test(inst_name);
     #(`SIM_PERIOD * 50);
-    $finish;
+	 $finish;
 end
 
 initial begin
@@ -96,19 +96,19 @@ task reset;                // reset 1 clock
 endtask
 
 task inst_load;
-    input [20*8-1:0] inst_name;
+    input [30*8-1:0] inst_name;
     begin
         #(`SIM_PERIOD/2);
         clk       = 1'b0;
         rst_n     = 1'b0;
-		$readmemh ("./testbench/SETREG", u_rooth_soc_0.u_rooth_0. u_regs_file_0. register);
+        $readmemh ("../tb/SETREG", u_rooth_soc_0.u_rooth_0. u_regs_file_0. register);
         $readmemh (inst_name, u_rooth_soc_0.u_inst_mem_0. inst_mem_f);
     end
 endtask
 
 task inst_test;
     integer r;
-    input [20*8-1:0] inst_name;
+    input [30*8-1:0] inst_name;
     begin
     inst_load(inst_name);
     #(`SIM_PERIOD * 1);
@@ -125,7 +125,7 @@ task inst_test;
             #(`SIM_PERIOD * 1);
             /*
              *for (r = 0; r < 32; r = r + 1)
-             *    $display("x%2d = 0x%x", r, u_rooth_0. u_regs_file_0. register[r]);
+             *    $display("x%2d = 0x%x", r, u_rooth_soc_0.u_rooth_0. u_regs_file_0. register[r]);
              */
             $stop;
         end
@@ -149,12 +149,9 @@ rooth_soc u_rooth_soc_0(
     .halted_ind     (halted_ind)
 );
 
-
-
-// iverilog 
-initial begin
-    $dumpfile("sim_out.vcd");
-    $dumpvars;
-end
+/*initial begin
+    $fsdbDumpfile("tb.fsdb");       
+    $fsdbDumpvars;
+end*/
 
 endmodule

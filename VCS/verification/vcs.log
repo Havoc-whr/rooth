@@ -1,0 +1,84 @@
+                         Chronologic VCS (TM)
+       Version O-2018.09-SP2_Full64 -- Thu May  4 00:04:07 2023
+               Copyright (c) 1991-2018 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file '../rtl/soc/rooth_defines.v'
+Parsing design file '../rtl/jtag/full_handshake_rx.v'
+Parsing design file '../rtl/jtag/full_handshake_tx.v'
+Parsing design file '../rtl/jtag/jtag_dm.v'
+Parsing design file '../rtl/jtag/jtag_driver.v'
+Parsing design file '../rtl/jtag/jtag_top.v'
+Parsing design file '../rtl/perips/inst_mem.v'
+Parsing design file '../rtl/perips/data_mem.v'
+Parsing design file '../rtl/perips/gpio.v'
+Parsing design file '../rtl/perips/spi.v'
+Parsing design file '../rtl/perips/timer.v'
+Parsing design file '../rtl/perips/uart.v'
+Parsing design file '../rtl/core/alu_core.v'
+Parsing design file '../rtl/core/pipeline_ctrl.v'
+Parsing design file '../rtl/core/pc_reg.v'
+Parsing design file '../rtl/core/if_de.v'
+Parsing design file '../rtl/core/decode.v'
+Parsing design file '../rtl/core/div.v'
+Parsing design file '../rtl/core/imm_gen.v'
+Parsing design file '../rtl/core/if_ex.v'
+Parsing design file '../rtl/core/mux_alu.v'
+Parsing design file '../rtl/core/if_fc.v'
+Parsing design file '../rtl/core/fetch.v'
+Parsing design file '../rtl/core/if_wb.v'
+Parsing design file '../rtl/core/writeback.v'
+Parsing design file '../rtl/core/reg_clash_fb.v'
+Parsing design file '../rtl/core/regs_file.v'
+Parsing design file '../rtl/core/csr_reg.v'
+Parsing design file '../rtl/core/clint.v'
+Parsing design file '../rtl/core/rooth.v'
+Parsing design file '../rtl/soc/bus.v'
+Parsing design file '../rtl/soc/rooth_soc.v'
+Parsing design file '../tb/tb_rooth_compliance.v'
+Top Level Modules:
+       tinyriscv_soc_tb
+TimeScale is 1 ns / 1 ns
+
+Warning-[TFIPC] Too few instance port connections
+../rtl/core/rooth.v, 359
+rooth, "if_fc u_if_fc_0( .clk (clk),  .rst_n (rst_n),  .flow_as_i (flow_as),  .rs1_data_i (ex_reg1_rd_data_o),  .rs2_data_i (ex_reg2_rd_data_o),  .imm_i (ex_imm_t),  .inst_i (ex_inst_o),  .pc_adder_i (ex_pc_adder_i),  .alu_res_op_i (ex_alu_res_op_t),  .alu_res_i (ex_alu_res_o),  .reg_wr_en_i (ex_reg_wr_en_t),  .reg_wr_adder_i (ex_reg_wr_adder_t),  .csr_wr_en_i (ex_csr_wr_en_t),  .csr_wr_adder_i (ex_csr_wr_adder_t),  .csr_rd_data_i (ex_csr_rd_data_o),  .rs1_data_o (as_rs1_data_i),  .rs2_data_o (as_rs2_data_i),  .imm_o (as_imm_i),  .inst_o (as_inst_o),  .pc_adder_o (as_pc_adder_o),  .alu_res_op_o (as_alu_res_op_i),  .alu_res_o (as_alu_res_i),  .reg_wr_en_o (as_reg_wr_en_i),  .reg_wr_adder_o (as_reg_wr_adder_i),  .csr_wr_en_o (as_csr_wr_en_i),  .csr_wr_adder_o (as ... "
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+Starting vcs inline pass...
+17 modules and 0 UDP read.
+	However, due to incremental compilation, no re-compilation is necessary.
+make[2]: Entering directory `/home/havoc/Project/rooth/rooth-master/VCS/verification/csrc'
+make[2]: Leaving directory `/home/havoc/Project/rooth/rooth-master/VCS/verification/csrc'
+make[2]: Entering directory `/home/havoc/Project/rooth/rooth-master/VCS/verification/csrc'
+rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic  -o .//../simv.daidir//_csrc0.so objs/amcQw_d.o 
+rm -f _csrc0.so
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv    -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -rdynamic  -Wl,-rpath=/home/Synopsys/vcs/O-2018.09-SP2/linux64/lib -L/home/Synopsys/vcs/O-2018.09-SP2/linux64/lib     _93654_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so     rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          -lzerosoft_rt_stubs -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /home/Synopsys/vcs/O-2018.09-SP2/linux64/lib/vcs_tls.o   -Wl,-whole-archive -lvcsucli -Wl,-no-whole-archive        _vcs_pli_stub_.o   /home/Synopsys/vcs/O-2018.09-SP2/linux64/lib/vcs_save_restore_new.o /home/Synopsys/verdi/Verdi_O-2018.09-SP2/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[2]: Leaving directory `/home/havoc/Project/rooth/rooth-master/VCS/verification/csrc'
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  May  4 00:04 2023
+test running...
+*Verdi* Loading libsscore_vcs201809.so
+FSDB Dumper for VCS, Release Verdi_O-2018.09-SP2, Linux x86_64/64bit, 02/21/2019
+(C) 1996 - 2019 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'tb.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+$finish called from file "../tb/tb_rooth_compliance.v", line 99.
+$finish at simulation time                19070
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 19070 ns
+CPU Time:      0.850 seconds;       Data structure size:   0.1Mb
+Thu May  4 00:04:11 2023
+CPU time: 1.390 seconds to compile + .941 seconds to elab + .803 seconds to link + .942 seconds in simulation

@@ -11,7 +11,7 @@
 ../rtl/perips/timer.v
 ../rtl/perips/uart.v
 ../rtl/core/alu_core.v
-../rtl/core/flow_ctrl.v
+../rtl/core/pipeline_ctrl.v
 ../rtl/core/pc_reg.v
 ../rtl/core/if_de.v
 ../rtl/core/decode.v
@@ -19,15 +19,16 @@
 ../rtl/core/imm_gen.v
 ../rtl/core/if_ex.v
 ../rtl/core/mux_alu.v
-../rtl/core/if_as.v
-../rtl/core/alu_res_ctrl.v
+../rtl/core/if_fc.v
+../rtl/core/fetch.v
 ../rtl/core/if_wb.v
+../rtl/core/writeback.v
 ../rtl/core/reg_clash_fb.v
 ../rtl/core/regs_file.v
 ../rtl/core/csr_reg.v
 ../rtl/core/clint.v
 ../rtl/core/rooth.v
-../rtl/soc/rib.v
+../rtl/soc/bus.v
 ../rtl/soc/rooth_soc.v
 
 # 根据仿真需要选择对应的testbench文件
@@ -37,4 +38,3 @@
 #../tb/tb_rooth.v
 # 运行新的更加完善的指令测试程序（单独运行指定的一个指令测试程序）
 #../tb/tb_rooth_compliance.v 
-

@@ -80,11 +80,11 @@
 `define ALU_SRC_WIDTH 3
 `define ALU_SRC_REG     		`ALU_SRC_WIDTH'b000 // src1 = reg1, src2 = reg2
 `define ALU_SRC_IMM     		`ALU_SRC_WIDTH'b001 // src1 = reg1, src2 = imm
-`define ALU_SRC_FOUR_PC 		`ALU_SRC_WIDTH'b010 // src1 = 4,    src2 = pc
-`define ALU_SRC_IMM_PC  		`ALU_SRC_WIDTH'b011 // src1 = imm,  src2 = pc
-`define ALU_SRC_CSR_REG 		`ALU_SRC_WIDTH'b100 // src1 = reg1, src2 = csr
-`define ALU_SRC_CSR_IMM 		`ALU_SRC_WIDTH'b101 // src1 = imm, src2 = csr
-`define ALU_SRC_CSRIN_REG 	`ALU_SRC_WIDTH'b110 // src1 = ~reg1, src2 = csr
+`define ALU_SRC_CSR_REG 		`ALU_SRC_WIDTH'b010 // src1 = reg1, src2 = csr
+`define ALU_SRC_CSRIN_REG 	    `ALU_SRC_WIDTH'b011 // src1 = ~reg1, src2 = csr
+`define ALU_SRC_FOUR_PC 		`ALU_SRC_WIDTH'b100 // src1 = 4,    src2 = pc
+`define ALU_SRC_IMM_PC  		`ALU_SRC_WIDTH'b101 // src1 = imm,  src2 = pc
+`define ALU_SRC_CSR_IMM 		`ALU_SRC_WIDTH'b110 // src1 = imm, src2 = csr
 
 // opcode
 `define OPCODE_WIDTH 7

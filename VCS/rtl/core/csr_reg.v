@@ -5,12 +5,13 @@
 // Filename      : csr_reg.v
 // Author        : whr
 // Created On    : 2022-08-10 23:08
-// Last Modified : 2023-04-27 18:00
+// Last Modified : 2023-01-14 17:07
 // ---------------------------------------------------------------------------------
 // Description   : 
 //  
 //
 // -FHDR----------------------------------------------------------------------------
+//`include "../soc/rooth_defines.v"
 
 module csr_reg (
     input                           clk,
