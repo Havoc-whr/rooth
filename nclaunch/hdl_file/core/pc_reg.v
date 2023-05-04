@@ -21,19 +21,24 @@ module pc_reg (
     output reg  [`CPU_WIDTH-1:0]    curr_pc_o   // current pc addr
 );
 
-always @ (posedge clk or negedge rst_n) begin
-    if(!rst_n || jtag_reset_flag_i)
+always @ (posedge clk) begin
+    if(!rst_n)
         curr_pc_o <= `CPU_WIDTH'b0;
     else begin
-        case(flow_pc_i)
-            `FLOW_WORK: begin
-                if(next_pc_four_i) curr_pc_o <= curr_pc_o + `CPU_WIDTH'd4;
-                else curr_pc_o <= next_pc_i;
-            end
-            `FLOW_STOP: curr_pc_o <= curr_pc_o;
-            `FLOW_REFRESH: curr_pc_o <= `CPU_WIDTH'b0;
-            default: curr_pc_o <= `CPU_WIDTH'b0;
-        endcase
+        if(jtag_reset_flag_i) begin
+            curr_pc_o <= `CPU_WIDTH'b0;
+        end
+        else begin
+            case(flow_pc_i)
+                `FLOW_WORK: begin
+                    if(next_pc_four_i) curr_pc_o <= curr_pc_o + `CPU_WIDTH'd4;
+                    else curr_pc_o <= next_pc_i;
+                end
+                `FLOW_STOP: curr_pc_o <= curr_pc_o;
+                `FLOW_REFRESH: curr_pc_o <= `CPU_WIDTH'b0;
+                default: curr_pc_o <= `CPU_WIDTH'b0;
+            endcase
+        end
     end
 end    
 
