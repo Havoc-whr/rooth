@@ -119,7 +119,7 @@ module gpio(
     end
 
     // 读寄存器
-    always @ (*) begin
+    always @ ( *) begin
         if (rst == 1'b0) begin
             data_o = 32'h0;
         end else begin

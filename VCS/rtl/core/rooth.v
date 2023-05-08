@@ -13,19 +13,20 @@
 //          输入信号为组合逻辑输出，输出为组合逻辑模块输入,t表示时序逻辑之间直接传递前缀
 //          表示信号作用所处于的指令周期阶段
 // -FHDR----------------------------------------------------------------------------
-
+//`include "../soc/rooth_defines.v"
 module rooth(
     input                           clk,
     input                           rst_n,
-    
-    input                           bus_hold_flag,
+
     input  [`INT_BUS]               int_flag_i,
 
+    input  [`CPU_WIDTH-1:0]         bus_data_i,
+    output [`CPU_WIDTH-1:0]         bus_addr_o,
+    output                          bus_req_o,
+    output                          bus_wr_en_o,
+    output [`CPU_WIDTH-1:0]         bus_data_o,
+
     input  [`CPU_WIDTH-1:0]         data_mem_data_out_i,
-    output [`CPU_WIDTH-1:0]         data_mem_addr_o,
-    output                          data_mem_req_o,
-    output                          data_mem_wr_en_o,
-    output [`CPU_WIDTH-1:0]         data_mem_data_in_o,
 
     input  [`CPU_WIDTH-1:0]         pc_inst_i,
     output [`CPU_WIDTH-1:0]         pc_curr_pc_o,
@@ -123,6 +124,7 @@ wire  [`WIDTH_RESCTRL-1:0]  as_alu_res_op_i;
 wire  [`CPU_WIDTH-1:0]      as_alu_res_i;
 wire                        access_mem_hold_o;
 wire                        as_no_writing_mem_o;
+wire                        fetch_pc_hold_o;
 
 wire  [`CPU_WIDTH-1:0]  as_data_mem_addr;
 wire                    as_data_mem_req_o;
@@ -141,7 +143,7 @@ wire [1:0]              as_mem_addr_index_o;
 wire [`CPU_WIDTH-1:0]   as_inst_o;
 wire [`CPU_WIDTH-1:0]   as_pc_adder_o;
 wire                    acess_mem_flag_o;
-wire                    pr_acess_instmem_o;
+wire [1:0]              pr_acess_instmem_o;
 
 //data_mem
 wire  [`CPU_WIDTH-1:0]  as_data_mem_data_out;
@@ -166,6 +168,7 @@ wire [1:0]                  wb_mem_addr_index_i;
 wire [`CPU_WIDTH-1:0]       wb_reg_wr_data_i;
 wire [`FUNCT3_WIDTH-1:0]    wb_funct3_i;
 wire [`CPU_WIDTH-1:0]       wb_reg_wr_data_o;
+wire [`CPU_WIDTH-1:0]       wb_data_mem_data_out_i;
 
 //pipeline_ctrl
 wire [`WIDTH_JUMP-1:0]    ex_jump;
@@ -212,10 +215,10 @@ pipeline_ctrl u_pipeline_ctrl_0(
     .jump_i                         ( ex_jump                     ),
     .imm_i                          ( ex_imm                      ),
     .reg1_rd_data_i                 ( ex_reg1_rd_data             ),
-    .bus_wait_i                     ( bus_hold_flag               ),
+    .fetch_pc_hold_i                ( fetch_pc_hold_o             ),
+    .alu_busy_i                     ( alu_busy_o                  ),
     .access_mem_hold_i              ( access_mem_hold_o           ),
     .pr_acess_instmem_i             ( pr_acess_instmem_o          ),
-    .alu_busy_i                     ( alu_busy_o                  ),
     .clint_hold_flag_i              ( clint_hold_flag_o           ),
     .clint_int_addr_i               ( clint_int_addr_o            ),
     .clint_int_assert_i             ( clint_int_assert_o          ),
@@ -275,6 +278,14 @@ imm_gen u_imm_gen_0(
     .imm_o                          ( de_imm_o                    )
 );
 
+/*ila_0 u_ila_0 (
+	.clk(clk), // input wire clk
+	.probe0(de_pc_adder_t), // input wire [31:0]  probe0  
+	.probe1(de_inst_o), // input wire [31:0]  probe1 
+	.probe2(ex_pc_adder_i), // input wire [31:0]  probe2 
+	.probe3(ex_inst_o) // input wire [31:0]  probe3
+);*/
+
 if_ex u_if_ex_0(
     .clk                            ( clk                         ),
     .rst_n                          ( rst_n                       ),
@@ -305,7 +316,7 @@ if_ex u_if_ex_0(
     .imm_o                          ( ex_imm_i                    ),
     .csr_wr_en_o                    ( ex_csr_wr_en_t              ),
     .csr_wr_adder_o                 ( ex_csr_wr_adder_t           ),
-    .csr_rd_adder_o                 ( ex_csr_rd_adder_i            ), 
+    .csr_rd_adder_o                 ( ex_csr_rd_adder_i           ), 
     .alu_op_o                       ( ex_alu_op_i                 ),
     .alu_src_sel_o                  ( ex_alu_src_sel_i            ),
     .alu_res_op_o                   ( ex_alu_res_op_t             )
@@ -323,6 +334,9 @@ mux_alu u_mux_alu_0(
 );
 
 alu_core u_alu_core_0(
+    .clk                            ( clk                         ),
+    .rst_n                          ( rst_n                       ),
+    .flow_wait_fc                   ( flow_wait_fc_o              ),
     .alu_op_i                       ( ex_alu_op_i                 ),
     .alu_src1_i                     ( ex_alu_src1                 ),
     .alu_src2_i                     ( ex_alu_src2                 ),
@@ -384,15 +398,16 @@ if_fc u_if_fc_0(
     .csr_wr_en_o                    ( as_csr_wr_en_i              ),
     .csr_wr_adder_o                 ( as_csr_wr_adder_i           ),
     .csr_rd_data_o                  ( as_csr_rd_data_i            ),
+    .as_no_writing_mem_i            ( as_no_writing_mem_o         ),
     .pr_acess_instmem_o             ( pr_acess_instmem_o          )
 );
 
 //数据存储器
-assign data_mem_addr_o = as_data_mem_addr;
-assign data_mem_wr_en_o = as_data_mem_wr_en;
-assign data_mem_data_in_o = as_data_mem_data_in;
-assign as_data_mem_data_out = data_mem_data_out_i;
-assign data_mem_req_o = as_data_mem_req_o;
+assign bus_addr_o = as_data_mem_addr;
+assign bus_wr_en_o = as_data_mem_wr_en;
+assign bus_data_o = as_data_mem_data_in;
+assign as_data_mem_data_out = bus_data_i;
+assign bus_req_o = as_data_mem_req_o;
 
 fetch u_fetch_0(
     .clk                            ( clk                         ),
@@ -414,7 +429,8 @@ fetch u_fetch_0(
     .csr_wr_data_o                  ( as_csr_wr_data_o            ),
     .access_mem_hold_o              ( access_mem_hold_o           ),
     .mem_addr_index_o               ( as_mem_addr_index_o         ),
-    .no_writing_mem_o               ( as_no_writing_mem_o         )
+    .no_writing_mem_o               ( as_no_writing_mem_o         ),
+    .pc_hold_o                      ( fetch_pc_hold_o             )
 );
 
 if_wb u_if_wb_0(
@@ -428,15 +444,17 @@ if_wb u_if_wb_0(
     .reg_wr_data_i                  ( as_reg_wr_data_o            ),
     .csr_wr_en_i                    ( as_csr_wr_en_i              ),
     .csr_wr_adder_i                 ( as_csr_wr_adder_i           ),
+    .csr_wr_data_i                  ( as_csr_wr_data_o            ),
+    .data_mem_data_i                ( data_mem_data_out_i         ),
     .mem_addr_index_i               ( as_mem_addr_index_o         ),
     .no_writing_mem_i               ( as_no_writing_mem_o         ),
-    .csr_wr_data_i                  ( as_csr_wr_data_o            ),
     .reg_wr_en_o                    ( wb_reg_wr_en                ),
     .reg_wr_adder_o                 ( wb_reg_wr_adder             ),
     .reg_wr_data_o                  ( wb_reg_wr_data_i            ),
     .csr_wr_en_o                    ( wb_csr_wr_en                ),
     .csr_wr_adder_o                 ( wb_csr_wr_adder             ),
     .csr_wr_data_o                  ( wb_csr_wr_data              ),
+    .data_mem_data_o                ( wb_data_mem_data_out_i      ),
     .inst_o                         ( wb_inst_o                   ),
     .pc_adder_o                     ( wb_pc_adder_o               ),
     .mem_addr_index_o               ( wb_mem_addr_index_i         ),
@@ -448,7 +466,7 @@ assign wb_funct3_i = wb_inst_o[14:12];
 writeback u_writeback_0(
     .wb_reg_wr_data_i               ( wb_reg_wr_data_i            ),
     .no_writing_mem_i               ( wb_no_writing_mem_i         ),
-    .data_mem_data_i                ( data_mem_data_out_i         ),
+    .data_mem_data_i                ( wb_data_mem_data_out_i      ),
     .funct3_i                       ( wb_funct3_i                 ),
     .mem_addr_index_i               ( wb_mem_addr_index_i         ),
     .reg_wr_data_o                  ( wb_reg_wr_data_o            )

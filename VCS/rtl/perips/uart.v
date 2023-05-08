@@ -14,7 +14,7 @@
  limitations under the License.                                          
  */
 
-
+//`include "../soc/rooth_defines.v"
 // 串口模块(默认: 115200, 8 N 1)
 module uart(
 
@@ -133,7 +133,7 @@ module uart(
     end
 
     // 读寄存器
-    always @ (*) begin
+    always @ ( *) begin
         if (rst_n == 1'b0) begin
             data_o = 32'h0;
         end else begin

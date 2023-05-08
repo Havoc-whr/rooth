@@ -59,9 +59,9 @@ ncsim> run
 ~~~~~~~~~ #       #    #  #    #  #    #~~~~~~~~~
 ~~~~~~~~~ #       #    #   ####    #### ~~~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Simulation complete via $finish(1) at time 311231 NS + 0
+Simulation complete via $finish(1) at time 321471 NS + 0
 ./testbench/tb_rooth_alltest.v:171     $finish;
 ncsim> ^C
 ncsim> exit
-ncsim: Memory Usage - 29.6M program + 28.1M data = 57.7M total (58.4M Peak)
-ncsim: CPU Usage - 0.8s system + 1.3s user = 2.1s total (33.2s, 6.3% cpu)
+ncsim: Memory Usage - 29.6M program + 28.1M data = 57.8M total (58.4M Peak)
+ncsim: CPU Usage - 0.7s system + 1.2s user = 1.9s total (30.0s, 6.3% cpu)

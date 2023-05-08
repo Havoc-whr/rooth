@@ -1,0 +1,45 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Sat May 06 09:50:14 2023
+[*]
+[dumpfile] "D:\rooth\rooth-master\rtl\sim_out.vcd"
+[dumpfile_mtime] "Sat May 06 09:48:18 2023"
+[dumpfile_size] 6629420
+[savefile] "D:\rooth\rooth-master\rtl\pipeline.gtkw"
+[timestart] 0
+[size] 1536 793
+[pos] -139 -139
+*-16.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_rooth.
+[treeopen] tb_rooth.u_rooth_soc_0.
+[treeopen] tb_rooth.u_rooth_soc_0.u_rooth_0.
+[sst_width] 197
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 221
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.inst_i[31:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.pc_adder_i[31:0]
+@200
+-
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.inst_o[31:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_de_0.pc_adder_o[31:0]
+@200
+-
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex_0.inst_o[31:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_ex_0.pc_adder_o[31:0]
+@200
+-
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_fc_0.inst_o[31:0]
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_fc_0.pc_adder_o[31:0]
+@200
+-
+@22
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.inst_o[31:0]
+@23
+tb_rooth.u_rooth_soc_0.u_rooth_0.u_if_wb_0.pc_adder_o[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

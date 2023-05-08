@@ -12,7 +12,7 @@
 //
 // -FHDR----------------------------------------------------------------------------
 
-`include "rooth_defines.v"
+`include"rooth_defines.v"
 
 module if_fc (
     input                               clk,
@@ -46,11 +46,13 @@ module if_fc (
     output reg                           csr_wr_en_o,
     output reg [`CSR_ADDR_WIDTH-1:0]     csr_wr_adder_o,
     output reg [`CPU_WIDTH-1:0]          csr_rd_data_o,
-    output reg                           acess_mem_flag_o,
-    output wire                          pr_acess_instmem_o
+
+    input                                as_no_writing_mem_i,
+    output wire[1:0]                     pr_acess_instmem_o
 );
 
-assign pr_acess_instmem_o = ((alu_res_op_i == `RESCTRL_MEM) || ((alu_res_op_i == `RESCTRL_REG) && (inst_i[6:0] == `INST_TYPE_IL))) && (alu_res_i[31:28] == 4'b0) ? 1'b1 : 1'b0;
+assign pr_acess_instmem_o[0] = ((alu_res_op_i == `RESCTRL_MEM) || ((alu_res_op_i == `RESCTRL_REG) && (inst_i[6:0] == `INST_TYPE_IL))) && (alu_res_i[31:28] == 4'b0) ? 1'b1 : 1'b0;
+assign pr_acess_instmem_o[1] = as_no_writing_mem_i && ((alu_res_op_i == `RESCTRL_MEM) || ((alu_res_op_i == `RESCTRL_REG) && (inst_i[6:0] == `INST_TYPE_IL))) && (alu_res_i[31:28] == 4'b0) ? 1'b1 : 1'b0;
 
 always @(posedge clk or negedge rst_n) begin
     if(!rst_n) begin

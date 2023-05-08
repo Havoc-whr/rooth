@@ -110,6 +110,7 @@ module jtag_dm #(
     localparam OP_SUCC = 2'b00;
 
     reg[31:0] read_data;
+    reg read_data_flag;
     reg dm_reg_we;
     reg[4:0] dm_reg_addr;
     reg[31:0] dm_reg_wdata;
@@ -155,9 +156,11 @@ module jtag_dm #(
             is_read_reg <= 1'b0;
             read_data <= 32'h0;
             need_resp <= 1'b0;
+            read_data_flag <= 1'b0;
         end else begin
             if (rx_valid) begin
                 need_resp <= 1'b1;
+                read_data_flag <= 1'b0;
                 case (op)
                     `DTM_OP_READ: begin
                         case (address)
@@ -185,12 +188,20 @@ module jtag_dm #(
                                 is_read_reg <= 1'b0;
                             end
                             SBDATA0: begin
-                                read_data <= dm_mem_rdata_i;
-                                if (sbcs[16] == 1'b1) begin
-                                    sbaddress0 <= sbaddress0_next;
+                                if(read_data_flag == 1'b1) begin
+                                    read_data <= dm_mem_rdata_i;
+                                    read_data_flag <= 1'b1;
+                                    need_resp <= 1'b1;
                                 end
-                                if (sbcs[15] == 1'b1) begin
-                                    dm_mem_addr <= sbaddress0_next;
+                                else begin
+                                    need_resp <= 1'b0;
+                                    read_data_flag <= 1'b1;
+                                    if (sbcs[16] == 1'b1) begin
+                                        sbaddress0 <= sbaddress0_next;
+                                    end
+                                    if (sbcs[15] == 1'b1) begin
+                                        dm_mem_addr <= sbaddress0_next;
+                                    end
                                 end
                             end
                             default: begin
@@ -307,7 +318,7 @@ module jtag_dm #(
     assign dm_mem_addr_o = dm_mem_addr;
     assign dm_mem_wdata_o = dm_mem_wdata;
 
-    assign dm_op_req_o = (rx_valid & (~read_dmstatus)) | need_resp;
+    assign dm_op_req_o = (rx_valid & (~read_dmstatus)) | need_resp | read_data_flag;
     assign dm_halt_req_o = dm_halt_req;
     assign dm_reset_req_o = dm_reset_req;
 

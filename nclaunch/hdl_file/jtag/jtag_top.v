@@ -13,7 +13,9 @@
  See the License for the specific language governing permissions and     
  limitations under the License.                                          
  */
-
+//`include "rooth_defines.v"
+//`include "jtag_dm.v"
+//`include "jtag_driver.v"
 // JTAG顶层模块
 module jtag_top #(
     parameter DMI_ADDR_BITS = 6,

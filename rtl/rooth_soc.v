@@ -13,7 +13,6 @@
 `include "rooth_defines.v"
 `include "alu_core.v"
 `include "div.v"
-`include "writeback.v"
 `include "rooth.v"
 `include "bus.v"
 `include "inst_mem.v"
@@ -27,6 +26,7 @@
 `include "mux_alu.v"
 `include "if_fc.v"
 `include "fetch.v"
+`include "writeback.v"
 `include "if_wb.v"
 `include "reg_clash_fb.v"
 `include "regs_file.v"
@@ -37,7 +37,6 @@
 `include "uart.v"
 `include "gpio.v"
 `include "jtag_top.v"
-
 module rooth_soc(
     input                   clk,
     input                   rst_n,
@@ -129,8 +128,6 @@ wire[31:0]                  gpio_data;
 wire[`INT_BUS]              int_flag_i;
 wire                        timer0_int;
 
-wire                        bus_hold_flag;
-
 wire                        jtag_reg_we;
 wire[`REG_ADDR_WIDTH-1:0]   jtag_reg_addr;
 wire[`CPU_WIDTH-1:0]        jtag_reg_data_o;
@@ -145,13 +142,13 @@ assign int_flag_i = {7'h0, timer0_int};
 rooth u_rooth_0(
     .clk                ( clk                   ),
     .rst_n              ( rst_n                 ),
-    .bus_hold_flag      ( bus_hold_flag         ),
     .int_flag_i         ( int_flag_i            ),
-    .data_mem_data_out_i( m0_data_o             ),
-    .data_mem_addr_o    ( m0_addr_i             ),
-    .data_mem_req_o     ( m0_req_i              ),
-    .data_mem_wr_en_o   ( m0_we_i               ),
-    .data_mem_data_in_o ( m0_data_i             ),
+    .bus_data_i         ( m0_data_o             ),
+    .bus_addr_o         ( m0_addr_i             ),
+    .bus_req_o          ( m0_req_i              ),
+    .bus_wr_en_o        ( m0_we_i               ),
+    .bus_data_o         ( m0_data_i             ),
+    .data_mem_data_out_i( s1_data_i             ),
     .pc_inst_i          ( m1_data_o             ),
     .pc_curr_pc_o       ( m1_addr_i             ),
     .jtag_we_i          ( jtag_reg_we           ),  
@@ -214,9 +211,7 @@ bus u_bus_0(
     .s5_addr_o          ( s5_addr_o             ),
     .s5_data_o          ( s5_data_o             ),
     .s5_data_i          ( s5_data_i             ),
-    .s5_we_o            ( s5_we_o               ),
-
-    .hold_flag_o        ( bus_hold_flag         )
+    .s5_we_o            ( s5_we_o               )
 );
 
 inst_mem u_inst_mem_0(
@@ -362,3 +357,4 @@ jtag_top #(
 );
 
 endmodule
+

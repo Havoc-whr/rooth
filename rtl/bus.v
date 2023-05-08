@@ -10,11 +10,8 @@
 // Description   : 
 //
 // -FHDR----------------------------------------------------------------------------
-
 `include "rooth_defines.v"
-
-
-// RIB总线模块
+// 总线模块
 module bus(
 
     input wire clk,
@@ -23,7 +20,7 @@ module bus(
     // master 0 interface
     input wire[`CPU_WIDTH-1:0] m0_addr_i,     // 主设备0读、写地址
     input wire[`CPU_WIDTH-1:0] m0_data_i,         // 主设备0写数据
-    output wire [`CPU_WIDTH-1:0] m0_data_o,         // 主设备0读取到的数据
+    output reg[`CPU_WIDTH-1:0] m0_data_o,         // 主设备0读取到的数据
     input wire m0_req_i,                   // 主设备0访问请求标志
     input wire m0_we_i,                    // 主设备0写标志
 
@@ -79,9 +76,8 @@ module bus(
     output reg[`CPU_WIDTH-1:0] s5_addr_o,     // 从设备5读、写地址
     output reg[`CPU_WIDTH-1:0] s5_data_o,         // 从设备5写数据
     input wire[`CPU_WIDTH-1:0] s5_data_i,         // 从设备5读取到的数据
-    output reg s5_we_o,                    // 从设备5写标志
+    output reg s5_we_o                    // 从设备5写标志
 
-    output reg hold_flag_o                 // 暂停流水线标志
 
     );
 
@@ -102,50 +98,30 @@ module bus(
 
     wire[3:0] req;
     reg[1:0] grant;
-    reg[3:0] next_m0_data_o;
-    reg[3:0] current_m0_data_o;
 
-    always @(posedge clk or negedge rst_n) begin
-        if(~rst_n) begin
-            current_m0_data_o <= `CPU_WIDTH'b0;
-        end
-        else begin
-            current_m0_data_o <= next_m0_data_o;
-        end
-    end
-
-    assign m0_data_o = (current_m0_data_o == 4'd0) ? s0_data_i :
-				    (current_m0_data_o == 4'd1) ? s1_data_i :
-                    (current_m0_data_o == 4'd2) ? s2_data_i :
-                    (current_m0_data_o == 4'd3) ? s3_data_i :
-				    (current_m0_data_o == 4'd4) ? s4_data_i : s5_data_i;
 
     // 仲裁逻辑
     // 固定优先级仲裁机制
-    // 优先级由高到低：主设备3，主设备0，主设备2，主设备1
+    // 优先级由高到低：主设备3，主设备2，主设备0，主设备1
     // master0-core_data_req、master1-core_inst_req、master2-jtag、master3-other;
     always @ (*) begin
         if (m3_req_i) begin
             grant = grant3;
-            hold_flag_o = 1'b1;
-        end
-        else if (m0_req_i) begin
-            grant = grant0;
-            hold_flag_o = 1'b1;
         end
         else if (m2_req_i) begin
             grant = grant2;
-            hold_flag_o = 1'b1;
+        end
+        else if (m0_req_i) begin
+            grant = grant0;
         end
         else begin
             grant = grant1;
-            hold_flag_o = 1'b0;
         end
     end
 
     // 根据仲裁结果，选择(访问)对应的从设备
     always @ (*) begin
-        next_m0_data_o = 4'b0;
+        m0_data_o = `CPU_WIDTH'b0;
         m1_data_o = s0_data_i;
         m2_data_o = `CPU_WIDTH'b0;
         m3_data_o = `CPU_WIDTH'b0;
@@ -169,7 +145,6 @@ module bus(
         s3_we_o = 1'b0;
         s4_we_o = 1'b0;
         s5_we_o = 1'b0;
-
         case (grant)
             grant0: begin
                 case (m0_addr_i[31:28])
@@ -177,37 +152,37 @@ module bus(
                         s0_we_o = m0_we_i;
                         s0_addr_o = {{4'h0}, {m0_addr_i[27:0]}};
                         s0_data_o = m0_data_i;
-                        next_m0_data_o = 4'd0;
+                        m0_data_o = s0_data_i;
                     end
                     slave_1: begin
                         s1_we_o = m0_we_i;
                         s1_addr_o = {{4'h0}, {m0_addr_i[27:0]}};
                         s1_data_o = m0_data_i;
-                        next_m0_data_o = 4'd1;
+                        m0_data_o = s1_data_i;
                     end
                     slave_2: begin
                         s2_we_o = m0_we_i;
                         s2_addr_o = {{4'h0}, {m0_addr_i[27:0]}};
                         s2_data_o = m0_data_i;
-                        next_m0_data_o = 4'd2;
+                        m0_data_o = s2_data_i;
                     end
                     slave_3: begin
                         s3_we_o = m0_we_i;
                         s3_addr_o = {{4'h0}, {m0_addr_i[27:0]}};
                         s3_data_o = m0_data_i;
-                        next_m0_data_o = 4'd3;
+                        m0_data_o = s3_data_i;
                     end
                     slave_4: begin
                         s4_we_o = m0_we_i;
                         s4_addr_o = {{4'h0}, {m0_addr_i[27:0]}};
                         s4_data_o = m0_data_i;
-                        next_m0_data_o = 4'd4;
+                        m0_data_o = s4_data_i;
                     end
                     slave_5: begin
                         s5_we_o = m0_we_i;
                         s5_addr_o = {{4'h0}, {m0_addr_i[27:0]}};
                         s5_data_o = m0_data_i;
-                        next_m0_data_o = 4'd5;
+                        m0_data_o = s4_data_i;
                     end
                     default: begin
 
@@ -307,3 +282,4 @@ module bus(
     end
 
 endmodule
+

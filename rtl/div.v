@@ -14,7 +14,7 @@
  limitations under the License.                                          
  */
 
-`include "rooth_defines.v"
+//`include "../soc/rooth_defines.v"
 
 // 除法模块
 // 试商法实现32位整数除法

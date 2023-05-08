@@ -11,7 +11,7 @@
 // 
 //
 // -FHDR----------------------------------------------------------------------------
-`include "rooth_defines.v"
+//`include "../soc/rooth_defines.v"
 module clint (
     input                           clk,
     input                           rst_n,

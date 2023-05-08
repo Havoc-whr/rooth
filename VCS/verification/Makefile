@@ -22,7 +22,8 @@ vcsone   :
         -timescale=1ns/1ns \
         -full64  -R  +vc  +v2k  -sverilog  -debug_access+all -fsdb +define+FSDB \
         |tee vcs.log
-vcs   :
+
+vcs :
 	python3 ./compliance_test.py $(isa)
 #-------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------
@@ -56,7 +57,7 @@ verdi  :
 
 #-------------------------------------------------------------------------------------------------------
 clean  :
-	 rm  -rf  *~  core  csrc  simv*  vc_hdrs.h  ucli.key  urg* *.log  novas.* *.fsdb* verdiLog  64* DVEfiles *.vpd
+	 rm  -rf  *~  core  csrc  simv*  vc_hdrs.h  ucli.key  urg* *.log  novas.* *.fsdb* verdiLog  64* DVEfiles *.vpd sim.log
 	 rm -rf INCA_libs irun*
 	 rm -rf modelsim.ini transcript work
 	 rm -rf result.output

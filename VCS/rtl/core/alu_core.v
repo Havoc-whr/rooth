@@ -5,7 +5,7 @@
 // Filename      : alu.v
 // Author        : whr
 // Created On    : 2022-07-02 20:58
-// Last Modified : 2023-01-25 11:13
+// Last Modified : 2023-05-07 22:36
 // ---------------------------------------------------------------------------------
 // Description   :ALU核心单元，仅用与数据的运算，源操作数的选择由选择器模块控
 // 制
@@ -14,6 +14,11 @@
 // -FHDR----------------------------------------------------------------------------
 //`include "../soc/rooth_defines.v"
 module alu_core (
+    input                       clk,
+    input                       rst_n,
+
+    input                       flow_wait_fc,
+    
     input [`ALU_OP_WIDTH-1:0]   alu_op_i,
     input [`CPU_WIDTH-1:0]      alu_src1_i,
     input [`CPU_WIDTH-1:0]      alu_src2_i,
@@ -38,7 +43,8 @@ wire [`CPU_WIDTH-1:0]alu_src2_invert;
 wire [`CPU_DOUBLE_WIDTH-1:0] multiply_result;
 wire [`CPU_DOUBLE_WIDTH-1:0] multiply_result_invert;
 reg  [`CPU_DOUBLE_WIDTH-1:0] extends_reg;
-
+reg                          extends_flag;
+wire                         extend_end;
 
 assign alu_src1_invert = ~alu_src1_i + 1'b1;
 assign alu_src2_invert = ~alu_src2_i + 1'b1;
@@ -54,7 +60,6 @@ always @(*) begin
     less_o = 1'b0;
     more_zero_o = 1'b0;
     alu_busy_o = 1'b0;
-    extends_reg = `CPU_DOUBLE_WIDTH'b0;
     case(alu_op_i)
         `ALU_ADD:
             alu_res_o = alu_src1_i + alu_src2_i;
@@ -73,7 +78,8 @@ always @(*) begin
         `ALU_SRL:
             alu_res_o = alu_src1_i >> {27'b0,alu_src2_i[4:0]};
         `ALU_SRA: begin
-            extends_reg = {{`CPU_WIDTH{alu_src1_i[31]}},alu_src1_i} >> {59'b0,alu_src2_i[4:0]};
+            if(extends_flag) alu_busy_o = 1'b0;
+            else alu_busy_o = 1'b1;
             alu_res_o = extends_reg[`CPU_WIDTH-1:0];
         end
         `ALU_SLT: //complement judge
@@ -98,11 +104,13 @@ always @(*) begin
             less_o = (alu_res_o == `CPU_WIDTH'b1) ? 1 : 0;
         end
         `ALU_MUL:begin
-            extends_reg = {alu_src1_i,alu_src2_i};
+            if(extends_flag) alu_busy_o = 1'b0;
+            else alu_busy_o = 1'b1;
             alu_res_o = multiply_result[`CPU_WIDTH-1:0];
         end
         `ALU_MULH:begin
-            extends_reg = {(alu_src1_i[`CPU_WIDTH-1] ? alu_src1_invert : alu_src1_i),(alu_src2_i[`CPU_WIDTH-1] ? alu_src2_invert : alu_src2_i)};
+            if(extends_flag) alu_busy_o = 1'b0;
+            else alu_busy_o = 1'b1;
             case({alu_src1_i[`CPU_WIDTH-1],alu_src2_i[`CPU_WIDTH-1]})
                 2'b00:   alu_res_o = multiply_result[`CPU_DOUBLE_WIDTH-1:`CPU_WIDTH];
                 2'b11:   alu_res_o = multiply_result[`CPU_DOUBLE_WIDTH-1:`CPU_WIDTH];
@@ -111,11 +119,13 @@ always @(*) begin
             endcase
         end
         `ALU_MULHU:begin
-            extends_reg = {alu_src1_i,alu_src2_i};
+            if(extends_flag) alu_busy_o = 1'b0;
+            else alu_busy_o = 1'b1;
             alu_res_o = multiply_result[`CPU_DOUBLE_WIDTH-1:`CPU_WIDTH];
         end
         `ALU_MULHSU:begin
-            extends_reg = {(alu_src1_i[`CPU_WIDTH-1] ? alu_src1_invert : alu_src1_i),alu_src2_i};
+            if(extends_flag) alu_busy_o = 1'b0;
+            else alu_busy_o = 1'b1;
             alu_res_o = alu_src1_i[`CPU_WIDTH-1] ? multiply_result_invert[`CPU_DOUBLE_WIDTH-1:`CPU_WIDTH] : multiply_result[`CPU_DOUBLE_WIDTH-1:`CPU_WIDTH];
         end
         `ALU_DIV,`ALU_DIVU,`ALU_REM,`ALU_REMU:begin
@@ -126,8 +136,14 @@ always @(*) begin
             else begin
                 dividend_o = alu_src1_i;
                 divisor_o = alu_src2_i;
-                div_start_o = 1'b1;
-                alu_busy_o = 1'b1;
+                if(~flow_wait_fc) begin
+                    div_start_o = 1'b1;
+                    alu_busy_o = 1'b1;
+                end
+                else begin
+                    div_start_o = 1'b0;
+                    alu_busy_o = 1'b0;
+                end
             end
         end
         default: begin
@@ -142,4 +158,44 @@ always @(*) begin
         end
     endcase
 end
+always @(posedge clk or negedge rst_n)begin
+    if(~rst_n) begin
+        extends_reg <= `CPU_DOUBLE_WIDTH'b0;
+        extends_flag <=1'b0;
+    end
+    else begin
+        if(extends_flag || flow_wait_fc) begin
+            extends_flag <= 1'b0;
+        end
+        else begin
+            case(alu_op_i)
+                `ALU_SRA:begin
+                    extends_reg <= {{`CPU_WIDTH{alu_src1_i[31]}},alu_src1_i} >> {59'b0,alu_src2_i[4:0]};
+                    extends_flag <=1'b1;
+                end
+                `ALU_MUL: begin
+                    extends_reg <= {alu_src1_i,alu_src2_i};
+                    extends_flag <=1'b1;
+                end
+                `ALU_MULH: begin
+                    extends_reg <= {(alu_src1_i[`CPU_WIDTH-1] ? alu_src1_invert : alu_src1_i),(alu_src2_i[`CPU_WIDTH-1] ? alu_src2_invert : alu_src2_i)};
+                    extends_flag <=1'b1;
+                end
+                `ALU_MULHU:begin
+                    extends_reg <= {alu_src1_i,alu_src2_i};
+                    extends_flag <=1'b1;
+                end
+                `ALU_MULHSU:begin
+                    extends_reg <= {(alu_src1_i[`CPU_WIDTH-1] ? alu_src1_invert : alu_src1_i),alu_src2_i};
+                    extends_flag <=1'b1;
+                end
+                default:begin
+                    extends_reg <= `CPU_DOUBLE_WIDTH'b0;
+                    extends_flag <=1'b0;
+                end
+            endcase
+        end
+    end
+end
 endmodule
+

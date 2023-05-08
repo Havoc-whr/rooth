@@ -14,7 +14,7 @@
  limitations under the License.                                          
  */
 
-
+`include "./hdl_file/soc/rooth_defines.v"
 // spi master模块
 module spi(
 
@@ -220,7 +220,7 @@ module spi(
     end
 
     // read reg
-    always @ (*) begin
+    always @ ( *) begin
         if (rst == 1'b0) begin
             data_o = 32'h0;
         end else begin

@@ -14,7 +14,7 @@
  limitations under the License.                                          
  */
 
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+`include "./hdl_file/soc/rooth_defines.v"
 
 
 // 32 bits count up timer module
@@ -94,7 +94,7 @@ module timer(
     end
 
     // read regs
-    always @ (*) begin
+    always @ ( *) begin
         if (rst_n == 1'b0) begin
             data_o = `CPU_WIDTH'b0;
         end else begin

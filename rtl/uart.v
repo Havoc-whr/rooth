@@ -133,7 +133,7 @@ module uart(
     end
 
     // 读寄存器
-    always @ (*) begin
+    always @ ( *) begin
         if (rst_n == 1'b0) begin
             data_o = 32'h0;
         end else begin

@@ -11,7 +11,7 @@
 //
 //
 // -FHDR----------------------------------------------------------------------------
-`include "rooth_defines.v"
+//`include "../soc/rooth_defines.v"
 
 module mux_alu(
     input       [`ALU_SRC_WIDTH-1:0]    alu_src_sel_i,

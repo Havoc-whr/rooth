@@ -2,11 +2,11 @@ Magic 271485
 Revision Verdi_O-2018.09-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort -10 20 1920 977 100 65
+viewPort 0 27 1920 872 223 167
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/havoc/Project/rooth/whr_RV/1_rtl_test/verification/tb.fsdb"
+openDirFile -d / "" "/home/havoc/Project/rooth/rooth-master/VCS/verification/tb.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 167896800.599888 171803050.599888
-cursor 0.000000
+zoom 743134.848138 899910.000000
+cursor 1670000.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 14
+markerPos 11
 
 ; event list
 ; addEvent event_name event_expression
@@ -46,7 +46,7 @@ curSTATUS ByChange
 
 
 addGroup "G1"
-activeDirFile "" "/home/havoc/Project/rooth/whr_RV/1_rtl_test/verification/tb.fsdb"
+activeDirFile "" "/home/havoc/Project/rooth/rooth-master/VCS/verification/tb.fsdb"
 addSignal -h 15 /tb_rooth/u_rooth_soc_0/u_rooth_0/u_if_de_0/inst_i[31:0]
 addSignal -h 15 -holdScope pc_adder_i[31:0]
 addGroup "G2"
@@ -62,10 +62,12 @@ addGroup "G5"
 addSignal -h 15 /tb_rooth/u_rooth_soc_0/u_rooth_0/u_if_wb_0/inst_o[31:0]
 addSignal -h 15 -holdScope pc_adder_o[31:0]
 addGroup "G6"
+addGroup "G7"
+addGroup "G8"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm
-activeDirFile "" "/home/havoc/Project/rooth/whr_RV/1_rtl_test/verification/tb.fsdb"
+activeDirFile "" "/home/havoc/Project/rooth/rooth-master/VCS/verification/tb.fsdb"
 
 GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
@@ -80,6 +82,12 @@ SCOPE_LIST_BEGIN
 "/tb_rooth/u_rooth_soc_0/u_rooth_0/u_if_ex_0"
 "/tb_rooth/u_rooth_soc_0/u_rooth_0/u_if_fc_0"
 "/tb_rooth/u_rooth_soc_0/u_rooth_0/u_if_wb_0"
+"/tb_rooth/u_rooth_soc_0/u_rooth_0"
+"/tb_rooth/u_rooth_soc_0/u_rooth_0/u_alu_core_0"
+"/tb_rooth/u_rooth_soc_0/u_rooth_0/u_pipeline_ctrl_0"
+"/tb_rooth/u_rooth_soc_0/u_rooth_0/u_mux_alu_0"
+"/tb_rooth/u_rooth_soc_0/u_bus_0"
+"/tb_rooth/u_rooth_soc_0/u_rooth_0/u_fetch_0"
 SCOPE_LIST_END
 
 GETSIGNALFORM_SCOPE_HIERARCHY_END

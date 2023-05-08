@@ -13,6 +13,8 @@
  See the License for the specific language governing permissions and     
  limitations under the License.                                          
  */
+//`include "full_handshake_rx.v"
+//`include "full_handshake_tx.v"
 
 `define DM_RESP_VALID     1'b1
 `define DM_RESP_INVALID   1'b0

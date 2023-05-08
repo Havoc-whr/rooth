@@ -11,7 +11,7 @@
 //  
 //
 // -FHDR----------------------------------------------------------------------------
-`include "rooth_defines.v"
+//`include "../soc/rooth_defines.v"
 
 module csr_reg (
     input                           clk,

@@ -11,7 +11,7 @@
 //
 //
 // -FHDR----------------------------------------------------------------------------
-`include "rooth_defines.v"
+
 module writeback(
     input [`CPU_WIDTH-1:0]              wb_reg_wr_data_i,
     input                               no_writing_mem_i,

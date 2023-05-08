@@ -184,6 +184,7 @@ task inst_load;
         clk       = 1'b0;
         rst_n     = 1'b0;
 		$readmemh ("../tb/SETREG", u_rooth_soc_0.u_rooth_0. u_regs_file_0. register);
+        $readmemh ("../tb/SETRAM", u_rooth_soc_0.u_data_mem_0. ram_file);
         $readmemh (inst_name, u_rooth_soc_0.u_inst_mem_0. inst_mem_f);
     end
 endtask

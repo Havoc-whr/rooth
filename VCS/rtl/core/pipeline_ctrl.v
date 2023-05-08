@@ -5,14 +5,14 @@
 // Filename      : pipeline_ctrl.v
 // Author        : whr
 // Created On    : 2022-08-11 16:20
-// Last Modified : 2023-01-14 21:22
+// Last Modified : 2023-05-06 17:00
 // ---------------------------------------------------------------------------------
 // Description   :流水线控制模块，用于流水线暂停等
 // 
 //
 //
 // -FHDR----------------------------------------------------------------------------
-
+//`include "../soc/rooth_defines.v"
 module pipeline_ctrl (
     input                           jtag_halt_flag_i,
     input      [`WIDTH_BRANCH-1:0]  branch_i,           // branch type
@@ -25,11 +25,11 @@ module pipeline_ctrl (
     input      [`WIDTH_JUMP-1:0]    jump_i,             // jump type
     input      [`CPU_WIDTH-1:0]     imm_i,              // immediate
     input      [`CPU_WIDTH-1:0]     reg1_rd_data_i,     // rs1 be used in jalr
-    input                           bus_wait_i,         // current pc addr
+    input                           fetch_pc_hold_i,         // current pc addr
 
     input                           alu_busy_i,         // div is busy
     input                           access_mem_hold_i,
-    input                           pr_acess_instmem_i,
+    input      [1:0]                pr_acess_instmem_i,
     
     // from clint 
     input                           clint_hold_flag_i, // 流水线暂停标志
@@ -66,6 +66,13 @@ always @( *) begin
         flow_as_o = `FLOW_STOP;
         flow_wb_o = `FLOW_STOP;
     end
+    else if(jtag_halt_flag_i) begin
+        flow_pc_o = `FLOW_STOP;
+        flow_de_o = `FLOW_STOP;
+        flow_ex_o = `FLOW_STOP;
+        flow_as_o = `FLOW_STOP;
+        flow_wb_o = `FLOW_STOP;
+    end
     else if(access_mem_hold_i) begin
         flow_pc_o = `FLOW_STOP;
         flow_de_o = `FLOW_STOP;
@@ -80,7 +87,14 @@ always @( *) begin
         flow_as_o = `FLOW_REFRESH;
         flow_wb_o = `FLOW_WORK;
     end
-    else if(pr_acess_instmem_i) begin
+    else if(pr_acess_instmem_i[1]) begin
+        flow_pc_o = `FLOW_STOP;
+        flow_de_o = `FLOW_STOP;
+        flow_ex_o = `FLOW_STOP;
+        flow_as_o = `FLOW_REFRESH;
+        flow_wb_o = `FLOW_WORK;
+    end
+    else if(pr_acess_instmem_i[0]) begin
         flow_pc_o = `FLOW_STOP;
         flow_de_o = `FLOW_STOP;
         flow_ex_o = `FLOW_REFRESH;
@@ -94,7 +108,7 @@ always @( *) begin
         flow_as_o = `FLOW_REFRESH;
         flow_wb_o = `FLOW_WORK;
     end
-    else if(bus_wait_i) begin
+    else if(fetch_pc_hold_i) begin
         flow_pc_o = `FLOW_STOP;
         flow_de_o = `FLOW_REFRESH;
         flow_ex_o = `FLOW_WORK;
@@ -172,13 +186,6 @@ always @( *) begin
             default:
                 next_pc_four_o = 1'b1;
         endcase
-    end
-    else if(jtag_halt_flag_i) begin
-        flow_pc_o = `FLOW_STOP;
-        flow_de_o = `FLOW_STOP;
-        flow_ex_o = `FLOW_STOP;
-        flow_as_o = `FLOW_STOP;
-        flow_wb_o = `FLOW_STOP;
     end
     else begin 
         flow_pc_o = `FLOW_WORK;

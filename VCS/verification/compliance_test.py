@@ -3,6 +3,7 @@ import filecmp
 import subprocess
 import sys
 import os
+from datetime import datetime
 
 
 # 找出path目录下的所有reference_output文件
@@ -61,11 +62,19 @@ def main():
     process.wait(timeout=20)
 
     # 3.比较结果
-    print('\033[1;34m1:rv32i')
-    print('2:rv32im')
-    print('3:rv32Zicsr')
-    print('4:rv32Zifencei')
-    subsets = int(input('Please select subsets:'));
+    #print('\033[1;34m1:rv32i')
+    #print('2:rv32im')
+    #print('3:rv32Zicsr')
+    #print('4:rv32Zifencei')
+    #subsets = int(input('Please select subsets:'));
+    if((sys.argv[1] == 'MUL')or(sys.argv[1] == 'MULH')or(sys.argv[1] == 'MULHSU')or(sys.argv[1] == 'MULHU')or(sys.argv[1] == 'DIV')or(sys.argv[1] == 'DIVU')or(sys.argv[1] == 'REM')or(sys.argv[1] == 'REMU')):
+        subsets = 2
+    elif((sys.argv[1] == 'CSRRW')or(sys.argv[1] == 'CSRRS')or(sys.argv[1] == 'CSRRC')or(sys.argv[1] == 'CSRRWI')or(sys.argv[1] == 'CSRRSI')or(sys.argv[1] == 'CSRRCI')):
+        subsets = 3
+    elif(sys.argv[1] == 'FENCE.I'):
+        subsets = 4
+    else:
+        subsets = 1
     print('\033[1;32mFinding the reference result. . .')
     if(subsets == 1):
         ref_file = get_reference_file('../../isa_test/riscv-compliance/build_generated/rv32i/I-' + sys.argv[1] + '-01.elf.bin')
@@ -75,6 +84,10 @@ def main():
         ref_file = get_reference_file('../../isa_test/riscv-compliance/build_generated/rv32Zicsr/I-' + sys.argv[1] + '-01.elf.bin')
     else:
         ref_file = get_reference_file('../../isa_test/riscv-compliance/build_generated/rv32Zifencei/I-' + sys.argv[1] + '-01.elf.bin')
+    log = open('sim.log', 'a+')
+    dt01 = datetime.today()
+    log.write('Date: ' + str(dt01.date()))
+    log.write(' ' + str(dt01.time()) + '\n')
     if (ref_file != None):
         if(subsets == 1):
             print('\033[1;32mComparing the results with I-' + sys.argv[1] + '-01 of rv32i subsets. . .')
@@ -86,7 +99,8 @@ def main():
             print('\033[1;32mComparing the results with I-' + sys.argv[1] + '-01 of rv32Zifencei subsets. . .')
         # 如果文件大小不一致，直接报fail
         if (os.path.getsize('result.output') != os.path.getsize(ref_file)):
-            print('\033[1;31m!!! FAIL, size != !!!\033[0m')
+            log.write('!!! ' + sys.argv[1] + ' FAIL, size != !!!\n')
+            print('\033[1;31m!!! ' + sys.argv[1] + ' FAIL, size != !!!\033[0m')
             return
         f1 = open('result.output')
         f2 = open(ref_file)
@@ -96,16 +110,20 @@ def main():
         for line in f2.readlines():
             # 只要有一行内容不一样就报fail
             if (f1_lines[i] != line):
-                print('\033[1;31m!!! FAIL, content != !!!\033[0m')
+                log.write('!!! ' + sys.argv[1] + ' FAIL, content != !!!\n')
+                print('\033[1;31m!!! ' + sys.argv[1] + ' FAIL, content != !!!\033[0m')
                 f1.close()
                 f2.close()
                 return
             i = i + 1
         f1.close()
         f2.close()
-        print('\033[1;32m### PASS ###\033[0m')
+        log.write('############ ' + sys.argv[1] + ' TEST PASS ############\n')
+        print('\033[1;32m############ ' + sys.argv[1] + ' TEST PASS ############\033[0m')
     else:
-        print('\033[1;31mNo ref file found, please check result by yourself.\033[0m')
+        log.write(sys.argv[1] +': No ref file found, please check result by yourself.\n')
+        print(sys.argv[1] +': \033[1;31mNo ref file found, please check result by yourself.\033[0m')
+    log.close()
 
 if __name__ == '__main__':
     sys.exit(main())

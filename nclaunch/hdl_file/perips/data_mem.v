@@ -11,7 +11,7 @@
 //  测试用代替RAM的模块
 //
 // -FHDR----------------------------------------------------------------------------
-//`include "/home/ICer/ic_prjs/rooth/VCS/rtl/soc/rooth_defines.v"
+`include "./hdl_file/soc/rooth_defines.v"
 module data_mem(
     input                               clk,
     input                               rst_n,
