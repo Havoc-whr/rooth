@@ -57,7 +57,7 @@
 
 3. 终端输入`bash test.sh`运行脚本，依次运行指令测试，运行时间较长 ，最终运行结果会在sim.log中查看。
 
-![](https://gitee.com/havocsite/rooth/raw/master/images/1677418988813.jpg)
+![](https://gitee.com/havocsite/rooth/raw/master/images/imags_20230508_221402.png)
 ## 3. 说明
 
 对于测试程序具体原理和脚本介绍，待更新....
