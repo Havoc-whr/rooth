@@ -55,7 +55,7 @@
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677419734696.jpg)
 
-3. 终端输入`bash test.sh`运行脚本，依次运行指令测试，运行时间较长 ，最终运行结果会在sim.log中查看。
+3. 终端输入`bash test.sh`运行脚本，依次运行指令测试，运行时间较长 ，最终运行结果可以在sim.log中查看。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/imags_20230508_221402.png)
 ## 3. 说明
