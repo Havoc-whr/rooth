@@ -92,22 +92,6 @@
 
 RISC-V凭借其开源特点以及后发优势，经过十多年的发展，逐渐形成了完善的软硬件生态，这使得基于RISC-V无论是硬件设计还是软件设计都可以找到相应的开源的编译器或有完善微架构设计的硬件，串联起来形成完整的体系进行学习、开发测试。从许多开源项目中可以找到比较完善的，工具链微架构的设计思路。
 
-开源项目：
-
-[Lichee-Pi/Tang_E203_Mini: LicheeTang 蜂鸟E203 Core (github.com)](https://github.com/Lichee-Pi/Tang_E203_Mini)
-
-[tinyriscv: 一个从零开始写的极简、非常易懂的RISC-V处理器核。 (gitee.com)](https://gitee.com/liangkangnan/tinyriscv)
-
-[香山项目总体介绍 - XiangShan 官方文档 (xiangshan-doc.readthedocs.io)](https://xiangshan-doc.readthedocs.io/zh_CN/latest/)
-
-标准文档：
-
-[Specifications – RISC-V International (riscv.org)](https://riscv.org/technical/specifications/)
-
-[jameslzhu/riscv-card: An unofficial assembly reference for RISC-V. (github.com)](https://github.com/jameslzhu/riscv-card)
-
-[RISC-V-中文读本-v2p1](http://www.havocsite.top:8081/d/DSM/home/RISC-V-%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C-v2p1.pdf?sign=cz1enoDbGvqQGEX8I1mt5nnh9sm6RCAE2LHSeymhwKU=:0)
-
 ## RISC-V特点：
 
 ### 简单了解RISC-V指令集
