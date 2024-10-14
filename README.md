@@ -12,9 +12,9 @@
 
 ---
 
-## 3. NCLaunch运行测试，在[nclaunch目录](https://gitee.com/havocsite/rooth/tree/master/nclaunch)下查看。
+## 3. NCLaunch运行测试，在[nclaunch目录](https://github.com/Havoc-whr/rooth/tree/master/nclaunch)下查看。
 ---
-## 4. FPGA相关设计迁移到[fpga分支](https://gitee.com/havocsite/rooth/tree/fpga/)下。
+## 4. FPGA相关设计迁移到[fpga分支](https://github.com/Havoc-whr/rooth/tree/fpga)下。
 ---
 ## 指令兼容性测试结果：
 
