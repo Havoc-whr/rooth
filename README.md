@@ -6,7 +6,7 @@
 
 ---
 
-## 2. VCS仿真测试运行方式说明，在[VCS目录](https://gitee.com/havocsite/rooth/tree/master/VCS#如何运行)下查看。
+## 2. VCS仿真测试运行方式说明，在[VCS目录](https://github.com/Havoc-whr/rooth/tree/master/VCS#如何运行)下查看。
 
 ![](https://gitee.com/havocsite/rooth/raw/master/images/1677426750198.jpg)
 
